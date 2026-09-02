@@ -1,0 +1,27 @@
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+sqlalchemy>=2.0.35
+pydantic>=2.9.0
+pydantic-settings>=2.5.0
+email-validator>=2.2.0
+python-jose[cryptography]>=3.3.0
+bcrypt>=4.0.0
+python-multipart>=0.0.12
+python-dotenv>=1.0.1
+
+# RAG (embeddings + vector search)
+sentence-transformers>=3.0.0
+faiss-cpu>=1.8.0
+
+# Predictive ML
+scikit-learn>=1.5.0
+numpy>=1.26.0
+pandas>=2.2.0
+
+# LLM providers (only the one(s) you use actually need a valid API key)
+openai>=1.50.0
+anthropic>=0.35.0
+requests>=2.32.0
+
+# Report parsing
+pypdf>=4.3.0

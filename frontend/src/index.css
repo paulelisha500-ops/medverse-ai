@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-paper text-ink font-sans antialiased;
+}
+
+::selection {
+  background-color: theme('colors.pulse.DEFAULT');
+  color: white;
+}
+
+/* Visible keyboard focus everywhere, styled to match the design */
+:focus-visible {
+  outline: 2px solid theme('colors.pulse.DEFAULT');
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+.readout-label {
+  @apply font-mono text-[11px] uppercase tracking-widest text-muted;
+}
+
+.readout-value {
+  @apply font-mono font-medium text-ink;
+}
+
+.card {
+  @apply bg-surface border border-line rounded-lg;
+}

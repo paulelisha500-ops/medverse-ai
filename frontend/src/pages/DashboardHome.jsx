@@ -1,0 +1,109 @@
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts'
+import client from '../api/client.js'
+import { useAuth } from '../context/AuthContext.jsx'
+import { PageHeader, StatCard, Disclaimer } from '../components/ui.jsx'
+
+export default function DashboardHome() {
+  const { user } = useAuth()
+  const [stats, setStats] = useState(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    client
+      .get('/dashboard/stats')
+      .then((res) => setStats(res.data))
+      .finally(() => setLoading(false))
+  }, [])
+
+  return (
+    <div>
+      <PageHeader
+        title={`Welcome, ${user.full_name.split(' ')[0]}`}
+        subtitle={roleSubtitle(user.role)}
+      />
+
+      {loading && <div className="readout-label">Loading dashboard…</div>}
+
+      {!loading && stats?.role === 'admin' && <AdminView stats={stats} />}
+      {!loading && stats?.role === 'doctor' && <DoctorView stats={stats} />}
+      {!loading && stats?.role === 'patient' && <PatientView stats={stats} />}
+
+      <div className="mt-8">
+        <Disclaimer />
+      </div>
+    </div>
+  )
+}
+
+function roleSubtitle(role) {
+  if (role === 'admin') return 'Platform-wide overview.'
+  if (role === 'doctor') return "Here's what's happening across your patients."
+  return 'Your health at a glance.'
+}
+
+function AdminView({ stats }) {
+  const chartData = (stats.records_by_type || []).map((r) => ({ name: r.type, count: r.count }))
+  return (
+    <div className="space-y-6">
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+        <StatCard label="Patients" value={stats.total_patients} />
+        <StatCard label="Doctors" value={stats.total_doctors} />
+        <StatCard label="Assistant chats" value={stats.total_chats} />
+        <StatCard label="Reports analyzed" value={stats.total_reports_analyzed} />
+      </div>
+
+      {chartData.length > 0 && (
+        <div className="card p-5">
+          <div className="readout-label mb-4">Medical record entries by type</div>
+          <ResponsiveContainer width="100%" height={220}>
+            <BarChart data={chartData}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#DDE3DF" />
+              <XAxis dataKey="name" tick={{ fontSize: 12, fill: '#5C6B66' }} />
+              <YAxis tick={{ fontSize: 12, fill: '#5C6B66' }} allowDecimals={false} />
+              <Tooltip contentStyle={{ fontSize: 12, borderRadius: 8, borderColor: '#DDE3DF' }} />
+              <Bar dataKey="count" fill="#1F8A70" radius={[4, 4, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      )}
+    </div>
+  )
+}
+
+function DoctorView({ stats }) {
+  return (
+    <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+      <StatCard label="Total patients" value={stats.total_patients} />
+      <StatCard label="Your assistant queries" value={stats.total_chats} />
+      <Link to="/patients" className="card flex flex-col justify-between p-5 hover:border-pulse">
+        <div className="readout-label">Quick action</div>
+        <div className="mt-2 font-display text-lg font-medium text-ink">Review patients →</div>
+      </Link>
+    </div>
+  )
+}
+
+function PatientView({ stats }) {
+  return (
+    <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+      <StatCard label="Record entries" value={stats.record_count} />
+      <StatCard label="Assistant chats" value={stats.total_chats} />
+      <StatCard label="Reports analyzed" value={stats.total_reports_analyzed} />
+      <div className="card p-5">
+        <div className="readout-label">Last risk check</div>
+        {stats.last_risk_assessment ? (
+          <div className="mt-2 font-mono text-sm text-ink">
+            Diabetes {stats.last_risk_assessment.diabetes_risk_pct}% · Heart{' '}
+            {stats.last_risk_assessment.heart_disease_risk_pct}%
+          </div>
+        ) : (
+          <Link to="/risk-check" className="mt-2 block text-sm font-medium text-pulse-dark underline">
+            Run your first check →
+          </Link>
+        )}
+      </div>
+    </div>
+  )
+}
