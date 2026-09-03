@@ -7,6 +7,7 @@ export default function Medications() {
   const [meds, setMeds] = useState(['', ''])
   const [result, setResult] = useState(null)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   function updateMed(index, value) {
     setMeds((prev) => prev.map((m, i) => (i === index ? value : m)))
@@ -25,9 +26,12 @@ export default function Medications() {
     const cleaned = meds.map((m) => m.trim()).filter(Boolean)
     if (cleaned.length < 2) return
     setLoading(true)
+    setError('')
     try {
       const res = await client.post('/medications/check', { medications: cleaned })
       setResult(res.data)
+    } catch (err) {
+      setError('Could not check interactions. Please try again.')
     } finally {
       setLoading(false)
     }
@@ -73,6 +77,7 @@ export default function Medications() {
         </div>
 
         <Button type="submit" disabled={loading}>{loading ? 'Checking…' : 'Check interactions'}</Button>
+        {error && <p className="text-sm text-alert">{error}</p>}
       </form>
 
       {result && (

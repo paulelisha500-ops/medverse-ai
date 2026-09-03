@@ -44,7 +44,8 @@ def normalize(name: str) -> str:
 
 
 def check_interactions(medication_list: List[str]) -> List[Dict]:
-    normalized = [normalize(m) for m in medication_list if m.strip()]
+    originals = [m for m in medication_list if m.strip()]
+    normalized = [normalize(m) for m in originals]
     found = []
     for i in range(len(normalized)):
         for j in range(i + 1, len(normalized)):
@@ -53,8 +54,8 @@ def check_interactions(medication_list: List[str]) -> List[Dict]:
                 pair = set(item["drugs"])
                 if {a, b} == pair:
                     found.append({
-                        "drug_a": medication_list[i],
-                        "drug_b": medication_list[j],
+                        "drug_a": originals[i],
+                        "drug_b": originals[j],
                         "description": item["description"],
                         "severity": item["severity"],
                     })
