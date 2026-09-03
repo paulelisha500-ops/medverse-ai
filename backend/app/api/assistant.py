@@ -4,6 +4,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
 from app.api.deps import get_current_user
+from app.api.patients import _compute_age, _compute_bmi
 from app.db import models
 from app.db.database import get_db
 from app.rag.llm_providers import get_llm_provider
@@ -38,10 +39,20 @@ def _build_patient_context(db: Session, requester: models.User, patient_id: int)
         .all()
     )
     record_lines = [f"- ({r.type}) {r.title}: {r.details or ''}" for r in records]
+    age = _compute_age(profile.date_of_birth)
+    bmi = _compute_bmi(profile.height_cm, profile.weight_kg)
+    summary_lines = [
+        f"Age: {age if age is not None else 'unknown'}",
+        f"Sex/gender: {profile.gender or 'unknown'}",
+        f"BMI: {bmi if bmi is not None else 'unknown'}",
+        f"Allergies: {profile.allergies or 'None recorded'}",
+        f"Chronic conditions: {profile.chronic_conditions or 'None recorded'}",
+        f"Family history: {profile.family_history or 'None recorded'}",
+        f"Smoking: {profile.smoking_status or 'unknown'}, Alcohol use: {profile.alcohol_use or 'unknown'}",
+    ]
     return (
         "\n\nPatient record summary (for clinician context only — do not restate verbatim to the "
-        f"patient without care):\nAllergies: {profile.allergies or 'None recorded'}\n"
-        + "\n".join(record_lines)
+        "patient without care):\n" + "\n".join(summary_lines) + "\n" + "\n".join(record_lines)
     )
 
 

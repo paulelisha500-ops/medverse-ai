@@ -39,6 +39,16 @@ class PatientProfileUpdate(BaseModel):
     gender: Optional[str] = None
     blood_group: Optional[str] = None
     allergies: Optional[str] = None
+    height_cm: Optional[float] = Field(default=None, ge=30, le=272)
+    weight_kg: Optional[float] = Field(default=None, ge=1, le=500)
+    phone: Optional[str] = None
+    address: Optional[str] = None
+    emergency_contact_name: Optional[str] = None
+    emergency_contact_phone: Optional[str] = None
+    smoking_status: Optional[str] = None
+    alcohol_use: Optional[str] = None
+    chronic_conditions: Optional[str] = None
+    family_history: Optional[str] = None
 
 
 class PatientProfileOut(BaseModel):
@@ -48,8 +58,20 @@ class PatientProfileOut(BaseModel):
     gender: Optional[str] = None
     blood_group: Optional[str] = None
     allergies: Optional[str] = None
+    height_cm: Optional[float] = None
+    weight_kg: Optional[float] = None
+    phone: Optional[str] = None
+    address: Optional[str] = None
+    emergency_contact_name: Optional[str] = None
+    emergency_contact_phone: Optional[str] = None
+    smoking_status: Optional[str] = None
+    alcohol_use: Optional[str] = None
+    chronic_conditions: Optional[str] = None
+    family_history: Optional[str] = None
     full_name: Optional[str] = None
     email: Optional[str] = None
+    age: Optional[int] = None
+    bmi: Optional[float] = None
 
     class Config:
         from_attributes = True
