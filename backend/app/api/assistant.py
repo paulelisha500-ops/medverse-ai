@@ -23,12 +23,12 @@ SYSTEM_PROMPT = (
 
 
 def _build_patient_context(db: Session, requester: models.User, patient_id: int) -> str:
-    profile = db.query(models.PatientProfile).filter(models.PatientProfile.user_id == patient_id).first()
-    if not profile:
-        return ""
-
     if requester.role not in ("doctor", "admin") and requester.id != patient_id:
         raise HTTPException(status_code=403, detail="Not authorized to use this patient's context")
+
+    profile = db.query(models.PatientProfile).filter(models.PatientProfile.user_id == patient_id).first()
+    if not profile:
+        raise HTTPException(status_code=404, detail="Patient not found")
 
     records = (
         db.query(models.MedicalRecordEntry)
@@ -61,7 +61,13 @@ def chat(
     user_prompt = f"Context:\n{context_block}{patient_context}\n\nQuestion: {payload.message}"
 
     provider = get_llm_provider()
-    answer = provider.generate(SYSTEM_PROMPT, user_prompt)
+    try:
+        answer = provider.generate(SYSTEM_PROMPT, user_prompt)
+    except Exception:
+        raise HTTPException(
+            status_code=502,
+            detail="The AI assistant is temporarily unavailable. Please try again in a moment.",
+        )
 
     sources = [ChatSource(title=r["title"], snippet=r["text"][:220]) for r in kb_results]
 

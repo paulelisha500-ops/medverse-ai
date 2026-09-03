@@ -50,7 +50,12 @@ export default function Medications() {
               className={inputClass}
             />
             {meds.length > 2 && (
-              <button type="button" onClick={() => removeField(i)} className="text-muted hover:text-alert">
+              <button
+                type="button"
+                onClick={() => removeField(i)}
+                aria-label={`Remove medication ${i + 1}`}
+                className="text-muted hover:text-alert"
+              >
                 <X size={18} />
               </button>
             )}

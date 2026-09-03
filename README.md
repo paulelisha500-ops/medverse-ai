@@ -77,8 +77,8 @@ cp backend/.env.example backend/.env
 docker compose up --build
 ```
 
-- Frontend: http://localhost:3000
-- Backend API docs (Swagger): http://localhost:8000/docs
+- Frontend: http://localhost:3004
+- Backend API docs (Swagger): http://localhost:8004/docs
 
 First backend startup will train the risk models and build the RAG index automatically (the
 embedding model downloads once, ~90MB).
@@ -91,7 +91,7 @@ cd backend
 python3 -m venv venv && source venv/bin/activate   # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 cp .env.example .env
-uvicorn app.main:app --reload
+uvicorn app.main:app --reload --port 8004
 ```
 
 **Frontend** (in a second terminal)
@@ -100,7 +100,7 @@ cd frontend
 npm install
 npm run dev
 ```
-Open http://localhost:5173 — the Vite dev server proxies `/api` to `http://localhost:8000`, so
+Open http://localhost:5173 — the Vite dev server proxies `/api` to `http://localhost:8004`, so
 there's no CORS configuration to fight with.
 
 ## Demo accounts
@@ -141,7 +141,7 @@ Adding a new provider is a matter of implementing one class in
 | `ANTHROPIC_API_KEY` / `ANTHROPIC_MODEL` | — / `claude-sonnet-5` | |
 | `OLLAMA_BASE_URL` / `OLLAMA_MODEL` | `http://localhost:11434` / `llama3.1` | |
 | `EMBEDDING_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Downloaded on first run |
-| `CORS_ORIGINS` | localhost:5173,3000 | Only needed if you bypass the Vite/nginx proxy |
+| `CORS_ORIGINS` | localhost:5173,3004 | Only needed if you bypass the Vite/nginx proxy |
 
 ## Project structure
 

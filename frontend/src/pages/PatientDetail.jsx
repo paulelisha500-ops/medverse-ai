@@ -16,13 +16,17 @@ export default function PatientDetail() {
   const [question, setQuestion] = useState('')
   const [answer, setAnswer] = useState(null)
   const [asking, setAsking] = useState(false)
+  const [askError, setAskError] = useState(null)
+  const [loadError, setLoadError] = useState(false)
 
   function load() {
+    setLoadError(false)
     Promise.all([client.get(`/patients/${id}`), client.get(`/patients/${id}/records`)])
       .then(([p, r]) => {
         setProfile(p.data)
         setRecords(r.data)
       })
+      .catch(() => setLoadError(true))
       .finally(() => setLoading(false))
   }
 
@@ -42,18 +46,29 @@ export default function PatientDetail() {
     if (!question.trim()) return
     setAsking(true)
     setAnswer(null)
+    setAskError(null)
     try {
       const res = await client.post('/assistant/chat', {
         message: question,
         patient_id: profile.user_id,
       })
       setAnswer(res.data)
+    } catch (err) {
+      setAskError('Something went wrong reaching the assistant. Please try again.')
     } finally {
       setAsking(false)
     }
   }
 
   if (loading) return <div className="readout-label">Loading patient…</div>
+  if (loadError) {
+    return (
+      <EmptyState
+        title="Couldn't load this patient"
+        description="Something went wrong fetching this record. Please try again."
+      />
+    )
+  }
   if (!profile) return <EmptyState title="Patient not found" description="This patient record doesn't exist." />
 
   return (
@@ -84,6 +99,11 @@ export default function PatientDetail() {
         {answer && (
           <div className="mt-3 whitespace-pre-wrap rounded border border-line bg-paper p-3 text-sm text-ink">
             {answer.answer}
+          </div>
+        )}
+        {askError && (
+          <div className="mt-3 rounded border border-alert/30 bg-alert/5 p-3 text-sm text-alert">
+            {askError}
           </div>
         )}
       </div>

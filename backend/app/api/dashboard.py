@@ -31,7 +31,9 @@ def stats(db: Session = Depends(get_db), user: models.User = Depends(get_current
         return {
             "role": "doctor",
             "total_patients": db.query(models.PatientProfile).count(),
-            "recent_reports": db.query(models.ReportSummary).order_by(models.ReportSummary.created_at.desc()).limit(5).count(),
+            "total_reports_analyzed": db.query(models.ReportSummary).filter(
+                models.ReportSummary.user_id == user.id
+            ).count(),
             "total_chats": db.query(models.ChatMessage).filter(
                 models.ChatMessage.user_id == user.id, models.ChatMessage.role == "user"
             ).count(),

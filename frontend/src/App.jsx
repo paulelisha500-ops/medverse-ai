@@ -12,6 +12,7 @@ import Medications from './pages/Medications.jsx'
 import Patients from './pages/Patients.jsx'
 import PatientDetail from './pages/PatientDetail.jsx'
 import Profile from './pages/Profile.jsx'
+import NotFound from './pages/NotFound.jsx'
 
 export default function App() {
   return (
@@ -48,6 +49,7 @@ export default function App() {
           }
         />
         <Route path="/profile" element={<Profile />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   )

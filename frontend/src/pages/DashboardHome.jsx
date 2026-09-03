@@ -9,32 +9,46 @@ export default function DashboardHome() {
   const { user } = useAuth()
   const [stats, setStats] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     client
       .get('/dashboard/stats')
       .then((res) => setStats(res.data))
+      .catch(() => setError(true))
       .finally(() => setLoading(false))
   }, [])
 
   return (
     <div>
       <PageHeader
-        title={`Welcome, ${user.full_name.split(' ')[0]}`}
+        title={`Welcome, ${firstName(user.full_name)}`}
         subtitle={roleSubtitle(user.role)}
       />
 
       {loading && <div className="readout-label">Loading dashboard…</div>}
 
-      {!loading && stats?.role === 'admin' && <AdminView stats={stats} />}
-      {!loading && stats?.role === 'doctor' && <DoctorView stats={stats} />}
-      {!loading && stats?.role === 'patient' && <PatientView stats={stats} />}
+      {!loading && error && (
+        <div className="card p-5 text-sm text-muted">
+          Couldn't load your dashboard stats. Please refresh the page.
+        </div>
+      )}
+
+      {!loading && !error && stats?.role === 'admin' && <AdminView stats={stats} />}
+      {!loading && !error && stats?.role === 'doctor' && <DoctorView stats={stats} />}
+      {!loading && !error && stats?.role === 'patient' && <PatientView stats={stats} />}
 
       <div className="mt-8">
         <Disclaimer />
       </div>
     </div>
   )
+}
+
+function firstName(fullName) {
+  const parts = fullName.trim().split(' ')
+  const first = parts[0].endsWith('.') && parts.length > 1 ? parts[1] : parts[0]
+  return first
 }
 
 function roleSubtitle(role) {
@@ -74,9 +88,10 @@ function AdminView({ stats }) {
 
 function DoctorView({ stats }) {
   return (
-    <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+    <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
       <StatCard label="Total patients" value={stats.total_patients} />
       <StatCard label="Your assistant queries" value={stats.total_chats} />
+      <StatCard label="Reports analyzed" value={stats.total_reports_analyzed} />
       <Link to="/patients" className="card flex flex-col justify-between p-5 hover:border-pulse">
         <div className="readout-label">Quick action</div>
         <div className="mt-2 font-display text-lg font-medium text-ink">Review patients →</div>

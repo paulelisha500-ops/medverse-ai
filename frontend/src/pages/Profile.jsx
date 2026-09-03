@@ -7,24 +7,33 @@ export default function Profile() {
   const { user } = useAuth()
   const [profile, setProfile] = useState(null)
   const [saved, setSaved] = useState(false)
+  const [saveError, setSaveError] = useState(false)
 
   useEffect(() => {
     if (user.role === 'patient') {
-      client.get('/patients/me/profile').then((res) => setProfile(res.data))
+      client
+        .get('/patients/me/profile')
+        .then((res) => setProfile(res.data))
+        .catch(() => {})
     }
   }, [user.role])
 
   async function handleSave(e) {
     e.preventDefault()
-    const res = await client.put('/patients/me/profile', {
-      date_of_birth: profile.date_of_birth,
-      gender: profile.gender,
-      blood_group: profile.blood_group,
-      allergies: profile.allergies,
-    })
-    setProfile(res.data)
-    setSaved(true)
-    setTimeout(() => setSaved(false), 2000)
+    setSaveError(false)
+    try {
+      const res = await client.put('/patients/me/profile', {
+        date_of_birth: profile.date_of_birth,
+        gender: profile.gender,
+        blood_group: profile.blood_group,
+        allergies: profile.allergies,
+      })
+      setProfile(res.data)
+      setSaved(true)
+      setTimeout(() => setSaved(false), 2000)
+    } catch (err) {
+      setSaveError(true)
+    }
   }
 
   return (
@@ -81,6 +90,7 @@ export default function Profile() {
           <div className="flex items-center gap-3">
             <Button type="submit">Save changes</Button>
             {saved && <span className="text-sm text-pulse-dark">Saved.</span>}
+            {saveError && <span className="text-sm text-alert">Couldn't save. Please try again.</span>}
           </div>
         </form>
       )}

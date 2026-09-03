@@ -28,7 +28,7 @@ class Settings(BaseSettings):
 
     EMBEDDING_MODEL: str = "sentence-transformers/all-MiniLM-L6-v2"
 
-    CORS_ORIGINS: str = "http://localhost:5173,http://localhost:3000"
+    CORS_ORIGINS: str = "http://localhost:5173,http://localhost:3004"
 
     @property
     def cors_origins_list(self) -> list[str]:

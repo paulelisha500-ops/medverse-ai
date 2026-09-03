@@ -19,11 +19,16 @@ export default function Assistant() {
   const bottomRef = useRef(null)
 
   useEffect(() => {
-    client.get('/assistant/history').then((res) => {
-      setMessages(
-        res.data.map((m) => ({ role: m.role, content: m.content, sources: [] }))
-      )
-    })
+    client
+      .get('/assistant/history')
+      .then((res) => {
+        setMessages(
+          res.data.map((m) => ({ role: m.role, content: m.content, sources: [] }))
+        )
+      })
+      .catch(() => {
+        // History failed to load — chat still works from a blank slate.
+      })
   }, [])
 
   useEffect(() => {

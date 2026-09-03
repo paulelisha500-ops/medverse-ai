@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
 from app.api.deps import get_current_user
@@ -16,7 +16,13 @@ def analyze(
     db: Session = Depends(get_db),
     user: models.User = Depends(get_current_user),
 ):
-    result = analyze_report(payload.text)
+    try:
+        result = analyze_report(payload.text)
+    except Exception:
+        raise HTTPException(
+            status_code=502,
+            detail="Report analysis is temporarily unavailable. Please try again in a moment.",
+        )
 
     record = models.ReportSummary(
         user_id=user.id,

@@ -8,11 +8,13 @@ export default function Patients() {
   const [patients, setPatients] = useState([])
   const [query, setQuery] = useState('')
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     client
       .get('/patients')
       .then((res) => setPatients(res.data))
+      .catch(() => setError(true))
       .finally(() => setLoading(false))
   }, [])
 
@@ -36,14 +38,21 @@ export default function Patients() {
 
       {loading && <div className="readout-label">Loading patients…</div>}
 
-      {!loading && filtered.length === 0 && (
+      {!loading && error && (
+        <EmptyState
+          title="Couldn't load patients"
+          description="Something went wrong fetching the patient list. Please try again."
+        />
+      )}
+
+      {!loading && !error && filtered.length === 0 && (
         <EmptyState
           title="No patients yet"
           description="Patients will appear here once they register or an admin adds them."
         />
       )}
 
-      {!loading && filtered.length > 0 && (
+      {!loading && !error && filtered.length > 0 && (
         <div className="card overflow-hidden">
           <table className="w-full text-left text-sm">
             <thead className="border-b border-line bg-paper/60">
