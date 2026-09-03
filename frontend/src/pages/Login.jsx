@@ -3,12 +3,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext.jsx'
 import { Button, Field, inputClass } from '../components/ui.jsx'
 
-const DEMO_ACCOUNTS = [
-  { role: 'Admin', email: 'admin@medverse.ai', password: 'Admin@123' },
-  { role: 'Doctor', email: 'doctor@medverse.ai', password: 'Doctor@123' },
-  { role: 'Patient', email: 'patient@medverse.ai', password: 'Patient@123' },
-]
-
 export default function Login() {
   const { login } = useAuth()
   const navigate = useNavigate()
@@ -29,11 +23,6 @@ export default function Login() {
     } finally {
       setBusy(false)
     }
-  }
-
-  function fillDemo(account) {
-    setEmail(account.email)
-    setPassword(account.password)
   }
 
   return (
@@ -98,22 +87,6 @@ export default function Login() {
               Create an account
             </Link>
           </p>
-
-          <div className="mt-8 rounded border border-line bg-surface p-4">
-            <div className="readout-label mb-2">Try a demo account</div>
-            <div className="space-y-1.5">
-              {DEMO_ACCOUNTS.map((acc) => (
-                <button
-                  key={acc.role}
-                  onClick={() => fillDemo(acc)}
-                  className="flex w-full items-center justify-between rounded px-2 py-1.5 text-left text-sm hover:bg-pulse-dim"
-                >
-                  <span className="font-medium text-ink">{acc.role}</span>
-                  <span className="font-mono text-xs text-muted">{acc.email}</span>
-                </button>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </div>
