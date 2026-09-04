@@ -1,7 +1,24 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { HeartPulse, Stethoscope, Pill, Activity, MessageSquareText, FileText } from 'lucide-react'
 import { useAuth } from '../context/AuthContext.jsx'
 import { Button, Field, inputClass } from '../components/ui.jsx'
+
+const TRUST_BADGES = ['RAG-Grounded', 'Role-Based Access', 'MIT Licensed']
+
+const ORBIT_ICONS = [
+  { icon: Stethoscope, top: '14%', left: '50%' },
+  { icon: Pill, top: '39%', left: '84%' },
+  { icon: Activity, top: '79%', left: '71%' },
+  { icon: MessageSquareText, top: '79%', left: '29%' },
+  { icon: FileText, top: '39%', left: '16%' },
+]
+
+const STEPS = [
+  'Sign in to your dashboard',
+  'Ask, check, or assess',
+  'Get grounded, sourced answers',
+]
 
 export default function Login() {
   const { login } = useAuth()
@@ -41,8 +58,28 @@ export default function Login() {
           </p>
         </div>
 
+        <div className="mt-6 flex flex-wrap gap-2">
+          {TRUST_BADGES.map((label) => (
+            <span
+              key={label}
+              className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium text-paper/70"
+            >
+              {label}
+            </span>
+          ))}
+        </div>
+
         <div className="flex flex-1 items-center justify-center">
-          <RiskCardMockup />
+          <CareOrbit />
+        </div>
+
+        <div className="grid grid-cols-3 gap-3">
+          {STEPS.map((label, i) => (
+            <div key={label} className="rounded-lg border border-white/10 bg-white/5 p-3">
+              <span className="font-mono text-xs text-pulse">0{i + 1}</span>
+              <div className="mt-1 text-xs leading-snug text-paper/60">{label}</div>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -134,46 +171,30 @@ function PulseWaveform() {
   )
 }
 
-function RiskCardMockup() {
+function CareOrbit() {
   return (
-    <div className="relative w-full max-w-sm">
-      <div className="absolute -inset-10 rounded-full bg-pulse/25 blur-3xl" />
-      <div className="absolute -inset-10 translate-x-10 rounded-full bg-amber/10 blur-3xl" />
+    <div className="relative h-64 w-64">
+      <div className="absolute inset-0 rounded-full bg-pulse/15 blur-3xl" />
 
-      <div className="absolute inset-0 translate-x-4 translate-y-5 rotate-3 rounded-lg bg-paper/10" />
+      {/* Orbit rings */}
+      <div className="absolute inset-0 rounded-full border border-dashed border-white/15" />
+      <div className="absolute inset-8 rounded-full border border-dashed border-white/10" />
 
-      <div className="relative -rotate-2 rounded-lg border border-white/10 bg-paper p-6 shadow-2xl">
-        <div className="mb-4 flex items-center justify-between">
-          <div className="flex items-center gap-1.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-alert/50" />
-            <span className="h-2.5 w-2.5 rounded-full bg-amber/50" />
-            <span className="h-2.5 w-2.5 rounded-full bg-pulse/50" />
-          </div>
-          <span className="readout-label">Disease Risk Check</span>
-        </div>
-
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <div className="readout-label">Diabetes risk</div>
-            <div className="font-mono text-3xl font-medium text-alert">
-              77.1<span className="ml-0.5 text-base text-muted">%</span>
-            </div>
-          </div>
-          <div>
-            <div className="readout-label">Heart disease</div>
-            <div className="font-mono text-3xl font-medium text-alert">
-              58.7<span className="ml-0.5 text-base text-muted">%</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-5 space-y-2 border-t border-line pt-4">
-          <div className="readout-label mb-1">Suggestions</div>
-          <div className="h-1.5 w-full rounded-full bg-line" />
-          <div className="h-1.5 w-4/5 rounded-full bg-line" />
-          <div className="h-1.5 w-3/5 rounded-full bg-line" />
-        </div>
+      {/* Center: platform icon */}
+      <div className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-pulse shadow-lg">
+        <HeartPulse size={24} className="text-paper" />
       </div>
+
+      {/* Orbiting feature icons */}
+      {ORBIT_ICONS.map(({ icon: Icon, top, left }) => (
+        <div
+          key={top + left}
+          className="absolute flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-paper shadow-md"
+          style={{ top, left }}
+        >
+          <Icon size={16} className="text-pulse-dark" />
+        </div>
+      ))}
     </div>
   )
 }
