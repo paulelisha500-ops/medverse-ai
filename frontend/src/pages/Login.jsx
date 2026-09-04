@@ -1,7 +1,28 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import {
+  LayoutDashboard,
+  MessageSquareText,
+  FileText,
+  Activity,
+  Pill,
+  Users,
+  UserCircle,
+  Stethoscope,
+} from 'lucide-react'
 import { useAuth } from '../context/AuthContext.jsx'
 import { Button, Field, inputClass } from '../components/ui.jsx'
+
+const FEATURES = [
+  { icon: LayoutDashboard, label: 'Dashboard' },
+  { icon: MessageSquareText, label: 'AI Assistant' },
+  { icon: FileText, label: 'Reports' },
+  { icon: Activity, label: 'Risk Check' },
+  { icon: Pill, label: 'Medications' },
+  { icon: Users, label: 'Patients' },
+  { icon: UserCircle, label: 'Profile' },
+  { icon: Stethoscope, label: 'Clinical Care' },
+]
 
 export default function Login() {
   const { login } = useAuth()
@@ -27,9 +48,13 @@ export default function Login() {
 
   return (
     <div className="flex min-h-screen bg-ink">
-      {/* Left: brand + waveform signature */}
-      <div className="relative hidden w-1/2 flex-col justify-between overflow-hidden p-12 md:flex">
-        <div>
+      {/* Left: brand + feature grid */}
+      <div className="relative hidden w-1/2 flex-col overflow-hidden p-12 md:flex">
+        <div className="absolute right-10 top-10 w-36 opacity-80">
+          <PulseWaveform />
+        </div>
+
+        <div className="pr-32">
           <span className="font-display text-2xl font-semibold text-paper">MedVerse AI</span>
           <p className="mt-2 max-w-xs text-sm text-paper/60">
             Clinical intelligence platform — RAG-grounded assistant, report understanding, and
@@ -37,9 +62,19 @@ export default function Login() {
           </p>
         </div>
 
-        <PulseWaveform />
-
-        <div className="readout-label text-paper/40">Portfolio demonstration build</div>
+        <div className="flex flex-1 items-center">
+          <div className="grid grid-cols-4 gap-4">
+            {FEATURES.map(({ icon: Icon, label }) => (
+              <div
+                key={label}
+                className="flex flex-col items-center gap-2 rounded-lg border border-white/10 bg-white/5 p-4 text-center"
+              >
+                <Icon size={20} className="text-pulse" />
+                <span className="text-[10px] uppercase tracking-wide text-paper/40">{label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Right: form */}
