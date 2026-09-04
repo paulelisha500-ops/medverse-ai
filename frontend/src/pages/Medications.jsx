@@ -1,16 +1,58 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { X, Plus } from 'lucide-react'
 import client from '../api/client.js'
-import { PageHeader, Button, Badge, Disclaimer, inputClass } from '../components/ui.jsx'
+import { PageHeader, Button, Badge, inputClass } from '../components/ui.jsx'
+
+function getSuggestions(query, directory) {
+  const q = query.trim().toLowerCase()
+  if (!q) return []
+  const starts = []
+  const includes = []
+  for (const drug of directory) {
+    const names = [capitalize(drug.name), ...drug.brand_names]
+    const hit = names.find((n) => n.toLowerCase().startsWith(q))
+    if (hit) {
+      starts.push({ drug, matchedName: hit })
+      continue
+    }
+    const partial = names.find((n) => n.toLowerCase().includes(q))
+    if (partial) includes.push({ drug, matchedName: partial })
+  }
+  return [...starts, ...includes].slice(0, 8)
+}
+
+function findExactDrug(value, directory) {
+  const v = value.trim().toLowerCase()
+  if (!v) return null
+  return directory.find((d) => d.name === v || d.brand_names.some((b) => b.toLowerCase() === v)) || null
+}
+
+function capitalize(s) {
+  return s.charAt(0).toUpperCase() + s.slice(1)
+}
 
 export default function Medications() {
   const [meds, setMeds] = useState(['', ''])
   const [result, setResult] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [directory, setDirectory] = useState([])
+  const [activeIndex, setActiveIndex] = useState(null)
+
+  useEffect(() => {
+    client
+      .get('/medications/directory')
+      .then((res) => setDirectory(res.data.drugs))
+      .catch(() => {})
+  }, [])
 
   function updateMed(index, value) {
     setMeds((prev) => prev.map((m, i) => (i === index ? value : m)))
+  }
+
+  function selectSuggestion(index, name) {
+    updateMed(index, name)
+    setActiveIndex(null)
   }
 
   function addField() {
@@ -41,30 +83,64 @@ export default function Medications() {
     <div>
       <PageHeader
         title="Medication Interaction Checker"
-        subtitle="Enter two or more medications to check for known interactions in our curated dataset."
+        subtitle="Enter two or more medications to check for known interactions in our curated dataset. Start typing for suggestions and typical dosing."
       />
 
       <form onSubmit={handleCheck} className="max-w-lg space-y-3">
-        {meds.map((med, i) => (
-          <div key={i} className="flex items-center gap-2">
-            <input
-              value={med}
-              onChange={(e) => updateMed(i, e.target.value)}
-              placeholder={`Medication ${i + 1} (e.g. Warfarin)`}
-              className={inputClass}
-            />
-            {meds.length > 2 && (
-              <button
-                type="button"
-                onClick={() => removeField(i)}
-                aria-label={`Remove medication ${i + 1}`}
-                className="text-muted hover:text-alert"
-              >
-                <X size={18} />
-              </button>
-            )}
-          </div>
-        ))}
+        {meds.map((med, i) => {
+          const suggestions = activeIndex === i ? getSuggestions(med, directory) : []
+          const exact = findExactDrug(med, directory)
+          return (
+            <div key={i}>
+              <div className="relative flex items-center gap-2">
+                <input
+                  value={med}
+                  onChange={(e) => updateMed(i, e.target.value)}
+                  onFocus={() => setActiveIndex(i)}
+                  onBlur={() => setTimeout(() => setActiveIndex((cur) => (cur === i ? null : cur)), 150)}
+                  placeholder={`Medication ${i + 1} (e.g. Warfarin)`}
+                  className={inputClass}
+                  autoComplete="off"
+                />
+                {meds.length > 2 && (
+                  <button
+                    type="button"
+                    onClick={() => removeField(i)}
+                    aria-label={`Remove medication ${i + 1}`}
+                    className="text-muted hover:text-alert"
+                  >
+                    <X size={18} />
+                  </button>
+                )}
+
+                {suggestions.length > 0 && (
+                  <div className="absolute left-0 top-full z-10 mt-1 w-full max-h-64 overflow-auto rounded border border-line bg-surface shadow-lg">
+                    {suggestions.map(({ drug, matchedName }) => (
+                      <button
+                        key={drug.name + matchedName}
+                        type="button"
+                        onMouseDown={(e) => e.preventDefault()}
+                        onClick={() => selectSuggestion(i, matchedName)}
+                        className="flex w-full flex-col items-start gap-0.5 border-b border-line px-3 py-2 text-left last:border-0 hover:bg-pulse-dim"
+                      >
+                        <span className="text-sm font-medium text-ink">
+                          {matchedName}
+                          {matchedName.toLowerCase() !== drug.name && (
+                            <span className="ml-1.5 font-normal text-muted">({capitalize(drug.name)})</span>
+                          )}
+                        </span>
+                        <span className="font-mono text-xs text-muted">{drug.dosage}</span>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+              {exact && activeIndex !== i && (
+                <p className="mt-1 pl-1 text-xs text-muted">Typical dosage: {exact.dosage}</p>
+              )}
+            </div>
+          )
+        })}
 
         <div className="flex items-center gap-3">
           <button
@@ -103,11 +179,6 @@ export default function Medications() {
               <p className="text-sm text-ink/80">{it.description}</p>
             </div>
           ))}
-
-          <Disclaimer>
-            This list is illustrative and not exhaustive — always confirm with a pharmacist or
-            physician before combining medications.
-          </Disclaimer>
         </div>
       )}
     </div>

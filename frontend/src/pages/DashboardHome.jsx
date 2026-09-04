@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts'
 import client from '../api/client.js'
 import { useAuth } from '../context/AuthContext.jsx'
-import { PageHeader, StatCard, Disclaimer } from '../components/ui.jsx'
+import { PageHeader, StatCard } from '../components/ui.jsx'
 
 export default function DashboardHome() {
   const { user } = useAuth()
@@ -37,10 +37,6 @@ export default function DashboardHome() {
       {!loading && !error && stats?.role === 'admin' && <AdminView stats={stats} />}
       {!loading && !error && stats?.role === 'doctor' && <DoctorView stats={stats} />}
       {!loading && !error && stats?.role === 'patient' && <PatientView stats={stats} />}
-
-      <div className="mt-8">
-        <Disclaimer />
-      </div>
     </div>
   )
 }

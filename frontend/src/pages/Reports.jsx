@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import client from '../api/client.js'
-import { PageHeader, Button, Disclaimer } from '../components/ui.jsx'
+import { PageHeader, Button } from '../components/ui.jsx'
 
 const SAMPLE_REPORT = `Patient Lab Report - Annual Check-up
 Fasting Glucose: 126 mg/dL
@@ -82,8 +82,6 @@ export default function Reports() {
               <p className="text-sm leading-relaxed text-ink">{result.clinical_summary}</p>
             </div>
           </div>
-
-          <Disclaimer>This summary is generated for demonstration and does not replace review by a clinician.</Disclaimer>
         </div>
       )}
     </div>

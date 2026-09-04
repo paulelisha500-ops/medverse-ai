@@ -10,6 +10,7 @@ API response.
 BRAND_TO_GENERIC lets common brand names (e.g. "Tylenol") resolve to the generic name
 the interaction table is keyed on (e.g. "acetaminophen"), so real-world input matches.
 """
+import difflib
 from typing import List, Dict
 
 # ---------------------------------------------------------------------------
@@ -110,12 +111,250 @@ BRAND_TO_GENERIC = {
     "depakote": "valproate", "depakene": "valproate",
     "yaz": "ethinyl estradiol", "yasmin": "ethinyl estradiol",
     "ortho-novum": "ethinyl estradiol", "loestrin": "ethinyl estradiol",
+
+    # International (INN) names and common brand names outside the US —
+    # many countries use a different official generic name than the US does.
+    "paracetamol": "acetaminophen", "calpol": "acetaminophen",
+    "salbutamol": "albuterol", "ventolin": "albuterol", "proventil": "albuterol",
+    "adrenaline": "epinephrine", "epipen": "epinephrine",
+    "pethidine": "meperidine",
+    "glyceryl trinitrate": "nitroglycerin", "gtn": "nitroglycerin",
+    "frusemide": "furosemide",
+    "diamorphine": "morphine",
+    "acetylsalicylic acid": "aspirin", "asa": "aspirin", "disprin": "aspirin",
+    "amoxil": "amoxicillin", "trimox": "amoxicillin",
+    "augmentin": "amoxicillin-clavulanate",
+    "keflex": "cephalexin",
+    "zpack": "azithromycin",
+    "panadol extra": "acetaminophen",
+    "brufen": "ibuprofen",
+    "losec": "omeprazole",
+    "norvasc": "amlodipine",
+    "vasotec": "enalapril",
+    "altace": "ramipril",
+    "tenormin": "atenolol",
+    "coreg": "carvedilol",
+    "zestoretic": "lisinopril",
+    "pravachol": "pravastatin",
+    "cymbalta": "duloxetine",
+    "remeron": "mirtazapine",
+    "desyrel": "trazodone",
+    "buspar": "buspirone",
+    "seroquel": "quetiapine",
+    "risperdal": "risperidone",
+    "abilify": "aripiprazole",
+    "zyprexa": "olanzapine",
+    "haldol": "haloperidol",
+    "topamax": "topiramate",
+    "lyrica": "pregabalin",
+    "lioresal": "baclofen",
+    "flexeril": "cyclobenzaprine",
+    "zanaflex": "tizanidine",
+    "maxalt": "rizatriptan",
+    "zofran": "ondansetron",
+    "reglan": "metoclopramide",
+    "phenergan": "promethazine",
+    "antivert": "meclizine",
+    "imodium": "loperamide",
+    "zyrtec": "cetirizine",
+    "claritin": "loratadine",
+    "allegra": "fexofenadine",
+    "singulair": "montelukast",
+    "flovent": "fluticasone",
+    "pulmicort": "budesonide",
+    "atrovent": "ipratropium",
+    "plaquenil": "hydroxychloroquine",
+    "narcan": "naloxone",
+    "suboxone": "buprenorphine",
+    "duragesic": "fentanyl",
 }
 
 
 def _generic(name: str) -> str:
     n = name.strip().lower()
-    return BRAND_TO_GENERIC.get(n, n)
+    if n in BRAND_TO_GENERIC:
+        return BRAND_TO_GENERIC[n]
+    if n in DRUG_INFO:
+        return n
+    # Typo tolerance: catch near-misses like "paracetomol" -> "paracetamol" without
+    # a hand-written alias for every possible misspelling.
+    candidates = list(BRAND_TO_GENERIC.keys()) + list(DRUG_INFO.keys())
+    close = difflib.get_close_matches(n, candidates, n=1, cutoff=0.82)
+    if close:
+        match = close[0]
+        return BRAND_TO_GENERIC.get(match, match)
+    return n
+
+
+# ---------------------------------------------------------------------------
+# Generic name -> typical adult dosing, for the medication autocomplete.
+# General reference ranges only — actual dosing is individualized by weight,
+# renal/hepatic function, indication, and clinician judgment.
+# ---------------------------------------------------------------------------
+DRUG_INFO = {
+    "acetaminophen": "325–1000 mg every 4–6 hours as needed; max 3000–4000 mg/day",
+    "albuterol": "2 inhalations (90 mcg each) every 4–6 hours as needed",
+    "allopurinol": "100–300 mg once daily, titrated to uric acid level",
+    "alprazolam": "0.25–0.5 mg 2–3 times daily",
+    "amiodarone": "400 mg 2–3 times daily loading, then 200 mg once daily maintenance",
+    "amitriptyline": "25–150 mg once daily at bedtime",
+    "amlodipine": "5–10 mg once daily",
+    "amoxicillin": "250–500 mg every 8 hours (or 500–875 mg every 12 hours)",
+    "amoxicillin-clavulanate": "500/125 mg every 12 hours or 250/125 mg every 8 hours",
+    "apixaban": "5 mg twice daily (2.5 mg twice daily in select patients)",
+    "aripiprazole": "10–15 mg once daily, titrated as needed",
+    "aspirin": "81 mg once daily (cardioprotective) or 325–650 mg every 4–6 hours (pain/fever)",
+    "atenolol": "25–100 mg once daily",
+    "atorvastatin": "10–80 mg once daily",
+    "azathioprine": "1–2.5 mg/kg once daily",
+    "azithromycin": "500 mg on day 1, then 250 mg once daily for 4 more days",
+    "baclofen": "5 mg 3 times daily, titrated up to 20 mg 3 times daily",
+    "budesonide": "1–2 inhalations twice daily (inhaled formulation)",
+    "buprenorphine": "individualized; sublingual film/tablet per prescriber induction protocol",
+    "bupropion": "150 mg once daily, may increase to 150 mg twice daily",
+    "buspirone": "7.5–15 mg twice daily",
+    "calcium": "500–1200 mg/day elemental calcium (as a supplement), in divided doses",
+    "carbamazepine": "200 mg twice daily, titrated to blood level and response",
+    "carvedilol": "3.125–25 mg twice daily",
+    "celecoxib": "100–200 mg once or twice daily",
+    "cephalexin": "250–500 mg every 6 hours",
+    "cetirizine": "10 mg once daily",
+    "cholestyramine": "4 g once or twice daily, mixed with liquid",
+    "ciprofloxacin": "250–750 mg every 12 hours",
+    "citalopram": "20–40 mg once daily",
+    "clarithromycin": "250–500 mg every 12 hours",
+    "clonazepam": "0.25–0.5 mg 2–3 times daily",
+    "clonidine": "0.1 mg twice daily, titrated as needed",
+    "clopidogrel": "75 mg once daily",
+    "cyclobenzaprine": "5–10 mg 3 times daily",
+    "cyclosporine": "individualized by weight and trough level (transplant/autoimmune protocols)",
+    "dabigatran": "150 mg twice daily",
+    "dextromethorphan": "10–20 mg every 4 hours as needed (OTC cough suppressant)",
+    "diazepam": "2–10 mg 2–4 times daily",
+    "diclofenac": "50 mg 2–3 times daily",
+    "digoxin": "0.125–0.25 mg once daily, individualized by level",
+    "diltiazem": "120–360 mg once daily (extended-release)",
+    "diphenhydramine": "25–50 mg every 4–6 hours as needed",
+    "disulfiram": "250–500 mg once daily",
+    "doxazosin": "1–8 mg once daily",
+    "doxycycline": "100 mg once or twice daily",
+    "duloxetine": "30–60 mg once daily",
+    "enalapril": "5–20 mg once or twice daily",
+    "epinephrine": "0.3 mg intramuscular (auto-injector) for anaphylaxis, may repeat",
+    "escitalopram": "10–20 mg once daily",
+    "esomeprazole": "20–40 mg once daily",
+    "ethinyl estradiol": "per specific combined oral contraceptive product labeling",
+    "fentanyl": "individualized; transdermal patch or IV per prescriber protocol",
+    "fexofenadine": "60 mg twice daily or 180 mg once daily",
+    "fluconazole": "150 mg single dose (or 100–400 mg once daily, indication-dependent)",
+    "fluoxetine": "20–60 mg once daily",
+    "fluticasone": "1–2 sprays per nostril once daily (nasal) or 1–2 inhalations twice daily",
+    "furosemide": "20–80 mg once or twice daily",
+    "gabapentin": "300–600 mg 3 times daily",
+    "gemfibrozil": "600 mg twice daily",
+    "gentamicin": "individualized by weight and renal function (IV/IM, monitored levels)",
+    "ginkgo biloba": "120–240 mg/day (as a supplement), in divided doses",
+    "glimepiride": "1–4 mg once daily",
+    "glipizide": "5–10 mg once or twice daily",
+    "haloperidol": "0.5–5 mg 2–3 times daily, indication-dependent",
+    "heparin": "individualized IV infusion or subcutaneous dosing, monitored by aPTT",
+    "hydrochlorothiazide": "12.5–25 mg once daily",
+    "hydrocodone": "5–10 mg every 4–6 hours as needed (combination products)",
+    "hydroxychloroquine": "200–400 mg once daily",
+    "ibuprofen": "200–400 mg every 4–6 hours as needed; max 1200 mg/day OTC",
+    "insulin": "individualized by type, weight, and glucose targets",
+    "ipratropium": "2 inhalations 4 times daily",
+    "iron": "65 mg elemental iron once daily (as a supplement), on an empty stomach if tolerated",
+    "itraconazole": "200 mg once or twice daily",
+    "lamotrigine": "25–200 mg once or twice daily, slow titration required",
+    "levofloxacin": "500–750 mg once daily",
+    "levothyroxine": "25–200 mcg once daily on an empty stomach, individualized by TSH",
+    "linezolid": "600 mg every 12 hours",
+    "lisinopril": "10–40 mg once daily",
+    "lithium": "300 mg 2–3 times daily, individualized by blood level",
+    "loperamide": "4 mg after first loose stool, then 2 mg after each subsequent; max 8 mg/day OTC",
+    "loratadine": "10 mg once daily",
+    "lorazepam": "0.5–2 mg 2–3 times daily",
+    "losartan": "25–100 mg once daily",
+    "lovastatin": "20–80 mg once daily with evening meal",
+    "meclizine": "25–50 mg once daily as needed",
+    "meperidine": "50–150 mg every 3–4 hours as needed (short-term use only)",
+    "metformin": "500 mg once or twice daily, titrated up to 2000 mg/day",
+    "methadone": "individualized; opioid-tolerance and QT monitoring required",
+    "methotrexate": "7.5–25 mg once weekly (autoimmune dosing; differs sharply from cancer dosing)",
+    "metoclopramide": "10 mg up to 4 times daily before meals and bedtime",
+    "metoprolol": "25–100 mg once or twice daily",
+    "metronidazole": "500 mg every 8 hours",
+    "mirtazapine": "15–45 mg once daily at bedtime",
+    "montelukast": "10 mg once daily in the evening",
+    "morphine": "individualized; 15–30 mg every 4 hours as needed (immediate-release, opioid-naive caution)",
+    "naloxone": "0.4–2 mg IM/IV/intranasal, may repeat for opioid overdose reversal",
+    "naproxen": "220–500 mg twice daily; max 1000 mg/day OTC",
+    "nitroglycerin": "0.4 mg sublingual every 5 minutes as needed, max 3 doses",
+    "olanzapine": "5–20 mg once daily",
+    "omeprazole": "20–40 mg once daily before a meal",
+    "ondansetron": "4–8 mg every 8 hours as needed",
+    "oxycodone": "5–15 mg every 4–6 hours as needed",
+    "phenelzine": "15 mg 2–3 times daily",
+    "phenytoin": "300–400 mg once daily (or divided), individualized by level",
+    "potassium": "10–20 mEq once or twice daily (as a supplement), individualized by level",
+    "pravastatin": "10–80 mg once daily",
+    "prednisone": "5–60 mg once daily, tapered per indication",
+    "pregabalin": "75–150 mg twice daily",
+    "promethazine": "12.5–25 mg every 4–6 hours as needed",
+    "propranolol": "40–160 mg twice daily (or extended-release once daily)",
+    "pseudoephedrine": "60 mg every 4–6 hours; max 240 mg/day OTC",
+    "quetiapine": "150–400 mg once or twice daily, indication-dependent",
+    "ramipril": "2.5–10 mg once daily",
+    "risperidone": "1–4 mg once or twice daily",
+    "rivaroxaban": "20 mg once daily with food (dose varies by indication)",
+    "rosuvastatin": "5–40 mg once daily",
+    "rifampin": "600 mg once daily",
+    "sertraline": "50–200 mg once daily",
+    "sildenafil": "50 mg about 1 hour before activity, as needed (max once/day)",
+    "simvastatin": "10–40 mg once daily in the evening",
+    "sotalol": "80–160 mg twice daily, QT-monitored",
+    "spironolactone": "25–100 mg once daily",
+    "st. john's wort": "300 mg 2–3 times daily (as a supplement)",
+    "sucralfate": "1 g 4 times daily on an empty stomach",
+    "sumatriptan": "50–100 mg at onset of migraine, may repeat once after 2 hours",
+    "tadalafil": "10 mg before activity, as needed, or 2.5–5 mg once daily",
+    "tamsulosin": "0.4 mg once daily, 30 minutes after the same meal each day",
+    "theophylline": "individualized by level; typically 300–600 mg/day divided",
+    "tizanidine": "2–4 mg every 6–8 hours as needed; max 36 mg/day",
+    "topiramate": "25–200 mg twice daily, titrated gradually",
+    "tramadol": "50–100 mg every 4–6 hours as needed; max 400 mg/day",
+    "tranylcypromine": "10 mg 2–3 times daily",
+    "trazodone": "50–100 mg at bedtime, titrated as needed",
+    "trimethoprim-sulfamethoxazole": "1 double-strength tablet every 12 hours",
+    "valproate": "500–1500 mg/day divided, individualized by level",
+    "venlafaxine": "75–225 mg once daily (extended-release)",
+    "verapamil": "120–360 mg once daily (extended-release)",
+    "vitamin k": "90–120 mcg/day (dietary reference intake); prescription doses vary by indication",
+    "warfarin": "individualized (commonly 2–10 mg once daily), dosed to target INR",
+    "zolpidem": "5–10 mg at bedtime, immediately before sleep",
+}
+
+
+def _reverse_brand_map() -> Dict[str, List[str]]:
+    reverse: Dict[str, List[str]] = {}
+    for brand, generic in BRAND_TO_GENERIC.items():
+        reverse.setdefault(generic, []).append(brand.title())
+    return reverse
+
+
+def get_drug_directory() -> List[Dict]:
+    """Full searchable drug list (generic name + known brand names + typical dosage)
+    for the medication-checker autocomplete."""
+    reverse = _reverse_brand_map()
+    return [
+        {
+            "name": generic,
+            "brand_names": sorted(set(reverse.get(generic, []))),
+            "dosage": dosage,
+        }
+        for generic, dosage in sorted(DRUG_INFO.items())
+    ]
 
 
 INTERACTIONS = [

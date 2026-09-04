@@ -167,3 +167,13 @@ class InteractionOut(BaseModel):
 class MedicationCheckResponse(BaseModel):
     interactions: List[InteractionOut]
     checked: List[str]
+
+
+class DrugInfoOut(BaseModel):
+    name: str
+    brand_names: List[str]
+    dosage: str
+
+
+class DrugDirectoryResponse(BaseModel):
+    drugs: List[DrugInfoOut]
