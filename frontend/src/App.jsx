@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import ProtectedRoute from './components/ProtectedRoute.jsx'
 import Layout from './components/Layout.jsx'
 
+import Landing from './pages/Landing.jsx'
 import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
 import DashboardHome from './pages/DashboardHome.jsx'
@@ -17,6 +18,7 @@ import NotFound from './pages/NotFound.jsx'
 export default function App() {
   return (
     <Routes>
+      <Route path="/welcome" element={<Landing />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
 
