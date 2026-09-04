@@ -1,28 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import {
-  LayoutDashboard,
-  MessageSquareText,
-  FileText,
-  Activity,
-  Pill,
-  Users,
-  UserCircle,
-  Stethoscope,
-} from 'lucide-react'
 import { useAuth } from '../context/AuthContext.jsx'
 import { Button, Field, inputClass } from '../components/ui.jsx'
-
-const FEATURES = [
-  { icon: LayoutDashboard, label: 'Dashboard' },
-  { icon: MessageSquareText, label: 'AI Assistant' },
-  { icon: FileText, label: 'Reports' },
-  { icon: Activity, label: 'Risk Check' },
-  { icon: Pill, label: 'Medications' },
-  { icon: Users, label: 'Patients' },
-  { icon: UserCircle, label: 'Profile' },
-  { icon: Stethoscope, label: 'Clinical Care' },
-]
 
 export default function Login() {
   const { login } = useAuth()
@@ -62,18 +41,8 @@ export default function Login() {
           </p>
         </div>
 
-        <div className="flex flex-1 items-center">
-          <div className="grid grid-cols-4 gap-4">
-            {FEATURES.map(({ icon: Icon, label }) => (
-              <div
-                key={label}
-                className="flex flex-col items-center gap-2 rounded-lg border border-white/10 bg-white/5 p-4 text-center"
-              >
-                <Icon size={20} className="text-pulse" />
-                <span className="text-[10px] uppercase tracking-wide text-paper/40">{label}</span>
-              </div>
-            ))}
-          </div>
+        <div className="flex flex-1 items-center justify-center">
+          <RiskCardMockup />
         </div>
       </div>
 
@@ -162,5 +131,49 @@ function PulseWaveform() {
         }
       `}</style>
     </svg>
+  )
+}
+
+function RiskCardMockup() {
+  return (
+    <div className="relative w-full max-w-sm">
+      <div className="absolute -inset-10 rounded-full bg-pulse/25 blur-3xl" />
+      <div className="absolute -inset-10 translate-x-10 rounded-full bg-amber/10 blur-3xl" />
+
+      <div className="absolute inset-0 translate-x-4 translate-y-5 rotate-3 rounded-lg bg-paper/10" />
+
+      <div className="relative -rotate-2 rounded-lg border border-white/10 bg-paper p-6 shadow-2xl">
+        <div className="mb-4 flex items-center justify-between">
+          <div className="flex items-center gap-1.5">
+            <span className="h-2.5 w-2.5 rounded-full bg-alert/50" />
+            <span className="h-2.5 w-2.5 rounded-full bg-amber/50" />
+            <span className="h-2.5 w-2.5 rounded-full bg-pulse/50" />
+          </div>
+          <span className="readout-label">Disease Risk Check</span>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <div className="readout-label">Diabetes risk</div>
+            <div className="font-mono text-3xl font-medium text-alert">
+              77.1<span className="ml-0.5 text-base text-muted">%</span>
+            </div>
+          </div>
+          <div>
+            <div className="readout-label">Heart disease</div>
+            <div className="font-mono text-3xl font-medium text-alert">
+              58.7<span className="ml-0.5 text-base text-muted">%</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-5 space-y-2 border-t border-line pt-4">
+          <div className="readout-label mb-1">Suggestions</div>
+          <div className="h-1.5 w-full rounded-full bg-line" />
+          <div className="h-1.5 w-4/5 rounded-full bg-line" />
+          <div className="h-1.5 w-3/5 rounded-full bg-line" />
+        </div>
+      </div>
+    </div>
   )
 }
