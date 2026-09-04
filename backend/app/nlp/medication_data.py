@@ -805,6 +805,66 @@ INTERACTIONS = [
     {"drugs": ("levetiracetam", "alcohol"), "description": "Alcohol can increase drowsiness and dizziness with this anticonvulsant.", "severity": "moderate"},
     {"drugs": ("zolmitriptan", "sertraline"), "description": "Combining a triptan with an SSRI raises the risk of serotonin syndrome.", "severity": "moderate"},
     {"drugs": ("eletriptan", "itraconazole"), "description": "This antifungal can raise triptan levels, increasing side-effect risk.", "severity": "moderate"},
+
+    # --- More serotonergic combinations ---
+    {"drugs": ("citalopram", "tramadol"), "description": "Combining these raises the risk of serotonin syndrome.", "severity": "high"},
+    {"drugs": ("escitalopram", "linezolid"), "description": "Linezolid has MAOI-like activity; combining it with an SSRI risks serotonin syndrome.", "severity": "high"},
+    {"drugs": ("duloxetine", "tramadol"), "description": "Combining these raises the risk of serotonin syndrome.", "severity": "high"},
+    {"drugs": ("venlafaxine", "linezolid"), "description": "Linezolid has MAOI-like activity; combining it with an antidepressant risks serotonin syndrome.", "severity": "high"},
+    {"drugs": ("trazodone", "tramadol"), "description": "Combining these raises the risk of serotonin syndrome.", "severity": "moderate"},
+    {"drugs": ("sumatriptan", "citalopram"), "description": "Combining a triptan with an SSRI raises the risk of serotonin syndrome.", "severity": "moderate"},
+
+    # --- QT-prolonging combinations ---
+    {"drugs": ("ziprasidone", "sotalol"), "description": "Combining these raises the risk of dangerous heart rhythm changes (QT prolongation).", "severity": "high"},
+    {"drugs": ("quetiapine", "sotalol"), "description": "Combining these raises the risk of dangerous heart rhythm changes (QT prolongation).", "severity": "high"},
+    {"drugs": ("haloperidol", "methadone"), "description": "Combining these raises the risk of dangerous heart rhythm changes (QT prolongation).", "severity": "high"},
+    {"drugs": ("methadone", "ciprofloxacin"), "description": "This antibiotic can raise the risk of dangerous heart rhythm changes (QT prolongation) with methadone.", "severity": "high"},
+
+    # --- More statin combinations ---
+    {"drugs": ("rosuvastatin", "cyclosporine"), "description": "Cyclosporine substantially raises statin levels, increasing the risk of muscle damage.", "severity": "high"},
+    {"drugs": ("pravastatin", "gemfibrozil"), "description": "This fibrate combined with a statin raises the risk of muscle damage.", "severity": "moderate"},
+    {"drugs": ("atorvastatin", "itraconazole"), "description": "This antifungal can raise statin levels, increasing the risk of muscle damage.", "severity": "moderate"},
+    {"drugs": ("fluconazole", "simvastatin"), "description": "This antifungal can raise simvastatin levels, increasing the risk of muscle damage.", "severity": "moderate"},
+
+    # --- More anticoagulant combinations ---
+    {"drugs": ("apixaban", "fluconazole"), "description": "This antifungal can raise apixaban levels, increasing bleeding risk.", "severity": "moderate"},
+    {"drugs": ("rivaroxaban", "itraconazole"), "description": "This antifungal can raise rivaroxaban levels, increasing bleeding risk.", "severity": "high"},
+    {"drugs": ("dabigatran", "verapamil"), "description": "Verapamil can raise dabigatran levels, increasing bleeding risk.", "severity": "moderate"},
+    {"drugs": ("warfarin", "azithromycin"), "description": "This antibiotic can modestly increase warfarin's blood-thinning effect.", "severity": "low"},
+    {"drugs": ("warfarin", "levofloxacin"), "description": "This antibiotic can increase warfarin's blood-thinning effect.", "severity": "moderate"},
+    {"drugs": ("warfarin", "glipizide"), "description": "Sulfonylureas can potentiate warfarin's blood-thinning effect.", "severity": "low"},
+
+    # --- More ACE inhibitor / ARB combinations ---
+    {"drugs": ("enalapril", "potassium"), "description": "ACE inhibitors combined with potassium supplements can cause dangerously high potassium levels.", "severity": "moderate"},
+    {"drugs": ("enalapril", "ibuprofen"), "description": "NSAIDs can reduce the blood-pressure-lowering effect and stress the kidneys.", "severity": "moderate"},
+    {"drugs": ("ramipril", "potassium"), "description": "ACE inhibitors combined with potassium supplements can cause dangerously high potassium levels.", "severity": "moderate"},
+    {"drugs": ("ramipril", "ibuprofen"), "description": "NSAIDs can reduce the blood-pressure-lowering effect and stress the kidneys.", "severity": "moderate"},
+
+    # --- More diabetes combinations ---
+    {"drugs": ("empagliflozin", "furosemide"), "description": "Combining these raises the risk of dehydration and low blood pressure.", "severity": "moderate"},
+    {"drugs": ("canagliflozin", "lisinopril"), "description": "Combining these can affect kidney function, especially with volume depletion.", "severity": "moderate"},
+
+    # --- More antibiotic combinations ---
+    {"drugs": ("ciprofloxacin", "tizanidine"), "description": "This antibiotic can sharply raise tizanidine levels, causing dangerously low blood pressure and sedation.", "severity": "high"},
+    {"drugs": ("ciprofloxacin", "ibuprofen"), "description": "Combining these can increase the risk of CNS stimulation and seizures.", "severity": "moderate"},
+    {"drugs": ("rifampin", "metoprolol"), "description": "Rifampin can reduce this beta blocker's effectiveness by speeding its breakdown.", "severity": "moderate"},
+    {"drugs": ("rifampin", "methadone"), "description": "Rifampin can sharply reduce methadone levels, risking withdrawal symptoms.", "severity": "moderate"},
+
+    # --- More PPI combinations ---
+    {"drugs": ("omeprazole", "citalopram"), "description": "Omeprazole can raise citalopram levels, increasing the risk of dangerous heart rhythm changes (QT prolongation).", "severity": "moderate"},
+
+    # --- More opioid combinations ---
+    {"drugs": ("fentanyl", "alprazolam"), "description": "Combining benzodiazepines with opioids increases the risk of severe respiratory depression.", "severity": "high"},
+    {"drugs": ("hydrocodone", "alprazolam"), "description": "Combining benzodiazepines with opioids increases the risk of severe respiratory depression.", "severity": "high"},
+    {"drugs": ("buprenorphine", "alprazolam"), "description": "Combining benzodiazepines with opioids increases the risk of severe respiratory depression.", "severity": "high"},
+    {"drugs": ("naltrexone", "methadone"), "description": "Naltrexone blocks opioid effects and can precipitate sudden, severe withdrawal.", "severity": "high"},
+
+    # --- More thyroid / TB / HIV / osteoporosis combinations ---
+    {"drugs": ("levothyroxine", "rifampin"), "description": "Rifampin can reduce thyroid medication effectiveness by speeding its breakdown.", "severity": "moderate"},
+    {"drugs": ("isoniazid", "phenytoin"), "description": "Isoniazid can raise phenytoin levels, increasing the risk of toxicity.", "severity": "moderate"},
+    {"drugs": ("efavirenz", "warfarin"), "description": "Efavirenz can raise or lower warfarin's effect unpredictably; INR should be monitored closely.", "severity": "moderate"},
+    {"drugs": ("dolutegravir", "calcium"), "description": "Calcium supplements can reduce absorption of this HIV medication if taken together.", "severity": "moderate"},
+    {"drugs": ("alendronate", "calcium"), "description": "Calcium supplements can reduce absorption of this bisphosphonate if taken too close together.", "severity": "low"},
 ]
 
 # Guard against an accidental duplicate/unordered-duplicate pair slipping into the
