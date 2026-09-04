@@ -173,6 +173,7 @@ class DrugInfoOut(BaseModel):
     name: str
     brand_names: List[str]
     dosage: str
+    category: str
 
 
 class DrugDirectoryResponse(BaseModel):

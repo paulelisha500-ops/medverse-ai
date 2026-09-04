@@ -123,11 +123,14 @@ export default function Medications() {
                         onClick={() => selectSuggestion(i, matchedName)}
                         className="flex w-full flex-col items-start gap-0.5 border-b border-line px-3 py-2 text-left last:border-0 hover:bg-pulse-dim"
                       >
-                        <span className="text-sm font-medium text-ink">
+                        <span className="flex items-center gap-1.5 text-sm font-medium text-ink">
                           {matchedName}
                           {matchedName.toLowerCase() !== drug.name && (
-                            <span className="ml-1.5 font-normal text-muted">({capitalize(drug.name)})</span>
+                            <span className="font-normal text-muted">({capitalize(drug.name)})</span>
                           )}
+                          <span className="rounded-sm bg-pulse-dim px-1.5 py-0.5 text-[10px] font-normal uppercase tracking-wide text-pulse-dark">
+                            {drug.category}
+                          </span>
                         </span>
                         <span className="font-mono text-xs text-muted">{drug.dosage}</span>
                       </button>
@@ -136,7 +139,9 @@ export default function Medications() {
                 )}
               </div>
               {exact && activeIndex !== i && (
-                <p className="mt-1 pl-1 text-xs text-muted">Typical dosage: {exact.dosage}</p>
+                <p className="mt-1 pl-1 text-xs text-muted">
+                  {exact.category} · Typical dosage: {exact.dosage}
+                </p>
               )}
             </div>
           )

@@ -30,6 +30,11 @@ class Settings(BaseSettings):
 
     CORS_ORIGINS: str = "http://localhost:5173,http://localhost:3004"
 
+    # Optional: published-to-web CSV export URL of a Google Sheet that overrides/extends
+    # the built-in medication directory (autocomplete names/categories/dosages only —
+    # never interaction pairs). Leave blank to use the built-in directory as-is.
+    GOOGLE_SHEET_CSV_URL: str = ""
+
     @property
     def cors_origins_list(self) -> list[str]:
         return [o.strip() for o in self.CORS_ORIGINS.split(",") if o.strip()]
