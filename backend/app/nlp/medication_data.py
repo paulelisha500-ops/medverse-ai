@@ -177,6 +177,106 @@ BRAND_TO_GENERIC = {
     "lantus": "insulin", "basaglar": "insulin", "toujeo": "insulin",
     "humalog": "insulin", "novolog": "insulin", "tresiba": "insulin",
     "insulin glargine": "insulin",
+
+    # GLP-1 / diabetes & weight management
+    "ozempic": "semaglutide", "wegovy": "semaglutide", "rybelsus": "semaglutide",
+    "mounjaro": "tirzepatide", "zepbound": "tirzepatide",
+    "victoza": "liraglutide", "saxenda": "liraglutide",
+    "trulicity": "dulaglutide",
+    "januvia": "sitagliptin",
+    "jardiance": "empagliflozin",
+    "invokana": "canagliflozin",
+    "farxiga": "dapagliflozin",
+    "actos": "pioglitazone",
+
+    # ADHD
+    "ritalin": "methylphenidate", "concerta": "methylphenidate", "metadate": "methylphenidate",
+    "adderall": "amphetamine-dextroamphetamine",
+    "vyvanse": "lisdexamfetamine",
+    "strattera": "atomoxetine",
+    "intuniv": "guanfacine",
+
+    # Seizure / neurology
+    "keppra": "levetiracetam",
+    "trileptal": "oxcarbazepine",
+    "zonegran": "zonisamide",
+    "sinemet": "levodopa-carbidopa",
+    "mirapex": "pramipexole",
+    "requip": "ropinirole",
+    "aricept": "donepezil",
+    "namenda": "memantine",
+    "provigil": "modafinil",
+    "lunesta": "eszopiclone",
+
+    # Osteoporosis
+    "fosamax": "alendronate",
+    "actonel": "risedronate",
+    "prolia": "denosumab",
+
+    # Cholesterol
+    "zetia": "ezetimibe",
+    "repatha": "evolocumab",
+
+    # Addiction medicine
+    "chantix": "varenicline",
+    "revia": "naltrexone", "vivitrol": "naltrexone",
+    "campral": "acamprosate",
+
+    # Ophthalmology
+    "xalatan": "latanoprost",
+    "alphagan": "brimonidine",
+
+    # Antibiotics
+    "veetids": "penicillin v",
+    "principen": "ampicillin",
+    "macrobid": "nitrofurantoin", "macrodantin": "nitrofurantoin",
+    "erythrocin": "erythromycin",
+
+    # Cardiac
+    "procardia": "nifedipine", "adalat": "nifedipine",
+    "apresoline": "hydralazine",
+    "imdur": "isosorbide mononitrate",
+
+    # GI
+    "pepcid": "famotidine",
+    "cytotec": "misoprostol",
+    "bentyl": "dicyclomine",
+
+    # Migraine
+    "relpax": "eletriptan",
+    "zomig": "zolmitriptan",
+    "aimovig": "erenumab",
+
+    # Antipsychotic
+    "latuda": "lurasidone",
+    "geodon": "ziprasidone",
+
+    # Muscle relaxants
+    "robaxin": "methocarbamol",
+    "soma": "carisoprodol",
+
+    # Reversal agents
+    "praxbind": "idarucizumab",
+
+    # Women's health
+    "prometrium": "progesterone",
+    "clomid": "clomiphene",
+    "depo-provera": "medroxyprogesterone",
+
+    # HIV
+    "sustiva": "efavirenz",
+    "tivicay": "dolutegravir",
+    "truvada": "emtricitabine-tenofovir",
+
+    # Antiparasitic
+    "albenza": "albendazole",
+    "stromectol": "ivermectin",
+
+    # Cold/cough
+    "mucinex": "guaifenesin",
+
+    # Anesthetic
+    "lidoderm": "lidocaine", "xylocaine": "lidocaine",
 }
 
 
@@ -382,6 +482,113 @@ DRUG_INFO = {
     "meropenem": _d("1 g IV every 8 hours", "Antibiotic (severe infection)"),
     "piperacillin-tazobactam": _d("3.375–4.5 g IV every 6–8 hours", "Antibiotic (severe infection)"),
     "insulin glargine": _d("individualized starting dose, once daily (long-acting basal insulin), titrated to fasting glucose", "Diabetes"),
+
+    # --- GLP-1 / diabetes & weight management ---
+    "semaglutide": _d("0.25 mg once weekly starting dose, titrated up to 1–2.4 mg once weekly (subcutaneous)", "Diabetes/Weight management"),
+    "tirzepatide": _d("2.5 mg once weekly starting dose, titrated up to 15 mg once weekly (subcutaneous)", "Diabetes/Weight management"),
+    "liraglutide": _d("0.6 mg once daily starting, titrated up to 1.8–3 mg once daily (subcutaneous)", "Diabetes/Weight management"),
+    "dulaglutide": _d("0.75–4.5 mg once weekly (subcutaneous)", "Diabetes"),
+    "sitagliptin": _d("100 mg once daily", "Diabetes"),
+    "empagliflozin": _d("10–25 mg once daily", "Diabetes"),
+    "canagliflozin": _d("100–300 mg once daily", "Diabetes"),
+    "dapagliflozin": _d("5–10 mg once daily", "Diabetes"),
+    "pioglitazone": _d("15–45 mg once daily", "Diabetes"),
+
+    # --- ADHD ---
+    "methylphenidate": _d("5–20 mg 2–3 times daily (immediate-release) or 18–72 mg once daily (extended-release)", "ADHD"),
+    "amphetamine-dextroamphetamine": _d("5–30 mg once or twice daily", "ADHD"),
+    "lisdexamfetamine": _d("30–70 mg once daily in the morning", "ADHD"),
+    "atomoxetine": _d("40–100 mg once daily", "ADHD"),
+    "guanfacine": _d("1–4 mg once daily (extended-release)", "ADHD"),
+
+    # --- Seizure / neurology ---
+    "levetiracetam": _d("500–1500 mg twice daily", "Anticonvulsant"),
+    "oxcarbazepine": _d("300–600 mg twice daily", "Anticonvulsant"),
+    "zonisamide": _d("100–400 mg once daily", "Anticonvulsant"),
+    "levodopa-carbidopa": _d("1 tablet (25/100 or 25/250) 3–4 times daily, titrated", "Parkinson's"),
+    "pramipexole": _d("0.125–1.5 mg 3 times daily", "Parkinson's/Restless legs"),
+    "ropinirole": _d("0.25–4 mg 3 times daily", "Parkinson's/Restless legs"),
+    "donepezil": _d("5–10 mg once daily at bedtime", "Alzheimer's"),
+    "memantine": _d("5–10 mg twice daily", "Alzheimer's"),
+    "modafinil": _d("100–200 mg once daily in the morning", "Narcolepsy/Wakefulness"),
+    "eszopiclone": _d("1–3 mg at bedtime", "Sleep aid"),
+
+    # --- Osteoporosis / bone ---
+    "alendronate": _d("70 mg once weekly, on an empty stomach, stay upright 30 minutes after", "Osteoporosis"),
+    "risedronate": _d("35 mg once weekly", "Osteoporosis"),
+    "denosumab": _d("60 mg subcutaneously every 6 months", "Osteoporosis"),
+
+    # --- Cholesterol (non-statin) ---
+    "ezetimibe": _d("10 mg once daily", "Lipid"),
+    "evolocumab": _d("140 mg subcutaneously every 2 weeks", "Lipid/Biologic"),
+
+    # --- Addiction medicine / smoking cessation ---
+    "varenicline": _d("0.5 mg once daily, titrated up to 1 mg twice daily", "Smoking cessation"),
+    "naltrexone": _d("50 mg once daily (oral) or 380 mg IM once monthly", "Addiction medicine"),
+    "acamprosate": _d("666 mg 3 times daily", "Addiction medicine"),
+
+    # --- Ophthalmology (glaucoma) ---
+    "latanoprost": _d("1 drop in affected eye(s) once daily in the evening", "Ophthalmology"),
+    "brimonidine": _d("1 drop 3 times daily", "Ophthalmology"),
+
+    # --- More antibiotics ---
+    "penicillin v": _d("250–500 mg every 6 hours", "Antibiotic"),
+    "ampicillin": _d("250–500 mg every 6 hours", "Antibiotic"),
+    "nitrofurantoin": _d("100 mg twice daily", "Antibiotic"),
+    "erythromycin": _d("250–500 mg every 6 hours", "Antibiotic"),
+
+    # --- More cardiac ---
+    "nifedipine": _d("30–90 mg once daily (extended-release)", "Calcium channel blocker"),
+    "hydralazine": _d("10–50 mg 4 times daily", "Blood pressure"),
+    "isosorbide mononitrate": _d("30–120 mg once daily", "Cardiac"),
+
+    # --- More GI ---
+    "famotidine": _d("20–40 mg once or twice daily", "Acid reducer"),
+    "misoprostol": _d("200 mcg 4 times daily (GI protection); cycle-based dosing for other indications", "GI/Women's health"),
+    "dicyclomine": _d("10–20 mg 4 times daily", "GI"),
+
+    # --- More migraine ---
+    "eletriptan": _d("20–40 mg at onset, may repeat once after 2 hours", "Migraine"),
+    "zolmitriptan": _d("1.25–2.5 mg at onset, may repeat after 2 hours", "Migraine"),
+    "erenumab": _d("70–140 mg subcutaneously once monthly", "Migraine/Biologic"),
+
+    # --- More antipsychotic ---
+    "lurasidone": _d("40–80 mg once daily with food", "Antipsychotic"),
+    "ziprasidone": _d("20–80 mg twice daily with food", "Antipsychotic"),
+
+    # --- More muscle relaxants ---
+    "methocarbamol": _d("1500 mg 4 times daily initially", "Muscle relaxant"),
+    "carisoprodol": _d("250–350 mg 3 times daily", "Muscle relaxant"),
+
+    # --- Reversal agents ---
+    "protamine": _d("1 mg IV per 100 units of heparin to be reversed", "Emergency/Reversal agent"),
+    "idarucizumab": _d("5 g IV (two 2.5 g doses) for dabigatran reversal", "Emergency/Reversal agent"),
+
+    # --- Women's health ---
+    "progesterone": _d("200 mg once daily at bedtime (oral, cyclic use)", "Women's health"),
+    "clomiphene": _d("50 mg once daily for 5 days, cycle-based", "Women's health/Fertility"),
+    "medroxyprogesterone": _d("150 mg IM every 3 months", "Women's health/Contraceptive"),
+
+    # --- HIV ---
+    "efavirenz": _d("600 mg once daily at bedtime", "HIV/Antiviral"),
+    "dolutegravir": _d("50 mg once daily", "HIV/Antiviral"),
+    "emtricitabine-tenofovir": _d("1 tablet once daily", "HIV/Antiviral"),
+
+    # --- Tuberculosis ---
+    "isoniazid": _d("5 mg/kg once daily (typically 300 mg)", "Antibiotic (TB)"),
+    "ethambutol": _d("15–25 mg/kg once daily", "Antibiotic (TB)"),
+    "pyrazinamide": _d("20–25 mg/kg once daily", "Antibiotic (TB)"),
+
+    # --- Antiparasitic ---
+    "albendazole": _d("400 mg once, may repeat per indication", "Antiparasitic"),
+    "ivermectin": _d("150–200 mcg/kg once, may repeat (oral); apply 0.5% lotion once for lice (topical)", "Antiparasitic"),
+
+    # --- Cold / cough ---
+    "guaifenesin": _d("200–400 mg every 4 hours; max 2400 mg/day", "Cold/Cough"),
+
+    # --- Local anesthetic ---
+    "lidocaine": _d("Apply to affected area per product labeling (topical); dosing varies widely by injectable use", "Anesthetic"),
+    "magnesium": _d("240–420 mg/day elemental magnesium (as a supplement), in divided doses", "Supplement"),
     "vitamin k": _d("90–120 mcg/day (dietary reference intake); prescription doses vary by indication", "Supplement"),
     "warfarin": _d("individualized (commonly 2–10 mg once daily), dosed to target INR — a higher target applies for mechanical heart valves", "Anticoagulant"),
     "zolpidem": _d("5–10 mg at bedtime, immediately before sleep", "Sleep aid"),
@@ -578,6 +785,26 @@ INTERACTIONS = [
 
     # --- Other well-established pairs ---
     {"drugs": ("acetaminophen", "alcohol"), "description": "Regularly combining these, especially in excess, raises the risk of liver damage.", "severity": "moderate"},
+
+    # --- New-drug coverage: ADHD, GLP-1, neuro, addiction medicine ---
+    {"drugs": ("methylphenidate", "phenelzine"), "description": "Combining a stimulant with an MAOI can trigger a dangerous spike in blood pressure.", "severity": "high"},
+    {"drugs": ("amphetamine-dextroamphetamine", "phenelzine"), "description": "Combining a stimulant with an MAOI can trigger a dangerous spike in blood pressure.", "severity": "high"},
+    {"drugs": ("methylphenidate", "warfarin"), "description": "Methylphenidate can increase warfarin's blood-thinning effect.", "severity": "moderate"},
+    {"drugs": ("semaglutide", "insulin"), "description": "Combining these increases the risk of low blood sugar.", "severity": "moderate"},
+    {"drugs": ("semaglutide", "glipizide"), "description": "Combining these increases the risk of low blood sugar.", "severity": "moderate"},
+    {"drugs": ("tirzepatide", "insulin"), "description": "Combining these increases the risk of low blood sugar.", "severity": "moderate"},
+    {"drugs": ("levodopa-carbidopa", "phenelzine"), "description": "Combining these can cause a dangerous spike in blood pressure (hypertensive crisis).", "severity": "high"},
+    {"drugs": ("varenicline", "alcohol"), "description": "Varenicline may reduce alcohol tolerance and increase the risk of unusual or aggressive behavior when combined with alcohol.", "severity": "moderate"},
+    {"drugs": ("naltrexone", "oxycodone"), "description": "Naltrexone blocks opioid effects and can precipitate sudden, severe withdrawal in someone taking opioids.", "severity": "high"},
+    {"drugs": ("naltrexone", "tramadol"), "description": "Naltrexone blocks opioid effects and can precipitate sudden, severe withdrawal.", "severity": "high"},
+    {"drugs": ("donepezil", "metoprolol"), "description": "Combining these can cause an excessively slow heart rate.", "severity": "moderate"},
+    {"drugs": ("alendronate", "ibuprofen"), "description": "NSAIDs combined with bisphosphonates raise the risk of stomach irritation and ulcers.", "severity": "moderate"},
+    {"drugs": ("erythromycin", "simvastatin"), "description": "This antibiotic can raise simvastatin levels sharply, increasing the risk of muscle damage.", "severity": "high"},
+    {"drugs": ("nitrofurantoin", "magnesium"), "description": "Magnesium-containing antacids can reduce absorption of this antibiotic.", "severity": "low"},
+    {"drugs": ("isoniazid", "acetaminophen"), "description": "Combining these raises the risk of liver toxicity, especially with regular acetaminophen use.", "severity": "moderate"},
+    {"drugs": ("levetiracetam", "alcohol"), "description": "Alcohol can increase drowsiness and dizziness with this anticonvulsant.", "severity": "moderate"},
+    {"drugs": ("zolmitriptan", "sertraline"), "description": "Combining a triptan with an SSRI raises the risk of serotonin syndrome.", "severity": "moderate"},
+    {"drugs": ("eletriptan", "itraconazole"), "description": "This antifungal can raise triptan levels, increasing side-effect risk.", "severity": "moderate"},
 ]
 
 # Guard against an accidental duplicate/unordered-duplicate pair slipping into the
