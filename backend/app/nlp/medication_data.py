@@ -36,6 +36,23 @@ except (OSError, ValueError):
 FDA_CLASS: Dict[str, str] = _FDA_REFERENCE.get("fda_class", {})
 
 # ---------------------------------------------------------------------------
+# Bulk reference tier (generated — see scripts/import_openfda_bulk.py).
+#
+# Drugs known to openFDA but not hand-curated. They carry a name, an FDA class,
+# brands and dosage forms, but deliberately NO dosing regimen: openFDA publishes
+# per-product strengths, not how a clinician doses a drug, and inventing one
+# would be worse than omitting it. These widen autocomplete coverage; they are
+# never a source of interaction pairs, which stay hand-reviewed.
+# ---------------------------------------------------------------------------
+_BULK_REFERENCE_PATH = os.path.join(os.path.dirname(__file__), "bulk_reference.json")
+
+try:
+    with open(_BULK_REFERENCE_PATH, encoding="utf-8") as _f:
+        BULK_REFERENCE: Dict[str, Dict] = json.load(_f)
+except (OSError, ValueError):
+    BULK_REFERENCE = {}
+
+# ---------------------------------------------------------------------------
 # Brand name -> generic name. Lets users type what's on the label.
 # ---------------------------------------------------------------------------
 BRAND_TO_GENERIC = {
@@ -1012,16 +1029,35 @@ def get_drug_directory() -> List[Dict]:
         merged.update(sheet_data)
 
     reverse = _reverse_brand_map()
-    return [
+    directory = [
         {
             "name": generic,
             "brand_names": sorted(set(reverse.get(generic, []))),
             "dosage": info["dosage"],
             "category": info["category"],
             "fda_class": FDA_CLASS.get(generic, ""),
+            "tier": "curated",
         }
         for generic, info in sorted(merged.items())
     ]
+
+    # Reference tier: no dosing regimen is available for these, so say what is
+    # known (the dosage forms marketed) rather than implying a dose.
+    for generic, info in sorted(BULK_REFERENCE.items()):
+        if generic in merged:
+            continue
+        forms = ", ".join(info.get("dosage_forms", []))
+        directory.append({
+            "name": generic,
+            "brand_names": sorted(set(info.get("brands", []))),
+            "dosage": (f"Available as: {forms} — refer to product labeling for dosing"
+                       if forms else "Refer to product labeling for dosing"),
+            "category": info.get("fda_class", "Other"),
+            "fda_class": info.get("fda_class", ""),
+            "tier": "reference",
+        })
+
+    return directory
 
 
 INTERACTIONS = [

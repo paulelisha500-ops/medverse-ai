@@ -131,6 +131,14 @@ export default function Medications() {
                           <span className="rounded-sm bg-pulse-dim px-1.5 py-0.5 text-[10px] font-normal uppercase tracking-wide text-pulse-dark">
                             {drug.category}
                           </span>
+                          {drug.tier === 'reference' && (
+                            <span
+                              title="From the FDA drug directory — no typical dosing on file, and not covered by interaction checking"
+                              className="rounded-sm border border-line px-1.5 py-0.5 text-[10px] font-normal uppercase tracking-wide text-muted"
+                            >
+                              Reference
+                            </span>
+                          )}
                         </span>
                         <span className="font-mono text-xs text-muted">{drug.dosage}</span>
                       </button>
@@ -140,9 +148,15 @@ export default function Medications() {
               </div>
               {exact && activeIndex !== i && (
                 <p className="mt-1 pl-1 text-xs text-muted">
-                  {exact.category} · Typical dosage: {exact.dosage}
+                  {exact.category} ·{' '}
+                  {exact.tier === 'reference' ? exact.dosage : `Typical dosage: ${exact.dosage}`}
                   {exact.fda_class && (
                     <span className="block text-muted/80">FDA class: {exact.fda_class}</span>
+                  )}
+                  {exact.tier === 'reference' && (
+                    <span className="block text-muted/80">
+                      Reference entry — not covered by interaction checking.
+                    </span>
                   )}
                 </p>
               )}

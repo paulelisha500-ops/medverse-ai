@@ -175,6 +175,9 @@ class DrugInfoOut(BaseModel):
     dosage: str
     category: str
     fda_class: str = ""
+    # "curated" entries have hand-written dosing and can appear in interaction
+    # pairs; "reference" entries come from openFDA and carry no dosing regimen.
+    tier: str = "curated"
 
 
 class DrugDirectoryResponse(BaseModel):
