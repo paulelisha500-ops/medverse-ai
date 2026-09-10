@@ -179,3 +179,33 @@ class DrugInfoOut(BaseModel):
 
 class DrugDirectoryResponse(BaseModel):
     drugs: List[DrugInfoOut]
+
+
+class ConversionFamilyOut(BaseModel):
+    key: str
+    label: str
+    reference: str
+    drugs: List[str]
+    caveats: List[str]
+
+
+class ConversionFamiliesResponse(BaseModel):
+    families: List[ConversionFamilyOut]
+
+
+class DoseConversionRequest(BaseModel):
+    family: str
+    from_drug: str
+    to_drug: str
+    dose_mg: float = Field(gt=0, le=10000)
+
+
+class DoseConversionResponse(BaseModel):
+    family: str
+    from_drug: str
+    to_drug: str
+    dose_mg: float
+    converted_mg: float
+    reference_value: float
+    reference_unit: str
+    caveats: List[str]
