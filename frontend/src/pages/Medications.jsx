@@ -141,6 +141,9 @@ export default function Medications() {
               {exact && activeIndex !== i && (
                 <p className="mt-1 pl-1 text-xs text-muted">
                   {exact.category} · Typical dosage: {exact.dosage}
+                  {exact.fda_class && (
+                    <span className="block text-muted/80">FDA class: {exact.fda_class}</span>
+                  )}
                 </p>
               )}
             </div>

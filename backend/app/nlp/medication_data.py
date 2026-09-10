@@ -11,10 +11,29 @@ BRAND_TO_GENERIC lets common brand names (e.g. "Tylenol") resolve to the generic
 the interaction table is keyed on (e.g. "acetaminophen"), so real-world input matches.
 """
 import difflib
+import json
+import os
 from typing import List, Dict
 
 from app.core.config import settings
 from app.nlp.sheet_sync import fetch_sheet_drug_info
+
+# ---------------------------------------------------------------------------
+# openFDA reference data (generated — see scripts/enrich_openfda.py).
+# Source: FDA NDC directory, a US Government public-domain work.
+#   fda_class     -> the FDA Established Pharmacologic Class for a generic
+#   brand_aliases -> real marketed trade names, filtered to single-ingredient
+#                    products so combination brands don't mislabel a drug
+# ---------------------------------------------------------------------------
+_FDA_REFERENCE_PATH = os.path.join(os.path.dirname(__file__), "fda_reference.json")
+
+try:
+    with open(_FDA_REFERENCE_PATH, encoding="utf-8") as _f:
+        _FDA_REFERENCE = json.load(_f)
+except (OSError, ValueError):
+    _FDA_REFERENCE = {"fda_class": {}, "brand_aliases": {}}
+
+FDA_CLASS: Dict[str, str] = _FDA_REFERENCE.get("fda_class", {})
 
 # ---------------------------------------------------------------------------
 # Brand name -> generic name. Lets users type what's on the label.
@@ -278,6 +297,12 @@ BRAND_TO_GENERIC = {
     # Anesthetic
     "lidoderm": "lidocaine", "xylocaine": "lidocaine",
 }
+
+# Fold in the openFDA-sourced trade names. setdefault, not update: the curated
+# entries above are deliberate (e.g. every insulin product maps to the generic
+# "insulin" bucket the interaction table keys on) and must win on conflict.
+for _brand, _generic_name in _FDA_REFERENCE.get("brand_aliases", {}).items():
+    BRAND_TO_GENERIC.setdefault(_brand, _generic_name)
 
 
 def _generic(name: str) -> str:
@@ -622,6 +647,7 @@ def get_drug_directory() -> List[Dict]:
             "brand_names": sorted(set(reverse.get(generic, []))),
             "dosage": info["dosage"],
             "category": info["category"],
+            "fda_class": FDA_CLASS.get(generic, ""),
         }
         for generic, info in sorted(merged.items())
     ]
