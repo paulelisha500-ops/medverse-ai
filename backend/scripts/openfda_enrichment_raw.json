@@ -1,0 +1,7499 @@
+{
+  "abatacept": {
+    "found": true,
+    "total_products": 6,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Selective T Cell Costimulation Modulator"
+    ],
+    "brand_names": [
+      "ORENCIA"
+    ],
+    "dosage_forms": [
+      "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      "INJECTION, SOLUTION"
+    ]
+  },
+  "abiraterone": {
+    "found": true,
+    "total_products": 79,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Cytochrome P450 17A1 Inhibitor"
+    ],
+    "brand_names": [
+      "Abirtega",
+      "Zytiga"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "acamprosate": {
+    "found": true,
+    "total_products": 14,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, DELAYED RELEASE"
+    ]
+  },
+  "acarbose": {
+    "found": true,
+    "total_products": 22,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "alpha-Glucosidase Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "acetaminophen": {
+    "found": true,
+    "total_products": 4086,
+    "combo_products_skipped": 18,
+    "fda_classes": [],
+    "brand_names": [
+      "Childrens Pain Relief",
+      "GeriCare Liquid Pain Relief",
+      "M-PAP",
+      "Medi-First Extra Strength Non-Aspirin",
+      "Meijer Childrens Pain and Fever Reducer",
+      "Pain Reliever"
+    ],
+    "dosage_forms": [
+      "CHEWABLE GEL",
+      "LIQUID",
+      "POWDER",
+      "SUSPENSION",
+      "TABLET, CHEWABLE",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "acyclovir": {
+    "found": true,
+    "total_products": 230,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Herpes Simplex Virus Nucleoside Analog DNA Polymerase Inhibitor",
+      "Herpes Zoster Virus Nucleoside Analog DNA Polymerase Inhibitor",
+      "Herpesvirus Nucleoside Analog DNA Polymerase Inhibitor"
+    ],
+    "brand_names": [
+      "Avaclyr"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "CREAM",
+      "OINTMENT",
+      "POWDER",
+      "SUSPENSION",
+      "TABLET"
+    ]
+  },
+  "adalimumab": {
+    "found": true,
+    "total_products": 142,
+    "combo_products_skipped": 8,
+    "fda_classes": [
+      "Tumor Necrosis Factor Blocker"
+    ],
+    "brand_names": [
+      "AMJEVITA",
+      "HYRIMOZ"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "LIQUID",
+      "SOLUTION"
+    ]
+  },
+  "adapalene": {
+    "found": true,
+    "total_products": 83,
+    "combo_products_skipped": 3,
+    "fda_classes": [
+      "Retinoid"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CREAM",
+      "GEL",
+      "POWDER"
+    ]
+  },
+  "adenosine": {
+    "found": true,
+    "total_products": 139,
+    "combo_products_skipped": 18,
+    "fda_classes": [
+      "Adenosine Receptor Agonist"
+    ],
+    "brand_names": [
+      "DERMAHAN THE WHITENING MOISTURIZING MASK"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "LIQUID",
+      "POWDER"
+    ]
+  },
+  "albendazole": {
+    "found": true,
+    "total_products": 24,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Anthelmintic"
+    ],
+    "brand_names": [
+      "ALBENZA"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "albuterol": {
+    "found": true,
+    "total_products": 172,
+    "combo_products_skipped": 2,
+    "fda_classes": [
+      "beta2-Adrenergic Agonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "AEROSOL, METERED",
+      "INHALANT",
+      "POWDER",
+      "SOLUTION",
+      "SYRUP",
+      "TABLET"
+    ]
+  },
+  "alendronate": {
+    "found": true,
+    "total_products": 57,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Bisphosphonate"
+    ],
+    "brand_names": [
+      "Binosto"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "SOLUTION",
+      "TABLET",
+      "TABLET, EFFERVESCENT"
+    ]
+  },
+  "alfuzosin": {
+    "found": true,
+    "total_products": 25,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "alpha-Adrenergic Blocker"
+    ],
+    "brand_names": [
+      "Uroxatral"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, EXTENDED RELEASE",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "alirocumab": {
+    "found": true,
+    "total_products": 5,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "PCSK9 Inhibitor"
+    ],
+    "brand_names": [
+      "Praluent"
+    ],
+    "dosage_forms": [
+      "INJECTION, SOLUTION"
+    ]
+  },
+  "allopurinol": {
+    "found": true,
+    "total_products": 188,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Xanthine Oxidase Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "TABLET"
+    ]
+  },
+  "alprazolam": {
+    "found": true,
+    "total_products": 167,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Benzodiazepine"
+    ],
+    "brand_names": [
+      "Xanax"
+    ],
+    "dosage_forms": [
+      "TABLET",
+      "TABLET, EXTENDED RELEASE",
+      "TABLET, ORALLY DISINTEGRATING"
+    ]
+  },
+  "amantadine": {
+    "found": true,
+    "total_products": 74,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Influenza A M2 Protein Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "CAPSULE, GELATIN COATED",
+      "CAPSULE, LIQUID FILLED",
+      "POWDER",
+      "SOLUTION",
+      "TABLET"
+    ]
+  },
+  "amikacin": {
+    "found": true,
+    "total_products": 20,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Aminoglycoside Antibacterial"
+    ],
+    "brand_names": [
+      "ARIKAYCE"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "SUSPENSION"
+    ]
+  },
+  "amiodarone": {
+    "found": true,
+    "total_products": 78,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Antiarrhythmic"
+    ],
+    "brand_names": [
+      "Pacerone"
+    ],
+    "dosage_forms": [
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "amitriptyline": {
+    "found": true,
+    "total_products": 234,
+    "combo_products_skipped": 2,
+    "fda_classes": [
+      "Tricyclic Antidepressant"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "amlodipine": {
+    "found": true,
+    "total_products": 611,
+    "combo_products_skipped": 14,
+    "fda_classes": [
+      "Calcium Channel Blocker",
+      "Dihydropyridine Calcium Channel Blocker"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "amoxicillin": {
+    "found": true,
+    "total_products": 515,
+    "combo_products_skipped": 17,
+    "fda_classes": [
+      "Penicillin-class Antibacterial"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER, FOR SUSPENSION",
+      "TABLET, CHEWABLE",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "amoxicillin-clavulanate": {
+    "found": false,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "amphetamine-dextroamphetamine": {
+    "found": false,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "ampicillin": {
+    "found": true,
+    "total_products": 130,
+    "combo_products_skipped": 7,
+    "fda_classes": [
+      "Penicillin-class Antibacterial"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION, POWDER, FOR SOLUTION",
+      "POWDER"
+    ]
+  },
+  "ampicillin-sulbactam": {
+    "found": false,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "anastrozole": {
+    "found": true,
+    "total_products": 63,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Aromatase Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "POWDER, FOR SUSPENSION",
+      "TABLET",
+      "TABLET, COATED",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "andexanet alfa": {
+    "found": true,
+    "total_products": 2,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [
+      "ANDEXXA"
+    ],
+    "dosage_forms": [
+      "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      "LIQUID"
+    ]
+  },
+  "apixaban": {
+    "found": true,
+    "total_products": 68,
+    "combo_products_skipped": 1,
+    "fda_classes": [
+      "Factor Xa Inhibitor"
+    ],
+    "brand_names": [
+      "ELIQUIS",
+      "ELIQUIS SPRINKLE"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "aripiprazole": {
+    "found": true,
+    "total_products": 351,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Atypical Antipsychotic"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "SOLUTION",
+      "TABLET"
+    ]
+  },
+  "asenapine": {
+    "found": true,
+    "total_products": 38,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Atypical Antipsychotic"
+    ],
+    "brand_names": [
+      "SECUADO"
+    ],
+    "dosage_forms": [
+      "FILM, EXTENDED RELEASE",
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "aspirin": {
+    "found": true,
+    "total_products": 809,
+    "combo_products_skipped": 10,
+    "fda_classes": [
+      "Nonsteroidal Anti-inflammatory Drug",
+      "Platelet Aggregation Inhibitor"
+    ],
+    "brand_names": [
+      "Alka-Seltzer Original Flavor"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, CHEWABLE",
+      "TABLET, COATED",
+      "TABLET, DELAYED RELEASE",
+      "TABLET, EFFERVESCENT"
+    ]
+  },
+  "atenolol": {
+    "found": true,
+    "total_products": 155,
+    "combo_products_skipped": 5,
+    "fda_classes": [
+      "beta-Adrenergic Blocker"
+    ],
+    "brand_names": [
+      "TENORMIN"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "atomoxetine": {
+    "found": true,
+    "total_products": 170,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Norepinephrine Reuptake Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER"
+    ]
+  },
+  "atorvastatin": {
+    "found": true,
+    "total_products": 514,
+    "combo_products_skipped": 3,
+    "fda_classes": [
+      "HMG-CoA Reductase Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "TABLET",
+      "TABLET, COATED",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "atovaquone-proguanil": {
+    "found": false,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "atropine": {
+    "found": true,
+    "total_products": 150,
+    "combo_products_skipped": 16,
+    "fda_classes": [
+      "Anticholinergic",
+      "Cholinergic Muscarinic Antagonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "SOLUTION"
+    ]
+  },
+  "azathioprine": {
+    "found": true,
+    "total_products": 45,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Purine Antimetabolite"
+    ],
+    "brand_names": [
+      "Azasan"
+    ],
+    "dosage_forms": [
+      "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "azelaic acid": {
+    "found": true,
+    "total_products": 29,
+    "combo_products_skipped": 6,
+    "fda_classes": [],
+    "brand_names": [
+      "FINACEA FOAM"
+    ],
+    "dosage_forms": [
+      "AEROSOL, FOAM",
+      "CREAM",
+      "GEL",
+      "POWDER"
+    ]
+  },
+  "azithromycin": {
+    "found": true,
+    "total_products": 232,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Macrolide Antimicrobial"
+    ],
+    "brand_names": [
+      "Zithromax"
+    ],
+    "dosage_forms": [
+      "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      "POWDER",
+      "POWDER, FOR SUSPENSION",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "aztreonam": {
+    "found": true,
+    "total_products": 21,
+    "combo_products_skipped": 2,
+    "fda_classes": [
+      "Monobactam Antibacterial"
+    ],
+    "brand_names": [
+      "AZACTAM"
+    ],
+    "dosage_forms": [
+      "INHALANT",
+      "INJECTION, POWDER, FOR SOLUTION",
+      "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      "POWDER"
+    ]
+  },
+  "baclofen": {
+    "found": true,
+    "total_products": 276,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "gamma-Aminobutyric Acid-ergic Agonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "SOLUTION",
+      "TABLET"
+    ]
+  },
+  "benzonatate": {
+    "found": true,
+    "total_products": 145,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Non-narcotic Antitussive"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "CAPSULE, LIQUID FILLED"
+    ]
+  },
+  "benzoyl peroxide": {
+    "found": true,
+    "total_products": 311,
+    "combo_products_skipped": 5,
+    "fda_classes": [],
+    "brand_names": [
+      "Acne Face and Body Wash",
+      "Acne Treatment",
+      "BP Wash",
+      "CLEAR MED 10%",
+      "CLEAR MED 5%",
+      "CVS Health Concealing Acne Treatment Maximum Strength Adult Acne Treatment",
+      "Dr. Zenovia Acne Cleanser",
+      "Dr. Zenovia Spot Treatment",
+      "Epsolay",
+      "Folliculitis Treatment Cream",
+      "Meijer Acne Foaming Cleanser Acne Treatment",
+      "Neutrogena Stubborn Acne AM Treatment"
+    ],
+    "dosage_forms": [
+      "CREAM",
+      "EMULSION",
+      "GEL",
+      "LIQUID",
+      "LOTION",
+      "POWDER"
+    ]
+  },
+  "benztropine": {
+    "found": true,
+    "total_products": 63,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Anticholinergic",
+      "Antihistamine"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION",
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "bevacizumab": {
+    "found": true,
+    "total_products": 24,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Vascular Endothelial Growth Factor Inhibitor"
+    ],
+    "brand_names": [
+      "ALYMSYS",
+      "Avastin",
+      "JOBEVNE",
+      "LYTENAVA",
+      "MVASI",
+      "Vegzelma",
+      "Zirabev"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "LIQUID"
+    ]
+  },
+  "bicalutamide": {
+    "found": true,
+    "total_products": 20,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Androgen Receptor Inhibitor"
+    ],
+    "brand_names": [
+      "CASODEX"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "bisacodyl": {
+    "found": true,
+    "total_products": 138,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Stimulant Laxative"
+    ],
+    "brand_names": [
+      "Conlax",
+      "Dulcolax Laxative",
+      "Dulcolax Pink Stimulant Laxative",
+      "Dulcolax Stimulant Laxative",
+      "Fleet",
+      "Laxative",
+      "Laxative Enteric Coated",
+      "Laxative Gentle",
+      "Stimulant Laxative Enteric Coated",
+      "WOMENS GENTLE LAXATIVE",
+      "Womens Gentle Laxative",
+      "Womens Laxative"
+    ],
+    "dosage_forms": [
+      "CAPSULE, LIQUID FILLED",
+      "POWDER",
+      "SUPPOSITORY",
+      "TABLET",
+      "TABLET, COATED",
+      "TABLET, DELAYED RELEASE"
+    ]
+  },
+  "bisoprolol": {
+    "found": true,
+    "total_products": 108,
+    "combo_products_skipped": 12,
+    "fda_classes": [
+      "beta-Adrenergic Blocker"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "bortezomib": {
+    "found": true,
+    "total_products": 55,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Proteasome Inhibitor"
+    ],
+    "brand_names": [
+      "BORUZU"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      "POWDER"
+    ]
+  },
+  "brimonidine": {
+    "found": true,
+    "total_products": 78,
+    "combo_products_skipped": 6,
+    "fda_classes": [
+      "alpha-Adrenergic Agonist"
+    ],
+    "brand_names": [
+      "LUMIFY PRESERVATIVE FREE EYE DROPS",
+      "LUMIFY Redness Reliever Eye Drops"
+    ],
+    "dosage_forms": [
+      "GEL",
+      "POWDER",
+      "SOLUTION",
+      "SOLUTION/ DROPS"
+    ]
+  },
+  "brivaracetam": {
+    "found": true,
+    "total_products": 80,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [
+      "Briviact"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "POWDER",
+      "SOLUTION",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "budesonide": {
+    "found": true,
+    "total_products": 135,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Corticosteroid"
+    ],
+    "brand_names": [
+      "PULMICORT FLEXHALER"
+    ],
+    "dosage_forms": [
+      "AEROSOL, FOAM",
+      "AEROSOL, POWDER",
+      "CAPSULE, DELAYED RELEASE PELLETS",
+      "INHALANT",
+      "POWDER",
+      "SPRAY, METERED"
+    ]
+  },
+  "bumetanide": {
+    "found": true,
+    "total_products": 142,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Loop Diuretic"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION",
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "buprenorphine": {
+    "found": true,
+    "total_products": 255,
+    "combo_products_skipped": 17,
+    "fda_classes": [
+      "Partial Opioid Agonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION",
+      "PATCH, EXTENDED RELEASE",
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "bupropion": {
+    "found": true,
+    "total_products": 396,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Aminoketone"
+    ],
+    "brand_names": [
+      "WELLBUTRIN XL"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, EXTENDED RELEASE",
+      "TABLET, FILM COATED",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "buspirone": {
+    "found": true,
+    "total_products": 292,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": [
+      "TABLET"
+    ]
+  },
+  "cabergoline": {
+    "found": true,
+    "total_products": 20,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Ergot Derivative"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "calcipotriene": {
+    "found": true,
+    "total_products": 38,
+    "combo_products_skipped": 8,
+    "fda_classes": [
+      "Vitamin D Analog"
+    ],
+    "brand_names": [
+      "Calcitrene",
+      "Pellix",
+      "SORILUX"
+    ],
+    "dosage_forms": [
+      "AEROSOL, FOAM",
+      "CREAM",
+      "OINTMENT",
+      "POWDER",
+      "SOLUTION"
+    ]
+  },
+  "calcitriol": {
+    "found": true,
+    "total_products": 58,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Vitamin D3 Analog"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "CAPSULE, GELATIN COATED",
+      "CAPSULE, LIQUID FILLED",
+      "POWDER",
+      "SOLUTION"
+    ]
+  },
+  "canagliflozin": {
+    "found": true,
+    "total_products": 37,
+    "combo_products_skipped": 12,
+    "fda_classes": [
+      "Sodium-Glucose Cotransporter 2 Inhibitor"
+    ],
+    "brand_names": [
+      "INVOKANA"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "capecitabine": {
+    "found": true,
+    "total_products": 54,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Nucleoside Metabolic Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CRYSTAL",
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "carbamazepine": {
+    "found": true,
+    "total_products": 174,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Mood Stabilizer"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE, EXTENDED RELEASE",
+      "POWDER",
+      "SUSPENSION",
+      "TABLET",
+      "TABLET, CHEWABLE",
+      "TABLET, EXTENDED RELEASE"
+    ]
+  },
+  "carboplatin": {
+    "found": true,
+    "total_products": 48,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Platinum-based Drug"
+    ],
+    "brand_names": [
+      "KYXATA"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER"
+    ]
+  },
+  "carisoprodol": {
+    "found": true,
+    "total_products": 68,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Muscle Relaxant"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "carvedilol": {
+    "found": true,
+    "total_products": 241,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "alpha-Adrenergic Blocker",
+      "beta-Adrenergic Blocker"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE, EXTENDED RELEASE",
+      "POWDER",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "caspofungin": {
+    "found": true,
+    "total_products": 22,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Echinocandin Antifungal"
+    ],
+    "brand_names": [
+      "CANCIDAS"
+    ],
+    "dosage_forms": [
+      "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      "POWDER"
+    ]
+  },
+  "cefazolin": {
+    "found": true,
+    "total_products": 52,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Cephalosporin Antibacterial"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION, POWDER, FOR SOLUTION",
+      "POWDER",
+      "POWDER, FOR SOLUTION",
+      "SOLUTION"
+    ]
+  },
+  "cefdinir": {
+    "found": true,
+    "total_products": 85,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Cephalosporin Antibacterial"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER",
+      "POWDER, FOR SUSPENSION"
+    ]
+  },
+  "cefepime": {
+    "found": true,
+    "total_products": 37,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Cephalosporin Antibacterial"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION, POWDER, FOR SOLUTION",
+      "INJECTION, SOLUTION",
+      "POWDER"
+    ]
+  },
+  "ceftazidime": {
+    "found": true,
+    "total_products": 16,
+    "combo_products_skipped": 2,
+    "fda_classes": [
+      "Cephalosporin Antibacterial"
+    ],
+    "brand_names": [
+      "TAZICEF"
+    ],
+    "dosage_forms": [
+      "INJECTION, POWDER, FOR SOLUTION",
+      "POWDER"
+    ]
+  },
+  "ceftriaxone": {
+    "found": true,
+    "total_products": 66,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Cephalosporin Antibacterial"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION, POWDER, FOR SOLUTION",
+      "INJECTION, SOLUTION",
+      "POWDER"
+    ]
+  },
+  "cefuroxime": {
+    "found": true,
+    "total_products": 58,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Cephalosporin Antibacterial"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION, POWDER, FOR SOLUTION",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "celecoxib": {
+    "found": true,
+    "total_products": 265,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Nonsteroidal Anti-inflammatory Drug"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER"
+    ]
+  },
+  "cephalexin": {
+    "found": true,
+    "total_products": 193,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Cephalosporin Antibacterial"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "FOR SUSPENSION",
+      "POWDER, FOR SUSPENSION",
+      "TABLET"
+    ]
+  },
+  "cetirizine": {
+    "found": true,
+    "total_products": 499,
+    "combo_products_skipped": 2,
+    "fda_classes": [
+      "Histamine-1 Receptor Antagonist"
+    ],
+    "brand_names": [
+      "All Day Allergy",
+      "Allergy Relief",
+      "CareOne Allergy Relief",
+      "Childrens Allergy Relief",
+      "Good Neighbor Pharmacy Childrens All Day Allergy",
+      "Zyrtec Allergy",
+      "careone childrens allergy relief"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "CAPSULE, LIQUID FILLED",
+      "POWDER",
+      "SOLUTION",
+      "TABLET",
+      "TABLET, COATED"
+    ]
+  },
+  "chlordiazepoxide": {
+    "found": true,
+    "total_products": 55,
+    "combo_products_skipped": 9,
+    "fda_classes": [
+      "Benzodiazepine"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER"
+    ]
+  },
+  "chloroquine": {
+    "found": true,
+    "total_products": 11,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Antimalarial"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, COATED"
+    ]
+  },
+  "chlorpromazine": {
+    "found": true,
+    "total_products": 136,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Phenothiazine"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION",
+      "TABLET",
+      "TABLET, COATED",
+      "TABLET, FILM COATED",
+      "TABLET, SUGAR COATED"
+    ]
+  },
+  "chlorthalidone": {
+    "found": true,
+    "total_products": 140,
+    "combo_products_skipped": 3,
+    "fda_classes": [
+      "Thiazide-like Diuretic"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "cholestyramine": {
+    "found": true,
+    "total_products": 48,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Bile Acid Sequestrant"
+    ],
+    "brand_names": [
+      "Prevalite"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "POWDER, FOR SUSPENSION"
+    ]
+  },
+  "ciclopirox": {
+    "found": true,
+    "total_products": 50,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": [
+      "CREAM",
+      "GEL",
+      "POWDER",
+      "SHAMPOO",
+      "SOLUTION",
+      "SUSPENSION"
+    ]
+  },
+  "cilostazol": {
+    "found": true,
+    "total_products": 22,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Phosphodiesterase 3 Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "ciprofloxacin": {
+    "found": true,
+    "total_products": 222,
+    "combo_products_skipped": 4,
+    "fda_classes": [
+      "Fluoroquinolone Antibacterial"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "SOLUTION/ DROPS",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "cisplatin": {
+    "found": true,
+    "total_products": 25,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Platinum-based Drug"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      "INJECTION, SOLUTION",
+      "POWDER"
+    ]
+  },
+  "citalopram": {
+    "found": true,
+    "total_products": 148,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Serotonin Reuptake Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "SOLUTION",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "clarithromycin": {
+    "found": true,
+    "total_products": 69,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Macrolide Antimicrobial"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "FOR SUSPENSION",
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "clascoterone": {
+    "found": true,
+    "total_products": 8,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Androgen Receptor Inhibitor"
+    ],
+    "brand_names": [
+      "Winlevi"
+    ],
+    "dosage_forms": [
+      "CREAM",
+      "POWDER"
+    ]
+  },
+  "clindamycin": {
+    "found": true,
+    "total_products": 293,
+    "combo_products_skipped": 2,
+    "fda_classes": [
+      "Lincosamide Antibacterial"
+    ],
+    "brand_names": [
+      "Clindacin",
+      "Clindesse"
+    ],
+    "dosage_forms": [
+      "AEROSOL, FOAM",
+      "CAPSULE",
+      "CREAM",
+      "GEL",
+      "LOTION",
+      "POWDER"
+    ]
+  },
+  "clobetasol": {
+    "found": true,
+    "total_products": 135,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Corticosteroid"
+    ],
+    "brand_names": [
+      "Clodan",
+      "Tovet (emollient formulation)"
+    ],
+    "dosage_forms": [
+      "AEROSOL, FOAM",
+      "CREAM",
+      "OINTMENT",
+      "POWDER",
+      "SHAMPOO",
+      "SOLUTION"
+    ]
+  },
+  "clomiphene": {
+    "found": true,
+    "total_products": 35,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Estrogen Agonist/Antagonist"
+    ],
+    "brand_names": [
+      "CLOMID"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "clomipramine": {
+    "found": true,
+    "total_products": 64,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Tricyclic Antidepressant"
+    ],
+    "brand_names": [
+      "ANAFRANIL"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER"
+    ]
+  },
+  "clonazepam": {
+    "found": true,
+    "total_products": 153,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Benzodiazepine"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "TABLET",
+      "TABLET, ORALLY DISINTEGRATING"
+    ]
+  },
+  "clonidine": {
+    "found": true,
+    "total_products": 192,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Central alpha-2 Adrenergic Agonist"
+    ],
+    "brand_names": [
+      "Nexiclon XR"
+    ],
+    "dosage_forms": [
+      "INJECTION, SOLUTION",
+      "PATCH",
+      "TABLET",
+      "TABLET, EXTENDED RELEASE"
+    ]
+  },
+  "clopidogrel": {
+    "found": true,
+    "total_products": 95,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "P2Y12 Platelet Inhibitor"
+    ],
+    "brand_names": [
+      "Plavix"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "clozapine": {
+    "found": true,
+    "total_products": 61,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Atypical Antipsychotic"
+    ],
+    "brand_names": [
+      "VERSACLOZ"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "SUSPENSION",
+      "TABLET",
+      "TABLET, ORALLY DISINTEGRATING"
+    ]
+  },
+  "codeine": {
+    "found": true,
+    "total_products": 126,
+    "combo_products_skipped": 20,
+    "fda_classes": [
+      "Opioid Agonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "coenzyme q10": {
+    "found": false,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "colchicine": {
+    "found": true,
+    "total_products": 73,
+    "combo_products_skipped": 2,
+    "fda_classes": [
+      "Alkaloid"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "cyclobenzaprine": {
+    "found": true,
+    "total_products": 266,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Muscle Relaxant"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "cyclophosphamide": {
+    "found": true,
+    "total_products": 108,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "INJECTION",
+      "INJECTION, POWDER, FOR SOLUTION",
+      "POWDER"
+    ]
+  },
+  "cyclosporine": {
+    "found": true,
+    "total_products": 73,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Calcineurin Inhibitor Immunosuppressant"
+    ],
+    "brand_names": [
+      "Gengraf",
+      "Neoral",
+      "Sandimmune"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "CAPSULE, GELATIN COATED",
+      "CAPSULE, LIQUID FILLED",
+      "EMULSION",
+      "POWDER"
+    ]
+  },
+  "dabigatran": {
+    "found": true,
+    "total_products": 77,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Direct Thrombin Inhibitor"
+    ],
+    "brand_names": [
+      "Pradaxa"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "CAPSULE, COATED PELLETS",
+      "PELLET",
+      "POWDER"
+    ]
+  },
+  "dapagliflozin": {
+    "found": true,
+    "total_products": 136,
+    "combo_products_skipped": 10,
+    "fda_classes": [
+      "Sodium-Glucose Cotransporter 2 Inhibitor"
+    ],
+    "brand_names": [
+      "FARXIGA"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "dapsone": {
+    "found": true,
+    "total_products": 69,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Sulfone"
+    ],
+    "brand_names": [
+      "ACZONE"
+    ],
+    "dosage_forms": [
+      "GEL",
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "daptomycin": {
+    "found": true,
+    "total_products": 64,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Lipopeptide Antibacterial"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      "INJECTION, POWDER, LYOPHILIZED, FOR SUSPENSION",
+      "INJECTION, SOLUTION",
+      "LIQUID",
+      "POWDER"
+    ]
+  },
+  "denosumab": {
+    "found": true,
+    "total_products": 27,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "RANK Ligand Inhibitor"
+    ],
+    "brand_names": [
+      "AUKELSO",
+      "BOMYNTRA",
+      "BOSAYA",
+      "Boncresa",
+      "CONEXXENCE",
+      "ENOBY",
+      "JUBBONTI",
+      "JUBEREQ",
+      "OSPOMYV",
+      "OSVYRTI",
+      "Osenvelt",
+      "Oziltus"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "LIQUID"
+    ]
+  },
+  "desmopressin": {
+    "found": true,
+    "total_products": 90,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Factor VIII Activator",
+      "Vasopressin Analog"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "SOLUTION",
+      "SPRAY",
+      "TABLET"
+    ]
+  },
+  "desvenlafaxine": {
+    "found": true,
+    "total_products": 85,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Serotonin and Norepinephrine Reuptake Inhibitor"
+    ],
+    "brand_names": [
+      "Pristiq Extended-Release"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, EXTENDED RELEASE",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "dexamethasone": {
+    "found": true,
+    "total_products": 360,
+    "combo_products_skipped": 3,
+    "fda_classes": [
+      "Corticosteroid"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "ELIXIR",
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "dexmedetomidine": {
+    "found": true,
+    "total_products": 99,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Central alpha-2 Adrenergic Agonist"
+    ],
+    "brand_names": [
+      "PRECEDEX",
+      "Precedex"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "INJECTION, SOLUTION, CONCENTRATE",
+      "POWDER"
+    ]
+  },
+  "dextromethorphan": {
+    "found": true,
+    "total_products": 2449,
+    "combo_products_skipped": 23,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": [
+      "CRYSTAL",
+      "POWDER"
+    ]
+  },
+  "diazepam": {
+    "found": true,
+    "total_products": 141,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Benzodiazepine"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "GEL",
+      "INJECTION, SOLUTION",
+      "SOLUTION",
+      "TABLET"
+    ]
+  },
+  "diclofenac": {
+    "found": true,
+    "total_products": 544,
+    "combo_products_skipped": 4,
+    "fda_classes": [
+      "Nonsteroidal Anti-inflammatory Drug"
+    ],
+    "brand_names": [
+      "UP AND UP ARTHRITIS PAIN RELIEVER",
+      "ZIPSOR",
+      "topcare athritis pain reliever"
+    ],
+    "dosage_forms": [
+      "CAPSULE, LIQUID FILLED",
+      "GEL",
+      "POWDER",
+      "SOLUTION",
+      "SYSTEM",
+      "TABLET"
+    ]
+  },
+  "dicyclomine": {
+    "found": true,
+    "total_products": 131,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Anticholinergic"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "SOLUTION",
+      "TABLET"
+    ]
+  },
+  "digoxin": {
+    "found": true,
+    "total_products": 75,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Cardiac Glycoside"
+    ],
+    "brand_names": [
+      "DigiFab",
+      "LANOXIN"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      "POWDER",
+      "SOLUTION",
+      "TABLET"
+    ]
+  },
+  "diltiazem": {
+    "found": true,
+    "total_products": 324,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Calcium Channel Blocker"
+    ],
+    "brand_names": [
+      "Cardizem",
+      "TIADYLT ER",
+      "TIAZAC EXTENDED RELEASE"
+    ],
+    "dosage_forms": [
+      "CAPSULE, EXTENDED RELEASE",
+      "INJECTION",
+      "POWDER",
+      "TABLET",
+      "TABLET, COATED",
+      "TABLET, EXTENDED RELEASE"
+    ]
+  },
+  "dimethyl fumarate": {
+    "found": true,
+    "total_products": 76,
+    "combo_products_skipped": 3,
+    "fda_classes": [],
+    "brand_names": [
+      "TECFIDERA"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "CAPSULE, DELAYED RELEASE",
+      "CAPSULE, GELATIN COATED",
+      "POWDER"
+    ]
+  },
+  "diphenhydramine": {
+    "found": true,
+    "total_products": 1261,
+    "combo_products_skipped": 6,
+    "fda_classes": [
+      "Histamine-1 Receptor Antagonist"
+    ],
+    "brand_names": [
+      "AXIV Allergy",
+      "AXIV Allergy Relief",
+      "Allergies MY CHILD NEEDS HELP WITH",
+      "Allergy Relief",
+      "Equaline Night Time Sleep Aid",
+      "Nighttime Sleep Aid",
+      "ZzzQuil Nighttime Sleep-Aid",
+      "equate NIGHTTIME Sleep-Aid"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "CAPSULE, LIQUID FILLED",
+      "LIQUID",
+      "POWDER",
+      "SOLUTION",
+      "TABLET"
+    ]
+  },
+  "disulfiram": {
+    "found": true,
+    "total_products": 12,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Aldehyde Dehydrogenase Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "dobutamine": {
+    "found": true,
+    "total_products": 16,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "beta-Adrenergic Agonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "INJECTION, SOLUTION, CONCENTRATE",
+      "POWDER"
+    ]
+  },
+  "docetaxel": {
+    "found": true,
+    "total_products": 89,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Microtubule Inhibitor"
+    ],
+    "brand_names": [
+      "DOCIVYX"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER"
+    ]
+  },
+  "docusate": {
+    "found": true,
+    "total_products": 380,
+    "combo_products_skipped": 7,
+    "fda_classes": [],
+    "brand_names": [
+      "Dulcolax Pink Stool Softener",
+      "Dulcolax Stool Softener",
+      "Quality Choice Stool Softener",
+      "Stool Softener",
+      "Stool Softener Laxative",
+      "Stool Softener Laxative Extra Strength"
+    ],
+    "dosage_forms": [
+      "CAPSULE, LIQUID FILLED",
+      "LIQUID",
+      "POWDER"
+    ]
+  },
+  "dofetilide": {
+    "found": true,
+    "total_products": 49,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Antiarrhythmic"
+    ],
+    "brand_names": [
+      "Tikosyn"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER"
+    ]
+  },
+  "dolutegravir": {
+    "found": true,
+    "total_products": 28,
+    "combo_products_skipped": 5,
+    "fda_classes": [
+      "Human Immunodeficiency Virus Integrase Strand Transfer Inhibitor"
+    ],
+    "brand_names": [
+      "Tivicay",
+      "Tivicay PD"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, FILM COATED",
+      "TABLET, FOR SUSPENSION"
+    ]
+  },
+  "donepezil": {
+    "found": true,
+    "total_products": 120,
+    "combo_products_skipped": 1,
+    "fda_classes": [
+      "Cholinesterase Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "dopamine": {
+    "found": true,
+    "total_products": 83,
+    "combo_products_skipped": 18,
+    "fda_classes": [
+      "Catecholamine"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION, SOLUTION",
+      "INJECTION, SOLUTION, CONCENTRATE",
+      "LIQUID",
+      "POWDER"
+    ]
+  },
+  "doxazosin": {
+    "found": true,
+    "total_products": 144,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "alpha-Adrenergic Blocker"
+    ],
+    "brand_names": [
+      "Cardura",
+      "Cardura XL"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "doxepin": {
+    "found": true,
+    "total_products": 218,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Tricyclic Antidepressant"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "doxorubicin": {
+    "found": true,
+    "total_products": 72,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Anthracycline Topoisomerase Inhibitor"
+    ],
+    "brand_names": [
+      "DOXIL"
+    ],
+    "dosage_forms": [
+      "INJECTABLE, LIPOSOMAL",
+      "INJECTION, SOLUTION",
+      "INJECTION, SUSPENSION, LIPOSOMAL",
+      "POWDER"
+    ]
+  },
+  "doxycycline": {
+    "found": true,
+    "total_products": 351,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Tetracycline-class Drug"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      "TABLET",
+      "TABLET, COATED",
+      "TABLET, DELAYED RELEASE",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "dronedarone": {
+    "found": true,
+    "total_products": 11,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Antiarrhythmic"
+    ],
+    "brand_names": [
+      "Multaq"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "dulaglutide": {
+    "found": true,
+    "total_products": 21,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "GLP-1 Receptor Agonist"
+    ],
+    "brand_names": [
+      "TRULICITY",
+      "Trulicity"
+    ],
+    "dosage_forms": [
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "SOLUTION"
+    ]
+  },
+  "duloxetine": {
+    "found": true,
+    "total_products": 241,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Serotonin and Norepinephrine Reuptake Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE, DELAYED RELEASE",
+      "CAPSULE, DELAYED RELEASE PELLETS"
+    ]
+  },
+  "dupilumab": {
+    "found": true,
+    "total_products": 8,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Interleukin-4 Receptor alpha Antagonist"
+    ],
+    "brand_names": [
+      "Dupixent"
+    ],
+    "dosage_forms": [
+      "INJECTION, SOLUTION",
+      "SOLUTION"
+    ]
+  },
+  "dutasteride": {
+    "found": true,
+    "total_products": 53,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "5-alpha Reductase Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "CAPSULE, GELATIN COATED",
+      "CAPSULE, LIQUID FILLED",
+      "POWDER"
+    ]
+  },
+  "echinacea": {
+    "found": true,
+    "total_products": 643,
+    "combo_products_skipped": 25,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": []
+  },
+  "edoxaban": {
+    "found": true,
+    "total_products": 17,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Factor Xa Inhibitor"
+    ],
+    "brand_names": [
+      "SAVAYSA"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "efavirenz": {
+    "found": true,
+    "total_products": 42,
+    "combo_products_skipped": 7,
+    "fda_classes": [
+      "Human Immunodeficiency Virus 1 Non-Nucleoside Analog Reverse Transcriptase Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "eletriptan": {
+    "found": true,
+    "total_products": 31,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Serotonin-1b and Serotonin-1d Receptor Agonist"
+    ],
+    "brand_names": [
+      "Relpax"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "empagliflozin": {
+    "found": true,
+    "total_products": 69,
+    "combo_products_skipped": 6,
+    "fda_classes": [
+      "Sodium-Glucose Cotransporter 2 Inhibitor"
+    ],
+    "brand_names": [
+      "Jardiance"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "emtricitabine-tenofovir": {
+    "found": false,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "enalapril": {
+    "found": true,
+    "total_products": 123,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Angiotensin Converting Enzyme Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "SOLUTION",
+      "TABLET"
+    ]
+  },
+  "enoxaparin": {
+    "found": true,
+    "total_products": 173,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Low Molecular Weight Heparin"
+    ],
+    "brand_names": [
+      "Lovenox"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER"
+    ]
+  },
+  "entacapone": {
+    "found": true,
+    "total_products": 56,
+    "combo_products_skipped": 17,
+    "fda_classes": [
+      "Catechol-O-Methyltransferase Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "entecavir": {
+    "found": true,
+    "total_products": 47,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Hepatitis B Virus Nucleoside Analog Reverse Transcriptase Inhibitor"
+    ],
+    "brand_names": [
+      "BARACLUDE"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "SOLUTION",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "enzalutamide": {
+    "found": true,
+    "total_products": 26,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Androgen Receptor Inhibitor"
+    ],
+    "brand_names": [
+      "Xtandi"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "epinephrine": {
+    "found": true,
+    "total_products": 283,
+    "combo_products_skipped": 15,
+    "fda_classes": [
+      "Catecholamine",
+      "alpha-Adrenergic Agonist",
+      "beta-Adrenergic Agonist"
+    ],
+    "brand_names": [
+      "Adrenalinum"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "INJECTION, SOLUTION, CONCENTRATE",
+      "PELLET",
+      "POWDER"
+    ]
+  },
+  "eplerenone": {
+    "found": true,
+    "total_products": 33,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Aldosterone Antagonist"
+    ],
+    "brand_names": [
+      "Inspra"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, COATED",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "epoetin alfa": {
+    "found": true,
+    "total_products": 26,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Erythropoiesis-stimulating Agent"
+    ],
+    "brand_names": [
+      "EPOGEN",
+      "RETACRIT"
+    ],
+    "dosage_forms": [
+      "INJECTION, SOLUTION",
+      "SOLUTION"
+    ]
+  },
+  "erenumab": {
+    "found": true,
+    "total_products": 4,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [
+      "AIMOVIG"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION"
+    ]
+  },
+  "erlotinib": {
+    "found": true,
+    "total_products": 46,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Kinase Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "POWDER, FOR SUSPENSION",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "ertapenem": {
+    "found": true,
+    "total_products": 23,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Penem Antibacterial"
+    ],
+    "brand_names": [
+      "INVANZ"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      "POWDER"
+    ]
+  },
+  "erythromycin": {
+    "found": true,
+    "total_products": 139,
+    "combo_products_skipped": 3,
+    "fda_classes": [
+      "Macrolide",
+      "Macrolide Antimicrobial"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE, DELAYED RELEASE PELLETS",
+      "FOR SUSPENSION",
+      "OINTMENT",
+      "POWDER",
+      "SOLUTION",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "escitalopram": {
+    "found": true,
+    "total_products": 174,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Serotonin Reuptake Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "esomeprazole": {
+    "found": true,
+    "total_products": 344,
+    "combo_products_skipped": 1,
+    "fda_classes": [
+      "Proton Pump Inhibitor"
+    ],
+    "brand_names": [
+      "Acid Reducer",
+      "NEXIUM"
+    ],
+    "dosage_forms": [
+      "CAPSULE, DELAYED RELEASE",
+      "GRANULE, DELAYED RELEASE",
+      "POWDER",
+      "TABLET",
+      "TABLET, DELAYED RELEASE"
+    ]
+  },
+  "estradiol": {
+    "found": true,
+    "total_products": 731,
+    "combo_products_skipped": 13,
+    "fda_classes": [
+      "Estrogen"
+    ],
+    "brand_names": [
+      "DOTTI",
+      "ESTRACE"
+    ],
+    "dosage_forms": [
+      "CREAM",
+      "INSERT",
+      "PATCH",
+      "PATCH, EXTENDED RELEASE",
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "eszopiclone": {
+    "found": true,
+    "total_products": 110,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, COATED",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "etanercept": {
+    "found": true,
+    "total_products": 6,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Tumor Necrosis Factor Blocker"
+    ],
+    "brand_names": [
+      "ENBREL"
+    ],
+    "dosage_forms": [
+      "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      "SOLUTION"
+    ]
+  },
+  "ethambutol": {
+    "found": true,
+    "total_products": 14,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Antimycobacterial"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "ethinyl estradiol": {
+    "found": true,
+    "total_products": 332,
+    "combo_products_skipped": 25,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": []
+  },
+  "ethosuximide": {
+    "found": true,
+    "total_products": 16,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Anti-epileptic Agent"
+    ],
+    "brand_names": [
+      "Zarontin"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "CAPSULE, LIQUID FILLED",
+      "POWDER",
+      "SOLUTION"
+    ]
+  },
+  "etomidate": {
+    "found": true,
+    "total_products": 30,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "General Anesthetic"
+    ],
+    "brand_names": [
+      "Amidate"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "SOLUTION"
+    ]
+  },
+  "everolimus": {
+    "found": true,
+    "total_products": 116,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Kinase Inhibitor",
+      "mTOR Inhibitor Immunosuppressant"
+    ],
+    "brand_names": [
+      "Afinitor",
+      "Afinitor Disperz"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FOR SUSPENSION"
+    ]
+  },
+  "evolocumab": {
+    "found": true,
+    "total_products": 7,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "PCSK9 Inhibitor"
+    ],
+    "brand_names": [
+      "REPATHA"
+    ],
+    "dosage_forms": [
+      "INJECTION, SOLUTION"
+    ]
+  },
+  "exemestane": {
+    "found": true,
+    "total_products": 25,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Aromatase Inhibitor"
+    ],
+    "brand_names": [
+      "Aromasin"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED",
+      "TABLET, SUGAR COATED"
+    ]
+  },
+  "ezetimibe": {
+    "found": true,
+    "total_products": 104,
+    "combo_products_skipped": 7,
+    "fda_classes": [
+      "Dietary Cholesterol Absorption Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "GRANULE",
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "famciclovir": {
+    "found": true,
+    "total_products": 40,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Herpesvirus Nucleoside Analog DNA Polymerase Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "famotidine": {
+    "found": true,
+    "total_products": 463,
+    "combo_products_skipped": 2,
+    "fda_classes": [
+      "Histamine-2 Receptor Antagonist"
+    ],
+    "brand_names": [
+      "CareOne Acid Relief",
+      "acid controller",
+      "dg health acid reducer",
+      "dg health heartburn prevention"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "POWDER, FOR SUSPENSION",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "febuxostat": {
+    "found": true,
+    "total_products": 64,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Xanthine Oxidase Inhibitor"
+    ],
+    "brand_names": [
+      "ULORIC"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "felodipine": {
+    "found": true,
+    "total_products": 63,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Dihydropyridine Calcium Channel Blocker"
+    ],
+    "brand_names": [
+      "Felopdipine"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, EXTENDED RELEASE",
+      "TABLET, FILM COATED",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "fenofibrate": {
+    "found": true,
+    "total_products": 233,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Peroxisome Proliferator Receptor alpha Agonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "TABLET",
+      "TABLET, COATED",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "fentanyl": {
+    "found": true,
+    "total_products": 84,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Opioid Agonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "PATCH",
+      "PATCH, EXTENDED RELEASE",
+      "POWDER"
+    ]
+  },
+  "ferrous sulfate": {
+    "found": true,
+    "total_products": 7,
+    "combo_products_skipped": 1,
+    "fda_classes": [],
+    "brand_names": [
+      "FERRUM SULPHURICUM",
+      "Ferrum sulphuricum"
+    ],
+    "dosage_forms": [
+      "PELLET",
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "fexofenadine": {
+    "found": true,
+    "total_products": 287,
+    "combo_products_skipped": 5,
+    "fda_classes": [
+      "Histamine-1 Receptor Antagonist"
+    ],
+    "brand_names": [
+      "24HR Allergy Relief",
+      "Allergy Relief",
+      "Children Allergy",
+      "HIVES RELIEF",
+      "Leader 24HR Allergy Relief",
+      "Nuvicare Hives Relief",
+      "Wal-Fex"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "SUSPENSION",
+      "TABLET",
+      "TABLET, COATED",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "finasteride": {
+    "found": true,
+    "total_products": 100,
+    "combo_products_skipped": 1,
+    "fda_classes": [
+      "5-alpha Reductase Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, COATED",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "fingolimod": {
+    "found": true,
+    "total_products": 46,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Sphingosine 1-phosphate Receptor Modulator"
+    ],
+    "brand_names": [
+      "Gilenya",
+      "TASCENSO ODT"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER",
+      "TABLET, ORALLY DISINTEGRATING"
+    ]
+  },
+  "flecainide": {
+    "found": true,
+    "total_products": 68,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Antiarrhythmic"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "fluconazole": {
+    "found": true,
+    "total_products": 184,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Azole Antifungal"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION",
+      "POWDER",
+      "POWDER, FOR SUSPENSION",
+      "TABLET"
+    ]
+  },
+  "fludrocortisone": {
+    "found": true,
+    "total_products": 21,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "flumazenil": {
+    "found": true,
+    "total_products": 25,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Benzodiazepine Antagonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER"
+    ]
+  },
+  "fluorouracil": {
+    "found": true,
+    "total_products": 63,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Nucleoside Metabolic Inhibitor"
+    ],
+    "brand_names": [
+      "Efudex",
+      "FAVLYXA"
+    ],
+    "dosage_forms": [
+      "CREAM",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "SOLUTION"
+    ]
+  },
+  "fluoxetine": {
+    "found": true,
+    "total_products": 275,
+    "combo_products_skipped": 1,
+    "fda_classes": [
+      "Serotonin Reuptake Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "fluphenazine": {
+    "found": true,
+    "total_products": 133,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Phenothiazine"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION, SOLUTION",
+      "LIQUID",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "fluticasone": {
+    "found": true,
+    "total_products": 278,
+    "combo_products_skipped": 4,
+    "fda_classes": [
+      "Corticosteroid"
+    ],
+    "brand_names": [
+      "ALLERGY RELIEF",
+      "Allergy Relief",
+      "FLONASE ALLERGY RELIEF",
+      "FLONASE SENSIMIST ALLERGY RELIEF",
+      "XHANCE",
+      "allergy relief nasal"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "SPRAY",
+      "SPRAY, METERED"
+    ]
+  },
+  "fluvoxamine": {
+    "found": true,
+    "total_products": 54,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Serotonin Reuptake Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE, EXTENDED RELEASE",
+      "POWDER",
+      "TABLET",
+      "TABLET, COATED",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "folic acid": {
+    "found": true,
+    "total_products": 192,
+    "combo_products_skipped": 16,
+    "fda_classes": [],
+    "brand_names": [
+      "QUIOFIC"
+    ],
+    "dosage_forms": [
+      "SOLUTION",
+      "TABLET"
+    ]
+  },
+  "fondaparinux": {
+    "found": true,
+    "total_products": 33,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Factor Xa Inhibitor"
+    ],
+    "brand_names": [
+      "Arixtra"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER"
+    ]
+  },
+  "formoterol": {
+    "found": true,
+    "total_products": 67,
+    "combo_products_skipped": 11,
+    "fda_classes": [
+      "beta2-Adrenergic Agonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "SOLUTION"
+    ]
+  },
+  "fosfomycin": {
+    "found": true,
+    "total_products": 19,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [
+      "Contepo"
+    ],
+    "dosage_forms": [
+      "GRANULE",
+      "GRANULE, FOR SOLUTION",
+      "INJECTION, POWDER, FOR SOLUTION",
+      "POWDER"
+    ]
+  },
+  "fremanezumab": {
+    "found": true,
+    "total_products": 3,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [
+      "AJOVY"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "LIQUID"
+    ]
+  },
+  "frovatriptan": {
+    "found": true,
+    "total_products": 9,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Serotonin-1b and Serotonin-1d Receptor Agonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "furosemide": {
+    "found": true,
+    "total_products": 246,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Loop Diuretic"
+    ],
+    "brand_names": [
+      "FUROSCIX"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "SOLUTION",
+      "TABLET"
+    ]
+  },
+  "gabapentin": {
+    "found": true,
+    "total_products": 640,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Anti-epileptic Agent"
+    ],
+    "brand_names": [
+      "GABARONE"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "galcanezumab": {
+    "found": true,
+    "total_products": 7,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [
+      "EMGALITY"
+    ],
+    "dosage_forms": [
+      "INJECTION, SOLUTION",
+      "SOLUTION"
+    ]
+  },
+  "gemcitabine": {
+    "found": true,
+    "total_products": 59,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Nucleoside Metabolic Inhibitor"
+    ],
+    "brand_names": [
+      "AVGEMSI",
+      "INLEXZO"
+    ],
+    "dosage_forms": [
+      "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "SYSTEM",
+      "TABLET"
+    ]
+  },
+  "gemfibrozil": {
+    "found": true,
+    "total_products": 48,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Peroxisome Proliferator Receptor alpha Agonist"
+    ],
+    "brand_names": [
+      "Lopid"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "gentamicin": {
+    "found": true,
+    "total_products": 55,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Aminoglycoside Antibacterial"
+    ],
+    "brand_names": [
+      "Gentak"
+    ],
+    "dosage_forms": [
+      "CREAM",
+      "INJECTION, SOLUTION",
+      "OINTMENT",
+      "POWDER",
+      "SOLUTION",
+      "SOLUTION/ DROPS"
+    ]
+  },
+  "glatiramer": {
+    "found": true,
+    "total_products": 27,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [
+      "Copaxone",
+      "Glatopa"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER"
+    ]
+  },
+  "glimepiride": {
+    "found": true,
+    "total_products": 124,
+    "combo_products_skipped": 3,
+    "fda_classes": [
+      "Sulfonylurea"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "glipizide": {
+    "found": true,
+    "total_products": 184,
+    "combo_products_skipped": 3,
+    "fda_classes": [
+      "Sulfonylurea"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, EXTENDED RELEASE",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "glucosamine": {
+    "found": true,
+    "total_products": 11,
+    "combo_products_skipped": 10,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER"
+    ]
+  },
+  "glyburide": {
+    "found": true,
+    "total_products": 100,
+    "combo_products_skipped": 9,
+    "fda_classes": [
+      "Sulfonylurea"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "granisetron": {
+    "found": true,
+    "total_products": 29,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Serotonin-3 Receptor Antagonist"
+    ],
+    "brand_names": [
+      "Granisol",
+      "SANCUSO",
+      "SUSTOL"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "PATCH",
+      "POWDER",
+      "SOLUTION",
+      "TABLET"
+    ]
+  },
+  "griseofulvin": {
+    "found": true,
+    "total_products": 24,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Tubulin Inhibiting Agent"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "SUSPENSION",
+      "TABLET",
+      "TABLET, COATED"
+    ]
+  },
+  "guaifenesin": {
+    "found": true,
+    "total_products": 1647,
+    "combo_products_skipped": 19,
+    "fda_classes": [
+      "Expectorant"
+    ],
+    "brand_names": [
+      "Mucus Relief"
+    ],
+    "dosage_forms": [
+      "TABLET",
+      "TABLET, EXTENDED RELEASE"
+    ]
+  },
+  "guanfacine": {
+    "found": true,
+    "total_products": 132,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Central alpha-2 Adrenergic Agonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "TABLET",
+      "TABLET, EXTENDED RELEASE"
+    ]
+  },
+  "haloperidol": {
+    "found": true,
+    "total_products": 242,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Typical Antipsychotic"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "heparin": {
+    "found": true,
+    "total_products": 174,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Anti-coagulant",
+      "Unfractionated Heparin"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER"
+    ]
+  },
+  "hydralazine": {
+    "found": true,
+    "total_products": 169,
+    "combo_products_skipped": 3,
+    "fda_classes": [
+      "Arteriolar Vasodilator"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "hydrochlorothiazide": {
+    "found": true,
+    "total_products": 952,
+    "combo_products_skipped": 19,
+    "fda_classes": [
+      "Thiazide Diuretic"
+    ],
+    "brand_names": [
+      "INZIRQO"
+    ],
+    "dosage_forms": [
+      "POWDER, FOR SUSPENSION",
+      "TABLET"
+    ]
+  },
+  "hydrocodone": {
+    "found": true,
+    "total_products": 263,
+    "combo_products_skipped": 22,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER"
+    ]
+  },
+  "hydrocortisone": {
+    "found": true,
+    "total_products": 752,
+    "combo_products_skipped": 2,
+    "fda_classes": [
+      "Corticosteroid"
+    ],
+    "brand_names": [
+      "Cortisone 10 Overnight Creme",
+      "DermaCort Anti-itch",
+      "Hemmorex-HC",
+      "MEDI-FIRST",
+      "Rite Aid Cortisone"
+    ],
+    "dosage_forms": [
+      "CREAM",
+      "SPRAY",
+      "SUPPOSITORY",
+      "TABLET"
+    ]
+  },
+  "hydroxychloroquine": {
+    "found": true,
+    "total_products": 71,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Antimalarial",
+      "Antirheumatic Agent"
+    ],
+    "brand_names": [
+      "Plaquenil",
+      "SOVUNA"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "hydroxyzine": {
+    "found": true,
+    "total_products": 313,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Antihistamine"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "ibuprofen": {
+    "found": true,
+    "total_products": 1481,
+    "combo_products_skipped": 2,
+    "fda_classes": [
+      "Nonsteroidal Anti-inflammatory Drug"
+    ],
+    "brand_names": [
+      "Childrens Motrin",
+      "Migraine Relief",
+      "pain relief"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "CAPSULE, LIQUID FILLED",
+      "POWDER",
+      "SUSPENSION",
+      "TABLET",
+      "TABLET, CHEWABLE"
+    ]
+  },
+  "icosapent ethyl": {
+    "found": true,
+    "total_products": 66,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [
+      "Icosapent",
+      "Vascepa"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "CAPSULE, LIQUID FILLED",
+      "LIQUID",
+      "OIL"
+    ]
+  },
+  "idarucizumab": {
+    "found": true,
+    "total_products": 3,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Humanized Monoclonal Antibody Fragment"
+    ],
+    "brand_names": [
+      "Praxbind"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "LIQUID"
+    ]
+  },
+  "imatinib": {
+    "found": true,
+    "total_products": 70,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Kinase Inhibitor"
+    ],
+    "brand_names": [
+      "Gleevec"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "imipenem-cilastatin": {
+    "found": false,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "imipramine": {
+    "found": true,
+    "total_products": 45,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Tricyclic Antidepressant"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "imiquimod": {
+    "found": true,
+    "total_products": 26,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [
+      "Zyclara"
+    ],
+    "dosage_forms": [
+      "CREAM",
+      "POWDER"
+    ]
+  },
+  "infliximab": {
+    "found": true,
+    "total_products": 22,
+    "combo_products_skipped": 1,
+    "fda_classes": [
+      "Tumor Necrosis Factor Blocker"
+    ],
+    "brand_names": [
+      "AVSOLA",
+      "INFLECTRA",
+      "REMICADE",
+      "Renflexis",
+      "ZYMFENTRA"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      "INJECTION, SOLUTION",
+      "LIQUID",
+      "SOLUTION"
+    ]
+  },
+  "insulin": {
+    "found": true,
+    "total_products": 203,
+    "combo_products_skipped": 5,
+    "fda_classes": [
+      "Insulin",
+      "Insulin Analog"
+    ],
+    "brand_names": [
+      "AFREZZA",
+      "BASAGLAR KwikPen",
+      "Humalog Mix75/25",
+      "Humulin R U-500 KwikPen",
+      "MYXREDLIN",
+      "NOVOLOG",
+      "NovoLog Mix 70/30",
+      "Novolin N",
+      "Novolin R",
+      "TOUJEO",
+      "Tresiba"
+    ],
+    "dosage_forms": [
+      "INJECTION, SOLUTION",
+      "INJECTION, SUSPENSION",
+      "POWDER, METERED"
+    ]
+  },
+  "insulin glargine": {
+    "found": true,
+    "total_products": 29,
+    "combo_products_skipped": 1,
+    "fda_classes": [
+      "Insulin Analog"
+    ],
+    "brand_names": [
+      "BASAGLAR KwikPen",
+      "LANGLARA",
+      "LANTUS SOLOSTAR",
+      "Lantus",
+      "Lantus Solostar",
+      "REZVOGLAR KWIKPEN",
+      "Rezvoglar KwikPen",
+      "SEMGLEE",
+      "TOUJEO",
+      "TOUJEO Max"
+    ],
+    "dosage_forms": [
+      "CRYSTAL",
+      "INJECTION, SOLUTION",
+      "POWDER"
+    ]
+  },
+  "ipratropium": {
+    "found": true,
+    "total_products": 64,
+    "combo_products_skipped": 6,
+    "fda_classes": [
+      "Anticholinergic"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "AEROSOL",
+      "POWDER",
+      "SOLUTION",
+      "SPRAY",
+      "SPRAY, METERED"
+    ]
+  },
+  "irbesartan": {
+    "found": true,
+    "total_products": 142,
+    "combo_products_skipped": 1,
+    "fda_classes": [
+      "Angiotensin 2 Receptor Blocker"
+    ],
+    "brand_names": [
+      "Avapro"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "isocarboxazid": {
+    "found": true,
+    "total_products": 2,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Monoamine Oxidase Inhibitor"
+    ],
+    "brand_names": [
+      "MARPLAN"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "isoniazid": {
+    "found": true,
+    "total_products": 35,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Antimycobacterial"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "SOLUTION",
+      "TABLET"
+    ]
+  },
+  "isosorbide mononitrate": {
+    "found": true,
+    "total_products": 64,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Nitrate Vasodilator"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, EXTENDED RELEASE"
+    ]
+  },
+  "isotretinoin": {
+    "found": true,
+    "total_products": 109,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Retinoid"
+    ],
+    "brand_names": [
+      "Absorica",
+      "ZENATANE"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "CAPSULE, GELATIN COATED",
+      "CAPSULE, LIQUID FILLED",
+      "POWDER"
+    ]
+  },
+  "itraconazole": {
+    "found": true,
+    "total_products": 36,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Azole Antifungal"
+    ],
+    "brand_names": [
+      "SPORANOX",
+      "Tolsura"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "CAPSULE, COATED PELLETS",
+      "CAPSULE, GELATIN COATED",
+      "POWDER",
+      "SOLUTION"
+    ]
+  },
+  "ivabradine": {
+    "found": true,
+    "total_products": 32,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Hyperpolarization-activated Cyclic Nucleotide-gated Channel Blocker"
+    ],
+    "brand_names": [
+      "Corlanor"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "SOLUTION",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "ivermectin": {
+    "found": true,
+    "total_products": 71,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Antiparasitic",
+      "Pediculicide"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CREAM",
+      "EMULSION",
+      "LOTION",
+      "LOTION/SHAMPOO",
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "ketamine": {
+    "found": true,
+    "total_products": 43,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "General Anesthetic"
+    ],
+    "brand_names": [
+      "Ketalar"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "INJECTION, SOLUTION, CONCENTRATE",
+      "POWDER"
+    ]
+  },
+  "ketoconazole": {
+    "found": true,
+    "total_products": 97,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Azole Antifungal"
+    ],
+    "brand_names": [
+      "KetoconClear Cream",
+      "Ketodan"
+    ],
+    "dosage_forms": [
+      "AEROSOL, FOAM",
+      "CREAM",
+      "LIQUID",
+      "POWDER",
+      "SHAMPOO",
+      "SHAMPOO, SUSPENSION"
+    ]
+  },
+  "labetalol": {
+    "found": true,
+    "total_products": 163,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "beta-Adrenergic Blocker"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "lacosamide": {
+    "found": true,
+    "total_products": 196,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [
+      "Vimpat"
+    ],
+    "dosage_forms": [
+      "CAPSULE, EXTENDED RELEASE",
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "POWDER, FOR SOLUTION",
+      "SOLUTION"
+    ]
+  },
+  "lactulose": {
+    "found": true,
+    "total_products": 48,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Osmotic Laxative"
+    ],
+    "brand_names": [
+      "Enulose",
+      "KRISTALOSE"
+    ],
+    "dosage_forms": [
+      "LIQUID",
+      "POWDER",
+      "POWDER, FOR SOLUTION",
+      "SOLUTION"
+    ]
+  },
+  "lamotrigine": {
+    "found": true,
+    "total_products": 334,
+    "combo_products_skipped": 3,
+    "fda_classes": [
+      "Anti-epileptic Agent",
+      "Mood Stabilizer"
+    ],
+    "brand_names": [
+      "LAMICTAL"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, EXTENDED RELEASE",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "lansoprazole": {
+    "found": true,
+    "total_products": 156,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Proton Pump Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE, DELAYED RELEASE",
+      "CAPSULE, DELAYED RELEASE PELLETS",
+      "PELLET",
+      "POWDER",
+      "TABLET, ORALLY DISINTEGRATING, DELAYED RELEASE"
+    ]
+  },
+  "latanoprost": {
+    "found": true,
+    "total_products": 45,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [
+      "IYUZEH",
+      "XALATAN"
+    ],
+    "dosage_forms": [
+      "LIQUID",
+      "OIL",
+      "POWDER",
+      "SOLUTION",
+      "SOLUTION/ DROPS"
+    ]
+  },
+  "ledipasvir-sofosbuvir": {
+    "found": false,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "leflunomide": {
+    "found": true,
+    "total_products": 50,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Antirheumatic Agent"
+    ],
+    "brand_names": [
+      "Arava"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "lenalidomide": {
+    "found": true,
+    "total_products": 135,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Thalidomide Analog"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER"
+    ]
+  },
+  "letrozole": {
+    "found": true,
+    "total_products": 36,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Aromatase Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "levetiracetam": {
+    "found": true,
+    "total_products": 351,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "SOLUTION",
+      "TABLET",
+      "TABLET, EXTENDED RELEASE"
+    ]
+  },
+  "levodopa-carbidopa": {
+    "found": false,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "levofloxacin": {
+    "found": true,
+    "total_products": 144,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "levothyroxine": {
+    "found": true,
+    "total_products": 668,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "l-Thyroxine"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "lidocaine": {
+    "found": true,
+    "total_products": 1836,
+    "combo_products_skipped": 4,
+    "fda_classes": [
+      "Amide Local Anesthetic",
+      "Antiarrhythmic"
+    ],
+    "brand_names": [
+      "AKTEN",
+      "GREEN GUARD Topical Pain Relief",
+      "HemAway",
+      "LAIYINHE Numbing Cream Anorectal (Hemorrhoidal) Cream",
+      "MEDI-FIRST Topical Analgesic",
+      "Roll-On Pain Relief Liquid"
+    ],
+    "dosage_forms": [
+      "CREAM",
+      "GEL",
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "OINTMENT",
+      "PATCH"
+    ]
+  },
+  "linaclotide": {
+    "found": true,
+    "total_products": 13,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Guanylate Cyclase-C Agonist"
+    ],
+    "brand_names": [
+      "Linzess"
+    ],
+    "dosage_forms": [
+      "CAPSULE, GELATIN COATED",
+      "POWDER"
+    ]
+  },
+  "linagliptin": {
+    "found": true,
+    "total_products": 39,
+    "combo_products_skipped": 10,
+    "fda_classes": [
+      "Dipeptidyl Peptidase 4 Inhibitor"
+    ],
+    "brand_names": [
+      "Tradjenta"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "linezolid": {
+    "found": true,
+    "total_products": 61,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Oxazolidinone Antibacterial"
+    ],
+    "brand_names": [
+      "Zyvox"
+    ],
+    "dosage_forms": [
+      "GRANULE, FOR SUSPENSION",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "SUSPENSION",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "liothyronine": {
+    "found": true,
+    "total_products": 97,
+    "combo_products_skipped": 2,
+    "fda_classes": [
+      "l-Triiodothyronine"
+    ],
+    "brand_names": [
+      "Liomny"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "liraglutide": {
+    "found": true,
+    "total_products": 63,
+    "combo_products_skipped": 1,
+    "fda_classes": [
+      "GLP-1 Receptor Agonist"
+    ],
+    "brand_names": [
+      "Saxenda",
+      "Victoza"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER"
+    ]
+  },
+  "lisdexamfetamine": {
+    "found": true,
+    "total_products": 195,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Central Nervous System Stimulant"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER",
+      "TABLET, CHEWABLE"
+    ]
+  },
+  "lisinopril": {
+    "found": true,
+    "total_products": 397,
+    "combo_products_skipped": 7,
+    "fda_classes": [
+      "Angiotensin Converting Enzyme Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "TABLET"
+    ]
+  },
+  "lithium": {
+    "found": true,
+    "total_products": 224,
+    "combo_products_skipped": 7,
+    "fda_classes": [
+      "Mood Stabilizer"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "CAPSULE, GELATIN COATED",
+      "PELLET",
+      "POWDER",
+      "SOLUTION",
+      "TABLET, EXTENDED RELEASE"
+    ]
+  },
+  "loperamide": {
+    "found": true,
+    "total_products": 257,
+    "combo_products_skipped": 3,
+    "fda_classes": [
+      "Opioid Agonist"
+    ],
+    "brand_names": [
+      "Anti Diarrheal",
+      "Anti-Diarrheal",
+      "MEDIQUE Diamode",
+      "anti diarrheal",
+      "anti-diarrheal",
+      "injoy diarrhea relief"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "CAPSULE, LIQUID FILLED",
+      "POWDER",
+      "SOLUTION",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "loratadine": {
+    "found": true,
+    "total_products": 453,
+    "combo_products_skipped": 4,
+    "fda_classes": [],
+    "brand_names": [
+      "ALLERGY RELIEF",
+      "All Day Allergy Relief",
+      "Allergy Relief",
+      "CONTAC Allergy",
+      "Claritin",
+      "CounterAct Allergy",
+      "MEDIQUE Loradamed",
+      "careone childrens allergy relief"
+    ],
+    "dosage_forms": [
+      "CAPSULE, LIQUID FILLED",
+      "POWDER",
+      "SOLUTION",
+      "TABLET",
+      "TABLET, CHEWABLE",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "lorazepam": {
+    "found": true,
+    "total_products": 159,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Benzodiazepine"
+    ],
+    "brand_names": [
+      "LOREEV XR"
+    ],
+    "dosage_forms": [
+      "CAPSULE, EXTENDED RELEASE",
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "losartan": {
+    "found": true,
+    "total_products": 349,
+    "combo_products_skipped": 14,
+    "fda_classes": [
+      "Angiotensin 2 Receptor Blocker"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "lovastatin": {
+    "found": true,
+    "total_products": 82,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "HMG-CoA Reductase Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "lurasidone": {
+    "found": true,
+    "total_products": 176,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Atypical Antipsychotic"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, COATED",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "mannitol": {
+    "found": true,
+    "total_products": 19,
+    "combo_products_skipped": 4,
+    "fda_classes": [
+      "Osmotic Diuretic"
+    ],
+    "brand_names": [
+      "Osmitrol"
+    ],
+    "dosage_forms": [
+      "INJECTION, SOLUTION",
+      "POWDER"
+    ]
+  },
+  "mebendazole": {
+    "found": true,
+    "total_products": 14,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Anthelmintic"
+    ],
+    "brand_names": [
+      "VERMOX"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, CHEWABLE"
+    ]
+  },
+  "meclizine": {
+    "found": true,
+    "total_products": 181,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Antiemetic"
+    ],
+    "brand_names": [
+      "BONINE",
+      "BONINE MAX",
+      "Motion Sickness Relief",
+      "Pepto Nausea Motion Sickness"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, CHEWABLE"
+    ]
+  },
+  "medroxyprogesterone": {
+    "found": true,
+    "total_products": 72,
+    "combo_products_skipped": 2,
+    "fda_classes": [
+      "Progestin"
+    ],
+    "brand_names": [
+      "Depo-Provera",
+      "Provera"
+    ],
+    "dosage_forms": [
+      "INJECTION, SUSPENSION",
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "melatonin": {
+    "found": true,
+    "total_products": 59,
+    "combo_products_skipped": 16,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": [
+      "LIQUID",
+      "POWDER"
+    ]
+  },
+  "memantine": {
+    "found": true,
+    "total_products": 176,
+    "combo_products_skipped": 1,
+    "fda_classes": [
+      "N-methyl-D-aspartate Receptor Antagonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE, EXTENDED RELEASE",
+      "POWDER",
+      "SOLUTION",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "meperidine": {
+    "found": true,
+    "total_products": 16,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Opioid Agonist"
+    ],
+    "brand_names": [
+      "DEMEROL"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "SOLUTION",
+      "TABLET"
+    ]
+  },
+  "meropenem": {
+    "found": true,
+    "total_products": 54,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Penem Antibacterial"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, POWDER, FOR SOLUTION",
+      "POWDER"
+    ]
+  },
+  "mesalamine": {
+    "found": true,
+    "total_products": 107,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Aminosalicylate"
+    ],
+    "brand_names": [
+      "Canasa"
+    ],
+    "dosage_forms": [
+      "CAPSULE, EXTENDED RELEASE",
+      "ENEMA",
+      "POWDER",
+      "SUPPOSITORY",
+      "SUSPENSION",
+      "TABLET, DELAYED RELEASE"
+    ]
+  },
+  "metformin": {
+    "found": true,
+    "total_products": 737,
+    "combo_products_skipped": 7,
+    "fda_classes": [
+      "Biguanide"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "TABLET",
+      "TABLET, EXTENDED RELEASE",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "methadone": {
+    "found": true,
+    "total_products": 60,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Opioid Agonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CONCENTRATE",
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "SOLUTION",
+      "TABLET"
+    ]
+  },
+  "methimazole": {
+    "found": true,
+    "total_products": 59,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Thyroid Hormone Synthesis Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "methocarbamol": {
+    "found": true,
+    "total_products": 225,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Muscle Relaxant"
+    ],
+    "brand_names": [
+      "ROBAXIN",
+      "Tanlor"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "POWDER",
+      "TABLET",
+      "TABLET, COATED",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "methotrexate": {
+    "found": true,
+    "total_products": 92,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Folate Analog Metabolic Inhibitor"
+    ],
+    "brand_names": [
+      "Trexall"
+    ],
+    "dosage_forms": [
+      "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "SOLUTION",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "methylphenidate": {
+    "found": true,
+    "total_products": 305,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Central Nervous System Stimulant"
+    ],
+    "brand_names": [
+      "CONCERTA",
+      "Ritalin LA"
+    ],
+    "dosage_forms": [
+      "CAPSULE, EXTENDED RELEASE",
+      "POWDER",
+      "SOLUTION",
+      "TABLET",
+      "TABLET, CHEWABLE",
+      "TABLET, EXTENDED RELEASE"
+    ]
+  },
+  "methylprednisolone": {
+    "found": true,
+    "total_products": 181,
+    "combo_products_skipped": 3,
+    "fda_classes": [
+      "Corticosteroid"
+    ],
+    "brand_names": [
+      "Depo-Medrol",
+      "SOLU-MEDROL"
+    ],
+    "dosage_forms": [
+      "INJECTION, POWDER, FOR SOLUTION",
+      "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      "INJECTION, SUSPENSION",
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "metoclopramide": {
+    "found": true,
+    "total_products": 89,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Dopamine-2 Receptor Antagonist"
+    ],
+    "brand_names": [
+      "GIMOTI"
+    ],
+    "dosage_forms": [
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "SOLUTION",
+      "SPRAY",
+      "TABLET"
+    ]
+  },
+  "metoprolol": {
+    "found": true,
+    "total_products": 561,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "beta-Adrenergic Blocker"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, EXTENDED RELEASE",
+      "TABLET, FILM COATED",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "metronidazole": {
+    "found": true,
+    "total_products": 203,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Nitroimidazole Antimicrobial"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "GEL",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "micafungin": {
+    "found": true,
+    "total_products": 36,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Echinocandin Antifungal"
+    ],
+    "brand_names": [
+      "Mycamine"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      "POWDER"
+    ]
+  },
+  "midazolam": {
+    "found": true,
+    "total_products": 95,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Benzodiazepine"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "SYRUP"
+    ]
+  },
+  "minocycline": {
+    "found": true,
+    "total_products": 155,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Tetracycline-class Drug"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER",
+      "TABLET, EXTENDED RELEASE",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "minoxidil": {
+    "found": true,
+    "total_products": 358,
+    "combo_products_skipped": 4,
+    "fda_classes": [
+      "Arteriolar Vasodilator"
+    ],
+    "brand_names": [
+      "members mark hair regrowth treatment"
+    ],
+    "dosage_forms": [
+      "AEROSOL, FOAM",
+      "LIQUID",
+      "POWDER",
+      "SOLUTION",
+      "TABLET"
+    ]
+  },
+  "mirabegron": {
+    "found": true,
+    "total_products": 46,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "beta3-Adrenergic Agonist"
+    ],
+    "brand_names": [
+      "Myrbetriq"
+    ],
+    "dosage_forms": [
+      "GRANULE, FOR SUSPENSION, EXTENDED RELEASE",
+      "POWDER",
+      "TABLET, EXTENDED RELEASE",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "mirtazapine": {
+    "found": true,
+    "total_products": 166,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "misoprostol": {
+    "found": true,
+    "total_products": 62,
+    "combo_products_skipped": 11,
+    "fda_classes": [
+      "Prostaglandin E1 Analog"
+    ],
+    "brand_names": [
+      "Cytotec"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "modafinil": {
+    "found": true,
+    "total_products": 76,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Sympathomimetic-like Agent"
+    ],
+    "brand_names": [
+      "Provigil"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "mometasone": {
+    "found": true,
+    "total_products": 108,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Corticosteroid"
+    ],
+    "brand_names": [
+      "Allergy",
+      "Nasonex"
+    ],
+    "dosage_forms": [
+      "CREAM",
+      "IMPLANT",
+      "INHALANT",
+      "LOTION",
+      "OINTMENT",
+      "POWDER"
+    ]
+  },
+  "montelukast": {
+    "found": true,
+    "total_products": 117,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Leukotriene Receptor Antagonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, CHEWABLE",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "morphine": {
+    "found": true,
+    "total_products": 166,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Opioid Agonist"
+    ],
+    "brand_names": [
+      "Opium Tincture Deodorized"
+    ],
+    "dosage_forms": [
+      "CAPSULE, EXTENDED RELEASE",
+      "INJECTION",
+      "POWDER",
+      "SOLUTION",
+      "TABLET",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "moxifloxacin": {
+    "found": true,
+    "total_products": 79,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Fluoroquinolone Antibacterial"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "SOLUTION",
+      "SOLUTION/ DROPS",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "mupirocin": {
+    "found": true,
+    "total_products": 57,
+    "combo_products_skipped": 1,
+    "fda_classes": [
+      "RNA Synthetase Inhibitor Antibacterial"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CREAM",
+      "OINTMENT",
+      "POWDER"
+    ]
+  },
+  "mycophenolate": {
+    "found": true,
+    "total_products": 98,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Antimetabolite Immunosuppressant"
+    ],
+    "brand_names": [
+      "CellCept"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "INJECTION",
+      "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      "POWDER",
+      "POWDER, FOR SUSPENSION",
+      "TABLET"
+    ]
+  },
+  "n-acetylcysteine": {
+    "found": false,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "naloxone": {
+    "found": true,
+    "total_products": 217,
+    "combo_products_skipped": 18,
+    "fda_classes": [
+      "Opioid Antagonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "SPRAY"
+    ]
+  },
+  "naltrexone": {
+    "found": true,
+    "total_products": 118,
+    "combo_products_skipped": 2,
+    "fda_classes": [
+      "Opioid Antagonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "naproxen": {
+    "found": true,
+    "total_products": 579,
+    "combo_products_skipped": 1,
+    "fda_classes": [
+      "Nonsteroidal Anti-inflammatory Drug"
+    ],
+    "brand_names": [
+      "ALL DAY PAIN RELIEF",
+      "Aleve",
+      "All Day Back and Muscle Pain Relief",
+      "All Day Pain Relief",
+      "All Day Relief",
+      "all day relief"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "CAPSULE, LIQUID FILLED",
+      "TABLET",
+      "TABLET, COATED",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "naratriptan": {
+    "found": true,
+    "total_products": 13,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Serotonin-1b and Serotonin-1d Receptor Agonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "natalizumab": {
+    "found": true,
+    "total_products": 4,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Integrin Receptor Antagonist"
+    ],
+    "brand_names": [
+      "TYRUKO",
+      "TYSABRI"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "LIQUID"
+    ]
+  },
+  "nebivolol": {
+    "found": true,
+    "total_products": 108,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "beta-Adrenergic Blocker"
+    ],
+    "brand_names": [
+      "Bystolic"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "niacin": {
+    "found": true,
+    "total_products": 57,
+    "combo_products_skipped": 12,
+    "fda_classes": [
+      "Nicotinic Acid"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, EXTENDED RELEASE",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "nifedipine": {
+    "found": true,
+    "total_products": 157,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Dihydropyridine Calcium Channel Blocker"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER",
+      "TABLET, EXTENDED RELEASE",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "nitrofurantoin": {
+    "found": true,
+    "total_products": 159,
+    "combo_products_skipped": 11,
+    "fda_classes": [
+      "Nitrofuran Antibacterial"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER",
+      "SUSPENSION"
+    ]
+  },
+  "nitroglycerin": {
+    "found": true,
+    "total_products": 130,
+    "combo_products_skipped": 3,
+    "fda_classes": [
+      "Nitrate Vasodilator"
+    ],
+    "brand_names": [
+      "NITROSTAT",
+      "Nitrostat"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "LIQUID",
+      "OINTMENT",
+      "SPRAY",
+      "TABLET"
+    ]
+  },
+  "nivolumab": {
+    "found": true,
+    "total_products": 12,
+    "combo_products_skipped": 3,
+    "fda_classes": [
+      "Programmed Death Receptor-1 Blocking Antibody"
+    ],
+    "brand_names": [
+      "OPDIVO"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "LIQUID"
+    ]
+  },
+  "norepinephrine": {
+    "found": true,
+    "total_products": 64,
+    "combo_products_skipped": 2,
+    "fda_classes": [
+      "Catecholamine"
+    ],
+    "brand_names": [
+      "LEVOPHED"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "INJECTION, SOLUTION, CONCENTRATE",
+      "LIQUID",
+      "POWDER",
+      "SOLUTION"
+    ]
+  },
+  "nortriptyline": {
+    "found": true,
+    "total_products": 94,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Tricyclic Antidepressant"
+    ],
+    "brand_names": [
+      "PAMELOR"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER",
+      "SOLUTION"
+    ]
+  },
+  "nystatin": {
+    "found": true,
+    "total_products": 140,
+    "combo_products_skipped": 6,
+    "fda_classes": [
+      "Polyene Antifungal"
+    ],
+    "brand_names": [
+      "Nystop"
+    ],
+    "dosage_forms": [
+      "CREAM",
+      "OINTMENT",
+      "POWDER",
+      "SUSPENSION",
+      "TABLET, COATED",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "ocrelizumab": {
+    "found": true,
+    "total_products": 4,
+    "combo_products_skipped": 1,
+    "fda_classes": [
+      "CD20-directed Cytolytic Antibody"
+    ],
+    "brand_names": [
+      "OCREVUS"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "LIQUID"
+    ]
+  },
+  "octreotide": {
+    "found": true,
+    "total_products": 64,
+    "combo_products_skipped": 3,
+    "fda_classes": [
+      "Somatostatin Analog"
+    ],
+    "brand_names": [
+      "Mycapssa",
+      "Sandostatin"
+    ],
+    "dosage_forms": [
+      "CAPSULE, DELAYED RELEASE",
+      "INJECTION, SOLUTION",
+      "POWDER"
+    ]
+  },
+  "ofloxacin": {
+    "found": true,
+    "total_products": 87,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Quinolone Antimicrobial"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "SOLUTION",
+      "SOLUTION/ DROPS",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "olanzapine": {
+    "found": true,
+    "total_products": 289,
+    "combo_products_skipped": 3,
+    "fda_classes": [
+      "Atypical Antipsychotic"
+    ],
+    "brand_names": [
+      "ZYPREXA Zydis"
+    ],
+    "dosage_forms": [
+      "INJECTION, POWDER, FOR SOLUTION",
+      "TABLET",
+      "TABLET, FILM COATED",
+      "TABLET, ORALLY DISINTEGRATING"
+    ]
+  },
+  "olmesartan": {
+    "found": true,
+    "total_products": 326,
+    "combo_products_skipped": 12,
+    "fda_classes": [
+      "Angiotensin 2 Receptor Blocker"
+    ],
+    "brand_names": [
+      "Benicar"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "omalizumab": {
+    "found": true,
+    "total_products": 14,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Anti-IgE"
+    ],
+    "brand_names": [
+      "OMLYCLO",
+      "XOLAIR",
+      "Xolair",
+      "Xolair PFS"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "LIQUID"
+    ]
+  },
+  "omega-3": {
+    "found": true,
+    "total_products": 40,
+    "combo_products_skipped": 1,
+    "fda_classes": [
+      "Omega-3 Fatty Acid"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "CAPSULE, LIQUID FILLED",
+      "LIQUID",
+      "OIL"
+    ]
+  },
+  "omeprazole": {
+    "found": true,
+    "total_products": 461,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Proton Pump Inhibitor"
+    ],
+    "brand_names": [
+      "Acid Reducer"
+    ],
+    "dosage_forms": [
+      "CAPSULE, DELAYED RELEASE",
+      "CAPSULE, DELAYED RELEASE PELLETS",
+      "POWDER",
+      "TABLET, DELAYED RELEASE"
+    ]
+  },
+  "ondansetron": {
+    "found": true,
+    "total_products": 317,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Serotonin-3 Receptor Antagonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "SOLUTION",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "oseltamivir": {
+    "found": true,
+    "total_products": 146,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Neuraminidase Inhibitor"
+    ],
+    "brand_names": [
+      "Tamiflu"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER",
+      "POWDER, FOR SUSPENSION",
+      "SUSPENSION"
+    ]
+  },
+  "osimertinib": {
+    "found": true,
+    "total_products": 13,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Kinase Inhibitor"
+    ],
+    "brand_names": [
+      "TAGRISSO"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "oxazepam": {
+    "found": true,
+    "total_products": 21,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Benzodiazepine"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "CAPSULE, GELATIN COATED",
+      "POWDER"
+    ]
+  },
+  "oxcarbazepine": {
+    "found": true,
+    "total_products": 158,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Anti-epileptic Agent"
+    ],
+    "brand_names": [
+      "Trileptal"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "SUSPENSION",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "oxybutynin": {
+    "found": true,
+    "total_products": 129,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Cholinergic Muscarinic Antagonist"
+    ],
+    "brand_names": [
+      "OXYTROL"
+    ],
+    "dosage_forms": [
+      "PATCH",
+      "POWDER",
+      "TABLET",
+      "TABLET, EXTENDED RELEASE",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "oxycodone": {
+    "found": true,
+    "total_products": 313,
+    "combo_products_skipped": 6,
+    "fda_classes": [
+      "Opioid Agonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "SOLUTION",
+      "TABLET"
+    ]
+  },
+  "paclitaxel": {
+    "found": true,
+    "total_products": 66,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Microtubule Inhibitor"
+    ],
+    "brand_names": [
+      "ABRAXANE"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, POWDER, FOR SOLUTION",
+      "INJECTION, POWDER, LYOPHILIZED, FOR SUSPENSION",
+      "INJECTION, SOLUTION",
+      "INJECTION, SOLUTION, CONCENTRATE",
+      "POWDER"
+    ]
+  },
+  "paliperidone": {
+    "found": true,
+    "total_products": 123,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Atypical Antipsychotic"
+    ],
+    "brand_names": [
+      "INVEGA",
+      "INVEGA SUSTENNA"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "POWDER",
+      "TABLET, EXTENDED RELEASE",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "pantoprazole": {
+    "found": true,
+    "total_products": 201,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Proton Pump Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION, POWDER, FOR SOLUTION",
+      "POWDER",
+      "TABLET, DELAYED RELEASE"
+    ]
+  },
+  "paroxetine": {
+    "found": true,
+    "total_products": 197,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Serotonin Reuptake Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "SUSPENSION",
+      "TABLET, FILM COATED",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "pembrolizumab": {
+    "found": true,
+    "total_products": 10,
+    "combo_products_skipped": 4,
+    "fda_classes": [
+      "Programmed Death Receptor-1 Blocking Antibody"
+    ],
+    "brand_names": [
+      "KEYTRUDA"
+    ],
+    "dosage_forms": [
+      "INJECTION, SOLUTION",
+      "LIQUID",
+      "SOLUTION"
+    ]
+  },
+  "penicillin v": {
+    "found": true,
+    "total_products": 76,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Penicillin-class Antibacterial"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "POWDER, FOR SOLUTION",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "perampanel": {
+    "found": true,
+    "total_products": 53,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Noncompetitive AMPA Glutamate Receptor Antagonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "SUSPENSION",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "permethrin": {
+    "found": true,
+    "total_products": 21,
+    "combo_products_skipped": 1,
+    "fda_classes": [
+      "Pyrethroid"
+    ],
+    "brand_names": [
+      "ELIMITE",
+      "Nix",
+      "Nix Lice Killing Creme Rinse",
+      "Topcare lice killing creme rinse",
+      "good sense lice killing creme rinse"
+    ],
+    "dosage_forms": [
+      "CREAM",
+      "LIQUID",
+      "LOTION",
+      "POWDER",
+      "RINSE"
+    ]
+  },
+  "perphenazine": {
+    "found": true,
+    "total_products": 85,
+    "combo_products_skipped": 1,
+    "fda_classes": [
+      "Phenothiazine"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "phenazopyridine": {
+    "found": true,
+    "total_products": 127,
+    "combo_products_skipped": 3,
+    "fda_classes": [],
+    "brand_names": [
+      "Family Dollar Maximum Strength Urinary Pain Relief",
+      "Foster and Thrive Maximum Strength Urinary Pain Relief",
+      "Foster and Thrive Neighbor Pharmacy Urinary Pain Relief",
+      "Good Neighbor Pharmacy Urinary Pain Relief",
+      "Maximum Strength Urinary Pain Relief",
+      "Nuvicare-Urinary Pain Relief Maximum Strength",
+      "Preferred Maximum Strength Urinary Pain Relief",
+      "Sunmark Maximum Strength Urinary Pain Relief",
+      "UTI PAIN RELIEF",
+      "Uqora Maximum UTI Pain Relief"
+    ],
+    "dosage_forms": [
+      "TABLET"
+    ]
+  },
+  "phenelzine": {
+    "found": true,
+    "total_products": 6,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Monoamine Oxidase Inhibitor"
+    ],
+    "brand_names": [
+      "Nardil"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "phenobarbital": {
+    "found": true,
+    "total_products": 208,
+    "combo_products_skipped": 5,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION",
+      "POWDER",
+      "SOLUTION",
+      "TABLET"
+    ]
+  },
+  "phenylephrine": {
+    "found": true,
+    "total_products": 1915,
+    "combo_products_skipped": 23,
+    "fda_classes": [
+      "alpha-1 Adrenergic Agonist"
+    ],
+    "brand_names": [
+      "Sinus Congestion"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "phenytoin": {
+    "found": true,
+    "total_products": 73,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Anti-epileptic Agent"
+    ],
+    "brand_names": [
+      "DILANTIN",
+      "Dilantin Infatabs",
+      "Dilantin-125",
+      "Phenytek"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "CAPSULE, EXTENDED RELEASE",
+      "INJECTION",
+      "POWDER",
+      "SUSPENSION",
+      "TABLET, CHEWABLE"
+    ]
+  },
+  "pioglitazone": {
+    "found": true,
+    "total_products": 132,
+    "combo_products_skipped": 9,
+    "fda_classes": [
+      "Peroxisome Proliferator Receptor alpha Agonist",
+      "Peroxisome Proliferator Receptor gamma Agonist",
+      "Thiazolidinedione"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "piperacillin-tazobactam": {
+    "found": false,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "polyethylene glycol": {
+    "found": true,
+    "total_products": 284,
+    "combo_products_skipped": 13,
+    "fda_classes": [
+      "Osmotic Laxative"
+    ],
+    "brand_names": [
+      "CLEARLAX",
+      "Dulcolax",
+      "EasyLAX",
+      "Equate ClearLAX",
+      "Laxative",
+      "MiraLAX",
+      "Winco"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "POWDER, FOR SOLUTION"
+    ]
+  },
+  "posaconazole": {
+    "found": true,
+    "total_products": 62,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Azole Antifungal"
+    ],
+    "brand_names": [
+      "NOXAFIL"
+    ],
+    "dosage_forms": [
+      "GRANULE",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "SOLUTION",
+      "SUSPENSION",
+      "TABLET"
+    ]
+  },
+  "pramipexole": {
+    "found": true,
+    "total_products": 153,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Nonergot Dopamine Agonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, EXTENDED RELEASE"
+    ]
+  },
+  "prasugrel": {
+    "found": true,
+    "total_products": 31,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "P2Y12 Platelet Inhibitor"
+    ],
+    "brand_names": [
+      "Effient"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, COATED",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "pravastatin": {
+    "found": true,
+    "total_products": 195,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "HMG-CoA Reductase Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "praziquantel": {
+    "found": true,
+    "total_products": 24,
+    "combo_products_skipped": 9,
+    "fda_classes": [
+      "Anthelmintic"
+    ],
+    "brand_names": [
+      "Biltricide"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "prednisolone": {
+    "found": true,
+    "total_products": 106,
+    "combo_products_skipped": 1,
+    "fda_classes": [
+      "Corticosteroid"
+    ],
+    "brand_names": [
+      "Orapred ODT"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "SOLUTION",
+      "SUSPENSION/ DROPS",
+      "TABLET",
+      "TABLET, ORALLY DISINTEGRATING"
+    ]
+  },
+  "prednisone": {
+    "found": true,
+    "total_products": 325,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Corticosteroid"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, DELAYED RELEASE"
+    ]
+  },
+  "pregabalin": {
+    "found": true,
+    "total_products": 582,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "primidone": {
+    "found": true,
+    "total_products": 52,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Anti-epileptic Agent"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "probenecid": {
+    "found": true,
+    "total_products": 18,
+    "combo_products_skipped": 6,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "probiotics": {
+    "found": true,
+    "total_products": 2,
+    "combo_products_skipped": 2,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": []
+  },
+  "prochlorperazine": {
+    "found": true,
+    "total_products": 91,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Phenothiazine"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION",
+      "LIQUID",
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "progesterone": {
+    "found": true,
+    "total_products": 204,
+    "combo_products_skipped": 4,
+    "fda_classes": [
+      "Progesterone"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "INJECTION, SOLUTION",
+      "LIQUID",
+      "POWDER"
+    ]
+  },
+  "promethazine": {
+    "found": true,
+    "total_products": 172,
+    "combo_products_skipped": 2,
+    "fda_classes": [
+      "Phenothiazine"
+    ],
+    "brand_names": [
+      "PROMETHEGAN"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "POWDER",
+      "SOLUTION",
+      "SUPPOSITORY",
+      "SYRUP",
+      "TABLET"
+    ]
+  },
+  "propafenone": {
+    "found": true,
+    "total_products": 72,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Antiarrhythmic"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE, EXTENDED RELEASE",
+      "POWDER",
+      "TABLET, COATED",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "propofol": {
+    "found": true,
+    "total_products": 50,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "General Anesthetic"
+    ],
+    "brand_names": [
+      "Diprivan"
+    ],
+    "dosage_forms": [
+      "INJECTION, EMULSION",
+      "LIQUID",
+      "POWDER"
+    ]
+  },
+  "propranolol": {
+    "found": true,
+    "total_products": 242,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "beta-Adrenergic Blocker"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE, EXTENDED RELEASE",
+      "INJECTION",
+      "SOLUTION",
+      "TABLET"
+    ]
+  },
+  "propylthiouracil": {
+    "found": true,
+    "total_products": 13,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Thyroid Hormone Synthesis Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "protamine": {
+    "found": true,
+    "total_products": 9,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Heparin Reversal Agent"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION, SOLUTION",
+      "POWDER"
+    ]
+  },
+  "pseudoephedrine": {
+    "found": true,
+    "total_products": 388,
+    "combo_products_skipped": 20,
+    "fda_classes": [
+      "alpha-Adrenergic Agonist"
+    ],
+    "brand_names": [
+      "Sinus Pressure and Congestion Relief Maximum Strength",
+      "Sinus and Congestion Non-Drowsy",
+      "SudoGest",
+      "nasal decongestant"
+    ],
+    "dosage_forms": [
+      "TABLET, EXTENDED RELEASE",
+      "TABLET, FILM COATED",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "pyrazinamide": {
+    "found": true,
+    "total_products": 9,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Antimycobacterial"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "quetiapine": {
+    "found": true,
+    "total_products": 418,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Atypical Antipsychotic"
+    ],
+    "brand_names": [
+      "SEROQUEL"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, EXTENDED RELEASE",
+      "TABLET, FILM COATED",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "rabeprazole": {
+    "found": true,
+    "total_products": 52,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Proton Pump Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, DELAYED RELEASE"
+    ]
+  },
+  "raloxifene": {
+    "found": true,
+    "total_products": 39,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Estrogen Agonist/Antagonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, COATED",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "ramelteon": {
+    "found": true,
+    "total_products": 54,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Melatonin Receptor Agonist"
+    ],
+    "brand_names": [
+      "Rozerem"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "ramipril": {
+    "found": true,
+    "total_products": 82,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Angiotensin Converting Enzyme Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER"
+    ]
+  },
+  "ranolazine": {
+    "found": true,
+    "total_products": 79,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Anti-anginal"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, EXTENDED RELEASE",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "rasagiline": {
+    "found": true,
+    "total_products": 41,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Monoamine Oxidase Inhibitor"
+    ],
+    "brand_names": [
+      "Azilect"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "repaglinide": {
+    "found": true,
+    "total_products": 31,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Glinide"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "ribavirin": {
+    "found": true,
+    "total_products": 8,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Nucleoside Analog Antiviral"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER",
+      "POWDER, FOR SOLUTION",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "rifampin": {
+    "found": true,
+    "total_products": 29,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Rifamycin Antibacterial"
+    ],
+    "brand_names": [
+      "Rifadin IV"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      "POWDER"
+    ]
+  },
+  "rifaximin": {
+    "found": true,
+    "total_products": 24,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Rifamycin Antibacterial"
+    ],
+    "brand_names": [
+      "XIFAXAN"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, COATED"
+    ]
+  },
+  "riluzole": {
+    "found": true,
+    "total_products": 17,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Benzothiazole"
+    ],
+    "brand_names": [
+      "TIGLUTIK",
+      "Teglutik"
+    ],
+    "dosage_forms": [
+      "FILM",
+      "LIQUID",
+      "POWDER",
+      "SUSPENSION",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "risedronate": {
+    "found": true,
+    "total_products": 43,
+    "combo_products_skipped": 6,
+    "fda_classes": [
+      "Bisphosphonate"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, DELAYED RELEASE",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "risperidone": {
+    "found": true,
+    "total_products": 223,
+    "combo_products_skipped": 4,
+    "fda_classes": [
+      "Atypical Antipsychotic"
+    ],
+    "brand_names": [
+      "RISPERDAL",
+      "RISPERDAL M-TAB"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "SOLUTION",
+      "TABLET",
+      "TABLET, FILM COATED",
+      "TABLET, ORALLY DISINTEGRATING"
+    ]
+  },
+  "rituximab": {
+    "found": true,
+    "total_products": 22,
+    "combo_products_skipped": 2,
+    "fda_classes": [
+      "CD20-directed Cytolytic Antibody"
+    ],
+    "brand_names": [
+      "Riabni",
+      "Rituxan",
+      "Ruxience",
+      "Truxima"
+    ],
+    "dosage_forms": [
+      "INJECTION, SOLUTION",
+      "INJECTION, SOLUTION, CONCENTRATE",
+      "LIQUID",
+      "SOLUTION"
+    ]
+  },
+  "rivaroxaban": {
+    "found": true,
+    "total_products": 88,
+    "combo_products_skipped": 1,
+    "fda_classes": [
+      "Factor Xa Inhibitor"
+    ],
+    "brand_names": [
+      "XARELTO",
+      "Xarelto"
+    ],
+    "dosage_forms": [
+      "FOR SUSPENSION",
+      "GRANULE, FOR SUSPENSION",
+      "POWDER",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "rizatriptan": {
+    "found": true,
+    "total_products": 93,
+    "combo_products_skipped": 1,
+    "fda_classes": [
+      "Serotonin-1b and Serotonin-1d Receptor Agonist"
+    ],
+    "brand_names": [
+      "RIZAFILM"
+    ],
+    "dosage_forms": [
+      "FILM",
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED",
+      "TABLET, ORALLY DISINTEGRATING"
+    ]
+  },
+  "rocuronium": {
+    "found": true,
+    "total_products": 80,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Nondepolarizing Neuromuscular Blocker"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER"
+    ]
+  },
+  "roflumilast": {
+    "found": true,
+    "total_products": 52,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Phosphodiesterase 4 Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "ropinirole": {
+    "found": true,
+    "total_products": 158,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Nonergot Dopamine Agonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "TABLET, EXTENDED RELEASE",
+      "TABLET, FILM COATED",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "rosuvastatin": {
+    "found": true,
+    "total_products": 309,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "HMG-CoA Reductase Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, COATED",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "sacubitril-valsartan": {
+    "found": true,
+    "total_products": 16,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER"
+    ]
+  },
+  "salicylic acid": {
+    "found": true,
+    "total_products": 1353,
+    "combo_products_skipped": 4,
+    "fda_classes": [],
+    "brand_names": [
+      "Acne Calming Water Cream",
+      "Acne Clarifying Cleanser",
+      "Aiilo WART REMOVER PATCHES",
+      "AmazingLink Liquid WART CORN REMOVER",
+      "Clear Smart Charcoal Blackhead Scrub",
+      "GOOD MOLECULE MAXIMUM STRENGHT ACNE",
+      "Kiehls Since 1851 Blue Herbal Acne Cleanser Treatment with Frankincense and Ginger Root",
+      "Lancome Paris Clarifique BX-Interceptor Topical Acne Clearing Treatment",
+      "Neutrogena Oil-Free Acne Wash Daily Scrub",
+      "OXY ADVANCED CARE MAXIMUM STRENGTH 3-in-1 ACNE PADS",
+      "PERSISTENT BODY ACNE WASH 8.5OZ",
+      "Shailee Psoriasis Treatment"
+    ],
+    "dosage_forms": [
+      "CREAM",
+      "GEL",
+      "LIQUID",
+      "LOTION",
+      "PATCH",
+      "POWDER"
+    ]
+  },
+  "salmeterol": {
+    "found": true,
+    "total_products": 74,
+    "combo_products_skipped": 19,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER"
+    ]
+  },
+  "saw palmetto": {
+    "found": true,
+    "total_products": 14,
+    "combo_products_skipped": 10,
+    "fda_classes": [],
+    "brand_names": [
+      "Sabal serrualata",
+      "Sabal serrulata"
+    ],
+    "dosage_forms": [
+      "PELLET"
+    ]
+  },
+  "secukinumab": {
+    "found": true,
+    "total_products": 6,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Interleukin-17A Antagonist"
+    ],
+    "brand_names": [
+      "COSENTYX"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION, CONCENTRATE",
+      "LIQUID"
+    ]
+  },
+  "selegiline": {
+    "found": true,
+    "total_products": 28,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Monoamine Oxidase Inhibitor",
+      "Monoamine Oxidase Type B Inhibitor"
+    ],
+    "brand_names": [
+      "EMSAM",
+      "ZELAPAR"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "PATCH",
+      "POWDER",
+      "TABLET",
+      "TABLET, ORALLY DISINTEGRATING"
+    ]
+  },
+  "selenium sulfide": {
+    "found": true,
+    "total_products": 54,
+    "combo_products_skipped": 2,
+    "fda_classes": [],
+    "brand_names": [
+      "Careone Medicated Dandruff",
+      "Dandruff",
+      "Hairitage Wash It Away Anti-Dandruff for Dry, Flaky Scalp",
+      "Head and Shoulders 2in1 Clinical Strength Dry Scalp Rescue",
+      "Head and Shoulders Clinical Strength Advanced Oil Control",
+      "Head and Shoulders Clinical Strength Dry Scalp Rescue",
+      "Prosoria Medicated",
+      "Selsun Blue 2-in-1",
+      "Topco Associates",
+      "Walgreens Dandruff and Conditioner Cleansing and Conditioning Anti-dandruff",
+      "amazon basics maximum strength dandruff Anti-dandruff",
+      "up and up Medicated Anti-dandruff Anti-dandruff, anti-seborrheic dermatitis, anti-psoriasis"
+    ],
+    "dosage_forms": [
+      "LIQUID",
+      "LOTION",
+      "LOTION/SHAMPOO",
+      "POWDER",
+      "SHAMPOO",
+      "SOLUTION"
+    ]
+  },
+  "semaglutide": {
+    "found": true,
+    "total_products": 136,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "GLP-1 Receptor Agonist"
+    ],
+    "brand_names": [
+      "OZEMPIC",
+      "Ozempic",
+      "WEGOVY"
+    ],
+    "dosage_forms": [
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "senna": {
+    "found": true,
+    "total_products": 47,
+    "combo_products_skipped": 14,
+    "fda_classes": [],
+    "brand_names": [
+      "Exchange select",
+      "Geri-kot",
+      "Senokot"
+    ],
+    "dosage_forms": [
+      "PELLET",
+      "SYRUP",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "sertraline": {
+    "found": true,
+    "total_products": 258,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Serotonin Reuptake Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "sevelamer": {
+    "found": true,
+    "total_products": 79,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Phosphate Binder"
+    ],
+    "brand_names": [
+      "Renvela"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "POWDER, FOR SUSPENSION",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "sildenafil": {
+    "found": true,
+    "total_products": 270,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Phosphodiesterase 5 Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "simvastatin": {
+    "found": true,
+    "total_products": 218,
+    "combo_products_skipped": 7,
+    "fda_classes": [
+      "HMG-CoA Reductase Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "sirolimus": {
+    "found": true,
+    "total_products": 65,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Kinase Inhibitor",
+      "mTOR Inhibitor Immunosuppressant"
+    ],
+    "brand_names": [
+      "HYFTOR"
+    ],
+    "dosage_forms": [
+      "GEL",
+      "POWDER",
+      "SOLUTION",
+      "TABLET",
+      "TABLET, FILM COATED",
+      "TABLET, SUGAR COATED"
+    ]
+  },
+  "sitagliptin": {
+    "found": true,
+    "total_products": 149,
+    "combo_products_skipped": 10,
+    "fda_classes": [
+      "Dipeptidyl Peptidase 4 Inhibitor"
+    ],
+    "brand_names": [
+      "JANUVIA"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "sofosbuvir": {
+    "found": true,
+    "total_products": 24,
+    "combo_products_skipped": 12,
+    "fda_classes": [
+      "Hepatitis C Virus Nucleotide Analog NS5B Polymerase Inhibitor"
+    ],
+    "brand_names": [
+      "Sovaldi"
+    ],
+    "dosage_forms": [
+      "PELLET",
+      "POWDER",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "solifenacin": {
+    "found": true,
+    "total_products": 65,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Cholinergic Muscarinic Antagonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, COATED",
+      "TABLET, FILM COATED",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "sotalol": {
+    "found": true,
+    "total_products": 83,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Antiarrhythmic"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "spironolactone": {
+    "found": true,
+    "total_products": 207,
+    "combo_products_skipped": 3,
+    "fda_classes": [
+      "Aldosterone Antagonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "SUSPENSION",
+      "TABLET",
+      "TABLET, COATED",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "succinylcholine": {
+    "found": true,
+    "total_products": 48,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Depolarizing Neuromuscular Blocker"
+    ],
+    "brand_names": [
+      "Anectine",
+      "QUELICIN"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER"
+    ]
+  },
+  "sucralfate": {
+    "found": true,
+    "total_products": 93,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Aluminum Complex"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "SUSPENSION",
+      "TABLET"
+    ]
+  },
+  "sugammadex": {
+    "found": true,
+    "total_products": 69,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [
+      "BRIDION"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER"
+    ]
+  },
+  "sulfasalazine": {
+    "found": true,
+    "total_products": 24,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Aminosalicylate"
+    ],
+    "brand_names": [
+      "Azulfidine",
+      "Azulfidine EN-tabs"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, DELAYED RELEASE"
+    ]
+  },
+  "sumatriptan": {
+    "found": true,
+    "total_products": 164,
+    "combo_products_skipped": 1,
+    "fda_classes": [
+      "Serotonin-1b and Serotonin-1d Receptor Agonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "SPRAY",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "suvorexant": {
+    "found": true,
+    "total_products": 16,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Orexin Receptor Antagonist"
+    ],
+    "brand_names": [
+      "BELSOMRA"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "tacrolimus": {
+    "found": true,
+    "total_products": 140,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Calcineurin Inhibitor Immunosuppressant"
+    ],
+    "brand_names": [
+      "Prograf"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "CAPSULE, GELATIN COATED",
+      "GRANULE, FOR SUSPENSION",
+      "OINTMENT",
+      "POWDER"
+    ]
+  },
+  "tadalafil": {
+    "found": true,
+    "total_products": 304,
+    "combo_products_skipped": 3,
+    "fda_classes": [
+      "Phosphodiesterase 5 Inhibitor"
+    ],
+    "brand_names": [
+      "Cialis"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "tamoxifen": {
+    "found": true,
+    "total_products": 29,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Estrogen Agonist/Antagonist"
+    ],
+    "brand_names": [
+      "SOLTAMOX"
+    ],
+    "dosage_forms": [
+      "LIQUID",
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "tamsulosin": {
+    "found": true,
+    "total_products": 81,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "alpha-Adrenergic Blocker"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "CAPSULE, GELATIN COATED",
+      "POWDER"
+    ]
+  },
+  "tazarotene": {
+    "found": true,
+    "total_products": 32,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Retinoid"
+    ],
+    "brand_names": [
+      "FABIOR",
+      "Trilitas"
+    ],
+    "dosage_forms": [
+      "AEROSOL, FOAM",
+      "CREAM",
+      "GEL",
+      "POWDER"
+    ]
+  },
+  "telmisartan": {
+    "found": true,
+    "total_products": 152,
+    "combo_products_skipped": 5,
+    "fda_classes": [
+      "Angiotensin 2 Receptor Blocker"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "temazepam": {
+    "found": true,
+    "total_products": 92,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Benzodiazepine"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE"
+    ]
+  },
+  "tenofovir": {
+    "found": true,
+    "total_products": 169,
+    "combo_products_skipped": 19,
+    "fda_classes": [
+      "Hepatitis B Virus Nucleoside Analog Reverse Transcriptase Inhibitor",
+      "Human Immunodeficiency Virus Nucleoside Analog Reverse Transcriptase Inhibitor"
+    ],
+    "brand_names": [
+      "VEMLIDY"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, COATED",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "terazosin": {
+    "found": true,
+    "total_products": 94,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "alpha-Adrenergic Blocker"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER"
+    ]
+  },
+  "terbinafine": {
+    "found": true,
+    "total_products": 106,
+    "combo_products_skipped": 1,
+    "fda_classes": [
+      "Allylamine Antifungal"
+    ],
+    "brand_names": [
+      "Athlete Foot Cream",
+      "Kroger Antifungal",
+      "Lamisil AT",
+      "Lamisil AT Cream",
+      "Silka Antifungal",
+      "Silka Jock Itch"
+    ],
+    "dosage_forms": [
+      "CREAM",
+      "POWDER",
+      "SPRAY",
+      "TABLET"
+    ]
+  },
+  "teriparatide": {
+    "found": true,
+    "total_products": 24,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Parathyroid Hormone Analog"
+    ],
+    "brand_names": [
+      "Bonsity",
+      "Forteo"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "LIQUID",
+      "POWDER"
+    ]
+  },
+  "testosterone": {
+    "found": true,
+    "total_products": 278,
+    "combo_products_skipped": 4,
+    "fda_classes": [
+      "Androgen"
+    ],
+    "brand_names": [
+      "Jatenzo",
+      "Natesto nasal gel"
+    ],
+    "dosage_forms": [
+      "CAPSULE, LIQUID FILLED",
+      "GEL, METERED",
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "SOLUTION"
+    ]
+  },
+  "tetrabenazine": {
+    "found": true,
+    "total_products": 33,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Vesicular Monoamine Transporter 2 Inhibitor"
+    ],
+    "brand_names": [
+      "Xenazine"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, COATED"
+    ]
+  },
+  "tetracycline": {
+    "found": true,
+    "total_products": 49,
+    "combo_products_skipped": 1,
+    "fda_classes": [
+      "Tetracycline-class Antimicrobial"
+    ],
+    "brand_names": [
+      "Honestly Battleborn First Aid for Real Man",
+      "Tetracyte First Aid and Antibiotic Topical",
+      "Viaderma Vitastem First Aid Topical Antibiotic",
+      "Vitastem",
+      "Vitastem First Aid Antibiotic"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "OINTMENT",
+      "POWDER",
+      "SOLUTION",
+      "SPRAY",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "theophylline": {
+    "found": true,
+    "total_products": 58,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Methylxanthine"
+    ],
+    "brand_names": [
+      "Theo-24"
+    ],
+    "dosage_forms": [
+      "CAPSULE, EXTENDED RELEASE",
+      "POWDER",
+      "SOLUTION",
+      "TABLET, EXTENDED RELEASE"
+    ]
+  },
+  "ticagrelor": {
+    "found": true,
+    "total_products": 85,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "P2Y12 Platelet Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "tigecycline": {
+    "found": true,
+    "total_products": 16,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Tetracycline-class Antibacterial"
+    ],
+    "brand_names": [
+      "Tygacil"
+    ],
+    "dosage_forms": [
+      "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      "POWDER"
+    ]
+  },
+  "tiotropium": {
+    "found": true,
+    "total_products": 17,
+    "combo_products_skipped": 1,
+    "fda_classes": [
+      "Anticholinergic"
+    ],
+    "brand_names": [
+      "Spiriva HandiHaler",
+      "Spiriva Respimat"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER",
+      "SPRAY, METERED"
+    ]
+  },
+  "tirzepatide": {
+    "found": true,
+    "total_products": 168,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "GLP-1 Receptor Agonist",
+      "Glucose-dependent Insulinotropic Polypeptide Receptor Agonist"
+    ],
+    "brand_names": [
+      "MOUNJARO",
+      "Mounjaro",
+      "ZEPBOUND"
+    ],
+    "dosage_forms": [
+      "INJECTION, SOLUTION",
+      "POWDER"
+    ]
+  },
+  "tizanidine": {
+    "found": true,
+    "total_products": 196,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Central alpha-2 Adrenergic Agonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "tobramycin": {
+    "found": true,
+    "total_products": 115,
+    "combo_products_skipped": 8,
+    "fda_classes": [
+      "Aminoglycoside Antibacterial"
+    ],
+    "brand_names": [
+      "Kitabis Pak"
+    ],
+    "dosage_forms": [
+      "INHALANT",
+      "INJECTION, POWDER, FOR SOLUTION",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "SOLUTION",
+      "SOLUTION/ DROPS"
+    ]
+  },
+  "tocilizumab": {
+    "found": true,
+    "total_products": 33,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Interleukin-6 Receptor Antagonist"
+    ],
+    "brand_names": [
+      "ACTEMRA",
+      "AVTOZMA",
+      "Actemra",
+      "Actemra ACTPen",
+      "TOFIDENCE",
+      "TYENNE",
+      "Tofidence"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "INJECTION, SOLUTION, CONCENTRATE",
+      "LIQUID"
+    ]
+  },
+  "tofacitinib": {
+    "found": true,
+    "total_products": 83,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Janus Kinase Inhibitor"
+    ],
+    "brand_names": [
+      "XELJANZ",
+      "XELJANZ XR"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "SOLUTION",
+      "TABLET, EXTENDED RELEASE",
+      "TABLET, FILM COATED",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "tolterodine": {
+    "found": true,
+    "total_products": 51,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Cholinergic Muscarinic Antagonist"
+    ],
+    "brand_names": [
+      "Detrol"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "CAPSULE, EXTENDED RELEASE",
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "topiramate": {
+    "found": true,
+    "total_products": 372,
+    "combo_products_skipped": 1,
+    "fda_classes": [],
+    "brand_names": [
+      "QUDEXY XR"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "CAPSULE, EXTENDED RELEASE",
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "torsemide": {
+    "found": true,
+    "total_products": 78,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Loop Diuretic"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "tramadol": {
+    "found": true,
+    "total_products": 165,
+    "combo_products_skipped": 4,
+    "fda_classes": [
+      "Opioid Agonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "SOLUTION",
+      "TABLET",
+      "TABLET, COATED",
+      "TABLET, EXTENDED RELEASE"
+    ]
+  },
+  "tranylcypromine": {
+    "found": true,
+    "total_products": 7,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Monoamine Oxidase Inhibitor"
+    ],
+    "brand_names": [
+      "PARNATE"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "trastuzumab": {
+    "found": true,
+    "total_products": 35,
+    "combo_products_skipped": 5,
+    "fda_classes": [
+      "HER2/neu Receptor Antagonist"
+    ],
+    "brand_names": [
+      "Enhertu",
+      "Herceptin",
+      "KADCYLA",
+      "Kanjinti",
+      "OGIVRI",
+      "Trazimera"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      "LIQUID",
+      "SOLUTION"
+    ]
+  },
+  "trazodone": {
+    "found": true,
+    "total_products": 182,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Serotonin Reuptake Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "GRANULE",
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "tretinoin": {
+    "found": true,
+    "total_products": 111,
+    "combo_products_skipped": 2,
+    "fda_classes": [
+      "Retinoid"
+    ],
+    "brand_names": [
+      "Retin-A"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "CREAM",
+      "GEL",
+      "POWDER"
+    ]
+  },
+  "triamcinolone": {
+    "found": true,
+    "total_products": 354,
+    "combo_products_skipped": 5,
+    "fda_classes": [
+      "Corticosteroid"
+    ],
+    "brand_names": [
+      "Nasal Allergy"
+    ],
+    "dosage_forms": [
+      "AEROSOL, SPRAY",
+      "CREAM",
+      "INJECTION, SUSPENSION",
+      "OINTMENT",
+      "POWDER",
+      "SPRAY, METERED"
+    ]
+  },
+  "triazolam": {
+    "found": true,
+    "total_products": 17,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Benzodiazepine"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET"
+    ]
+  },
+  "trihexyphenidyl": {
+    "found": true,
+    "total_products": 23,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "SOLUTION",
+      "SYRUP",
+      "TABLET"
+    ]
+  },
+  "trimethoprim-sulfamethoxazole": {
+    "found": false,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "turmeric": {
+    "found": true,
+    "total_products": 9,
+    "combo_products_skipped": 7,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": [
+      "AEROSOL, FOAM",
+      "LOTION"
+    ]
+  },
+  "umeclidinium": {
+    "found": true,
+    "total_products": 18,
+    "combo_products_skipped": 4,
+    "fda_classes": [
+      "Anticholinergic"
+    ],
+    "brand_names": [
+      "Incruse Ellipta"
+    ],
+    "dosage_forms": [
+      "AEROSOL, POWDER",
+      "POWDER"
+    ]
+  },
+  "upadacitinib": {
+    "found": true,
+    "total_products": 17,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Janus Kinase Inhibitor"
+    ],
+    "brand_names": [
+      "Rinvoq"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "SOLUTION",
+      "TABLET",
+      "TABLET, EXTENDED RELEASE"
+    ]
+  },
+  "ursodiol": {
+    "found": true,
+    "total_products": 66,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Bile Acid"
+    ],
+    "brand_names": [
+      "URSOLIGN",
+      "Urso 250",
+      "Urso Forte"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "ustekinumab": {
+    "found": true,
+    "total_products": 58,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Interleukin-12 Antagonist",
+      "Interleukin-23 Antagonist"
+    ],
+    "brand_names": [
+      "Otulfi",
+      "PYZCHIVA",
+      "STEQEYMA",
+      "WEZLANA"
+    ],
+    "dosage_forms": [
+      "INJECTION, SOLUTION",
+      "SOLUTION"
+    ]
+  },
+  "valacyclovir": {
+    "found": true,
+    "total_products": 126,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Herpes Simplex Virus Nucleoside Analog DNA Polymerase Inhibitor",
+      "Herpes Zoster Virus Nucleoside Analog DNA Polymerase Inhibitor",
+      "Herpesvirus Nucleoside Analog DNA Polymerase Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "valerian": {
+    "found": true,
+    "total_products": 19,
+    "combo_products_skipped": 12,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": [
+      "PELLET"
+    ]
+  },
+  "valganciclovir": {
+    "found": true,
+    "total_products": 44,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Cytomegalovirus Nucleoside Analog DNA Polymerase Inhibitor",
+      "Nucleoside Analog Antiviral"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "FOR SOLUTION",
+      "POWDER",
+      "POWDER, FOR SOLUTION",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "valproate": {
+    "found": true,
+    "total_products": 14,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Anti-epileptic Agent",
+      "Mood Stabilizer"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "INJECTION",
+      "INJECTION, SOLUTION",
+      "POWDER"
+    ]
+  },
+  "valsartan": {
+    "found": true,
+    "total_products": 478,
+    "combo_products_skipped": 9,
+    "fda_classes": [
+      "Angiotensin 2 Receptor Blocker"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "SOLUTION",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "vancomycin": {
+    "found": true,
+    "total_products": 185,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Glycopeptide Antibacterial"
+    ],
+    "brand_names": [
+      "TYZAVAN"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "INJECTION, POWDER, FOR SOLUTION",
+      "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      "INJECTION, SOLUTION",
+      "POWDER, FOR SOLUTION",
+      "SOLUTION"
+    ]
+  },
+  "varenicline": {
+    "found": true,
+    "total_products": 106,
+    "combo_products_skipped": 6,
+    "fda_classes": [
+      "Cholinergic Receptor Agonist",
+      "Partial Cholinergic Nicotinic Agonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "vasopressin": {
+    "found": true,
+    "total_products": 60,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": [
+      "INJECTION, SOLUTION",
+      "POWDER"
+    ]
+  },
+  "vedolizumab": {
+    "found": true,
+    "total_products": 10,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Integrin Receptor Antagonist"
+    ],
+    "brand_names": [
+      "ENTYVIO",
+      "ENTYVIO Pen",
+      "Entyvio"
+    ],
+    "dosage_forms": [
+      "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      "INJECTION, SOLUTION",
+      "LIQUID"
+    ]
+  },
+  "venlafaxine": {
+    "found": true,
+    "total_products": 367,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Serotonin and Norepinephrine Reuptake Inhibitor"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE, EXTENDED RELEASE",
+      "POWDER",
+      "TABLET",
+      "TABLET, EXTENDED RELEASE"
+    ]
+  },
+  "verapamil": {
+    "found": true,
+    "total_products": 164,
+    "combo_products_skipped": 1,
+    "fda_classes": [
+      "Calcium Channel Blocker"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE, EXTENDED RELEASE",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "TABLET",
+      "TABLET, EXTENDED RELEASE",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "vigabatrin": {
+    "found": true,
+    "total_products": 37,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Anti-epileptic Agent"
+    ],
+    "brand_names": [
+      "SABRIL",
+      "VIGADRONE"
+    ],
+    "dosage_forms": [
+      "FOR SOLUTION",
+      "POWDER",
+      "POWDER, FOR SOLUTION",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "vilazodone": {
+    "found": true,
+    "total_products": 45,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [
+      "VIIBRYD"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "vitamin b12": {
+    "found": true,
+    "total_products": 8,
+    "combo_products_skipped": 8,
+    "fda_classes": [],
+    "brand_names": [],
+    "dosage_forms": []
+  },
+  "vitamin d": {
+    "found": true,
+    "total_products": 25,
+    "combo_products_skipped": 24,
+    "fda_classes": [
+      "Provitamin D2 Compound"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE, LIQUID FILLED"
+    ]
+  },
+  "voriconazole": {
+    "found": true,
+    "total_products": 81,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Azole Antifungal"
+    ],
+    "brand_names": [
+      "VFEND"
+    ],
+    "dosage_forms": [
+      "INJECTION",
+      "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      "INJECTION, SOLUTION",
+      "POWDER",
+      "POWDER, FOR SUSPENSION",
+      "TABLET, COATED"
+    ]
+  },
+  "vortioxetine": {
+    "found": true,
+    "total_products": 23,
+    "combo_products_skipped": 0,
+    "fda_classes": [],
+    "brand_names": [
+      "Trintellix"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET, FILM COATED"
+    ]
+  },
+  "warfarin": {
+    "found": true,
+    "total_products": 150,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Vitamin K Antagonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "TABLET"
+    ]
+  },
+  "zaleplon": {
+    "found": true,
+    "total_products": 27,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "gamma-Aminobutyric Acid A Receptor Agonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER"
+    ]
+  },
+  "zinc": {
+    "found": true,
+    "total_products": 5692,
+    "combo_products_skipped": 8,
+    "fda_classes": [
+      "Copper Absorption Inhibitor"
+    ],
+    "brand_names": [
+      "DAYDREAM Broad Spectrum Sunscreen SPF 40",
+      "Daily Skin Protection Sunscreen NT",
+      "Diaper Rash Cream 2.5oz",
+      "Dolce and Gabbana Blueberry Nutri Tint SPF 20 22N Medium",
+      "Dolce and Gabbana Blueberry Nutri Tint SPF 20 26C Medium Deep",
+      "EMMA LEWISHAM Sunceutical SPF 50 Mineral Face Cream",
+      "GLOW UP Ageless Daily Protection Sunscreen",
+      "Innisfree Daily UV Defense Mineral Sunscreen",
+      "PLUMSCREEN SPF 31",
+      "Quality Choice Dandruff Everyday Clean",
+      "SOLARA SUNCARE - TIME TRAVELER SPF-30 UNSCENTED",
+      "Saie Sunvisor Broad Spectrum SPF 35 Sheer Moisturizer"
+    ],
+    "dosage_forms": [
+      "CREAM",
+      "EMULSION",
+      "GEL",
+      "LOTION",
+      "LOTION/SHAMPOO",
+      "OINTMENT"
+    ]
+  },
+  "ziprasidone": {
+    "found": true,
+    "total_products": 108,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Atypical Antipsychotic"
+    ],
+    "brand_names": [
+      "Geodon"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER"
+    ]
+  },
+  "zolmitriptan": {
+    "found": true,
+    "total_products": 58,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Serotonin-1b and Serotonin-1d Receptor Agonist"
+    ],
+    "brand_names": [
+      "ZOMIG",
+      "zolmiptriptan"
+    ],
+    "dosage_forms": [
+      "POWDER",
+      "SPRAY",
+      "SPRAY, METERED",
+      "TABLET",
+      "TABLET, FILM COATED",
+      "TABLET, ORALLY DISINTEGRATING"
+    ]
+  },
+  "zolpidem": {
+    "found": true,
+    "total_products": 160,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "gamma-Aminobutyric Acid A Receptor Positive Modulator",
+      "gamma-Aminobutyric Acid-ergic Agonist"
+    ],
+    "brand_names": [],
+    "dosage_forms": [
+      "POWDER",
+      "TABLET",
+      "TABLET, COATED",
+      "TABLET, EXTENDED RELEASE",
+      "TABLET, FILM COATED",
+      "TABLET, FILM COATED, EXTENDED RELEASE"
+    ]
+  },
+  "zonisamide": {
+    "found": true,
+    "total_products": 75,
+    "combo_products_skipped": 0,
+    "fda_classes": [
+      "Anti-epileptic Agent"
+    ],
+    "brand_names": [
+      "Zonegran"
+    ],
+    "dosage_forms": [
+      "CAPSULE",
+      "POWDER"
+    ]
+  }
+}
