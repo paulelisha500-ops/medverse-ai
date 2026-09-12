@@ -15,7 +15,7 @@ import {
 import { useAuth } from '../context/AuthContext.jsx'
 
 const NAV_ITEMS = [
-  { to: '/', label: 'Dashboard', icon: LayoutDashboard, roles: ['admin', 'doctor', 'patient'] },
+  { to: '/dashboard', label: 'Dashboard', icon: LayoutDashboard, roles: ['admin', 'doctor', 'patient'] },
   { to: '/assistant', label: 'AI Assistant', icon: MessageSquareText, roles: ['admin', 'doctor', 'patient'] },
   { to: '/reports', label: 'Report Analysis', icon: FileText, roles: ['admin', 'doctor', 'patient'] },
   { to: '/risk-check', label: 'Risk Check', icon: Activity, roles: ['admin', 'doctor', 'patient'] },
@@ -63,7 +63,7 @@ export default function Layout() {
               <NavLink
                 key={to}
                 to={to}
-                end={to === '/'}
+                end={to === '/dashboard'}
                 onClick={() => setMobileOpen(false)}
                 className={({ isActive }) =>
                   `flex items-center gap-3 rounded px-3 py-2 text-sm font-medium transition-colors ${
