@@ -280,10 +280,12 @@ export function BorderBeam({ className = '', duration = 6 }) {
 
 /** Soft blurred colour wash used behind hero art and CTAs. */
 export function GlowBackdrop({ className = '', tone = 'pulse' }) {
+  // Kept low: these are large and blurred, so anything heavier stops reading
+  // as a warm tint and washes the whole section pink.
   const tones = {
-    pulse: 'bg-pulse/20',
-    amber: 'bg-amber/15',
-    alert: 'bg-alert/15',
+    pulse: 'bg-pulse/12',
+    amber: 'bg-amber/12',
+    alert: 'bg-alert/10',
   }
   return (
     <div
