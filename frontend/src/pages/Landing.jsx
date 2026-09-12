@@ -29,6 +29,17 @@ const TABLET_IMG = 'https://images.unsplash.com/photo-1666886573301-b5d526cfd518
 
 const STACK = ['React', 'FastAPI', 'scikit-learn', 'sentence-transformers', 'FAISS', 'SQLAlchemy']
 
+const u = (id, w = 900) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`
+
+// Free-licence Unsplash photos (checked for Unsplash+/Getty, which are a
+// different licence, and verified to resolve 200).
+const GALLERY = [
+  { src: u('photo-1576091358783-a212ec293ff3'), alt: 'Pharmacist checking a pill bottle', caption: 'Medication review' },
+  { src: u('photo-1696861308115-54a5e5a134b0'), alt: 'Pharmacy shelves stocked with medication', caption: '990-drug directory' },
+  { src: u('photo-1580281657527-47f249e8f4df'), alt: 'Pharmacist reaching for a medication box', caption: 'Interaction checks' },
+  { src: u('photo-1739289696449-cba3a5ef085d'), alt: 'Two people reviewing products in a pharmacy', caption: 'Patient guidance' },
+]
+
 const STEPS = [
   { icon: LogIn, title: 'Sign in', body: 'Use a demo account or create your own patient login — no setup required.' },
   { icon: Search, title: 'Ask, check, or assess', body: 'Chat with the assistant, run a medication check, or calculate disease risk.' },
@@ -108,20 +119,33 @@ export default function Landing() {
       <Nav />
 
       {/* Hero */}
-      <section className="relative overflow-hidden">
-        <GlowBackdrop className="-left-32 top-0 h-96 w-96" tone="pulse" />
-        <GlowBackdrop className="right-0 top-40 h-80 w-80" tone="amber" />
+      <section className="relative isolate overflow-hidden">
+        <div aria-hidden="true" className="bg-grid fade-radial absolute inset-0 -z-10" />
+        <GlowBackdrop className="-right-56 -top-52 h-[32rem] w-[32rem]" tone="alert" />
+        <GlowBackdrop className="-left-56 top-64 h-[22rem] w-[22rem]" tone="pulse" />
 
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-12 md:grid-cols-2 md:items-center md:py-20">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 pb-14 pt-8 md:grid-cols-2 md:items-center md:pb-20 md:pt-10">
           <div>
-            <Reveal y={14}>
-              <div className="mb-4 w-40 text-pulse/70">
+            <Reveal y={10}>
+              <div className="inline-flex items-center gap-2 rounded-full border border-line bg-surface/80 px-3 py-1.5 text-xs font-medium text-ink shadow-sm backdrop-blur">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-pulse-ring rounded-full bg-alert" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-alert" />
+                </span>
+                990 medications · 230 interactions
+                <span aria-hidden="true" className="hidden h-3 w-px bg-line sm:block" />
+                <span className="hidden text-muted sm:inline">Updated from the FDA directory</span>
+              </div>
+            </Reveal>
+            <Reveal y={14} delay={60}>
+              <div className="mb-3 mt-5 w-40 text-pulse/70">
                 <PulseWaveform />
               </div>
             </Reveal>
-            <Reveal delay={80}>
-              <h1 className="font-display text-4xl font-semibold leading-tight text-ink md:text-5xl">
-                Clinical intelligence, grounded in your own data.
+            <Reveal delay={110}>
+              <h1 className="font-display text-4xl font-semibold leading-[1.05] text-ink md:text-5xl">
+                Clinical intelligence,{' '}
+                <span className="text-gradient">grounded in your own data.</span>
               </h1>
             </Reveal>
             <Reveal delay={170}>
@@ -214,6 +238,49 @@ export default function Landing() {
             <InlineBadge icon={MessageSquareText} label="AI-grounded insight" /> — so care
             decisions happen with context, not guesswork.
           </p>
+        </div>
+      </section>
+
+      {/* Photo strip */}
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <Reveal>
+          <div className="mb-8 flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <div className="readout-label">In practice</div>
+              <h2 className="mt-2 font-display text-3xl font-semibold text-ink">
+                Built around how care actually happens
+              </h2>
+            </div>
+            <Link
+              to="/login"
+              className="text-sm font-medium text-pulse-dark underline decoration-line underline-offset-4 hover:decoration-pulse"
+            >
+              Explore the platform →
+            </Link>
+          </div>
+        </Reveal>
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+          {GALLERY.map(({ src, alt, caption }, i) => (
+            <Reveal key={src} delay={i * 90}>
+              <TiltCard max={6} className="rounded-lg">
+                <figure className="group relative overflow-hidden rounded-lg shadow-lg">
+                  <img
+                    src={src}
+                    alt={alt}
+                    loading="lazy"
+                    className="aspect-[3/4] w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent"
+                  />
+                  <figcaption className="absolute inset-x-0 bottom-0 p-3 text-xs font-medium text-paper">
+                    {caption}
+                  </figcaption>
+                </figure>
+              </TiltCard>
+            </Reveal>
+          ))}
         </div>
       </section>
 
