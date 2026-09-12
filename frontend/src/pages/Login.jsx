@@ -34,7 +34,7 @@ export default function Login() {
     setBusy(true)
     try {
       await login(email, password)
-      navigate('/')
+      navigate('/dashboard')
     } catch (err) {
       setError(err.response?.data?.detail || 'Could not sign in. Check your email and password.')
     } finally {
