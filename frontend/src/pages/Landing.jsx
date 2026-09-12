@@ -17,8 +17,10 @@ import {
   ScanText,
   LineChart,
   ShieldCheck,
+  ArrowRight,
 } from 'lucide-react'
 import { Button } from '../components/ui.jsx'
+import { Reveal, Counter, TiltCard, Marquee, BorderBeam, GlowBackdrop } from '../components/motion.jsx'
 
 const HERO_IMG = 'https://images.unsplash.com/photo-1758691461990-03b49d969495?auto=format&fit=crop&w=1400&q=80'
 const CLINIC_IMG = 'https://images.unsplash.com/photo-1720180246446-d1738fe8ca76?auto=format&fit=crop&w=1400&q=80'
@@ -34,16 +36,23 @@ const STEPS = [
 ]
 
 const STATS = [
-  { value: '240+', label: 'Medications tracked' },
-  { value: '190', label: 'Documented interactions' },
-  { value: '0', label: 'API keys required to run' },
+  { value: 990, label: 'Medications in the directory' },
+  { value: 230, label: 'Documented interactions' },
+  { value: 674, label: 'Brand names recognized' },
+  { value: 0, label: 'API keys required to run' },
+]
+
+const TRUST_PILLS = [
+  'RAG-grounded answers', 'FDA pharmacologic classes', 'Typo-tolerant matching',
+  'Role-based access', 'Opioid dose conversion', 'Zero API keys', 'MIT licensed',
+  '74 knowledge-base topics', 'Explainable risk models',
 ]
 
 const PLATFORM_ITEMS = [
   { icon: MessageSquareText, label: 'AI Assistant', body: 'RAG-grounded chat over a real knowledge base' },
   { icon: FileText, label: 'Report Analysis', body: 'Regex + LLM extraction of labs, meds, diagnoses' },
   { icon: Activity, label: 'Risk Check', body: 'Trained diabetes & heart-disease risk models' },
-  { icon: Pill, label: 'Medication Checker', body: '240+ drugs, 190 curated interactions' },
+  { icon: Pill, label: 'Medication Checker', body: '990 drugs, 230 curated interactions' },
 ]
 
 const TECH_DETAILS = [
@@ -65,7 +74,7 @@ const TECH_DETAILS = [
   {
     icon: ShieldCheck,
     title: 'Medication Interactions',
-    body: '240+ drugs across 262 brand/generic aliases, 190 hand-curated interaction pairs, plus typo-tolerant fuzzy matching (difflib) so near-miss spellings still resolve.',
+    body: '990 medications — 484 hand-curated with typical dosing, 506 more imported from the FDA drug directory — across 674 brand/generic aliases, with 230 hand-reviewed interaction pairs and typo-tolerant fuzzy matching (difflib) so near-miss spellings still resolve.',
   },
 ]
 
@@ -88,7 +97,7 @@ const FAQS = [
   },
   {
     q: 'Is the medication database exhaustive?',
-    a: 'No — it\'s a curated set of 240+ well-known medications and 190 clinically significant interactions, written from established pharmacology knowledge. It is illustrative, not a substitute for a pharmacist.',
+    a: 'No. 484 medications are hand-curated with typical adult dosing, alongside 230 hand-reviewed interaction pairs. A further 506 come from the FDA drug directory as reference entries — those carry no dosing regimen and are deliberately excluded from interaction checking. It is illustrative, not a substitute for a pharmacist.',
   },
 ]
 
@@ -99,35 +108,98 @@ export default function Landing() {
       <Nav />
 
       {/* Hero */}
-      <section className="mx-auto grid max-w-6xl gap-10 px-6 py-12 md:grid-cols-2 md:items-center md:py-20">
-        <div>
-          <div className="mb-4 w-40 text-pulse/70">
-            <PulseWaveform />
+      <section className="relative overflow-hidden">
+        <GlowBackdrop className="-left-32 top-0 h-96 w-96" tone="pulse" />
+        <GlowBackdrop className="right-0 top-40 h-80 w-80" tone="amber" />
+
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-12 md:grid-cols-2 md:items-center md:py-20">
+          <div>
+            <Reveal y={14}>
+              <div className="mb-4 w-40 text-pulse/70">
+                <PulseWaveform />
+              </div>
+            </Reveal>
+            <Reveal delay={80}>
+              <h1 className="font-display text-4xl font-semibold leading-tight text-ink md:text-5xl">
+                Clinical intelligence, grounded in your own data.
+              </h1>
+            </Reveal>
+            <Reveal delay={170}>
+              <p className="mt-4 max-w-md text-base text-muted">
+                A RAG-powered assistant, real NLP report extraction, trained risk models, and a
+                medication interaction checker — behind role-based dashboards for patients, doctors,
+                and admins.
+              </p>
+            </Reveal>
+            <Reveal delay={260}>
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <Link to="/login">
+                  <Button className="group relative overflow-hidden px-6 py-3 text-base">
+                    <span className="relative z-10 flex items-center gap-2">
+                      Sign in
+                      <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </Button>
+                </Link>
+                <Link
+                  to="/register"
+                  className="text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:text-pulse-dark hover:decoration-pulse"
+                >
+                  Create a patient account
+                </Link>
+              </div>
+            </Reveal>
+            <Reveal delay={340}>
+              <div className="mt-8 flex items-center gap-6 border-t border-line pt-6">
+                {STATS.slice(0, 3).map(({ value, label }) => (
+                  <div key={label}>
+                    <div className="font-display text-2xl font-semibold text-ink">
+                      <Counter value={value} />
+                    </div>
+                    <div className="text-xs text-muted">{label}</div>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
           </div>
-          <h1 className="font-display text-4xl font-semibold leading-tight text-ink md:text-5xl">
-            Clinical intelligence, grounded in your own data.
-          </h1>
-          <p className="mt-4 max-w-md text-base text-muted">
-            A RAG-powered assistant, real NLP report extraction, trained risk models, and a
-            medication interaction checker — behind role-based dashboards for patients, doctors,
-            and admins.
-          </p>
-          <div className="mt-8 flex items-center gap-3">
-            <Link to="/login">
-              <Button className="px-6 py-3 text-base">Sign in</Button>
-            </Link>
-            <Link to="/register" className="text-sm font-medium text-ink underline hover:text-pulse-dark">
-              Create a patient account
-            </Link>
-          </div>
+
+          <Reveal delay={140} y={28}>
+            <TiltCard className="rounded-lg">
+              <div className="absolute -inset-6 -z-10 rounded-full bg-pulse/15 blur-3xl" />
+              <div className="relative overflow-hidden rounded-lg shadow-2xl">
+                <img
+                  src={HERO_IMG}
+                  alt="Clinician and patient in a consultation"
+                  className="aspect-[4/3] w-full object-cover"
+                />
+                <BorderBeam />
+              </div>
+
+              {/* Floating readouts layered over the photo */}
+              <div className="absolute -bottom-5 -left-5 animate-float rounded-lg border border-line bg-surface/95 p-3 shadow-xl backdrop-blur">
+                <div className="readout-label">Interaction check</div>
+                <div className="mt-1 flex items-center gap-2 text-sm font-medium text-ink">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-pulse-ring rounded-full bg-alert" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-alert" />
+                  </span>
+                  Warfarin + Aspirin
+                </div>
+              </div>
+              <div
+                className="absolute -right-4 -top-4 animate-float rounded-lg border border-line bg-surface/95 px-3 py-2 shadow-xl backdrop-blur"
+                style={{ animationDelay: '1.5s' }}
+              >
+                <div className="readout-label">Risk score</div>
+                <div className="font-mono text-lg font-medium text-amber">77.1%</div>
+              </div>
+            </TiltCard>
+          </Reveal>
         </div>
-        <div className="relative">
-          <div className="absolute -inset-6 -z-10 rounded-full bg-pulse/15 blur-3xl" />
-          <img
-            src={HERO_IMG}
-            alt="Clinician and patient in a consultation"
-            className="aspect-[4/3] w-full rounded-lg object-cover shadow-2xl"
-          />
+
+        {/* Capability marquee */}
+        <div className="pb-12">
+          <Marquee items={TRUST_PILLS} label="Platform capabilities" />
         </div>
       </section>
 
@@ -146,15 +218,26 @@ export default function Landing() {
       </section>
 
       {/* Stat band */}
-      <section className="bg-alert py-14">
-        <div className="mx-auto grid max-w-5xl gap-8 px-6 text-center text-paper sm:grid-cols-3">
-          {STATS.map(({ value, label }) => (
-            <div key={label}>
-              <div className="font-display text-5xl font-semibold">{value}</div>
-              <div className="mt-2 text-sm text-paper/70">{label}</div>
-            </div>
+      <section className="relative overflow-hidden bg-alert py-14">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 opacity-[0.07]"
+          style={{
+            backgroundImage:
+              'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
+            backgroundSize: '28px 28px',
+          }}
+        />
+        <dl className="relative mx-auto grid max-w-5xl gap-8 px-6 text-center text-paper sm:grid-cols-2 lg:grid-cols-4">
+          {STATS.map(({ value, label }, i) => (
+            <Reveal key={label} delay={i * 90} as="div" className="group">
+              <dd className="font-display text-5xl font-semibold transition-transform duration-300 group-hover:scale-105">
+                <Counter value={value} />
+              </dd>
+              <dt className="mt-2 text-sm text-paper/70">{label}</dt>
+            </Reveal>
           ))}
-        </div>
+        </dl>
       </section>
 
       {/* Patients */}
@@ -205,14 +288,25 @@ export default function Landing() {
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {STEPS.map(({ icon: Icon, title, body }, i) => (
-            <div key={title} className="card relative overflow-hidden p-6">
-              <span className="font-mono text-xs text-pulse-dark">0{i + 1}</span>
-              <div className="mt-3 flex h-11 w-11 items-center justify-center rounded-full bg-pulse-dim text-pulse-dark">
-                <Icon size={20} />
-              </div>
-              <div className="mt-4 font-display text-lg font-medium text-ink">{title}</div>
-              <p className="mt-1.5 text-sm text-muted">{body}</p>
-            </div>
+            <Reveal key={title} delay={i * 110}>
+              <TiltCard max={5} className="h-full rounded-lg">
+                <div className="card group relative h-full overflow-hidden p-6">
+                  {/* Oversized step numeral bleeding off the corner */}
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -right-3 -top-5 font-display text-7xl font-semibold text-pulse/[0.07] transition-all duration-500 group-hover:text-pulse/[0.12]"
+                  >
+                    {i + 1}
+                  </span>
+                  <span className="font-mono text-xs text-pulse-dark">0{i + 1}</span>
+                  <div className="mt-3 flex h-11 w-11 items-center justify-center rounded-full bg-pulse-dim text-pulse-dark transition-transform duration-300 group-hover:scale-110">
+                    <Icon size={20} />
+                  </div>
+                  <div className="mt-4 font-display text-lg font-medium text-ink">{title}</div>
+                  <p className="mt-1.5 text-sm text-muted">{body}</p>
+                </div>
+              </TiltCard>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -227,14 +321,18 @@ export default function Landing() {
             </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
-            {TECH_DETAILS.map(({ icon: Icon, title, body }) => (
-              <div key={title} className="card p-6">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-pulse-dim text-pulse-dark">
-                  <Icon size={20} />
-                </div>
-                <div className="mt-4 font-display text-lg font-medium text-ink">{title}</div>
-                <p className="mt-1.5 text-sm leading-relaxed text-muted">{body}</p>
-              </div>
+            {TECH_DETAILS.map(({ icon: Icon, title, body }, i) => (
+              <Reveal key={title} delay={i * 90}>
+                <TiltCard max={4} className="h-full rounded-lg">
+                  <div className="card group h-full p-6 transition-shadow duration-300 hover:shadow-xl">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-pulse-dim text-pulse-dark transition-transform duration-300 group-hover:scale-110">
+                      <Icon size={20} />
+                    </div>
+                    <div className="mt-4 font-display text-lg font-medium text-ink">{title}</div>
+                    <p className="mt-1.5 text-sm leading-relaxed text-muted">{body}</p>
+                  </div>
+                </TiltCard>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -245,10 +343,12 @@ export default function Landing() {
         <div className="mx-auto max-w-4xl px-6 text-center">
           <p className="readout-label text-paper/50">Built with</p>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
-            {STACK.map((name) => (
-              <span key={name} className="font-display text-lg text-paper/70">
-                {name}
-              </span>
+            {STACK.map((name, i) => (
+              <Reveal key={name} delay={i * 70} y={12}>
+                <span className="font-display text-lg text-paper/60 transition-colors duration-300 hover:text-paper">
+                  {name}
+                </span>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -268,14 +368,44 @@ export default function Landing() {
       </section>
 
       {/* Closing CTA */}
-      <section className="mx-auto max-w-3xl px-6 pb-20 text-center">
-        <h2 className="font-display text-3xl font-semibold text-ink">Ready to take a look?</h2>
-        <p className="mt-3 text-muted">Sign in with a demo account or create your own patient login.</p>
-        <div className="mt-6 flex items-center justify-center gap-3">
-          <Link to="/login">
-            <Button className="px-6 py-3 text-base">Sign in</Button>
-          </Link>
-        </div>
+      <section className="mx-auto max-w-4xl px-6 pb-20">
+        <Reveal>
+          <div className="relative overflow-hidden rounded-lg border border-line bg-surface px-6 py-14 text-center shadow-lg">
+            {/* A wash inside the card — a blurred blob behind an opaque card
+                only shows where it overflows, which reads as a smudge. */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0"
+              style={{
+                background:
+                  'radial-gradient(560px circle at 50% -10%, rgb(111 78 55 / 0.10), transparent 70%)',
+              }}
+            />
+            <BorderBeam duration={8} />
+            <h2 className="relative font-display text-3xl font-semibold text-ink">
+              Ready to take a look?
+            </h2>
+            <p className="relative mt-3 text-muted">
+              Sign in with a demo account or create your own patient login.
+            </p>
+            <div className="relative mt-6 flex flex-wrap items-center justify-center gap-3">
+              <Link to="/login">
+                <Button className="group px-6 py-3 text-base">
+                  <span className="flex items-center gap-2">
+                    Sign in
+                    <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+                  </span>
+                </Button>
+              </Link>
+              <Link
+                to="/register"
+                className="rounded border border-line px-6 py-3 text-base font-medium text-ink transition-colors hover:border-pulse hover:text-pulse-dark"
+              >
+                Create an account
+              </Link>
+            </div>
+          </div>
+        </Reveal>
       </section>
 
       <footer className="border-t border-line py-8">
@@ -294,7 +424,7 @@ export default function Landing() {
 function AnnouncementBar() {
   return (
     <div className="bg-ink py-2 text-center text-xs font-medium text-paper">
-      New: 240+ medication database with real-time interaction checking —{' '}
+      New: 990-medication database with real-time interaction checking —{' '}
       <Link to="/login" className="underline hover:text-pulse">Try it now</Link>
     </div>
   )
@@ -372,19 +502,27 @@ function FaqItem({ q, a }) {
 
 function AudienceSection({ img, alt, eyebrow, title, body, icon: Icon, imageSide }) {
   const imageEl = (
-    <div className="relative">
-      <img src={img} alt={alt} className="aspect-[4/3] w-full rounded-lg object-cover shadow-lg" />
-    </div>
+    <Reveal y={26} x={imageSide === 'left' ? -18 : 18}>
+      <TiltCard max={4} className="rounded-lg">
+        <div className="relative overflow-hidden rounded-lg shadow-lg">
+          <img
+            src={img}
+            alt={alt}
+            className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
+          />
+        </div>
+      </TiltCard>
+    </Reveal>
   )
   const textEl = (
-    <div>
-      <div className="flex h-11 w-11 items-center justify-center rounded-full bg-pulse-dim text-pulse-dark">
+    <Reveal delay={120}>
+      <div className="group flex h-11 w-11 items-center justify-center rounded-full bg-pulse-dim text-pulse-dark transition-transform duration-300 hover:scale-110">
         <Icon size={20} />
       </div>
       <div className="readout-label mt-4">{eyebrow}</div>
       <h2 className="mt-2 font-display text-3xl font-semibold text-ink">{title}</h2>
       <p className="mt-4 text-base text-muted">{body}</p>
-    </div>
+    </Reveal>
   )
 
   return (
