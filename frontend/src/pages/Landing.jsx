@@ -124,10 +124,10 @@ export default function Landing() {
         <GlowBackdrop className="-right-56 -top-52 h-[34rem] w-[34rem]" tone="alert" />
         <GlowBackdrop className="-left-56 top-72 h-[24rem] w-[24rem]" tone="pulse" />
 
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 pb-14 pt-12 md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] md:pb-16 md:pt-16">
+        <div className="mx-auto grid max-w-6xl gap-x-12 gap-y-10 px-6 pb-14 pt-12 md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] md:items-start md:pb-16 md:pt-14">
           <div>
             <Reveal y={14}>
-              <EcgStrip className="mb-8 max-w-md" />
+              <EcgStrip className="mb-6 w-56" />
             </Reveal>
             <Reveal delay={90}>
               <h1 className="font-display text-5xl font-semibold leading-[1.02] tracking-tight text-ink md:text-6xl lg:text-[4.25rem]">
@@ -160,18 +160,6 @@ export default function Landing() {
                 </Link>
               </div>
             </Reveal>
-            <Reveal delay={300}>
-              <div className="mt-9 flex items-center gap-8 border-t border-line pt-7">
-                {STATS.slice(0, 3).map(({ value, label }) => (
-                  <div key={label}>
-                    <div className="font-display text-3xl font-semibold text-ink">
-                      <Counter value={value} />
-                    </div>
-                    <div className="mt-0.5 text-xs text-muted">{label}</div>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
           </div>
 
           <Reveal delay={140} y={28}>
@@ -185,27 +173,24 @@ export default function Landing() {
                 />
                 <BorderBeam />
               </div>
-
-              {/* Floating readouts layered over the photo */}
-              <div className="absolute -bottom-5 -left-5 animate-float rounded-lg border border-line bg-surface/95 p-3 shadow-xl backdrop-blur">
-                <div className="readout-label">Interaction check</div>
-                <div className="mt-1 flex items-center gap-2 text-sm font-medium text-ink">
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-pulse-ring rounded-full bg-alert" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-alert" />
-                  </span>
-                  Warfarin + Aspirin
-                </div>
-              </div>
-              <div
-                className="absolute -right-4 -top-4 animate-float rounded-lg border border-line bg-surface/95 px-3 py-2 shadow-xl backdrop-blur"
-                style={{ animationDelay: '1.5s' }}
-              >
-                <div className="readout-label">Risk score</div>
-                <div className="font-mono text-lg font-medium text-amber">77.1%</div>
-              </div>
             </TiltCard>
           </Reveal>
+
+          {/* Spans both columns. The text column runs ~250px taller than the
+              photo, so anything parked only on the left leaves that band of
+              the page empty across from it. */}
+          <div className="grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-3 md:col-span-2">
+            {STATS.slice(0, 3).map(({ value, label }, i) => (
+              <Reveal key={label} delay={i * 90} className="h-full">
+                <div className="h-full bg-surface px-5 py-4">
+                  <div className="font-display text-3xl font-semibold text-ink">
+                    <Counter value={value} />
+                  </div>
+                  <div className="mt-1 text-sm text-muted">{label}</div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
 
         {/* Capability tiles. The hero grid is text-left/photo-right, so the row
@@ -653,76 +638,49 @@ function ecgPath(cycles) {
   return d.trim()
 }
 
-const ECG_TRACE = ecgPath(3)
+const ECG_TRACE = ecgPath(2)
 
 function EcgStrip({ className = '' }) {
   return (
-    <div className={`relative overflow-hidden rounded-lg border border-line bg-surface shadow-sm ${className}`}>
-      <div
-        aria-hidden="true"
-        className="absolute inset-0"
-        style={{
-          backgroundImage:
-            'linear-gradient(to right, rgb(163 46 53 / 0.16) 1px, transparent 1px),'
-            + 'linear-gradient(to bottom, rgb(163 46 53 / 0.16) 1px, transparent 1px),'
-            + 'linear-gradient(to right, rgb(163 46 53 / 0.07) 1px, transparent 1px),'
-            + 'linear-gradient(to bottom, rgb(163 46 53 / 0.07) 1px, transparent 1px)',
-          backgroundSize: '40px 40px, 40px 40px, 8px 8px, 8px 8px',
-        }}
+    <svg
+      viewBox="0 0 400 110"
+      className={`text-pulse ${className}`}
+      role="img"
+      aria-label="Electrocardiogram tracing showing a normal sinus rhythm"
+    >
+      {/* The full trace is always drawn — a line that spends half its animation
+          blank just reads as empty space. The movement is a short bright
+          segment sweeping along it, the way a monitor refreshes. */}
+      <path
+        d={ECG_TRACE}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeOpacity="0.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
-      <div className="relative flex items-center justify-between px-3 pt-2.5">
-        <span className="flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest text-pulse-dark">
-          <span className="relative flex h-1.5 w-1.5">
-            <span className="absolute inline-flex h-full w-full animate-pulse-ring rounded-full bg-pulse" />
-            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-pulse" />
-          </span>
-          Sinus rhythm
-        </span>
-        <span className="font-mono text-[10px] uppercase tracking-widest text-muted">Lead II · 25 mm/s</span>
-      </div>
-      <svg
-        viewBox="0 0 600 110"
-        preserveAspectRatio="none"
-        className="relative block h-20 w-full text-pulse"
-        role="img"
-        aria-label="Electrocardiogram tracing showing a normal sinus rhythm"
-      >
-        {/* The full trace is always drawn — a strip that spends half its
-            animation blank just reads as an empty box. The movement is a short
-            bright segment sweeping along it, the way a monitor refreshes. */}
-        <path
-          d={ECG_TRACE}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeOpacity="0.45"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          vectorEffect="non-scaling-stroke"
-        />
-        <path
-          className="ecg-sweep"
-          d={ECG_TRACE}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2.75"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          vectorEffect="non-scaling-stroke"
-          pathLength="1"
-          style={{ strokeDasharray: '0.22 0.78' }}
-        />
-        <style>{`
-          .ecg-sweep { animation: ecg-sweep 3.4s linear infinite; }
-          @keyframes ecg-sweep {
-            from { stroke-dashoffset: 1; }
-            to { stroke-dashoffset: 0; }
-          }
-          @media (prefers-reduced-motion: reduce) {
-            .ecg-sweep { animation: none !important; stroke-dasharray: none; stroke-width: 2.25px; }
-          }
-        `}</style>
-      </svg>
-    </div>
+      <path
+        className="ecg-sweep"
+        d={ECG_TRACE}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        pathLength="1"
+        style={{ strokeDasharray: '0.22 0.78' }}
+      />
+      <style>{`
+        .ecg-sweep { animation: ecg-sweep 3.4s linear infinite; }
+        @keyframes ecg-sweep {
+          from { stroke-dashoffset: 1; }
+          to { stroke-dashoffset: 0; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .ecg-sweep { animation: none !important; stroke-dasharray: none; stroke-width: 2.25px; }
+        }
+      `}</style>
+    </svg>
   )
 }
