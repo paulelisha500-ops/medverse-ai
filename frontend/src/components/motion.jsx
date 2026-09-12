@@ -205,7 +205,7 @@ export function TiltCard({ children, className = '', max = 6, glow = true }) {
           className="pointer-events-none absolute inset-0 rounded-lg transition-opacity duration-300"
           style={{
             opacity: glowPos.on ? 1 : 0,
-            background: `radial-gradient(320px circle at ${glowPos.x} ${glowPos.y}, rgb(111 78 55 / 0.16), transparent 65%)`,
+            background: `radial-gradient(320px circle at ${glowPos.x} ${glowPos.y}, rgb(163 46 53 / 0.16), transparent 65%)`,
           }}
         />
       )}
@@ -270,7 +270,7 @@ export function BorderBeam({ className = '', duration = 6 }) {
         className="absolute aspect-square w-[36%] animate-beam"
         style={{
           offsetPath: 'rect(0 auto auto 0 round 12px)',
-          background: 'radial-gradient(circle, rgb(111 78 55 / 0.55), transparent 60%)',
+          background: 'radial-gradient(circle, rgb(163 46 53 / 0.55), transparent 60%)',
           animationDuration: `${duration}s`,
         }}
       />

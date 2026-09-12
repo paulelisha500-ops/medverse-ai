@@ -3,19 +3,22 @@ export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
+      // Red / cream / burgundy. The palette was previously coffee-brown; the
+      // token names are kept so every existing class keeps working, but the
+      // values now sit on the red axis with no brown left in them.
       colors: {
-        ink: '#2E1F16',
-        paper: '#F7F1E8',
+        ink: '#2A1418',
+        paper: '#FAF2EE',
         surface: '#FFFFFF',
         pulse: {
-          DEFAULT: '#6F4E37',
-          dim: '#EFE3D6',
-          dark: '#4A3222',
+          DEFAULT: '#A32E35',
+          dim: '#F7E3E1',
+          dark: '#6E1F24',
         },
-        amber: '#B8752E',
+        amber: '#C2542F',
         alert: '#A83C3C',
-        muted: '#7A6A5D',
-        line: '#E4D9C9',
+        muted: '#7C6167',
+        line: '#EBD9D3',
       },
       fontFamily: {
         display: ['"Space Grotesk"', 'sans-serif'],

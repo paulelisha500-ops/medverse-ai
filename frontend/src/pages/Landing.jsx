@@ -22,8 +22,8 @@ import {
 import { Button } from '../components/ui.jsx'
 import { Reveal, Counter, TiltCard, Marquee, BorderBeam, GlowBackdrop } from '../components/motion.jsx'
 
-const HERO_IMG = 'https://images.unsplash.com/photo-1758691461990-03b49d969495?auto=format&fit=crop&w=1400&q=80'
-const CLINIC_IMG = 'https://images.unsplash.com/photo-1720180246446-d1738fe8ca76?auto=format&fit=crop&w=1400&q=80'
+const HERO_IMG = 'https://images.unsplash.com/photo-1758691462878-6edc3d3da1be?auto=format&fit=crop&w=1600&q=80'
+const CLINIC_IMG = 'https://images.unsplash.com/photo-1682365114691-f0264ad25c52?auto=format&fit=crop&w=1400&q=80'
 const TECH_IMG = 'https://images.unsplash.com/photo-1758691462848-31a39258dbd8?auto=format&fit=crop&w=1400&q=80'
 const TABLET_IMG = 'https://images.unsplash.com/photo-1666886573301-b5d526cfd518?auto=format&fit=crop&w=1400&q=80'
 
@@ -121,44 +121,31 @@ export default function Landing() {
       {/* Hero */}
       <section className="relative isolate overflow-hidden">
         <div aria-hidden="true" className="bg-grid fade-radial absolute inset-0 -z-10" />
-        <GlowBackdrop className="-right-56 -top-52 h-[32rem] w-[32rem]" tone="alert" />
-        <GlowBackdrop className="-left-56 top-64 h-[22rem] w-[22rem]" tone="pulse" />
+        <GlowBackdrop className="-right-56 -top-52 h-[34rem] w-[34rem]" tone="alert" />
+        <GlowBackdrop className="-left-56 top-72 h-[24rem] w-[24rem]" tone="pulse" />
 
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 pb-14 pt-8 md:grid-cols-2 md:items-center md:pb-20 md:pt-10">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 pb-14 pt-12 md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] md:pb-16 md:pt-16">
           <div>
-            <Reveal y={10}>
-              <div className="inline-flex items-center gap-2 rounded-full border border-line bg-surface/80 px-3 py-1.5 text-xs font-medium text-ink shadow-sm backdrop-blur">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-pulse-ring rounded-full bg-alert" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-alert" />
-                </span>
-                990 medications · 230 interactions
-                <span aria-hidden="true" className="hidden h-3 w-px bg-line sm:block" />
-                <span className="hidden text-muted sm:inline">Updated from the FDA directory</span>
-              </div>
+            <Reveal y={14}>
+              <EcgStrip className="mb-8 max-w-md" />
             </Reveal>
-            <Reveal y={14} delay={60}>
-              <div className="mb-3 mt-5 w-40 text-pulse/70">
-                <PulseWaveform />
-              </div>
-            </Reveal>
-            <Reveal delay={110}>
-              <h1 className="font-display text-4xl font-semibold leading-[1.05] text-ink md:text-5xl">
+            <Reveal delay={90}>
+              <h1 className="font-display text-5xl font-semibold leading-[1.02] tracking-tight text-ink md:text-6xl lg:text-[4.25rem]">
                 Clinical intelligence,{' '}
                 <span className="text-gradient">grounded in your own data.</span>
               </h1>
             </Reveal>
-            <Reveal delay={170}>
-              <p className="mt-4 max-w-md text-base text-muted">
+            <Reveal delay={150}>
+              <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted">
                 A RAG-powered assistant, real NLP report extraction, trained risk models, and a
                 medication interaction checker — behind role-based dashboards for patients, doctors,
                 and admins.
               </p>
             </Reveal>
-            <Reveal delay={260}>
-              <div className="mt-8 flex flex-wrap items-center gap-3">
+            <Reveal delay={220}>
+              <div className="mt-9 flex flex-wrap items-center gap-4">
                 <Link to="/login">
-                  <Button className="group relative overflow-hidden px-6 py-3 text-base">
+                  <Button className="group relative overflow-hidden px-7 py-3.5 text-base">
                     <span className="relative z-10 flex items-center gap-2">
                       Sign in
                       <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
@@ -173,14 +160,14 @@ export default function Landing() {
                 </Link>
               </div>
             </Reveal>
-            <Reveal delay={340}>
-              <div className="mt-8 flex items-center gap-6 border-t border-line pt-6">
+            <Reveal delay={300}>
+              <div className="mt-9 flex items-center gap-8 border-t border-line pt-7">
                 {STATS.slice(0, 3).map(({ value, label }) => (
                   <div key={label}>
-                    <div className="font-display text-2xl font-semibold text-ink">
+                    <div className="font-display text-3xl font-semibold text-ink">
                       <Counter value={value} />
                     </div>
-                    <div className="text-xs text-muted">{label}</div>
+                    <div className="mt-0.5 text-xs text-muted">{label}</div>
                   </div>
                 ))}
               </div>
@@ -193,8 +180,8 @@ export default function Landing() {
               <div className="relative overflow-hidden rounded-lg shadow-2xl">
                 <img
                   src={HERO_IMG}
-                  alt="Clinician and patient in a consultation"
-                  className="aspect-[4/3] w-full object-cover"
+                  alt="A doctor at her desk reviewing records on a monitor while consulting a patient"
+                  className="aspect-[5/4] w-full object-cover"
                 />
                 <BorderBeam />
               </div>
@@ -221,8 +208,27 @@ export default function Landing() {
           </Reveal>
         </div>
 
+        {/* Capability tiles. The hero grid is text-left/photo-right, so the row
+            under the shorter column used to bottom out into empty paper before
+            the marquee — these carry the eye across that band instead. */}
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+            {PLATFORM_ITEMS.map(({ icon: Icon, label, body }, i) => (
+              <Reveal key={label} delay={i * 80} className="h-full">
+                <div className="group h-full bg-surface p-5 transition-colors hover:bg-pulse-dim/50">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-pulse-dim text-pulse-dark transition-transform duration-300 group-hover:scale-110">
+                    <Icon size={17} />
+                  </span>
+                  <div className="mt-3 font-display text-base font-medium text-ink">{label}</div>
+                  <p className="mt-1 text-sm leading-relaxed text-muted">{body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+
         {/* Capability marquee */}
-        <div className="pb-12">
+        <div className="py-12">
           <Marquee items={TRUST_PILLS} label="Platform capabilities" />
         </div>
       </section>
@@ -336,7 +342,7 @@ export default function Landing() {
       {/* Admins */}
       <AudienceSection
         img={CLINIC_IMG}
-        alt="Bright clinic corridor"
+        alt="A clean, equipped clinic consulting room"
         eyebrow="For admins"
         title="Platform-wide visibility"
         body="Track patients, staff, and usage across the whole platform from a single
@@ -445,7 +451,7 @@ export default function Landing() {
               className="pointer-events-none absolute inset-0"
               style={{
                 background:
-                  'radial-gradient(560px circle at 50% -10%, rgb(111 78 55 / 0.10), transparent 70%)',
+                  'radial-gradient(560px circle at 50% -10%, rgb(163 46 53 / 0.10), transparent 70%)',
               }}
             />
             <BorderBeam duration={8} />
@@ -620,34 +626,103 @@ function InlineBadge({ icon: Icon, label }) {
   )
 }
 
-function PulseWaveform() {
+/**
+ * Hero vitals strip — a clean sinus rhythm on ECG paper.
+ *
+ * The trace is generated rather than hand-drawn so every beat is identical:
+ * one cycle is P wave, QRS complex, T wave, drawn to scale against a 5mm/1mm
+ * gridded background like a real rhythm strip. The sweep animation redraws the
+ * line left to right; reduced motion leaves it fully drawn and still.
+ */
+const ECG_CYCLE = 200
+const ECG_BASE = 62
+
+function ecgPath(cycles) {
+  let d = ''
+  for (let i = 0; i < cycles; i += 1) {
+    const x = i * ECG_CYCLE
+    const b = ECG_BASE
+    d += `${i === 0 ? 'M' : 'L'}${x} ${b} L${x + 22} ${b} `
+      + `Q${x + 33} ${b - 18} ${x + 44} ${b} `        // P wave
+      + `L${x + 56} ${b} L${x + 62} ${b + 8} `        // Q
+      + `L${x + 70} ${b - 50} L${x + 78} ${b + 26} `  // R spike, S trough
+      + `L${x + 86} ${b} L${x + 104} ${b} `
+      + `Q${x + 124} ${b - 23} ${x + 144} ${b} `      // T wave
+      + `L${x + ECG_CYCLE} ${b} `
+  }
+  return d.trim()
+}
+
+const ECG_TRACE = ecgPath(3)
+
+function EcgStrip({ className = '' }) {
   return (
-    <svg viewBox="0 0 400 120" className="w-full" role="img" aria-label="Animated vitals waveform">
-      <path
-        d="M0 60 L60 60 L80 60 L95 20 L110 100 L125 40 L140 60 L200 60 L215 60 L230 25 L245 95 L260 45 L275 60 L400 60"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        pathLength="1"
+    <div className={`relative overflow-hidden rounded-lg border border-line bg-surface shadow-sm ${className}`}>
+      <div
+        aria-hidden="true"
+        className="absolute inset-0"
         style={{
-          strokeDasharray: 1,
-          strokeDashoffset: 1,
-          animation: 'draw-pulse 3.2s ease-in-out infinite',
+          backgroundImage:
+            'linear-gradient(to right, rgb(163 46 53 / 0.16) 1px, transparent 1px),'
+            + 'linear-gradient(to bottom, rgb(163 46 53 / 0.16) 1px, transparent 1px),'
+            + 'linear-gradient(to right, rgb(163 46 53 / 0.07) 1px, transparent 1px),'
+            + 'linear-gradient(to bottom, rgb(163 46 53 / 0.07) 1px, transparent 1px)',
+          backgroundSize: '40px 40px, 40px 40px, 8px 8px, 8px 8px',
         }}
       />
-      <style>{`
-        @keyframes draw-pulse {
-          0% { stroke-dashoffset: 1; opacity: 0.3; }
-          45% { stroke-dashoffset: 0; opacity: 1; }
-          70% { opacity: 1; }
-          100% { stroke-dashoffset: -1; opacity: 0.3; }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          path { animation: none !important; stroke-dashoffset: 0; opacity: 0.8; }
-        }
-      `}</style>
-    </svg>
+      <div className="relative flex items-center justify-between px-3 pt-2.5">
+        <span className="flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest text-pulse-dark">
+          <span className="relative flex h-1.5 w-1.5">
+            <span className="absolute inline-flex h-full w-full animate-pulse-ring rounded-full bg-pulse" />
+            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-pulse" />
+          </span>
+          Sinus rhythm
+        </span>
+        <span className="font-mono text-[10px] uppercase tracking-widest text-muted">Lead II · 25 mm/s</span>
+      </div>
+      <svg
+        viewBox="0 0 600 110"
+        preserveAspectRatio="none"
+        className="relative block h-20 w-full text-pulse"
+        role="img"
+        aria-label="Electrocardiogram tracing showing a normal sinus rhythm"
+      >
+        {/* The full trace is always drawn — a strip that spends half its
+            animation blank just reads as an empty box. The movement is a short
+            bright segment sweeping along it, the way a monitor refreshes. */}
+        <path
+          d={ECG_TRACE}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeOpacity="0.45"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          vectorEffect="non-scaling-stroke"
+        />
+        <path
+          className="ecg-sweep"
+          d={ECG_TRACE}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.75"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          vectorEffect="non-scaling-stroke"
+          pathLength="1"
+          style={{ strokeDasharray: '0.22 0.78' }}
+        />
+        <style>{`
+          .ecg-sweep { animation: ecg-sweep 3.4s linear infinite; }
+          @keyframes ecg-sweep {
+            from { stroke-dashoffset: 1; }
+            to { stroke-dashoffset: 0; }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .ecg-sweep { animation: none !important; stroke-dasharray: none; stroke-width: 2.25px; }
+          }
+        `}</style>
+      </svg>
+    </div>
   )
 }
