@@ -3,22 +3,27 @@ export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
-      // Red / cream / burgundy. The palette was previously coffee-brown; the
-      // token names are kept so every existing class keeps working, but the
-      // values now sit on the red axis with no brown left in them.
+      // Blue / cream / navy.
+      //
+      // `alert` and `amber` are deliberately NOT on the blue axis: they mean
+      // danger and moderate, and carry that meaning in risk badges, risk
+      // readouts, the destructive button and every form error. A blue error
+      // message reads as ordinary text, so they stay red and amber. Everything
+      // decorative that happened to use them has moved to `navy`.
       colors: {
-        ink: '#2A1418',
-        paper: '#FAF2EE',
+        ink: '#0D1B33',
+        paper: '#F5F1E6',
         surface: '#FFFFFF',
         pulse: {
-          DEFAULT: '#A32E35',
-          dim: '#F7E3E1',
-          dark: '#6E1F24',
+          DEFAULT: '#1D5FAB',
+          dim: '#DCE8F7',
+          dark: '#123A6B',
         },
-        amber: '#C2542F',
-        alert: '#A83C3C',
-        muted: '#7C6167',
-        line: '#EBD9D3',
+        navy: '#16325B',
+        amber: '#B4722A',
+        alert: '#B03A3A',
+        muted: '#55637A',
+        line: '#DCE1E8',
       },
       fontFamily: {
         display: ['"Space Grotesk"', 'sans-serif'],

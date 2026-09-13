@@ -20,6 +20,7 @@ import {
   ArrowRight,
 } from 'lucide-react'
 import { Button } from '../components/ui.jsx'
+import { Logo } from '../components/Logo.jsx'
 import { Reveal, Counter, TiltCard, Marquee, BorderBeam, GlowBackdrop } from '../components/motion.jsx'
 
 const HERO_IMG = 'https://images.unsplash.com/photo-1758691462878-6edc3d3da1be?auto=format&fit=crop&w=1600&q=80'
@@ -121,7 +122,7 @@ export default function Landing() {
       {/* Hero */}
       <section className="relative isolate overflow-hidden">
         <div aria-hidden="true" className="bg-grid fade-radial absolute inset-0 -z-10" />
-        <GlowBackdrop className="-right-56 -top-52 h-[34rem] w-[34rem]" tone="alert" />
+        <GlowBackdrop className="-right-56 -top-52 h-[34rem] w-[34rem]" tone="navy" />
         <GlowBackdrop className="-left-56 top-72 h-[24rem] w-[24rem]" tone="pulse" />
 
         <div className="mx-auto grid max-w-6xl gap-x-12 gap-y-10 px-6 pb-14 pt-12 md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] md:items-start md:pb-16 md:pt-14">
@@ -276,7 +277,7 @@ export default function Landing() {
       </section>
 
       {/* Stat band */}
-      <section className="relative overflow-hidden bg-alert py-14">
+      <section className="relative overflow-hidden bg-navy py-14">
         <div
           aria-hidden="true"
           className="absolute inset-0 opacity-[0.07]"
@@ -436,7 +437,7 @@ export default function Landing() {
               className="pointer-events-none absolute inset-0"
               style={{
                 background:
-                  'radial-gradient(560px circle at 50% -10%, rgb(163 46 53 / 0.10), transparent 70%)',
+                  'radial-gradient(560px circle at 50% -10%, rgb(29 95 171 / 0.10), transparent 70%)',
               }}
             />
             <BorderBeam duration={8} />
@@ -468,7 +469,7 @@ export default function Landing() {
 
       <footer className="border-t border-line py-8">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 text-sm text-muted md:flex-row">
-          <span>MedVerse AI</span>
+          <Logo size={24} textClass="text-base" />
           <div className="flex gap-5">
             <Link to="/login" className="hover:text-ink">Sign in</Link>
             <Link to="/register" className="hover:text-ink">Create account</Link>
@@ -495,7 +496,7 @@ function Nav() {
     <header className="sticky top-0 z-20 bg-paper/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
         <div className="flex items-center gap-8">
-          <span className="font-display text-xl font-semibold text-ink">MedVerse AI</span>
+          <Link to="/" aria-label="MedVerse AI home"><Logo /></Link>
           <nav className="hidden items-center gap-6 md:flex">
             <div
               className="relative"
