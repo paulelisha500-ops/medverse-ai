@@ -205,7 +205,7 @@ export function TiltCard({ children, className = '', max = 6, glow = true }) {
           className="pointer-events-none absolute inset-0 rounded-lg transition-opacity duration-300"
           style={{
             opacity: glowPos.on ? 1 : 0,
-            background: `radial-gradient(320px circle at ${glowPos.x} ${glowPos.y}, rgb(163 46 53 / 0.16), transparent 65%)`,
+            background: `radial-gradient(320px circle at ${glowPos.x} ${glowPos.y}, rgb(29 95 171 / 0.16), transparent 65%)`,
           }}
         />
       )}
@@ -270,7 +270,7 @@ export function BorderBeam({ className = '', duration = 6 }) {
         className="absolute aspect-square w-[36%] animate-beam"
         style={{
           offsetPath: 'rect(0 auto auto 0 round 12px)',
-          background: 'radial-gradient(circle, rgb(163 46 53 / 0.55), transparent 60%)',
+          background: 'radial-gradient(circle, rgb(29 95 171 / 0.55), transparent 60%)',
           animationDuration: `${duration}s`,
         }}
       />
@@ -281,11 +281,11 @@ export function BorderBeam({ className = '', duration = 6 }) {
 /** Soft blurred colour wash used behind hero art and CTAs. */
 export function GlowBackdrop({ className = '', tone = 'pulse' }) {
   // Kept low: these are large and blurred, so anything heavier stops reading
-  // as a warm tint and washes the whole section pink.
+  // as a tint and washes the whole section blue.
   const tones = {
     pulse: 'bg-pulse/12',
-    amber: 'bg-amber/12',
-    alert: 'bg-alert/10',
+    navy: 'bg-navy/10',
+    dim: 'bg-pulse-dim/40',
   }
   return (
     <div

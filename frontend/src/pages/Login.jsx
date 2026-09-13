@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { HeartPulse, Stethoscope, Pill, Activity, MessageSquareText, FileText } from 'lucide-react'
 import { useAuth } from '../context/AuthContext.jsx'
 import { Button, Field, inputClass } from '../components/ui.jsx'
+import { Logo } from '../components/Logo.jsx'
 
 const TRUST_BADGES = ['RAG-Grounded', 'Role-Based Access', 'MIT Licensed']
 
@@ -51,7 +52,7 @@ export default function Login() {
         </div>
 
         <div className="pr-32">
-          <span className="font-display text-2xl font-semibold text-paper">MedVerse AI</span>
+          <Logo tone="dark" size={36} textClass="text-2xl" />
           <p className="mt-2 max-w-xs text-sm text-paper/60">
             Clinical intelligence platform — RAG-grounded assistant, report understanding, and
             predictive risk, in one console.
@@ -87,7 +88,7 @@ export default function Login() {
       <div className="flex w-full items-center justify-center bg-paper px-6 py-12 md:w-1/2">
         <div className="w-full max-w-sm">
           <div className="mb-8 md:hidden">
-            <span className="font-display text-2xl font-semibold text-ink">MedVerse AI</span>
+            <Logo size={36} textClass="text-2xl" />
           </div>
 
           <h1 className="font-display text-2xl font-semibold text-ink">Sign in</h1>

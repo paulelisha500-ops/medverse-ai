@@ -13,6 +13,7 @@ import {
   X,
 } from 'lucide-react'
 import { useAuth } from '../context/AuthContext.jsx'
+import { Logo } from './Logo.jsx'
 
 const NAV_ITEMS = [
   { to: '/dashboard', label: 'Dashboard', icon: LayoutDashboard, roles: ['admin', 'doctor', 'patient'] },
@@ -40,7 +41,7 @@ export default function Layout() {
     <div className="flex h-screen bg-paper">
       {/* Mobile topbar */}
       <div className="fixed inset-x-0 top-0 z-30 flex items-center justify-between border-b border-line bg-ink px-4 py-3 md:hidden">
-        <span className="font-display text-lg font-semibold text-paper">MedVerse AI</span>
+        <Logo tone="dark" size={26} textClass="text-lg" />
         <button onClick={() => setMobileOpen((v) => !v)} className="text-paper" aria-label="Toggle menu">
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
@@ -54,7 +55,7 @@ export default function Layout() {
       >
         <div className="flex h-full flex-col px-4 py-6">
           <div className="mb-8 hidden px-2 md:block">
-            <span className="font-display text-xl font-semibold text-paper">MedVerse AI</span>
+            <Logo tone="dark" />
             <div className="readout-label mt-1 text-paper/50">Clinical Intelligence</div>
           </div>
 
