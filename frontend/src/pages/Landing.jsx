@@ -437,7 +437,7 @@ export default function Landing() {
               className="pointer-events-none absolute inset-0"
               style={{
                 background:
-                  'radial-gradient(560px circle at 50% -10%, rgb(29 95 171 / 0.10), transparent 70%)',
+                  'radial-gradient(560px circle at 50% -10%, rgb(42 109 176 / 0.10), transparent 70%)',
               }}
             />
             <BorderBeam duration={8} />

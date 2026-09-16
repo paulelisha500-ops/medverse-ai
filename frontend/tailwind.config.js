@@ -11,19 +11,19 @@ export default {
       // message reads as ordinary text, so they stay red and amber. Everything
       // decorative that happened to use them has moved to `navy`.
       colors: {
-        ink: '#0D1B33',
-        paper: '#F5F1E6',
+        ink: '#0C2340',
+        paper: '#F8F4EA',
         surface: '#FFFFFF',
         pulse: {
-          DEFAULT: '#1D5FAB',
-          dim: '#DCE8F7',
-          dark: '#123A6B',
+          DEFAULT: '#2A6DB0',
+          dim: '#DEEAF6',
+          dark: '#1A4C80',
         },
-        navy: '#16325B',
+        navy: '#14456F',
         amber: '#B4722A',
         alert: '#B03A3A',
-        muted: '#55637A',
-        line: '#DCE1E8',
+        muted: '#556579',
+        line: '#DCE3EB',
       },
       fontFamily: {
         display: ['"Space Grotesk"', 'sans-serif'],

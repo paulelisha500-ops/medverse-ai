@@ -69,11 +69,11 @@ function AdminView({ stats }) {
           <div className="readout-label mb-4">Medical record entries by type</div>
           <ResponsiveContainer width="100%" height={220}>
             <BarChart data={chartData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#DCE1E8" />
-              <XAxis dataKey="name" tick={{ fontSize: 12, fill: '#55637A' }} />
-              <YAxis tick={{ fontSize: 12, fill: '#55637A' }} allowDecimals={false} />
-              <Tooltip contentStyle={{ fontSize: 12, borderRadius: 8, borderColor: '#DCE1E8' }} />
-              <Bar dataKey="count" fill="#1D5FAB" radius={[4, 4, 0, 0]} />
+              <CartesianGrid strokeDasharray="3 3" stroke="#DCE3EB" />
+              <XAxis dataKey="name" tick={{ fontSize: 12, fill: '#556579' }} />
+              <YAxis tick={{ fontSize: 12, fill: '#556579' }} allowDecimals={false} />
+              <Tooltip contentStyle={{ fontSize: 12, borderRadius: 8, borderColor: '#DCE3EB' }} />
+              <Bar dataKey="count" fill="#2A6DB0" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
