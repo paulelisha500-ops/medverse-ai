@@ -4,6 +4,7 @@ import { HeartPulse, Stethoscope, Pill, Activity, MessageSquareText, FileText } 
 import { useAuth } from '../context/AuthContext.jsx'
 import { Button, Field, inputClass } from '../components/ui.jsx'
 import { Logo } from '../components/Logo.jsx'
+import { apiErrorMessage } from '../api/errors.js'
 
 const TRUST_BADGES = ['RAG-Grounded', 'Role-Based Access', 'MIT Licensed']
 
@@ -37,7 +38,7 @@ export default function Login() {
       await login(email, password)
       navigate('/dashboard')
     } catch (err) {
-      setError(err.response?.data?.detail || 'Could not sign in. Check your email and password.')
+      setError(apiErrorMessage(err, 'Could not sign in. Check your email and password.'))
     } finally {
       setBusy(false)
     }
