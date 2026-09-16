@@ -52,10 +52,10 @@ export function LogoMark({ size = 32, tone = 'light', className = '', title = 'M
 export function Logo({ size = 32, tone = 'light', className = '', textClass = 'text-xl' }) {
   const dark = tone === 'dark'
   return (
-    <span className={`inline-flex items-center gap-2.5 ${className}`}>
+    <span className={`inline-flex shrink-0 items-center gap-2.5 ${className}`}>
       <LogoMark size={size} tone={tone} title={null} />
       <span
-        className={`font-display font-semibold tracking-tight ${textClass} ${dark ? 'text-paper' : 'text-ink'}`}
+        className={`whitespace-nowrap font-display font-semibold tracking-tight ${textClass} ${dark ? 'text-paper' : 'text-ink'}`}
       >
         MedVerse<span className={dark ? 'text-pulse-light' : 'text-pulse'}> AI</span>
       </span>

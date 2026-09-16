@@ -494,9 +494,9 @@ function Nav() {
 
   return (
     <header className="sticky top-0 z-20 bg-paper/80 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-4 sm:px-6 sm:py-5">
         <div className="flex items-center gap-8">
-          <Link to="/" aria-label="MedVerse AI home"><Logo /></Link>
+          <Link to="/" aria-label="MedVerse AI home"><Logo textClass="text-lg sm:text-xl" /></Link>
           <nav className="hidden items-center gap-6 md:flex">
             <div
               className="relative"
@@ -531,11 +531,13 @@ function Nav() {
           </nav>
         </div>
         <div className="flex items-center gap-4">
-          <Link to="/login" className="text-sm font-medium text-ink hover:text-pulse-dark">
+          {/* Hidden on phones, where the wordmark and this link can't share a
+              row with the button — the hero's first CTA is Sign in anyway. */}
+          <Link to="/login" className="hidden whitespace-nowrap text-sm font-medium text-ink hover:text-pulse-dark sm:inline">
             Sign in
           </Link>
           <Link to="/register">
-            <Button>Create account</Button>
+            <Button className="whitespace-nowrap">Create account</Button>
           </Link>
         </div>
       </div>
