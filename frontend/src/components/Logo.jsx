@@ -1,60 +1,63 @@
 /**
  * MedVerse AI logo.
  *
- * A blue tile carrying a single heartbeat, echoing the waveform the landing
- * page and the sign-in panel already use. The tile is blue rather than navy so
- * the mark holds up on both the cream page and the navy sidebar without
- * needing a second version of itself.
+ * A medical cross inside an open orbit, with a single satellite sitting in the
+ * orbit's gap: the cross is the "Med", the orbit is the "Verse". It echoes the
+ * ring of feature icons circling the core on the sign-in panel.
  *
- * The trace is drawn on a 32-unit grid with a heavy stroke and only four
- * direction changes, so it still reads as a heartbeat at favicon size.
+ * Two tones, because a single version can't work on both grounds: on the navy
+ * sidebar a navy cross vanishes, so `tone="dark"` swaps it to cream and lifts
+ * the orbit to a lighter blue. Strokes are heavy enough to survive favicon
+ * size — at 16px it still reads as a ring and a cross.
  */
 
-const TRACE = 'M6 19h3.6l2.2-5.4L15.4 24l2.9-8.2 1.9 3.2H26'
+const TONES = {
+  light: { ring: '#2A6DB0', core: '#0C2340' },
+  dark: { ring: '#6FA3DB', core: '#F8F4EA' },
+}
 
-export function LogoMark({ size = 32, className = '' }) {
+export function LogoMark({ size = 32, tone = 'light', className = '', title = 'MedVerse AI' }) {
+  const { ring, core } = TONES[tone] || TONES.light
   return (
     <svg
       width={size}
       height={size}
       viewBox="0 0 32 32"
       className={className}
-      role="img"
-      aria-label="MedVerse AI"
+      {...(title ? { role: 'img', 'aria-label': title } : { 'aria-hidden': true })}
     >
-      <defs>
-        <linearGradient id="medverse-mark" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#2A70C2" />
-          <stop offset="100%" stopColor="#16325B" />
-        </linearGradient>
-      </defs>
-      <rect width="32" height="32" rx="9" fill="url(#medverse-mark)" />
-      <path
-        d={TRACE}
+      {/* One dash plus one gap spans the circumference (2π·12 ≈ 75.4), which
+          leaves a single opening at the upper right for the satellite. */}
+      <circle
+        cx="16"
+        cy="16"
+        r="12"
         fill="none"
-        stroke="#F5F1E6"
-        strokeWidth="2.4"
+        stroke={ring}
+        strokeWidth="2.6"
+        strokeDasharray="53 22.4"
         strokeLinecap="round"
-        strokeLinejoin="round"
       />
+      <circle cx="23.6" cy="6.7" r="3.3" fill={ring} />
+      <rect x="14.1" y="9.6" width="3.8" height="12.8" rx="1.9" fill={core} />
+      <rect x="9.6" y="14.1" width="12.8" height="3.8" rx="1.9" fill={core} />
     </svg>
   )
 }
 
 /**
- * Mark plus wordmark. `tone="dark"` is for placing it on the navy sidebar or
- * the sign-in panel; the default is for the cream page.
+ * Mark plus wordmark. `tone="dark"` is for the navy sidebar and the sign-in
+ * panel; the default is for the cream page.
  */
 export function Logo({ size = 32, tone = 'light', className = '', textClass = 'text-xl' }) {
+  const dark = tone === 'dark'
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
-      <LogoMark size={size} />
+      <LogoMark size={size} tone={tone} title={null} />
       <span
-        className={`font-display font-semibold tracking-tight ${textClass} ${
-          tone === 'dark' ? 'text-paper' : 'text-ink'
-        }`}
+        className={`font-display font-semibold tracking-tight ${textClass} ${dark ? 'text-paper' : 'text-ink'}`}
       >
-        MedVerse<span className={tone === 'dark' ? 'text-pulse-dim' : 'text-pulse'}> AI</span>
+        MedVerse<span className={dark ? 'text-pulse-light' : 'text-pulse'}> AI</span>
       </span>
     </span>
   )

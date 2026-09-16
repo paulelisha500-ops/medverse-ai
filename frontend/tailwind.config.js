@@ -18,6 +18,7 @@ export default {
           DEFAULT: '#2A6DB0',
           dim: '#DEEAF6',
           dark: '#1A4C80',
+          light: '#6FA3DB',
         },
         navy: '#14456F',
         amber: '#B4722A',
