@@ -1,7 +1,12 @@
 from datetime import datetime
-from typing import List, Optional
+from typing import Annotated, List, Optional
 
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import BaseModel, EmailStr, Field, StringConstraints
+
+# Rejects "" and whitespace-only input with a 422. Without it an empty chat
+# message still ran retrieval — returning whatever passage ranked first for
+# nothing — and an empty report was saved and counted as analyzed.
+NonEmptyStr = Annotated[str, StringConstraints(strip_whitespace=True, min_length=1)]
 
 
 # ---------- Auth / Users ----------
@@ -9,7 +14,7 @@ from pydantic import BaseModel, EmailStr, Field
 class UserCreate(BaseModel):
     email: EmailStr
     password: str = Field(min_length=6)
-    full_name: str
+    full_name: NonEmptyStr
 
 
 class StaffCreate(UserCreate):
@@ -78,8 +83,8 @@ class PatientProfileOut(BaseModel):
 
 
 class RecordEntryCreate(BaseModel):
-    type: str
-    title: str
+    type: NonEmptyStr
+    title: NonEmptyStr
     details: Optional[str] = None
 
 
@@ -97,7 +102,7 @@ class RecordEntryOut(BaseModel):
 # ---------- Assistant / RAG ----------
 
 class ChatRequest(BaseModel):
-    message: str
+    message: NonEmptyStr
     patient_id: Optional[int] = None
 
 
@@ -120,7 +125,7 @@ class ChatHistoryItem(BaseModel):
 # ---------- Reports / NLP ----------
 
 class ReportAnalyzeRequest(BaseModel):
-    text: str
+    text: NonEmptyStr
 
 
 class ReportAnalyzeResponse(BaseModel):
