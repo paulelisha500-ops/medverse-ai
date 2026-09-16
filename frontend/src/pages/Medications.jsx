@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { X, Plus } from 'lucide-react'
 import client from '../api/client.js'
 import { PageHeader, Button, Badge, inputClass } from '../components/ui.jsx'
+import { apiErrorMessage } from '../api/errors.js'
 
 function getSuggestions(query, directory) {
   const q = query.trim().toLowerCase()
@@ -263,7 +264,7 @@ function DoseConverter() {
       })
       setResult(res.data)
     } catch (err) {
-      setError(err.response?.data?.detail || 'Could not convert that dose. Please try again.')
+      setError(apiErrorMessage(err, 'Could not convert that dose. Please try again.'))
     } finally {
       setBusy(false)
     }
