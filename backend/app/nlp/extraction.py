@@ -30,13 +30,13 @@ def extract_lab_values(text: str) -> Dict[str, str]:
 
 
 EXTRACTION_SYSTEM_PROMPT = (
-    "You extract structured information from a medical report or prescription for a demo "
+    "You extract structured information from a medical report or prescription for a clinical "
     "healthcare platform. Return ONLY valid JSON with keys: diagnoses (list of strings), "
     "medications (list of strings), follow_up (list of strings). No markdown, no other text."
 )
 
 SUMMARY_SYSTEM_PROMPT = (
-    "You write two summaries of a medical report for a demo healthcare platform: one in plain, "
+    "You write two summaries of a medical report for a clinical healthcare platform: one in plain, "
     "friendly language for the patient (avoid jargon), and one concise, clinical summary for the "
     "doctor. Never present the summary as a diagnosis — it is a summary of what the report says. "
     "Return ONLY valid JSON with keys: patient_summary, clinical_summary. No markdown, no other text."
@@ -63,7 +63,7 @@ def analyze_report(text: str) -> dict:
     entities["lab_values"] = lab_values
 
     summaries_raw = provider.generate(SUMMARY_SYSTEM_PROMPT, f"Report text:\n{text}\n\nQuestion: Summarize this report.")
-    fallback_note = "Connect an LLM API key in backend/.env for full AI-generated summaries."
+    fallback_note = "A summary could not be generated for this report."
     summaries = _safe_json_parse(summaries_raw, {
         "patient_summary": fallback_note,
         "clinical_summary": fallback_note,

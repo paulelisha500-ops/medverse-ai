@@ -1,8 +1,8 @@
 """
 Trains lightweight logistic regression risk models on synthetically generated
-data with realistic feature-risk relationships. This is a portfolio/demo
-project — a production system would train on validated clinical datasets and
-go through appropriate regulatory review before informing real decisions.
+data with realistic feature-risk relationships. Training on validated
+clinical datasets and going through regulatory review would be required
+before using this to inform real medical decisions.
 """
 import os
 import pickle

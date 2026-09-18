@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { X, Plus } from 'lucide-react'
 import client from '../api/client.js'
-import { PageHeader, Button, Badge, Disclaimer, inputClass } from '../components/ui.jsx'
+import { PageHeader, Button, Badge, inputClass } from '../components/ui.jsx'
 
 export default function Medications() {
   const [meds, setMeds] = useState(['', ''])
@@ -37,7 +37,7 @@ export default function Medications() {
     <div>
       <PageHeader
         title="Medication Interaction Checker"
-        subtitle="Enter two or more medications to check for known interactions in our curated dataset."
+        subtitle="Enter two or more medications to check for interactions against official FDA drug labeling."
       />
 
       <form onSubmit={handleCheck} className="max-w-lg space-y-3">
@@ -83,26 +83,31 @@ export default function Medications() {
 
           {result.interactions.length === 0 && (
             <div className="card p-5 text-sm text-ink">
-              No known interactions found in our dataset for this combination.
+              No known interactions found for this combination.
             </div>
           )}
 
           {result.interactions.map((it, i) => (
             <div key={i} className="card space-y-2 p-5">
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between gap-3">
                 <span className="font-display font-medium text-ink">
                   {it.drug_a} + {it.drug_b}
                 </span>
-                <Badge severity={it.severity}>{it.severity}</Badge>
+                <div className="flex items-center gap-2">
+                  {it.severity && <Badge severity={it.severity}>{it.severity}</Badge>}
+                  <Badge severity={it.source === 'fda_label' ? undefined : 'low'}>
+                    {it.source === 'fda_label' ? 'FDA label' : 'Curated reference'}
+                  </Badge>
+                </div>
               </div>
               <p className="text-sm text-ink/80">{it.description}</p>
+              {it.excerpt && it.source === 'fda_label' && (
+                <p className="border-l-2 border-line pl-3 text-xs italic text-muted">
+                  From the official FDA label: “{it.excerpt}”
+                </p>
+              )}
             </div>
           ))}
-
-          <Disclaimer>
-            This list is illustrative and not exhaustive — always confirm with a pharmacist or
-            physician before combining medications.
-          </Disclaimer>
         </div>
       )}
     </div>

@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from app.core.security import hash_password
 from app.db import models
 
-DEMO_USERS = [
+SEED_USERS = [
     {
         "email": "admin@medverse.ai",
         "password": "Admin@123",
@@ -24,7 +24,7 @@ DEMO_USERS = [
     },
 ]
 
-DEMO_RECORDS = [
+SEED_RECORDS = [
     {"type": "condition", "title": "Type 2 Diabetes", "details": "Diagnosed 2022, managed with metformin."},
     {"type": "medication", "title": "Metformin 500mg", "details": "Twice daily with meals."},
     {"type": "lab", "title": "Fasting Glucose", "details": "126 mg/dL (Jan 2026)."},
@@ -39,7 +39,7 @@ def run_seed(db: Session) -> None:
         return
 
     created = {}
-    for u in DEMO_USERS:
+    for u in SEED_USERS:
         user = models.User(
             email=u["email"],
             hashed_password=hash_password(u["password"]),
@@ -60,7 +60,7 @@ def run_seed(db: Session) -> None:
     db.add(patient_profile)
     db.flush()
 
-    for r in DEMO_RECORDS:
+    for r in SEED_RECORDS:
         db.add(
             models.MedicalRecordEntry(
                 patient_id=patient_profile.id,
@@ -71,4 +71,4 @@ def run_seed(db: Session) -> None:
         )
 
     db.commit()
-    print("Seeded demo users: admin@medverse.ai / doctor@medverse.ai / patient@medverse.ai (see README for passwords)")
+    print("Seeded initial accounts: admin@medverse.ai / doctor@medverse.ai / patient@medverse.ai (see README for passwords)")

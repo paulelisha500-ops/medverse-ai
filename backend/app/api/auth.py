@@ -5,8 +5,8 @@ from sqlalchemy.orm import Session
 from app.core.security import create_access_token, hash_password, verify_password
 from app.db import models
 from app.db.database import get_db
-from app.schemas import StaffCreate, Token, UserCreate, UserOut
-from app.api.deps import require_roles
+from app.schemas import StaffCreate, Token, UserCreate, UserOut, UserUpdate
+from app.api.deps import get_current_user, require_roles
 
 router = APIRouter(prefix="/api/auth", tags=["auth"])
 
@@ -77,3 +77,24 @@ def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depend
 @router.get("/me", response_model=UserOut)
 def me(current_user: models.User = Depends(require_roles("admin", "doctor", "patient"))):
     return current_user
+
+
+@router.put("/me", response_model=UserOut)
+def update_me(
+    payload: UserUpdate,
+    db: Session = Depends(get_db),
+    user: models.User = Depends(get_current_user),
+):
+    updates = payload.model_dump(exclude_unset=True)
+
+    if "email" in updates and updates["email"] != user.email:
+        existing = db.query(models.User).filter(models.User.email == updates["email"]).first()
+        if existing:
+            raise HTTPException(status_code=400, detail="An account with this email already exists")
+
+    for field, value in updates.items():
+        setattr(user, field, value)
+
+    db.commit()
+    db.refresh(user)
+    return user

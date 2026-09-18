@@ -11,6 +11,8 @@ import {
   LogOut,
   Menu,
   X,
+  CalendarClock,
+  BellRing,
 } from 'lucide-react'
 import { useAuth } from '../context/AuthContext.jsx'
 
@@ -20,6 +22,8 @@ const NAV_ITEMS = [
   { to: '/reports', label: 'Report Analysis', icon: FileText, roles: ['admin', 'doctor', 'patient'] },
   { to: '/risk-check', label: 'Risk Check', icon: Activity, roles: ['admin', 'doctor', 'patient'] },
   { to: '/medications', label: 'Medication Checker', icon: Pill, roles: ['admin', 'doctor', 'patient'] },
+  { to: '/appointments', label: 'Appointments', icon: CalendarClock, roles: ['admin', 'doctor', 'patient'] },
+  { to: '/reminders', label: 'My Medications', icon: BellRing, roles: ['patient'] },
   { to: '/patients', label: 'Patients', icon: Users, roles: ['admin', 'doctor'] },
   { to: '/profile', label: 'Profile', icon: UserCircle, roles: ['admin', 'doctor', 'patient'] },
 ]

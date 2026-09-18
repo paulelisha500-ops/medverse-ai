@@ -64,8 +64,8 @@ flowchart LR
   auth (`python-jose` + `passlib`/bcrypt)
 - **RAG:** `sentence-transformers` embeddings + `faiss-cpu` vector search over an original,
   hand-written health knowledge base
-- **LLM:** pluggable provider — OpenAI, Anthropic, local Ollama, or a "demo mode" fallback that
-  still returns retrieved context with zero API keys configured
+- **LLM:** pluggable provider — OpenAI, Anthropic, or local Ollama. With none configured, the
+  assistant still returns the most relevant retrieved knowledge-base context directly.
 - **Predictive ML:** `scikit-learn` logistic regression, trained on synthetic data at first run
 - **Deployment:** Docker + Docker Compose
 
@@ -73,7 +73,7 @@ flowchart LR
 
 ```bash
 cp backend/.env.example backend/.env
-# optional: edit backend/.env to add an OpenAI/Anthropic key, or leave LLM_PROVIDER=none for demo mode
+# optional: edit backend/.env to add an OpenAI/Anthropic key, or leave LLM_PROVIDER=none
 docker compose up --build
 ```
 
@@ -103,9 +103,9 @@ npm run dev
 Open http://localhost:5173 — the Vite dev server proxies `/api` to `http://localhost:8004`, so
 there's no CORS configuration to fight with.
 
-## Demo accounts
+## Seeded accounts
 
-Seeded automatically on first run:
+Created automatically on first run:
 
 | Role | Email | Password |
 |---|---|---|
@@ -113,7 +113,7 @@ Seeded automatically on first run:
 | Doctor | `doctor@medverse.ai` | `Doctor@123` |
 | Patient | `patient@medverse.ai` | `Patient@123` |
 
-These are for local demo purposes only — change or remove them before deploying anywhere public.
+Change or remove these before deploying anywhere public.
 
 ## Connecting an LLM provider
 

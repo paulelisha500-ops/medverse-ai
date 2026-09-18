@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Send } from 'lucide-react'
 import client from '../api/client.js'
 import { useAuth } from '../context/AuthContext.jsx'
-import { PageHeader, Disclaimer, LoadingDots } from '../components/ui.jsx'
+import { PageHeader, LoadingDots } from '../components/ui.jsx'
 
 const SUGGESTIONS = [
   'Explain my last fasting glucose result',
@@ -70,12 +70,6 @@ export default function Assistant() {
         subtitle="Grounded in the MedVerse knowledge base — every answer shows its sources."
       />
 
-      <div className="mb-4">
-        <Disclaimer>
-          This assistant gives general educational information, not a diagnosis. For anything
-          urgent, contact a healthcare professional directly.
-        </Disclaimer>
-      </div>
 
       <div className="flex-1 space-y-4 overflow-y-auto pb-4">
         {messages.length === 0 && (

@@ -1,7 +1,7 @@
 """
-Curated, well-established drug-drug interactions for demo purposes.
-This list is illustrative and NOT exhaustive or a substitute for pharmacist
-or physician review — see the disclaimer surfaced in the API response.
+Curated, well-established drug-drug interactions used as an offline
+fallback when the live openFDA/RxNorm lookup (see drug_data.py) can't
+reach the network or find a label for one of the checked drugs.
 """
 from typing import List, Dict
 
@@ -41,6 +41,20 @@ INTERACTIONS = [
 
 def normalize(name: str) -> str:
     return name.strip().lower()
+
+
+def check_curated_pair(drug_a: str, drug_b: str) -> Dict | None:
+    a, b = normalize(drug_a), normalize(drug_b)
+    for item in INTERACTIONS:
+        if {a, b} == set(item["drugs"]):
+            return {
+                "drug_a": drug_a,
+                "drug_b": drug_b,
+                "description": item["description"],
+                "severity": item["severity"],
+                "source": "curated",
+            }
+    return None
 
 
 def check_interactions(medication_list: List[str]) -> List[Dict]:

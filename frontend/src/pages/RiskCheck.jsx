@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import client from '../api/client.js'
-import { PageHeader, Button, Field, inputClass, Readout, Disclaimer } from '../components/ui.jsx'
+import { PageHeader, Button, Field, inputClass, Readout } from '../components/ui.jsx'
 
 const DEFAULTS = {
   age: 45,
@@ -115,7 +115,6 @@ export default function RiskCheck() {
                   {result.tips.map((tip, i) => <li key={i}>• {tip}</li>)}
                 </ul>
               </div>
-              <Disclaimer />
             </>
           ) : (
             <div className="card flex h-full items-center justify-center p-10 text-center text-sm text-muted">

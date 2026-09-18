@@ -12,6 +12,8 @@ import Medications from './pages/Medications.jsx'
 import Patients from './pages/Patients.jsx'
 import PatientDetail from './pages/PatientDetail.jsx'
 import Profile from './pages/Profile.jsx'
+import Appointments from './pages/Appointments.jsx'
+import Reminders from './pages/Reminders.jsx'
 import NotFound from './pages/NotFound.jsx'
 
 export default function App() {
@@ -32,6 +34,15 @@ export default function App() {
         <Route path="/reports" element={<Reports />} />
         <Route path="/risk-check" element={<RiskCheck />} />
         <Route path="/medications" element={<Medications />} />
+        <Route path="/appointments" element={<Appointments />} />
+        <Route
+          path="/reminders"
+          element={
+            <ProtectedRoute roles={['patient']}>
+              <Reminders />
+            </ProtectedRoute>
+          }
+        />
         <Route
           path="/patients"
           element={

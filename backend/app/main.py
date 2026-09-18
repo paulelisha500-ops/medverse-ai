@@ -3,17 +3,18 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api import assistant, auth, dashboard, medications, patients, reports, risk
+from app.api import appointments, assistant, auth, dashboard, medications, patients, reminders, reports, risk
 from app.core.config import settings
 from app.db import models
-from app.db.database import Base, SessionLocal, engine
+from app.db.database import Base, SessionLocal, engine, run_lightweight_migrations
 from app.db.seed import run_seed
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Startup: create tables, seed demo data, warm up RAG index + risk models
+    # Startup: create tables, run lightweight migrations, seed data, warm up RAG index + risk models
     Base.metadata.create_all(bind=engine)
+    run_lightweight_migrations()
 
     db = SessionLocal()
     try:
@@ -36,7 +37,7 @@ async def lifespan(app: FastAPI):
         print(f"[startup] Risk models not trained yet ({exc}).")
 
     yield
-    # Shutdown: nothing to clean up for this demo
+    # Shutdown: nothing to clean up
 
 
 app = FastAPI(title=settings.APP_NAME, lifespan=lifespan)
@@ -56,6 +57,8 @@ app.include_router(reports.router)
 app.include_router(risk.router)
 app.include_router(medications.router)
 app.include_router(dashboard.router)
+app.include_router(appointments.router)
+app.include_router(reminders.router)
 
 
 @app.get("/api/health")

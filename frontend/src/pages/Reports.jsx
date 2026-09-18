@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import client from '../api/client.js'
-import { PageHeader, Button, Disclaimer } from '../components/ui.jsx'
+import { PageHeader, Button } from '../components/ui.jsx'
 
 const SAMPLE_REPORT = `Patient Lab Report - Annual Check-up
 Fasting Glucose: 126 mg/dL
@@ -72,18 +72,18 @@ export default function Reports() {
             <ListCard title="Medications mentioned" items={result.entities?.medications} />
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className={`grid gap-4 ${result.clinical_summary ? 'md:grid-cols-2' : ''}`}>
             <div className="card p-5">
               <div className="readout-label mb-2">Patient-friendly summary</div>
               <p className="text-sm leading-relaxed text-ink">{result.patient_summary}</p>
             </div>
-            <div className="card p-5">
-              <div className="readout-label mb-2">Clinical summary</div>
-              <p className="text-sm leading-relaxed text-ink">{result.clinical_summary}</p>
-            </div>
+            {result.clinical_summary && (
+              <div className="card p-5">
+                <div className="readout-label mb-2">Clinical summary</div>
+                <p className="text-sm leading-relaxed text-ink">{result.clinical_summary}</p>
+              </div>
+            )}
           </div>
-
-          <Disclaimer>This summary is generated for demonstration and does not replace review by a clinician.</Disclaimer>
         </div>
       )}
     </div>

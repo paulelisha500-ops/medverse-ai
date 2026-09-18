@@ -39,7 +39,7 @@ def analyze(
         id=record.id,
         entities=result["entities"],
         patient_summary=result["patient_summary"],
-        clinical_summary=result["clinical_summary"],
+        clinical_summary=None if user.role == "patient" else result["clinical_summary"],
     )
 
 
@@ -56,7 +56,7 @@ def list_reports(db: Session = Depends(get_db), user: models.User = Depends(get_
             "id": r.id,
             "entities": r.entities,
             "patient_summary": r.patient_summary,
-            "clinical_summary": r.clinical_summary,
+            "clinical_summary": None if user.role == "patient" else r.clinical_summary,
             "created_at": r.created_at,
         }
         for r in reports

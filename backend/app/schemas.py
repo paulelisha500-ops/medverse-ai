@@ -20,10 +20,17 @@ class UserOut(BaseModel):
     id: int
     email: str
     full_name: str
+    phone: Optional[str] = None
     role: str
 
     class Config:
         from_attributes = True
+
+
+class UserUpdate(BaseModel):
+    full_name: Optional[str] = None
+    email: Optional[EmailStr] = None
+    phone: Optional[str] = None
 
 
 class Token(BaseModel):
@@ -105,7 +112,7 @@ class ReportAnalyzeResponse(BaseModel):
     id: int
     entities: dict
     patient_summary: str
-    clinical_summary: str
+    clinical_summary: Optional[str] = None
 
 
 # ---------- Risk prediction ----------
@@ -139,9 +146,93 @@ class InteractionOut(BaseModel):
     drug_a: str
     drug_b: str
     description: str
-    severity: str
+    severity: Optional[str] = None
+    source: Optional[str] = None  # "fda_label" | "curated"
+    excerpt: Optional[str] = None
 
 
 class MedicationCheckResponse(BaseModel):
     interactions: List[InteractionOut]
     checked: List[str]
+
+
+# ---------- Appointments ----------
+
+class AppointmentCreate(BaseModel):
+    doctor_id: int
+    patient_id: Optional[int] = None  # required when staff books on a patient's behalf
+    scheduled_at: datetime
+    reason: Optional[str] = None
+
+
+class AppointmentUpdate(BaseModel):
+    status: Optional[str] = None
+    notes: Optional[str] = None
+    scheduled_at: Optional[datetime] = None
+
+
+class AppointmentOut(BaseModel):
+    id: int
+    patient_id: int
+    doctor_id: int
+    patient_name: Optional[str] = None
+    doctor_name: Optional[str] = None
+    scheduled_at: datetime
+    reason: Optional[str] = None
+    status: str
+    notes: Optional[str] = None
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
+class DoctorOut(BaseModel):
+    id: int
+    full_name: str
+
+
+# ---------- Medication reminders ----------
+
+class ReminderCreate(BaseModel):
+    medication_name: str
+    dosage: Optional[str] = None
+    frequency: Optional[str] = None
+    start_date: Optional[str] = None
+
+
+class ReminderUpdate(BaseModel):
+    medication_name: Optional[str] = None
+    dosage: Optional[str] = None
+    frequency: Optional[str] = None
+    active: Optional[bool] = None
+
+
+class ReminderOut(BaseModel):
+    id: int
+    medication_name: str
+    dosage: Optional[str] = None
+    frequency: Optional[str] = None
+    start_date: Optional[str] = None
+    active: bool
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
+class ReminderLogCreate(BaseModel):
+    status: str  # "taken" | "skipped"
+
+
+class ReminderProgress(BaseModel):
+    reminder_id: int
+    medication_name: str
+    taken_count: int
+    skipped_count: int
+    adherence_pct: float
+
+
+class ReminderProgressResponse(BaseModel):
+    reminders: List[ReminderProgress]
+    overall_adherence_pct: float

@@ -77,12 +77,7 @@ class FallbackProvider(LLMProvider):
         snippet = context[:700] + ("..." if len(context) > 700 else "")
         if not snippet:
             snippet = "No matching information was found in the knowledge base for this question."
-        return (
-            "**[Demo mode — no LLM API key configured]**\n\n"
-            "I can retrieve relevant information, but generating a free-form answer needs an "
-            "OpenAI, Anthropic, or Ollama connection (see `backend/.env`). Here's the most "
-            f"relevant information I found:\n\n{snippet}"
-        )
+        return f"Here's the most relevant information I found:\n\n{snippet}"
 
 
 def get_llm_provider() -> LLMProvider:

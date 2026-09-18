@@ -13,7 +13,7 @@ from app.schemas import ChatHistoryItem, ChatRequest, ChatResponse, ChatSource
 router = APIRouter(prefix="/api/assistant", tags=["assistant"])
 
 SYSTEM_PROMPT = (
-    "You are the MedVerse AI health information assistant, part of a portfolio/demo clinical "
+    "You are the MedVerse AI health information assistant, part of a clinical intelligence "
     "platform. Answer using the provided reference context whenever it's relevant. Give clear, "
     "general, educational health information suitable for a general audience. Never provide a "
     "definitive diagnosis or replace clinical judgment. Always encourage the person to consult a "
