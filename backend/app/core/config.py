@@ -1,4 +1,7 @@
+from pydantic import Field, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+_INSECURE_KEYS = {"", "change-this-to-a-long-random-string"}
 
 
 class Settings(BaseSettings):
@@ -6,8 +9,18 @@ class Settings(BaseSettings):
 
     APP_NAME: str = "MedVerse AI"
 
-    # Security
-    SECRET_KEY: str = "change-this-to-a-long-random-string"
+    # Security — no default on purpose: a published default key lets anyone forge tokens.
+    SECRET_KEY: str = Field(default="", validate_default=True)
+
+    @field_validator("SECRET_KEY")
+    @classmethod
+    def _require_real_secret(cls, v: str) -> str:
+        if v.strip() in _INSECURE_KEYS or len(v) < 32:
+            raise ValueError(
+                "SECRET_KEY is missing or insecure. Set a random value of 32+ characters in "
+                'backend/.env, e.g. python -c "import secrets; print(secrets.token_hex(32))"'
+            )
+        return v
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 1440
 

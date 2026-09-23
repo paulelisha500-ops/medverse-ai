@@ -7,6 +7,7 @@ export default function Medications() {
   const [meds, setMeds] = useState(['', ''])
   const [result, setResult] = useState(null)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   function updateMed(index, value) {
     setMeds((prev) => prev.map((m, i) => (i === index ? value : m)))
@@ -23,11 +24,22 @@ export default function Medications() {
   async function handleCheck(e) {
     e.preventDefault()
     const cleaned = meds.map((m) => m.trim()).filter(Boolean)
-    if (cleaned.length < 2) return
+    setError('')
+    if (cleaned.length < 2) {
+      setError('Enter at least two medications to check.')
+      return
+    }
     setLoading(true)
     try {
       const res = await client.post('/medications/check', { medications: cleaned })
       setResult(res.data)
+    } catch (err) {
+      setResult(null)
+      setError(
+        err.response?.status === 422
+          ? 'You can check up to 10 medications at a time.'
+          : "Couldn't complete the check. Please try again."
+      )
     } finally {
       setLoading(false)
     }
@@ -72,6 +84,7 @@ export default function Medications() {
           </button>
         </div>
 
+        {error && <p role="alert" className="text-sm text-alert">{error}</p>}
         <Button type="submit" disabled={loading}>{loading ? 'Checking…' : 'Check interactions'}</Button>
       </form>
 
@@ -81,7 +94,16 @@ export default function Medications() {
             Checked {result.checked.length} medications · {result.interactions.length} interaction(s) found
           </div>
 
-          {result.interactions.length === 0 && (
+          {result.unverified?.length > 0 && (
+            <div role="alert" className="card border-amber/40 p-5 text-sm text-ink">
+              <span className="font-medium">Couldn't verify: {result.unverified.join(', ')}.</span>{' '}
+              No official label was found for {result.unverified.length === 1 ? 'this medication' : 'these medications'}
+              , so the absence of a warning below does not mean it is safe to combine. Check the spelling
+              or ask a pharmacist.
+            </div>
+          )}
+
+          {result.interactions.length === 0 && !result.unverified?.length && (
             <div className="card p-5 text-sm text-ink">
               No known interactions found for this combination.
             </div>

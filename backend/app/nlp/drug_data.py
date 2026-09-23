@@ -15,6 +15,8 @@ If either lookup fails (network issue, drug not found in either dataset),
 callers fall back to the curated INTERACTIONS list in medication_data.py.
 """
 import re
+import threading
+import time
 from typing import Dict, Optional
 
 import requests
@@ -22,11 +24,23 @@ import requests
 RXNORM_BASE = "https://rxnav.nlm.nih.gov/REST"
 OPENFDA_BASE = "https://api.fda.gov/drug/label.json"
 TIMEOUT = 6
+CACHE_TTL_SECONDS = 3600
+
+_cache: Dict[str, tuple] = {}
+_cache_lock = threading.Lock()
+
+
+def _clean(name: str) -> str:
+    """Strips characters that would alter the openFDA search query."""
+    return re.sub(r'["\\]', " ", name).strip()[:100]
 
 
 def resolve_drug_name(name: str) -> Optional[str]:
     """Returns the canonical RxNorm name for a (possibly misspelled or
     brand) drug name, or None if RxNorm has no match / is unreachable."""
+    name = _clean(name)
+    if not name:
+        return None
     try:
         resp = requests.get(
             f"{RXNORM_BASE}/approximateTerm.json",
@@ -64,6 +78,9 @@ INTERACTION_FIELDS = (
 
 
 def _fetch_label_by_name(name: str) -> Optional[str]:
+    name = _clean(name)
+    if not name:
+        return None
     try:
         query = f'openfda.brand_name:"{name}" openfda.generic_name:"{name}"'
         resp = requests.get(OPENFDA_BASE, params={"search": query, "limit": 1}, timeout=TIMEOUT)
@@ -90,36 +107,47 @@ def lookup_drug(name: str) -> Dict:
     resolution (or the original input) even when no label text was found,
     so callers can still search for mentions of it by its standardized
     name rather than a user's typo."""
-    text = _fetch_label_by_name(name)
-    canonical = resolve_drug_name(name) or name
+    key = name.strip().lower()
+    with _cache_lock:
+        cached = _cache.get(key)
+    if cached and time.time() - cached[0] < CACHE_TTL_SECONDS:
+        return cached[1]
 
-    if text is None and canonical.lower() != name.lower():
+    text = _fetch_label_by_name(name)
+    canonical = resolve_drug_name(name) or _clean(name)
+
+    if text is None and canonical.lower() != name.strip().lower():
         text = _fetch_label_by_name(canonical)
 
-    return {"canonical_name": canonical, "label_text": text}
+    result = {"canonical_name": canonical, "label_text": text}
+    if text is not None:  # never cache failures — they may be transient network errors
+        with _cache_lock:
+            _cache[key] = (time.time(), result)
+    return result
 
 
 def _mentions(haystack: str, needle: str) -> Optional[str]:
-    """Returns the sentence mentioning `needle` in `haystack`, if any."""
-    pattern = re.escape(needle.strip())
-    if not pattern:
+    """Returns the sentence containing `needle` as a whole word/phrase."""
+    needle = needle.strip()
+    if len(needle) < 3:
         return None
-    sentences = re.split(r"(?<=[.!?])\s+", haystack)
-    for sentence in sentences:
-        if re.search(pattern, sentence, re.IGNORECASE):
+    pattern = re.compile(rf"(?<!\w){re.escape(needle)}(?!\w)", re.IGNORECASE)
+    for sentence in re.split(r"(?<=[.!?])\s+", haystack):
+        if pattern.search(sentence):
             return sentence.strip()[:400]
     return None
 
 
-def check_pair_live(drug_a: str, drug_b: str) -> Dict:
+def check_pair_live(drug_a: str, drug_b: str, a: Optional[Dict] = None, b: Optional[Dict] = None) -> Dict:
     """Checks whether drug_a's or drug_b's official FDA label text mentions
     the other (searching by RxNorm-resolved canonical name, so typos and
-    brand names still match). Returns a dict with status "hit" (interaction
+    brand names still match). Pass pre-fetched lookups `a`/`b` to avoid
+    repeat network calls. Returns a dict with status "hit" (interaction
     found), "no_match" (both labels found, neither mentions the other), or
-    "unavailable" (neither label could be found/reached — caller should
-    fall back to the curated dataset in that case, see medications.py)."""
-    a = lookup_drug(drug_a)
-    b = lookup_drug(drug_b)
+    "unavailable" (at least one label could not be found/reached — the
+    result is then unverified, see medications.py)."""
+    a = a or lookup_drug(drug_a)
+    b = b or lookup_drug(drug_b)
 
     if a["label_text"]:
         match = _mentions(a["label_text"], b["canonical_name"]) or _mentions(a["label_text"], drug_b)
@@ -136,6 +164,6 @@ def check_pair_live(drug_a: str, drug_b: str) -> Dict:
                 "excerpt": match, "labeled_drug": drug_b, "mentioned_drug": drug_a,
             }
 
-    if a["label_text"] is None and b["label_text"] is None:
+    if a["label_text"] is None or b["label_text"] is None:
         return {"status": "unavailable"}
     return {"status": "no_match"}

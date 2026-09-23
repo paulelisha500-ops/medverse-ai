@@ -73,6 +73,8 @@ flowchart LR
 
 ```bash
 cp backend/.env.example backend/.env
+# REQUIRED: set SECRET_KEY in backend/.env (the app refuses to start without one):
+#   python -c "import secrets; print(secrets.token_hex(32))"
 # optional: edit backend/.env to add an OpenAI/Anthropic key, or leave LLM_PROVIDER=none
 docker compose up --build
 ```

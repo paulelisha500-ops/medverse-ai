@@ -1,17 +1,22 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 import client from '../api/client.js'
+import { storage } from '../api/storage.js'
 
 const AuthContext = createContext(null)
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
-    const stored = localStorage.getItem('medverse_user')
-    return stored ? JSON.parse(stored) : null
+    try {
+      const stored = storage.get('medverse_user')
+      return stored ? JSON.parse(stored) : null
+    } catch {
+      return null // corrupt stored value — treat as signed out
+    }
   })
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const token = localStorage.getItem('medverse_token')
+    const token = storage.get('medverse_token')
     if (!token) {
       setLoading(false)
       return
@@ -20,11 +25,11 @@ export function AuthProvider({ children }) {
       .get('/auth/me')
       .then((res) => {
         setUser(res.data)
-        localStorage.setItem('medverse_user', JSON.stringify(res.data))
+        storage.set('medverse_user', JSON.stringify(res.data))
       })
       .catch(() => {
-        localStorage.removeItem('medverse_token')
-        localStorage.removeItem('medverse_user')
+        storage.remove('medverse_token')
+        storage.remove('medverse_user')
         setUser(null)
       })
       .finally(() => setLoading(false))
@@ -37,8 +42,8 @@ export function AuthProvider({ children }) {
     const res = await client.post('/auth/login', form, {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     })
-    localStorage.setItem('medverse_token', res.data.access_token)
-    localStorage.setItem('medverse_user', JSON.stringify(res.data.user))
+    storage.set('medverse_token', res.data.access_token)
+    storage.set('medverse_user', JSON.stringify(res.data.user))
     setUser(res.data.user)
     return res.data.user
   }
@@ -49,20 +54,20 @@ export function AuthProvider({ children }) {
       email,
       password,
     })
-    localStorage.setItem('medverse_token', res.data.access_token)
-    localStorage.setItem('medverse_user', JSON.stringify(res.data.user))
+    storage.set('medverse_token', res.data.access_token)
+    storage.set('medverse_user', JSON.stringify(res.data.user))
     setUser(res.data.user)
     return res.data.user
   }
 
   function logout() {
-    localStorage.removeItem('medverse_token')
-    localStorage.removeItem('medverse_user')
+    storage.remove('medverse_token')
+    storage.remove('medverse_user')
     setUser(null)
   }
 
   function updateUser(updated) {
-    localStorage.setItem('medverse_user', JSON.stringify(updated))
+    storage.set('medverse_user', JSON.stringify(updated))
     setUser(updated)
   }
 

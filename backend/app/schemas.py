@@ -1,7 +1,19 @@
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import List, Optional
 
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import BaseModel, EmailStr, Field, field_serializer, field_validator
+
+
+def _to_naive_utc(value: Optional[datetime]) -> Optional[datetime]:
+    """Stored datetimes are naive UTC. Aware inputs are converted (not just
+    stripped); naive inputs are assumed to already be UTC."""
+    if value is None or value.tzinfo is None:
+        return value
+    return value.astimezone(timezone.utc).replace(tzinfo=None)
+
+
+def _utc_iso(value: datetime) -> str:
+    return value.isoformat() + "Z"
 
 
 # ---------- Auth / Users ----------
@@ -139,7 +151,7 @@ class RiskAssessResponse(BaseModel):
 # ---------- Medications ----------
 
 class MedicationCheckRequest(BaseModel):
-    medications: List[str]
+    medications: List[str] = Field(max_length=10)
 
 
 class InteractionOut(BaseModel):
@@ -154,6 +166,7 @@ class InteractionOut(BaseModel):
 class MedicationCheckResponse(BaseModel):
     interactions: List[InteractionOut]
     checked: List[str]
+    unverified: List[str] = []  # drugs whose official label couldn't be found/reached
 
 
 # ---------- Appointments ----------
@@ -164,11 +177,21 @@ class AppointmentCreate(BaseModel):
     scheduled_at: datetime
     reason: Optional[str] = None
 
+    @field_validator("scheduled_at")
+    @classmethod
+    def _normalize_utc(cls, v):
+        return _to_naive_utc(v)
+
 
 class AppointmentUpdate(BaseModel):
     status: Optional[str] = None
     notes: Optional[str] = None
     scheduled_at: Optional[datetime] = None
+
+    @field_validator("scheduled_at")
+    @classmethod
+    def _normalize_utc(cls, v):
+        return _to_naive_utc(v)
 
 
 class AppointmentOut(BaseModel):
@@ -182,6 +205,10 @@ class AppointmentOut(BaseModel):
     status: str
     notes: Optional[str] = None
     created_at: datetime
+
+    @field_serializer("scheduled_at", "created_at")
+    def _serialize_utc(self, value: datetime) -> str:
+        return _utc_iso(value)
 
     class Config:
         from_attributes = True
