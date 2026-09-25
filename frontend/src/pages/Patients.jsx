@@ -59,6 +59,7 @@ export default function Patients() {
               <tr>
                 <th className="px-4 py-3 font-medium text-muted">Name</th>
                 <th className="px-4 py-3 font-medium text-muted">Email</th>
+                <th className="px-4 py-3 font-medium text-muted">Age</th>
                 <th className="px-4 py-3 font-medium text-muted">Blood group</th>
                 <th className="px-4 py-3 font-medium text-muted">Allergies</th>
               </tr>
@@ -72,6 +73,7 @@ export default function Patients() {
                     </Link>
                   </td>
                   <td className="px-4 py-3 font-mono text-xs text-muted">{p.email}</td>
+                  <td className="px-4 py-3">{p.age ?? '—'}</td>
                   <td className="px-4 py-3">{p.blood_group || '—'}</td>
                   <td className="px-4 py-3">{p.allergies || '—'}</td>
                 </tr>

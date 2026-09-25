@@ -1,7 +1,8 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import ProtectedRoute from './components/ProtectedRoute.jsx'
 import Layout from './components/Layout.jsx'
 
+import Landing from './pages/Landing.jsx'
 import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
 import DashboardHome from './pages/DashboardHome.jsx'
@@ -19,6 +20,10 @@ import NotFound from './pages/NotFound.jsx'
 export default function App() {
   return (
     <Routes>
+      <Route path="/" element={<Landing />} />
+      {/* The landing page lived here while the dashboard held "/". Kept as a
+          redirect so existing links don't 404. */}
+      <Route path="/welcome" element={<Navigate to="/" replace />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
 
@@ -29,7 +34,7 @@ export default function App() {
           </ProtectedRoute>
         }
       >
-        <Route path="/" element={<DashboardHome />} />
+        <Route path="/dashboard" element={<DashboardHome />} />
         <Route path="/assistant" element={<Assistant />} />
         <Route path="/reports" element={<Reports />} />
         <Route path="/risk-check" element={<RiskCheck />} />

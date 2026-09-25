@@ -1,7 +1,7 @@
 from datetime import datetime, timezone
-from typing import List, Optional
+from typing import Annotated, List, Optional
 
-from pydantic import BaseModel, EmailStr, Field, field_serializer, field_validator
+from pydantic import BaseModel, EmailStr, Field, StringConstraints, field_serializer, field_validator
 
 
 def _to_naive_utc(value: Optional[datetime]) -> Optional[datetime]:
@@ -16,12 +16,18 @@ def _utc_iso(value: datetime) -> str:
     return value.isoformat() + "Z"
 
 
+# Rejects "" and whitespace-only input with a 422. Without it an empty chat
+# message still ran retrieval — returning whatever passage ranked first for
+# nothing — and an empty report was saved and counted as analyzed.
+NonEmptyStr = Annotated[str, StringConstraints(strip_whitespace=True, min_length=1)]
+
+
 # ---------- Auth / Users ----------
 
 class UserCreate(BaseModel):
     email: EmailStr
     password: str = Field(min_length=6)
-    full_name: str
+    full_name: NonEmptyStr
 
 
 class StaffCreate(UserCreate):
@@ -58,6 +64,16 @@ class PatientProfileUpdate(BaseModel):
     gender: Optional[str] = None
     blood_group: Optional[str] = None
     allergies: Optional[str] = None
+    height_cm: Optional[float] = Field(default=None, ge=30, le=272)
+    weight_kg: Optional[float] = Field(default=None, ge=1, le=500)
+    phone: Optional[str] = None
+    address: Optional[str] = None
+    emergency_contact_name: Optional[str] = None
+    emergency_contact_phone: Optional[str] = None
+    smoking_status: Optional[str] = None
+    alcohol_use: Optional[str] = None
+    chronic_conditions: Optional[str] = None
+    family_history: Optional[str] = None
 
 
 class PatientProfileOut(BaseModel):
@@ -67,16 +83,28 @@ class PatientProfileOut(BaseModel):
     gender: Optional[str] = None
     blood_group: Optional[str] = None
     allergies: Optional[str] = None
+    height_cm: Optional[float] = None
+    weight_kg: Optional[float] = None
+    phone: Optional[str] = None
+    address: Optional[str] = None
+    emergency_contact_name: Optional[str] = None
+    emergency_contact_phone: Optional[str] = None
+    smoking_status: Optional[str] = None
+    alcohol_use: Optional[str] = None
+    chronic_conditions: Optional[str] = None
+    family_history: Optional[str] = None
     full_name: Optional[str] = None
     email: Optional[str] = None
+    age: Optional[int] = None
+    bmi: Optional[float] = None
 
     class Config:
         from_attributes = True
 
 
 class RecordEntryCreate(BaseModel):
-    type: str
-    title: str
+    type: NonEmptyStr
+    title: NonEmptyStr
     details: Optional[str] = None
 
 
@@ -94,7 +122,7 @@ class RecordEntryOut(BaseModel):
 # ---------- Assistant / RAG ----------
 
 class ChatRequest(BaseModel):
-    message: str
+    message: NonEmptyStr
     patient_id: Optional[int] = None
 
 
@@ -117,7 +145,7 @@ class ChatHistoryItem(BaseModel):
 # ---------- Reports / NLP ----------
 
 class ReportAnalyzeRequest(BaseModel):
-    text: str
+    text: NonEmptyStr
 
 
 class ReportAnalyzeResponse(BaseModel):
@@ -263,3 +291,50 @@ class ReminderProgress(BaseModel):
 class ReminderProgressResponse(BaseModel):
     reminders: List[ReminderProgress]
     overall_adherence_pct: float
+
+
+
+
+class DrugInfoOut(BaseModel):
+    name: str
+    brand_names: List[str]
+    dosage: str
+    category: str
+    fda_class: str = ""
+    # "curated" entries have hand-written dosing and can appear in interaction
+    # pairs; "reference" entries come from openFDA and carry no dosing regimen.
+    tier: str = "curated"
+
+
+class DrugDirectoryResponse(BaseModel):
+    drugs: List[DrugInfoOut]
+
+
+class ConversionFamilyOut(BaseModel):
+    key: str
+    label: str
+    reference: str
+    drugs: List[str]
+    caveats: List[str]
+
+
+class ConversionFamiliesResponse(BaseModel):
+    families: List[ConversionFamilyOut]
+
+
+class DoseConversionRequest(BaseModel):
+    family: str
+    from_drug: str
+    to_drug: str
+    dose_mg: float = Field(gt=0, le=10000)
+
+
+class DoseConversionResponse(BaseModel):
+    family: str
+    from_drug: str
+    to_drug: str
+    dose_mg: float
+    converted_mg: float
+    reference_value: float
+    reference_unit: str
+    caveats: List[str]
