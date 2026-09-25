@@ -33,6 +33,24 @@ class PatientProfile(Base):
     blood_group = Column(String, nullable=True)
     allergies = Column(String, nullable=True)
 
+    # Vitals
+    height_cm = Column(Float, nullable=True)
+    weight_kg = Column(Float, nullable=True)
+
+    # Contact
+    phone = Column(String, nullable=True)
+    address = Column(Text, nullable=True)
+    emergency_contact_name = Column(String, nullable=True)
+    emergency_contact_phone = Column(String, nullable=True)
+
+    # Lifestyle
+    smoking_status = Column(String, nullable=True)  # never | former | current
+    alcohol_use = Column(String, nullable=True)  # none | occasional | regular
+
+    # Medical background (free-text summary; detailed entries live in MedicalRecordEntry)
+    chronic_conditions = Column(Text, nullable=True)
+    family_history = Column(Text, nullable=True)
+
     user = relationship("User", back_populates="patient_profile")
     records = relationship(
         "MedicalRecordEntry", back_populates="patient", cascade="all, delete-orphan"

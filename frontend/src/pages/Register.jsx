@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext.jsx'
 import { Button, Field, inputClass } from '../components/ui.jsx'
+import { Logo } from '../components/Logo.jsx'
+import { apiErrorMessage } from '../api/errors.js'
 
 export default function Register() {
   const { register } = useAuth()
@@ -18,9 +20,9 @@ export default function Register() {
     setBusy(true)
     try {
       await register(fullName, email, password)
-      navigate('/')
+      navigate('/dashboard')
     } catch (err) {
-      setError(err.response?.data?.detail || 'Could not create your account.')
+      setError(apiErrorMessage(err, 'Could not create your account.'))
     } finally {
       setBusy(false)
     }
@@ -29,7 +31,7 @@ export default function Register() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-paper px-6 py-12">
       <div className="w-full max-w-sm">
-        <span className="font-display text-2xl font-semibold text-ink">MedVerse AI</span>
+        <Logo size={36} textClass="text-2xl" />
         <h1 className="mt-4 font-display text-2xl font-semibold text-ink">Create your account</h1>
         <p className="mt-1 text-sm text-muted">
           Patient sign-up. Doctor and admin accounts are created by an administrator.

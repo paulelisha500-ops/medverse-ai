@@ -1,3 +1,5 @@
+name: medverse-ai
+
 services:
   backend:
     build: ./backend

@@ -1,0 +1,5249 @@
+{
+  "abemaciclib": {
+    "brands": [
+      "Verzenio"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Kinase Inhibitor",
+    "product_count": 4
+  },
+  "abrocitinib": {
+    "brands": [
+      "CIBINQO",
+      "Cibinqo"
+    ],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Janus Kinase Inhibitor",
+    "product_count": 8
+  },
+  "acalabrutinib": {
+    "brands": [
+      "CALQUENCE"
+    ],
+    "dosage_forms": [
+      "Capsule, Gelatin Coated",
+      "Powder",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Kinase Inhibitor",
+    "product_count": 3
+  },
+  "acebutolol hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule"
+    ],
+    "fda_class": "beta-Adrenergic Blocker",
+    "product_count": 3
+  },
+  "acetazolamide": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule",
+      "Capsule, Extended Release",
+      "Injection, Powder, Lyophilized, For Solution",
+      "Powder"
+    ],
+    "fda_class": "Carbonic Anhydrase Inhibitor",
+    "product_count": 8
+  },
+  "acetylcysteine": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Powder",
+      "Solution"
+    ],
+    "fda_class": "Antidote",
+    "product_count": 6
+  },
+  "acitretin": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule",
+      "Powder"
+    ],
+    "fda_class": "Retinoid",
+    "product_count": 7
+  },
+  "adalimumab-aqvh": {
+    "brands": [
+      "YUSIMRY"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Tumor Necrosis Factor Blocker",
+    "product_count": 2
+  },
+  "adalimumab-atto": {
+    "brands": [
+      "AMJEVITA"
+    ],
+    "dosage_forms": [
+      "Injection"
+    ],
+    "fda_class": "Tumor Necrosis Factor Blocker",
+    "product_count": 4
+  },
+  "aflibercept": {
+    "brands": [
+      "EYLEA",
+      "EYLEA HD"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Vascular Endothelial Growth Factor Inhibitor",
+    "product_count": 6
+  },
+  "albumin (human)": {
+    "brands": [
+      "ALBURX",
+      "ALBUTEIN"
+    ],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Solution"
+    ],
+    "fda_class": "Human Serum Albumin",
+    "product_count": 8
+  },
+  "alcaftadine": {
+    "brands": [
+      "LASTACAFT"
+    ],
+    "dosage_forms": [
+      "Solution/ Drops"
+    ],
+    "fda_class": "Histamine-1 Receptor Antagonist",
+    "product_count": 2
+  },
+  "alclometasone dipropionate": {
+    "brands": [],
+    "dosage_forms": [
+      "Cream",
+      "Ointment"
+    ],
+    "fda_class": "Corticosteroid",
+    "product_count": 2
+  },
+  "aliskiren hemifumarate": {
+    "brands": [
+      "Tekturna"
+    ],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Renin Inhibitor",
+    "product_count": 2
+  },
+  "alprostadil": {
+    "brands": [
+      "Caverject Impulse",
+      "Edex",
+      "PROSTIN VR PEDIATRIC"
+    ],
+    "dosage_forms": [
+      "Injection, Powder, Lyophilized, For Solution",
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Prostaglandin Analog",
+    "product_count": 8
+  },
+  "ambrisentan": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Endothelin Receptor Antagonist",
+    "product_count": 6
+  },
+  "amcinonide": {
+    "brands": [],
+    "dosage_forms": [
+      "Cream",
+      "Ointment"
+    ],
+    "fda_class": "Corticosteroid",
+    "product_count": 2
+  },
+  "aminocaproic acid": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Powder",
+      "Solution",
+      "Tablet"
+    ],
+    "fda_class": "Antifibrinolytic Agent",
+    "product_count": 12
+  },
+  "aminophylline": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Methylxanthine",
+    "product_count": 3
+  },
+  "ammonia n-13": {
+    "brands": [
+      "Ammonia N 13"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Radioactive Diagnostic Agent",
+    "product_count": 2
+  },
+  "amoxapine": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet"
+    ],
+    "fda_class": "Tricyclic Antidepressant",
+    "product_count": 3
+  },
+  "amphetamine extended-release": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet, Orally Disintegrating"
+    ],
+    "fda_class": "Central Nervous System Stimulant",
+    "product_count": 6
+  },
+  "amphetamine sulfate": {
+    "brands": [
+      "Evekeo"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet",
+      "Tablet, Orally Disintegrating"
+    ],
+    "fda_class": "Central Nervous System Stimulant",
+    "product_count": 17
+  },
+  "amphotericin b": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Powder, Lyophilized, For Solution",
+      "Powder"
+    ],
+    "fda_class": "Lipid-based Polyene Antifungal",
+    "product_count": 6
+  },
+  "antifungal": {
+    "brands": [],
+    "dosage_forms": [
+      "Cream"
+    ],
+    "fda_class": "Azole Antifungal",
+    "product_count": 2
+  },
+  "apomorphine hydrochloride": {
+    "brands": [
+      "APOKYN",
+      "ONAPGO"
+    ],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Dopaminergic Agonist",
+    "product_count": 4
+  },
+  "aprepitant": {
+    "brands": [
+      "EMEND"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Powder"
+    ],
+    "fda_class": "Substance P/Neurokinin-1 Receptor Antagonist",
+    "product_count": 11
+  },
+  "arformoterol tartrate": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Solution"
+    ],
+    "fda_class": "beta2-Adrenergic Agonist",
+    "product_count": 3
+  },
+  "argatroban": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Solution"
+    ],
+    "fda_class": "Anti-coagulant",
+    "product_count": 4
+  },
+  "aripiprazole orally disintegrating": {
+    "brands": [
+      "Aripiprazole"
+    ],
+    "dosage_forms": [
+      "Tablet"
+    ],
+    "fda_class": "Atypical Antipsychotic",
+    "product_count": 2
+  },
+  "asfotase alfa": {
+    "brands": [
+      "STRENSIQ"
+    ],
+    "dosage_forms": [
+      "Solution"
+    ],
+    "fda_class": "Tissue-nonspecific Alkaline Phosphatase",
+    "product_count": 3
+  },
+  "atazanavir": {
+    "brands": [
+      "REYATAZ"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Capsule, Gelatin Coated",
+      "Powder"
+    ],
+    "fda_class": "Protease Inhibitor",
+    "product_count": 5
+  },
+  "atorvastatin calcium, film coated": {
+    "brands": [
+      "Atorvastatin Calcium",
+      "atorvastatin calcium"
+    ],
+    "dosage_forms": [
+      "Tablet"
+    ],
+    "fda_class": "HMG-CoA Reductase Inhibitor",
+    "product_count": 6
+  },
+  "atovaquone": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Suspension"
+    ],
+    "fda_class": "Antimalarial",
+    "product_count": 7
+  },
+  "atracurium besylate": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Nondepolarizing Neuromuscular Blocker",
+    "product_count": 2
+  },
+  "axitinib": {
+    "brands": [
+      "INLYTA"
+    ],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Kinase Inhibitor",
+    "product_count": 3
+  },
+  "azacitidine": {
+    "brands": [
+      "ONUREG"
+    ],
+    "dosage_forms": [
+      "Injection, Powder, Lyophilized, For Solution",
+      "Powder",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Nucleoside Metabolic Inhibitor",
+    "product_count": 11
+  },
+  "azelastine hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Solution/ Drops",
+      "Spray, Metered"
+    ],
+    "fda_class": "Histamine-1 Receptor Antagonist",
+    "product_count": 3
+  },
+  "azilsartan kamedoxomil": {
+    "brands": [
+      "Edarbi"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Angiotensin 2 Receptor Blocker",
+    "product_count": 4
+  },
+  "baloxavir marboxil": {
+    "brands": [
+      "Xofluza"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Polymerase Acidic Endonuclease Inhibitor",
+    "product_count": 2
+  },
+  "beclomethasone dipropionate": {
+    "brands": [],
+    "dosage_forms": [
+      "Aerosol, Metered"
+    ],
+    "fda_class": "Corticosteroid",
+    "product_count": 2
+  },
+  "benazepril hydrochloride": {
+    "brands": [
+      "Lotensin"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet",
+      "Tablet, Coated",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Angiotensin Converting Enzyme Inhibitor",
+    "product_count": 21
+  },
+  "benzocaine": {
+    "brands": [
+      "Anbesol Maximum Strength",
+      "Astra-dent Topical Anesthetic Gel",
+      "Bactimicina for Sore Throat",
+      "Benzo-Jel",
+      "Brace Relief",
+      "CVS Maximum Strength"
+    ],
+    "dosage_forms": [
+      "Aerosol, Spray",
+      "Cloth",
+      "Cream",
+      "Gel"
+    ],
+    "fda_class": "Standardized Chemical Allergen",
+    "product_count": 77
+  },
+  "benzphetamine hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Sympathomimetic Amine Anorectic",
+    "product_count": 3
+  },
+  "bepotastine besilate": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Solution",
+      "Solution/ Drops"
+    ],
+    "fda_class": "Histamine-1 Receptor Antagonist",
+    "product_count": 4
+  },
+  "betamethasone dipropionate": {
+    "brands": [],
+    "dosage_forms": [
+      "Cream",
+      "Cream, Augmented",
+      "Gel",
+      "Lotion, Augmented"
+    ],
+    "fda_class": "Corticosteroid",
+    "product_count": 12
+  },
+  "betamethasone valerate": {
+    "brands": [],
+    "dosage_forms": [
+      "Cream",
+      "Lotion",
+      "Ointment",
+      "Powder"
+    ],
+    "fda_class": "Corticosteroid",
+    "product_count": 6
+  },
+  "betaxolol": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "beta-Adrenergic Blocker",
+    "product_count": 4
+  },
+  "bethanechol chloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Cholinergic Muscarinic Agonist",
+    "product_count": 5
+  },
+  "bevacizumab-adcd": {
+    "brands": [
+      "Vegzelma"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Vascular Endothelial Growth Factor Inhibitor",
+    "product_count": 2
+  },
+  "bexarotene": {
+    "brands": [
+      "Targretin"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Capsule, Liquid Filled",
+      "Gel",
+      "Powder"
+    ],
+    "fda_class": "Retinoid",
+    "product_count": 4
+  },
+  "bimatoprost": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Solution/ Drops"
+    ],
+    "fda_class": "Prostaglandin Analog",
+    "product_count": 11
+  },
+  "bisacodyl suppository": {
+    "brands": [
+      "Walgreens Gentle Laxative"
+    ],
+    "dosage_forms": [
+      "Suppository"
+    ],
+    "fda_class": "Stimulant Laxative",
+    "product_count": 2
+  },
+  "bismuth": {
+    "brands": [],
+    "dosage_forms": [
+      "Pellet",
+      "Tablet, Chewable"
+    ],
+    "fda_class": "Bismuth",
+    "product_count": 2
+  },
+  "bismuth subsalicylate": {
+    "brands": [
+      "Bismuth",
+      "CVS Stomach Relief",
+      "CVS Stomach Relief Ultra Strength",
+      "Chewable Stomach Relief",
+      "Digestive Relief",
+      "Equaline Stomach Relief"
+    ],
+    "dosage_forms": [
+      "Capsule, Liquid Filled",
+      "Liquid",
+      "Powder",
+      "Suspension"
+    ],
+    "fda_class": "Bismuth",
+    "product_count": 34
+  },
+  "bismuthum oxydatum": {
+    "brands": [],
+    "dosage_forms": [
+      "Pellet"
+    ],
+    "fda_class": "Bismuth",
+    "product_count": 8
+  },
+  "bismuthum subnitricum": {
+    "brands": [],
+    "dosage_forms": [
+      "Pellet"
+    ],
+    "fda_class": "Bismuth",
+    "product_count": 8
+  },
+  "bivalirudin": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Powder, Lyophilized, For Solution",
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Anti-coagulant",
+    "product_count": 5
+  },
+  "bosutinib": {
+    "brands": [
+      "BOSULIF"
+    ],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Kinase Inhibitor",
+    "product_count": 2
+  },
+  "brinzolamide": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Suspension/ Drops"
+    ],
+    "fda_class": "Carbonic Anhydrase Inhibitor",
+    "product_count": 6
+  },
+  "bromfenac sodium": {
+    "brands": [
+      "bromfenac ophthalmic solution"
+    ],
+    "dosage_forms": [
+      "Solution/ Drops"
+    ],
+    "fda_class": "Nonsteroidal Anti-inflammatory Drug",
+    "product_count": 2
+  },
+  "bromocriptine mesylate": {
+    "brands": [
+      "CYCLOSET"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Ergot Derivative",
+    "product_count": 6
+  },
+  "budesonide inhalation": {
+    "brands": [],
+    "dosage_forms": [
+      "Suspension"
+    ],
+    "fda_class": "Corticosteroid",
+    "product_count": 2
+  },
+  "bupivacaine hydrochloride": {
+    "brands": [
+      "Marcaine",
+      "Sensorcaine",
+      "Sensorcaine MPF"
+    ],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Amide Local Anesthetic",
+    "product_count": 23
+  },
+  "busulfan": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Alkylating Drug",
+    "product_count": 2
+  },
+  "butorphanol tartrate": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Opioid Agonist/Antagonist",
+    "product_count": 2
+  },
+  "cabozantinib": {
+    "brands": [
+      "CABOMETYX",
+      "COMETRIQ"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Tablet"
+    ],
+    "fda_class": "Kinase Inhibitor",
+    "product_count": 4
+  },
+  "caffeine": {
+    "brands": [
+      "Alert",
+      "Awake Maximum Strength",
+      "Stay Awake",
+      "Stay Awake Maximum Strength"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet",
+      "Tablet, Coated",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Central Nervous System Stimulant",
+    "product_count": 9
+  },
+  "calamine and zinc oxide": {
+    "brands": [
+      "Calamine",
+      "calamine"
+    ],
+    "dosage_forms": [
+      "Lotion"
+    ],
+    "fda_class": "Copper Absorption Inhibitor",
+    "product_count": 2
+  },
+  "calcarea acetica": {
+    "brands": [],
+    "dosage_forms": [
+      "Pellet"
+    ],
+    "fda_class": "Blood Coagulation Factor",
+    "product_count": 8
+  },
+  "calcarea phosphorica": {
+    "brands": [
+      "Calc Phos",
+      "Schuessler Tissue Salts Calc Phos Bone Health 2"
+    ],
+    "dosage_forms": [
+      "Liquid",
+      "Spray",
+      "Tablet, Chewable"
+    ],
+    "fda_class": "Blood Coagulation Factor",
+    "product_count": 3
+  },
+  "calcarea sulphurica": {
+    "brands": [
+      "Schuessler Tissue Salts Calc Sulph Blood Cleanser 3"
+    ],
+    "dosage_forms": [
+      "Spray",
+      "Tablet, Chewable"
+    ],
+    "fda_class": "Blood Coagulation Factor",
+    "product_count": 2
+  },
+  "calcitonin salmon": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Calcitonin",
+    "product_count": 2
+  },
+  "candesartan cilexetil": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet"
+    ],
+    "fda_class": "Angiotensin 2 Receptor Blocker",
+    "product_count": 11
+  },
+  "captopril": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Angiotensin Converting Enzyme Inhibitor",
+    "product_count": 13
+  },
+  "carbinoxamine maleate": {
+    "brands": [],
+    "dosage_forms": [
+      "Suspension, Extended Release",
+      "Tablet"
+    ],
+    "fda_class": "Histamine-1 Receptor Antagonist",
+    "product_count": 2
+  },
+  "carboprost tromethamine": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Prostaglandin Analog",
+    "product_count": 3
+  },
+  "cariprazine": {
+    "brands": [
+      "Vraylar"
+    ],
+    "dosage_forms": [
+      "Capsule, Gelatin Coated"
+    ],
+    "fda_class": "Atypical Antipsychotic",
+    "product_count": 3
+  },
+  "carmustine": {
+    "brands": [
+      "Gliadel"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Wafer"
+    ],
+    "fda_class": "Alkylating Drug",
+    "product_count": 4
+  },
+  "cefaclor": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule",
+      "Tablet, Film Coated, Extended Release"
+    ],
+    "fda_class": "Cephalosporin Antibacterial",
+    "product_count": 2
+  },
+  "cefadroxil": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule",
+      "Powder, For Suspension",
+      "Tablet"
+    ],
+    "fda_class": "Cephalosporin Antibacterial",
+    "product_count": 10
+  },
+  "cefotaxime": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Powder, For Solution"
+    ],
+    "fda_class": "Cephalosporin Antibacterial",
+    "product_count": 3
+  },
+  "cefoxitin": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Powder, For Solution"
+    ],
+    "fda_class": "Cephalosporin Antibacterial",
+    "product_count": 2
+  },
+  "cefpodoxime proxetil": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Cephalosporin Antibacterial",
+    "product_count": 8
+  },
+  "cefuroxime axetil": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Cephalosporin Antibacterial",
+    "product_count": 10
+  },
+  "cevimeline hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule",
+      "Powder"
+    ],
+    "fda_class": "Cholinergic Receptor Agonist",
+    "product_count": 5
+  },
+  "chlorothiazide sodium": {
+    "brands": [
+      "Chlorothiazide"
+    ],
+    "dosage_forms": [
+      "Injection, Powder, Lyophilized, For Solution"
+    ],
+    "fda_class": "Thiazide Diuretic",
+    "product_count": 3
+  },
+  "chlorpheniramine maleate": {
+    "brands": [
+      "Aller-chlor",
+      "Allergy",
+      "Allergy Relief",
+      "Allergy Relief 4 Hour",
+      "Anti Allergy",
+      "ClorRelief"
+    ],
+    "dosage_forms": [
+      "Aerosol, Spray",
+      "Tablet"
+    ],
+    "fda_class": "Histamine-1 Receptor Antagonist",
+    "product_count": 7
+  },
+  "chlorpromazine hci": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection"
+    ],
+    "fda_class": "Phenothiazine",
+    "product_count": 2
+  },
+  "chlorzoxazone": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet"
+    ],
+    "fda_class": "Muscle Relaxant",
+    "product_count": 7
+  },
+  "cimetidine": {
+    "brands": [
+      "ACID CONTROLLER",
+      "basic care acid reducer"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Histamine-2 Receptor Antagonist",
+    "product_count": 9
+  },
+  "cinacalcet": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Calcium-sensing Receptor Agonist",
+    "product_count": 4
+  },
+  "ciprofolxacin": {
+    "brands": [
+      "Ciprofloxacin"
+    ],
+    "dosage_forms": [
+      "Tablet"
+    ],
+    "fda_class": "Fluoroquinolone Antibacterial",
+    "product_count": 6
+  },
+  "cisatracurium besylate": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Nondepolarizing Neuromuscular Blocker",
+    "product_count": 12
+  },
+  "cladribine": {
+    "brands": [
+      "Mavenclad"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Purine Antimetabolite",
+    "product_count": 3
+  },
+  "clevipidine": {
+    "brands": [
+      "Cleviprex"
+    ],
+    "dosage_forms": [
+      "Emulsion"
+    ],
+    "fda_class": "Dihydropyridine Calcium Channel Blocker",
+    "product_count": 2
+  },
+  "clobazam": {
+    "brands": [
+      "Onfi",
+      "SYMPAZAN"
+    ],
+    "dosage_forms": [
+      "Film",
+      "Powder",
+      "Suspension",
+      "Tablet"
+    ],
+    "fda_class": "Benzodiazepine",
+    "product_count": 17
+  },
+  "clonidine transdermal system": {
+    "brands": [
+      "Catapres-TTS-1",
+      "Catapres-TTS-2",
+      "Catapres-TTS-3"
+    ],
+    "dosage_forms": [
+      "Patch"
+    ],
+    "fda_class": "Central alpha-2 Adrenergic Agonist",
+    "product_count": 6
+  },
+  "clopidogrel bisulfate": {
+    "brands": [
+      "CLOPIDOGREL",
+      "Clopidogrel"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "P2Y12 Platelet Inhibitor",
+    "product_count": 10
+  },
+  "clorazepate dipotassium": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet"
+    ],
+    "fda_class": "Benzodiazepine",
+    "product_count": 7
+  },
+  "clotrimazole": {
+    "brands": [
+      "AU KAH CHUEN ANTIFUNGAL",
+      "ElixirCurozole",
+      "Fortinia",
+      "Kroger ATHLETES FOOT",
+      "Live Better Antifungal",
+      "Micomitin Antifungal"
+    ],
+    "dosage_forms": [
+      "Cream",
+      "Lotion",
+      "Lozenge",
+      "Powder"
+    ],
+    "fda_class": "Azole Antifungal",
+    "product_count": 31
+  },
+  "colesevelam hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Powder, For Suspension",
+      "Tablet",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Bile Acid Sequestrant",
+    "product_count": 5
+  },
+  "colestipol hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule",
+      "Powder",
+      "Suspension",
+      "Tablet"
+    ],
+    "fda_class": "Bile Acid Sequestrant",
+    "product_count": 10
+  },
+  "copper": {
+    "brands": [
+      "Cuprum metallicum",
+      "ParaGard T 380A"
+    ],
+    "dosage_forms": [
+      "Intrauterine Device",
+      "Pellet"
+    ],
+    "fda_class": "Copper-containing Intrauterine Device",
+    "product_count": 4
+  },
+  "cortisone acetate": {
+    "brands": [
+      "Cortisone aceticum"
+    ],
+    "dosage_forms": [
+      "Pellet",
+      "Powder"
+    ],
+    "fda_class": "Corticosteroid",
+    "product_count": 4
+  },
+  "crisaborole": {
+    "brands": [
+      "Eucrisa"
+    ],
+    "dosage_forms": [
+      "Ointment",
+      "Powder"
+    ],
+    "fda_class": "Phosphodiesterase 4 Inhibitor",
+    "product_count": 5
+  },
+  "cromolyn sodium": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Solution",
+      "Solution, Concentrate",
+      "Solution/ Drops"
+    ],
+    "fda_class": "Mast Cell Stabilizer",
+    "product_count": 6
+  },
+  "cuprum metallicum": {
+    "brands": [],
+    "dosage_forms": [
+      "Globule",
+      "Liquid"
+    ],
+    "fda_class": "Copper-containing Intrauterine Device",
+    "product_count": 2
+  },
+  "cyanocobalamin": {
+    "brands": [
+      "Non-proprietary name"
+    ],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Solution",
+      "Powder",
+      "Spray"
+    ],
+    "fda_class": "Vitamin B12",
+    "product_count": 14
+  },
+  "cysteamine bitartrate": {
+    "brands": [
+      "PROCYSBI"
+    ],
+    "dosage_forms": [
+      "Capsule, Delayed Release Pellets",
+      "Granule, Delayed Release",
+      "Powder"
+    ],
+    "fda_class": "Cystine Depleting Agent",
+    "product_count": 5
+  },
+  "dabigatran etexilate": {
+    "brands": [
+      "DABIGATRAN"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Capsule, Coated Pellets"
+    ],
+    "fda_class": "Direct Thrombin Inhibitor",
+    "product_count": 9
+  },
+  "dalfampridine": {
+    "brands": [
+      "AMPYRA"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Extended Release",
+      "Tablet, Film Coated, Extended Release"
+    ],
+    "fda_class": "Potassium Channel Blocker",
+    "product_count": 7
+  },
+  "dantrolene sodium": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule",
+      "Injection, Suspension",
+      "Powder"
+    ],
+    "fda_class": "Skeletal Muscle Relaxant",
+    "product_count": 6
+  },
+  "daptomycin in sodium chloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Lipopeptide Antibacterial",
+    "product_count": 2
+  },
+  "darifenacin hydrobromide": {
+    "brands": [
+      "Darifenacin"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Extended Release"
+    ],
+    "fda_class": "Cholinergic Muscarinic Antagonist",
+    "product_count": 2
+  },
+  "darunavir": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Protease Inhibitor",
+    "product_count": 7
+  },
+  "dasatinib": {
+    "brands": [
+      "SPRYCEL"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Kinase Inhibitor",
+    "product_count": 4
+  },
+  "decitabine": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Powder, Lyophilized, For Solution",
+      "Powder"
+    ],
+    "fda_class": "Nucleoside Metabolic Inhibitor",
+    "product_count": 6
+  },
+  "deferasirox": {
+    "brands": [
+      "Deferasorox",
+      "Exjade"
+    ],
+    "dosage_forms": [
+      "Granule",
+      "Powder",
+      "Tablet, For Suspension"
+    ],
+    "fda_class": "Iron Chelator",
+    "product_count": 8
+  },
+  "deferiprone": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Iron Chelator",
+    "product_count": 2
+  },
+  "deflazacort": {
+    "brands": [
+      "JAYTHARI Oral Suspension",
+      "KYMBEE"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Suspension",
+      "Tablet"
+    ],
+    "fda_class": "Corticosteroid",
+    "product_count": 13
+  },
+  "delafloxacin meglumine": {
+    "brands": [
+      "Baxdela"
+    ],
+    "dosage_forms": [
+      "Injection, Powder, Lyophilized, For Solution",
+      "Powder, For Solution",
+      "Tablet"
+    ],
+    "fda_class": "Fluoroquinolone Antibacterial",
+    "product_count": 3
+  },
+  "demeclocycline": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet"
+    ],
+    "fda_class": "Tetracycline-class Antimicrobial",
+    "product_count": 2
+  },
+  "denosumab-bmwo": {
+    "brands": [
+      "Osenvelt",
+      "Stoboclo"
+    ],
+    "dosage_forms": [
+      "Injection"
+    ],
+    "fda_class": "RANK Ligand Inhibitor",
+    "product_count": 4
+  },
+  "denosumab-mobz": {
+    "brands": [
+      "Boncresa",
+      "Oziltus"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "RANK Ligand Inhibitor",
+    "product_count": 2
+  },
+  "desipramine hydrochloride": {
+    "brands": [
+      "Norpramin"
+    ],
+    "dosage_forms": [
+      "Tablet, Sugar Coated"
+    ],
+    "fda_class": "Tricyclic Antidepressant",
+    "product_count": 6
+  },
+  "desloratadine": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Histamine-1 Receptor Antagonist",
+    "product_count": 4
+  },
+  "desonide": {
+    "brands": [],
+    "dosage_forms": [
+      "Cream",
+      "Lotion",
+      "Ointment",
+      "Powder"
+    ],
+    "fda_class": "Corticosteroid",
+    "product_count": 5
+  },
+  "desoximetasone": {
+    "brands": [],
+    "dosage_forms": [
+      "Cream",
+      "Ointment",
+      "Powder"
+    ],
+    "fda_class": "Corticosteroid",
+    "product_count": 7
+  },
+  "dexlansoprazole": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule, Delayed Release",
+      "Powder"
+    ],
+    "fda_class": "Proton Pump Inhibitor",
+    "product_count": 7
+  },
+  "dexmethylphenidate hydrochloride": {
+    "brands": [
+      "Focalin XR"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Capsule, Extended Release",
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Central Nervous System Stimulant",
+    "product_count": 28
+  },
+  "dextran 40": {
+    "brands": [
+      "LMD in Dextrose",
+      "LMD in Sodium Chloride"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Plasma Volume Expander",
+    "product_count": 2
+  },
+  "dextroamphetamine sulfate": {
+    "brands": [
+      "DEXEDRINE SPANSULE"
+    ],
+    "dosage_forms": [
+      "Capsule, Extended Release",
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Central Nervous System Stimulant",
+    "product_count": 12
+  },
+  "dextromethorphan hbr": {
+    "brands": [
+      "Adult Long Lasting Cough Relief",
+      "Cough Relief Cough Suppressant"
+    ],
+    "dosage_forms": [
+      "Capsule, Liquid Filled",
+      "Liquid"
+    ],
+    "fda_class": "Sigma-1 Agonist",
+    "product_count": 3
+  },
+  "dextromethorphan polistirex": {
+    "brands": [
+      "Cough DM",
+      "DG Health Cough DM",
+      "Equate Cough DM",
+      "Robitussin 12 Hour Cough Relief",
+      "cough dm"
+    ],
+    "dosage_forms": [
+      "Suspension",
+      "Suspension, Extended Release"
+    ],
+    "fda_class": "Sigma-1 Agonist",
+    "product_count": 9
+  },
+  "diatrizoate meglumine": {
+    "brands": [
+      "Cystografin Dilute"
+    ],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Radiographic Contrast Agent",
+    "product_count": 2
+  },
+  "diclofenac sodium topical": {
+    "brands": [
+      "Diclofenac Sodium",
+      "Diclofenac Sodium 1.5%"
+    ],
+    "dosage_forms": [
+      "Gel",
+      "Solution"
+    ],
+    "fda_class": "Nonsteroidal Anti-inflammatory Drug",
+    "product_count": 4
+  },
+  "dicloxacillin sodium": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule"
+    ],
+    "fda_class": "Penicillin-class Antibacterial",
+    "product_count": 2
+  },
+  "diethylpropion hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet",
+      "Tablet, Extended Release"
+    ],
+    "fda_class": "Sympathomimetic Amine Anorectic",
+    "product_count": 5
+  },
+  "diflorasone diacetate": {
+    "brands": [],
+    "dosage_forms": [
+      "Cream",
+      "Ointment"
+    ],
+    "fda_class": "Corticosteroid",
+    "product_count": 2
+  },
+  "diflunisal": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Nonsteroidal Anti-inflammatory Drug",
+    "product_count": 3
+  },
+  "dihydroergotamine mesylate": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Spray"
+    ],
+    "fda_class": "Ergotamine Derivative",
+    "product_count": 2
+  },
+  "dimenhydrinate": {
+    "brands": [
+      "Airmit Ace",
+      "Gravol",
+      "Motion Sickness",
+      "Motion Sickness Relief"
+    ],
+    "dosage_forms": [
+      "Capsule, Liquid Filled",
+      "Tablet",
+      "Tablet, Coated"
+    ],
+    "fda_class": "Histamine-1 Receptor Antagonist",
+    "product_count": 8
+  },
+  "dinoprostone": {
+    "brands": [
+      "CERVIDIL"
+    ],
+    "dosage_forms": [
+      "Insert",
+      "Powder"
+    ],
+    "fda_class": "Prostaglandin Analog",
+    "product_count": 3
+  },
+  "dipyridamole": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection",
+      "Powder",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Platelet Aggregation Inhibitor",
+    "product_count": 5
+  },
+  "disopyramide phosphate": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule"
+    ],
+    "fda_class": "Antiarrhythmic",
+    "product_count": 2
+  },
+  "divalproex sodium": {
+    "brands": [
+      "Depakote ER"
+    ],
+    "dosage_forms": [
+      "Capsule, Coated Pellets",
+      "Capsule, Delayed Release",
+      "Powder",
+      "Tablet, Delayed Release"
+    ],
+    "fda_class": "Anti-epileptic Agent",
+    "product_count": 29
+  },
+  "doravirine": {
+    "brands": [
+      "PIFELTRO"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Human Immunodeficiency Virus 1 Non-Nucleoside Analog Reverse Transcriptase Inhibitor",
+    "product_count": 2
+  },
+  "dorzolamide hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Solution/ Drops"
+    ],
+    "fda_class": "Carbonic Anhydrase Inhibitor",
+    "product_count": 3
+  },
+  "doxercalciferol": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Vitamin D2 Analog",
+    "product_count": 5
+  },
+  "doxorubicin hydrochloride liposome": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Suspension, Liposomal"
+    ],
+    "fda_class": "Anthracycline Topoisomerase Inhibitor",
+    "product_count": 2
+  },
+  "doxycycline hyclate": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule",
+      "Powder",
+      "Powder, For Solution",
+      "Tablet"
+    ],
+    "fda_class": "Tetracycline-class Drug",
+    "product_count": 28
+  },
+  "doxylamine succinate": {
+    "brands": [
+      "Good sense sleep aid",
+      "Night Time Sleep Aid",
+      "Nighttime Sleep Aid",
+      "Nighttime Sleep-Aid",
+      "Sleep Aid",
+      "Vicks ZzzQuil Ultra"
+    ],
+    "dosage_forms": [
+      "Liquid",
+      "Powder",
+      "Tablet",
+      "Tablet, Coated"
+    ],
+    "fda_class": "Antihistamine",
+    "product_count": 15
+  },
+  "dronabinol": {
+    "brands": [
+      "SYNDROS"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Solution"
+    ],
+    "fda_class": "Cannabinoid",
+    "product_count": 6
+  },
+  "durvalumab": {
+    "brands": [
+      "IMFINZI"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Programmed Death Ligand-1 Blocker",
+    "product_count": 2
+  },
+  "econazole nitrate": {
+    "brands": [],
+    "dosage_forms": [
+      "Aerosol, Foam",
+      "Cream",
+      "Powder"
+    ],
+    "fda_class": "Azole Antifungal",
+    "product_count": 5
+  },
+  "elotuzumab": {
+    "brands": [
+      "EMPLICITI"
+    ],
+    "dosage_forms": [
+      "Injection, Powder, Lyophilized, For Solution"
+    ],
+    "fda_class": "SLAMF7-directed Immunostimulatory Antibody",
+    "product_count": 3
+  },
+  "eltrombopag": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Thrombopoietin Receptor Agonist",
+    "product_count": 4
+  },
+  "eltrombopag olamine": {
+    "brands": [
+      "Eltrombopag"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Thrombopoietin Receptor Agonist",
+    "product_count": 3
+  },
+  "eluxadoline": {
+    "brands": [
+      "Viberzi"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "mu-Opioid Receptor Agonist",
+    "product_count": 4
+  },
+  "emtricitabine": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule",
+      "Powder"
+    ],
+    "fda_class": "Human Immunodeficiency Virus Nucleoside Analog Reverse Transcriptase Inhibitor",
+    "product_count": 8
+  },
+  "enalaprilat": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection"
+    ],
+    "fda_class": "Angiotensin Converting Enzyme Inhibitor",
+    "product_count": 2
+  },
+  "enasidenib mesylate": {
+    "brands": [
+      "Idhifa"
+    ],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Isocitrate Dehydrogenase 2 Inhibitor",
+    "product_count": 2
+  },
+  "ephedrine sulfate": {
+    "brands": [
+      "Akovaz",
+      "Emerphed",
+      "Emerphed PFS"
+    ],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Norepinephrine Releasing Agent",
+    "product_count": 15
+  },
+  "epinephrine in sodium chloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection"
+    ],
+    "fda_class": "Catecholamine",
+    "product_count": 5
+  },
+  "ergocalciferol": {
+    "brands": [
+      "VITAMIN D"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Capsule, Liquid Filled"
+    ],
+    "fda_class": "Provitamin D2 Compound",
+    "product_count": 3
+  },
+  "eribulin mesylate": {
+    "brands": [
+      "Halaven"
+    ],
+    "dosage_forms": [
+      "Injection",
+      "Powder"
+    ],
+    "fda_class": "Microtubule Inhibitor",
+    "product_count": 7
+  },
+  "erythromycin ethylsuccinate": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Suspension"
+    ],
+    "fda_class": "Macrolide",
+    "product_count": 3
+  },
+  "esmolol hydrochloride": {
+    "brands": [
+      "BREVIBLOC"
+    ],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "beta-Adrenergic Blocker",
+    "product_count": 9
+  },
+  "estrogens, conjugated": {
+    "brands": [
+      "Premarin"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Estrogen",
+    "product_count": 5
+  },
+  "etodolac": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule",
+      "Powder",
+      "Tablet, Extended Release",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Nonsteroidal Anti-inflammatory Drug",
+    "product_count": 17
+  },
+  "etravirine": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Human Immunodeficiency Virus 1 Non-Nucleoside Analog Reverse Transcriptase Inhibitor",
+    "product_count": 6
+  },
+  "felbamate": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet"
+    ],
+    "fda_class": "Anti-epileptic Agent",
+    "product_count": 2
+  },
+  "fenofibric acid": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule, Delayed Release"
+    ],
+    "fda_class": "Peroxisome Proliferator Receptor alpha Agonist",
+    "product_count": 4
+  },
+  "fenoprofen calcium": {
+    "brands": [
+      "FENOPRON TM"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Powder"
+    ],
+    "fda_class": "Nonsteroidal Anti-inflammatory Drug",
+    "product_count": 3
+  },
+  "ferric picrate": {
+    "brands": [
+      "FERRUM PICRICUM",
+      "Ferrum picricum"
+    ],
+    "dosage_forms": [
+      "Pellet"
+    ],
+    "fda_class": "Parenteral Iron Replacement",
+    "product_count": 2
+  },
+  "fibrinogen human": {
+    "brands": [
+      "RiaSTAP",
+      "Riastap"
+    ],
+    "dosage_forms": [
+      "Injection, Powder, Lyophilized, For Solution",
+      "Injection, Solution"
+    ],
+    "fda_class": "Human Blood Coagulation Factor",
+    "product_count": 2
+  },
+  "filgrastim-txid": {
+    "brands": [
+      "NYPOZI txid"
+    ],
+    "dosage_forms": [
+      "Injection"
+    ],
+    "fda_class": "Leukocyte Growth Factor",
+    "product_count": 2
+  },
+  "flavoxate hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Cholinergic Muscarinic Antagonist",
+    "product_count": 3
+  },
+  "flucytosine": {
+    "brands": [
+      "ANCOBON"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Powder"
+    ],
+    "fda_class": "Nucleoside Analog Antifungal",
+    "product_count": 9
+  },
+  "fludarabine phosphate": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection",
+      "Powder"
+    ],
+    "fda_class": "Nucleoside Metabolic Inhibitor",
+    "product_count": 3
+  },
+  "fludeoxyglucose f-18": {
+    "brands": [
+      "Fludeoxyglucose F 18"
+    ],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Solution"
+    ],
+    "fda_class": "Radioactive Diagnostic Agent",
+    "product_count": 2
+  },
+  "fludeoxyglucose f18": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection"
+    ],
+    "fda_class": "Radioactive Diagnostic Agent",
+    "product_count": 2
+  },
+  "flunisolide": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Solution"
+    ],
+    "fda_class": "Corticosteroid",
+    "product_count": 2
+  },
+  "fluocinolone acetonide": {
+    "brands": [
+      "Flac Otic Oil",
+      "Iluvien",
+      "YUTIQ"
+    ],
+    "dosage_forms": [
+      "Cream",
+      "Implant",
+      "Oil",
+      "Ointment"
+    ],
+    "fda_class": "Corticosteroid",
+    "product_count": 11
+  },
+  "fluocinonide": {
+    "brands": [],
+    "dosage_forms": [
+      "Cream",
+      "Ointment",
+      "Powder"
+    ],
+    "fda_class": "Corticosteroid",
+    "product_count": 7
+  },
+  "fluorescein": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection"
+    ],
+    "fda_class": "Diagnostic Dye",
+    "product_count": 4
+  },
+  "fluphenazine decanoate": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Solution",
+      "Liquid",
+      "Powder"
+    ],
+    "fda_class": "Phenothiazine",
+    "product_count": 5
+  },
+  "flurbiprofen": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Nonsteroidal Anti-inflammatory Drug",
+    "product_count": 4
+  },
+  "fluvastatin": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule"
+    ],
+    "fda_class": "HMG-CoA Reductase Inhibitor",
+    "product_count": 4
+  },
+  "follitropin": {
+    "brands": [
+      "Gonal-f RFF Redi-ject"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Gonadotropin",
+    "product_count": 3
+  },
+  "fomepizole": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Solution"
+    ],
+    "fda_class": "Antidote",
+    "product_count": 2
+  },
+  "fosaprepitant dimeglumine": {
+    "brands": [
+      "FOCINVEZ",
+      "Fosaprepitant"
+    ],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Powder, Lyophilized, For Solution",
+      "Powder"
+    ],
+    "fda_class": "Substance P/Neurokinin-1 Receptor Antagonist",
+    "product_count": 7
+  },
+  "foscarnet sodium": {
+    "brands": [
+      "Foscavir"
+    ],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Pyrophosphate Analog DNA Polymerase Inhibitor",
+    "product_count": 4
+  },
+  "fosinopril sodium": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Angiotensin Converting Enzyme Inhibitor",
+    "product_count": 3
+  },
+  "fulvestrant": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Estrogen Receptor Antagonist",
+    "product_count": 4
+  },
+  "gadobutrol": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection"
+    ],
+    "fda_class": "Gadolinium-based Contrast Agent",
+    "product_count": 11
+  },
+  "gadoterate meglumine": {
+    "brands": [
+      "CLARISCAN",
+      "DOTAREM"
+    ],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Solution"
+    ],
+    "fda_class": "Gadolinium-based Contrast Agent",
+    "product_count": 10
+  },
+  "ganciclovir sodium": {
+    "brands": [
+      "Ganciclovir"
+    ],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Powder, Lyophilized, For Solution"
+    ],
+    "fda_class": "Cytomegalovirus Nucleoside Analog DNA Polymerase Inhibitor",
+    "product_count": 3
+  },
+  "ganirelix acetate": {
+    "brands": [
+      "Fyremadel"
+    ],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Solution"
+    ],
+    "fda_class": "Gonadotropin Releasing Hormone Receptor Antagonist",
+    "product_count": 4
+  },
+  "gatifloxacin": {
+    "brands": [
+      "ZYMAXID"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Solution/ Drops"
+    ],
+    "fda_class": "Quinolone Antimicrobial",
+    "product_count": 2
+  },
+  "gefitinib": {
+    "brands": [
+      "IRESSA"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Coated"
+    ],
+    "fda_class": "Kinase Inhibitor",
+    "product_count": 3
+  },
+  "glycerinum": {
+    "brands": [],
+    "dosage_forms": [
+      "Pellet"
+    ],
+    "fda_class": "Non-Standardized Chemical Allergen",
+    "product_count": 3
+  },
+  "glycerol phenylbutyrate": {
+    "brands": [
+      "Ravicti"
+    ],
+    "dosage_forms": [
+      "Liquid",
+      "Powder"
+    ],
+    "fda_class": "Nitrogen Binding Agent",
+    "product_count": 4
+  },
+  "glycopyrrolate": {
+    "brands": [
+      "GLYRX-PF"
+    ],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Solution",
+      "Powder",
+      "Solution"
+    ],
+    "fda_class": "Anticholinergic",
+    "product_count": 35
+  },
+  "gold": {
+    "brands": [
+      "Aurum metallicum"
+    ],
+    "dosage_forms": [
+      "Pellet"
+    ],
+    "fda_class": "Standardized Chemical Allergen",
+    "product_count": 4
+  },
+  "halobetasol propionate": {
+    "brands": [],
+    "dosage_forms": [
+      "Ointment",
+      "Powder"
+    ],
+    "fda_class": "Corticosteroid",
+    "product_count": 2
+  },
+  "haloperidol decanoate": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Typical Antipsychotic",
+    "product_count": 5
+  },
+  "hepatitis a vaccine": {
+    "brands": [
+      "HAVRIX"
+    ],
+    "dosage_forms": [
+      "Injection, Suspension"
+    ],
+    "fda_class": "Inactivated Hepatitis A Virus Vaccine",
+    "product_count": 3
+  },
+  "homatropine hydrobromide": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Solution"
+    ],
+    "fda_class": "Cholinergic Muscarinic Antagonist",
+    "product_count": 2
+  },
+  "hydromorphone hydrochloride": {
+    "brands": [
+      "Dilaudid"
+    ],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Powder",
+      "Solution",
+      "Suppository"
+    ],
+    "fda_class": "Opioid Agonist",
+    "product_count": 10
+  },
+  "hydroxocobalamin": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection",
+      "Powder"
+    ],
+    "fda_class": "Antidote",
+    "product_count": 2
+  },
+  "hydroxyurea": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule",
+      "Powder"
+    ],
+    "fda_class": "Antimetabolite",
+    "product_count": 6
+  },
+  "hydroxyzine pamoate": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule",
+      "Powder"
+    ],
+    "fda_class": "Antihistamine",
+    "product_count": 18
+  },
+  "i.v. fat emulsion": {
+    "brands": [
+      "Intralipid"
+    ],
+    "dosage_forms": [
+      "Emulsion"
+    ],
+    "fda_class": "Lipid Emulsion",
+    "product_count": 3
+  },
+  "ibandronate sodium": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Bisphosphonate",
+    "product_count": 2
+  },
+  "ibuprofen oral": {
+    "brands": [],
+    "dosage_forms": [
+      "Suspension"
+    ],
+    "fda_class": "Nonsteroidal Anti-inflammatory Drug",
+    "product_count": 4
+  },
+  "icatibant": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Solution"
+    ],
+    "fda_class": "Bradykinin B2 Receptor Antagonist",
+    "product_count": 2
+  },
+  "ifosfamide": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Powder, For Solution"
+    ],
+    "fda_class": "Alkylating Drug",
+    "product_count": 2
+  },
+  "iloperidone": {
+    "brands": [
+      "FANAPT"
+    ],
+    "dosage_forms": [
+      "Tablet"
+    ],
+    "fda_class": "Atypical Antipsychotic",
+    "product_count": 11
+  },
+  "imlunestrant": {
+    "brands": [
+      "Inluriyo"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Estrogen Receptor Antagonist",
+    "product_count": 2
+  },
+  "immune globulin intravenous (human)": {
+    "brands": [
+      "Panzyga"
+    ],
+    "dosage_forms": [
+      "Solution"
+    ],
+    "fda_class": "Human Immunoglobulin G",
+    "product_count": 4
+  },
+  "immunoglobulin g": {
+    "brands": [
+      "Cutaquig"
+    ],
+    "dosage_forms": [
+      "Solution"
+    ],
+    "fda_class": "Human Immunoglobulin G",
+    "product_count": 2
+  },
+  "inavolisib": {
+    "brands": [
+      "Itovebi"
+    ],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Kinase Inhibitor",
+    "product_count": 2
+  },
+  "incobotulinumtoxina": {
+    "brands": [
+      "Xeomin"
+    ],
+    "dosage_forms": [
+      "Injection, Powder, Lyophilized, For Solution"
+    ],
+    "fda_class": "Acetylcholine Release Inhibitor",
+    "product_count": 3
+  },
+  "indapamide": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Thiazide-like Diuretic",
+    "product_count": 6
+  },
+  "indomethacin": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule",
+      "Capsule, Extended Release",
+      "Injection, Powder, Lyophilized, For Solution",
+      "Powder"
+    ],
+    "fda_class": "Nonsteroidal Anti-inflammatory Drug",
+    "product_count": 15
+  },
+  "insulin aspart": {
+    "brands": [
+      "Fiasp",
+      "NOVOLOG",
+      "NovoLog Mix 70/30"
+    ],
+    "dosage_forms": [
+      "Crystal",
+      "Injection, Solution",
+      "Injection, Suspension"
+    ],
+    "fda_class": "Insulin Analog",
+    "product_count": 5
+  },
+  "insulin aspart-fsan": {
+    "brands": [
+      "Garzulys"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Insulin Analog",
+    "product_count": 2
+  },
+  "insulin human": {
+    "brands": [
+      "HUMULIN R",
+      "Humulin R"
+    ],
+    "dosage_forms": [
+      "Crystal",
+      "Injection, Solution",
+      "Powder, Metered"
+    ],
+    "fda_class": "Insulin",
+    "product_count": 6
+  },
+  "insulin lispro": {
+    "brands": [
+      "ADMELOG",
+      "Humalog",
+      "Humalog KwikPen"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Insulin Analog",
+    "product_count": 8
+  },
+  "insulin lispro-aabc": {
+    "brands": [
+      "LYUMJEV"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Insulin Analog",
+    "product_count": 2
+  },
+  "interferon beta-1a": {
+    "brands": [
+      "REBIF",
+      "REBIF REBIDOSE"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Interferon beta",
+    "product_count": 4
+  },
+  "iopamidol": {
+    "brands": [
+      "ISOVUE 250",
+      "ISOVUE-M"
+    ],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Radiographic Contrast Agent",
+    "product_count": 7
+  },
+  "irinotecan hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Topoisomerase Inhibitor",
+    "product_count": 7
+  },
+  "iron sucrose": {
+    "brands": [
+      "Venofer"
+    ],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Parenteral Iron Replacement",
+    "product_count": 2
+  },
+  "isoflurane": {
+    "brands": [],
+    "dosage_forms": [
+      "Liquid"
+    ],
+    "fda_class": "General Anesthetic",
+    "product_count": 2
+  },
+  "isoproterenol hydrochloride": {
+    "brands": [
+      "ISOPROTERENOL"
+    ],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "beta-Adrenergic Agonist",
+    "product_count": 5
+  },
+  "isosorbide dinitrate": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet"
+    ],
+    "fda_class": "Nitrate Vasodilator",
+    "product_count": 12
+  },
+  "ixekizumab": {
+    "brands": [
+      "TALTZ"
+    ],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Solution"
+    ],
+    "fda_class": "Interleukin-17A Antagonist",
+    "product_count": 2
+  },
+  "kali muriaticum": {
+    "brands": [
+      "Kali Mur",
+      "Schuessler Tissue Salts Kali Mur Glandular Tonic 5"
+    ],
+    "dosage_forms": [
+      "Liquid",
+      "Spray",
+      "Tablet, Chewable"
+    ],
+    "fda_class": "Osmotic Laxative",
+    "product_count": 3
+  },
+  "kali oxalicum": {
+    "brands": [],
+    "dosage_forms": [
+      "Pellet"
+    ],
+    "fda_class": "Osmotic Laxative",
+    "product_count": 8
+  },
+  "kali sulphuricum": {
+    "brands": [
+      "Schuessler Tissue Salts Kali Sulph Skin Balance 7"
+    ],
+    "dosage_forms": [
+      "Pellet",
+      "Spray",
+      "Tablet, Chewable"
+    ],
+    "fda_class": "Osmotic Laxative",
+    "product_count": 10
+  },
+  "ketoprofen": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule, Extended Release",
+      "Powder"
+    ],
+    "fda_class": "Nonsteroidal Anti-inflammatory Drug",
+    "product_count": 3
+  },
+  "ketorolac tromethamine": {
+    "brands": [
+      "Acular"
+    ],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Solution",
+      "Powder",
+      "Solution"
+    ],
+    "fda_class": "Cyclooxygenase Inhibitor",
+    "product_count": 30
+  },
+  "ketotifen fumarate": {
+    "brands": [
+      "Eye Itch Relief"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Solution",
+      "Solution/ Drops"
+    ],
+    "fda_class": "Histamine-1 Receptor Inhibitor",
+    "product_count": 5
+  },
+  "lamivudine": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Hepatitis B Virus Nucleoside Analog Reverse Transcriptase Inhibitor",
+    "product_count": 11
+  },
+  "lamotrigine extended-release": {
+    "brands": [
+      "lamotrigine"
+    ],
+    "dosage_forms": [
+      "Tablet, Film Coated, Extended Release"
+    ],
+    "fda_class": "Anti-epileptic Agent",
+    "product_count": 12
+  },
+  "landiolol": {
+    "brands": [
+      "RAPIBLYK"
+    ],
+    "dosage_forms": [
+      "Injection, Powder, Lyophilized, For Solution",
+      "Powder, For Solution"
+    ],
+    "fda_class": "beta-Adrenergic Blocker",
+    "product_count": 2
+  },
+  "lecanemab": {
+    "brands": [
+      "LEQEMBI"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Amyloid Beta-directed Antibody",
+    "product_count": 2
+  },
+  "lecanemab-irmb": {
+    "brands": [
+      "LECANEMAB AUTOINJECTOR"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Amyloid Beta-directed Antibody",
+    "product_count": 2
+  },
+  "lemborexant": {
+    "brands": [
+      "DAYVIGO"
+    ],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Orexin Receptor Antagonist",
+    "product_count": 2
+  },
+  "lenvatinib": {
+    "brands": [
+      "Lenvima"
+    ],
+    "dosage_forms": [
+      "Capsule"
+    ],
+    "fda_class": "Kinase Inhibitor",
+    "product_count": 7
+  },
+  "letermovir": {
+    "brands": [
+      "PREVYMIS"
+    ],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Pellet",
+      "Powder",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Cytomegalovirus DNA Terminase Complex Inhibitor",
+    "product_count": 4
+  },
+  "leucovorin calcium": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Powder, Lyophilized, For Solution",
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Folate Analog",
+    "product_count": 23
+  },
+  "leuprolide acetate": {
+    "brands": [
+      "Eligard",
+      "Fensolvi"
+    ],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Powder, Lyophilized, For Suspension",
+      "Injection, Suspension, Extended Release"
+    ],
+    "fda_class": "Gonadotropin Releasing Hormone Receptor Agonist",
+    "product_count": 8
+  },
+  "levalbuterol hydrochloride": {
+    "brands": [
+      "Levalbuterol"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Solution"
+    ],
+    "fda_class": "beta2-Adrenergic Agonist",
+    "product_count": 5
+  },
+  "levocetirizine dihydrochloride": {
+    "brands": [
+      "Allergy Relief",
+      "Childrens Xyzal Allergy",
+      "Topcare All Day Allergy",
+      "Xyzal",
+      "Xyzal Allergy 24HR",
+      "allergy relief"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Solution",
+      "Tablet",
+      "Tablet, Coated"
+    ],
+    "fda_class": "Histamine-1 Receptor Antagonist",
+    "product_count": 29
+  },
+  "levodopa": {
+    "brands": [
+      "Inbrija"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Powder"
+    ],
+    "fda_class": "Aromatic Amino Acid",
+    "product_count": 4
+  },
+  "levoleucovorin": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection"
+    ],
+    "fda_class": "Folate Analog",
+    "product_count": 2
+  },
+  "levonorgestrel": {
+    "brands": [
+      "LILETTA",
+      "My Way"
+    ],
+    "dosage_forms": [
+      "Intrauterine Device",
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Progestin",
+    "product_count": 4
+  },
+  "levorphanol tartrate": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet"
+    ],
+    "fda_class": "Opioid Agonist",
+    "product_count": 3
+  },
+  "lidocaine hci": {
+    "brands": [
+      "TheraCare Roll-on Lidocaine Pain Relief Liquid",
+      "TheraCare Roll-on Lidocaine Pain Relief Liquid - Lavender"
+    ],
+    "dosage_forms": [
+      "Cream",
+      "Injection, Solution",
+      "Liquid"
+    ],
+    "fda_class": "Amide Local Anesthetic",
+    "product_count": 4
+  },
+  "lisdexamfetamine dimesylate": {
+    "brands": [
+      "Vyvanse"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Powder",
+      "Tablet, Chewable"
+    ],
+    "fda_class": "Central Nervous System Stimulant",
+    "product_count": 29
+  },
+  "lisdexamfetamine dimesylate oral": {
+    "brands": [
+      "ARYNTA"
+    ],
+    "dosage_forms": [
+      "Solution"
+    ],
+    "fda_class": "Central Nervous System Stimulant",
+    "product_count": 2
+  },
+  "lithium sulphuratum": {
+    "brands": [],
+    "dosage_forms": [
+      "Pellet"
+    ],
+    "fda_class": "Mood Stabilizer",
+    "product_count": 8
+  },
+  "lomustine": {
+    "brands": [
+      "Gleostine"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Capsule, Gelatin Coated"
+    ],
+    "fda_class": "Alkylating Drug",
+    "product_count": 9
+  },
+  "lorlatinib": {
+    "brands": [
+      "Lorbrena"
+    ],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Kinase Inhibitor",
+    "product_count": 4
+  },
+  "loteprednol etabonate": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Suspension/ Drops"
+    ],
+    "fda_class": "Corticosteroid",
+    "product_count": 11
+  },
+  "lubiprostone": {
+    "brands": [
+      "Amitza"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Capsule, Gelatin Coated"
+    ],
+    "fda_class": "Chloride Channel Activator",
+    "product_count": 7
+  },
+  "lurbinectedin": {
+    "brands": [
+      "ZEPZELCA"
+    ],
+    "dosage_forms": [
+      "Injection, Powder, Lyophilized, For Solution",
+      "Powder"
+    ],
+    "fda_class": "Alkylating Drug",
+    "product_count": 2
+  },
+  "luspatercept": {
+    "brands": [
+      "Reblozyl"
+    ],
+    "dosage_forms": [
+      "Injection, Powder, Lyophilized, For Solution"
+    ],
+    "fda_class": "Erythroid Maturation Agent",
+    "product_count": 4
+  },
+  "macitentan": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Endothelin Receptor Antagonist",
+    "product_count": 5
+  },
+  "mafenide acetate": {
+    "brands": [
+      "SULFAMYLON"
+    ],
+    "dosage_forms": [
+      "Cream",
+      "Powder"
+    ],
+    "fda_class": "Methylated Sulfonamide Antibacterial",
+    "product_count": 3
+  },
+  "magnesia oxydata": {
+    "brands": [],
+    "dosage_forms": [
+      "Pellet"
+    ],
+    "fda_class": "Calculi Dissolution Agent",
+    "product_count": 6
+  },
+  "magnesia phosphorica": {
+    "brands": [
+      "Schuessler Tissue Salts Mag Phos Muscle Relaxant 8"
+    ],
+    "dosage_forms": [
+      "Spray",
+      "Tablet, Chewable"
+    ],
+    "fda_class": "Calculi Dissolution Agent",
+    "product_count": 2
+  },
+  "magnesium hydroxide": {
+    "brands": [
+      "Equate Gentle Laxative Soft chew",
+      "Equate Kids Gentle Laxative SC",
+      "Gentle Laxative",
+      "MILK OF MAGNESIA",
+      "MILK OF MAGNESIA CHERRY",
+      "MILK OF MAGNESIA MINT"
+    ],
+    "dosage_forms": [
+      "Liquid",
+      "Powder",
+      "Suspension",
+      "Tablet, Chewable"
+    ],
+    "fda_class": "Calculi Dissolution Agent",
+    "product_count": 22
+  },
+  "magnesium oxide": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet"
+    ],
+    "fda_class": "Calculi Dissolution Agent",
+    "product_count": 4
+  },
+  "magnesium sulfate (heptahydrate)": {
+    "brands": [
+      "NuValu Epsom Salt"
+    ],
+    "dosage_forms": [
+      "Granule"
+    ],
+    "fda_class": "Calculi Dissolution Agent",
+    "product_count": 2
+  },
+  "magnesium sulfate heptahydrate": {
+    "brands": [
+      "CVS muscle relief",
+      "Magnesium Sulfate",
+      "PHUEL",
+      "Theraworx Relief",
+      "Theraworx Relief Muscle Cramp and Spasm Relief"
+    ],
+    "dosage_forms": [
+      "Aerosol, Foam",
+      "Injection, Solution",
+      "Liquid",
+      "Solution"
+    ],
+    "fda_class": "Calculi Dissolution Agent",
+    "product_count": 10
+  },
+  "magnesium sulfate in water": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Calculi Dissolution Agent",
+    "product_count": 3
+  },
+  "magnesium sulfate, unspecified form": {
+    "brands": [
+      "Theraworx Relief for Foot Cramps Foam",
+      "Theraworx Relief for Muscle Cramps",
+      "Theraworx Relief for Muscle Cramps Roll On",
+      "Theraworx Relief for Muscle Cramps Roll-On"
+    ],
+    "dosage_forms": [
+      "Aerosol",
+      "Aerosol, Foam",
+      "Spray"
+    ],
+    "fda_class": "Calculi Dissolution Agent",
+    "product_count": 4
+  },
+  "manganum fluoratum": {
+    "brands": [],
+    "dosage_forms": [
+      "Pellet"
+    ],
+    "fda_class": "Paramagnetic Contrast Agent",
+    "product_count": 7
+  },
+  "mecamylamine hydrochloride": {
+    "brands": [
+      "Vecamyl"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Autonomic Ganglionic Blocker",
+    "product_count": 2
+  },
+  "meclizine hydrocloride": {
+    "brands": [
+      "MECLIZINE HYDROCHLORIDE"
+    ],
+    "dosage_forms": [
+      "Tablet"
+    ],
+    "fda_class": "Antiemetic",
+    "product_count": 2
+  },
+  "mefenamic acid": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule",
+      "Powder"
+    ],
+    "fda_class": "Nonsteroidal Anti-inflammatory Drug",
+    "product_count": 2
+  },
+  "mefloquine hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Antimalarial",
+    "product_count": 2
+  },
+  "megestrol acetate": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Suspension"
+    ],
+    "fda_class": "Progestin",
+    "product_count": 4
+  },
+  "meloxicam": {
+    "brands": [
+      "QAMZOVA"
+    ],
+    "dosage_forms": [
+      "Injection",
+      "Powder",
+      "Suspension",
+      "Tablet"
+    ],
+    "fda_class": "Nonsteroidal Anti-inflammatory Drug",
+    "product_count": 39
+  },
+  "mepivacaine hydrochloride": {
+    "brands": [
+      "Mepivacaine",
+      "Polocaine",
+      "Polocaine-MPF",
+      "Scandonest 3% Plain"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Amide Local Anesthetic",
+    "product_count": 8
+  },
+  "mercaptopurine": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Suspension",
+      "Tablet"
+    ],
+    "fda_class": "Nucleoside Metabolic Inhibitor",
+    "product_count": 5
+  },
+  "meropenem and sodium chloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Penem Antibacterial",
+    "product_count": 2
+  },
+  "mesna": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Cytoprotective Agent",
+    "product_count": 3
+  },
+  "metaxalone": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet"
+    ],
+    "fda_class": "Muscle Relaxant",
+    "product_count": 9
+  },
+  "methoxy polyethylene glycol-epoetin beta": {
+    "brands": [
+      "Mircera"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Erythropoiesis-stimulating Agent",
+    "product_count": 8
+  },
+  "methscopolamine bromide": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Anticholinergic",
+    "product_count": 3
+  },
+  "methyldopa": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet"
+    ],
+    "fda_class": "Central alpha-2 Adrenergic Agonist",
+    "product_count": 2
+  },
+  "methylene blue": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Oxidation-Reduction Agent",
+    "product_count": 21
+  },
+  "methylergonovine maleate": {
+    "brands": [
+      "Methergine"
+    ],
+    "dosage_forms": [
+      "Tablet"
+    ],
+    "fda_class": "Ergot Derivative",
+    "product_count": 2
+  },
+  "methylphenidate extended-release": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet, Orally Disintegrating"
+    ],
+    "fda_class": "Central Nervous System Stimulant",
+    "product_count": 3
+  },
+  "metolazone": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Thiazide-like Diuretic",
+    "product_count": 5
+  },
+  "mexiletine hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule"
+    ],
+    "fda_class": "Antiarrhythmic",
+    "product_count": 15
+  },
+  "micafungin in sodium chloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection"
+    ],
+    "fda_class": "Echinocandin Antifungal",
+    "product_count": 3
+  },
+  "miconazole": {
+    "brands": [
+      "Oravig",
+      "medicated"
+    ],
+    "dosage_forms": [
+      "Cream",
+      "Powder",
+      "Soap",
+      "Tablet"
+    ],
+    "fda_class": "Azole Antifungal",
+    "product_count": 5
+  },
+  "midodrine hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "alpha-Adrenergic Agonist",
+    "product_count": 20
+  },
+  "miglitol": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Coated"
+    ],
+    "fda_class": "alpha-Glucosidase Inhibitor",
+    "product_count": 4
+  },
+  "miglustat": {
+    "brands": [
+      "OPFOLDA"
+    ],
+    "dosage_forms": [
+      "Capsule"
+    ],
+    "fda_class": "Enzyme Stabilizer",
+    "product_count": 3
+  },
+  "milnacipran hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Serotonin and Norepinephrine Reuptake Inhibitor",
+    "product_count": 3
+  },
+  "milrinone lactate": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Phosphodiesterase 3 Inhibitor",
+    "product_count": 5
+  },
+  "mirdametinib": {
+    "brands": [
+      "Gomekli"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Tablet, For Suspension"
+    ],
+    "fda_class": "Kinase Inhibitor",
+    "product_count": 3
+  },
+  "mirikizumab-mrkz": {
+    "brands": [
+      "Omvoh"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Interleukin-23 Antagonist",
+    "product_count": 2
+  },
+  "mitomycin": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Powder, Lyophilized, For Solution",
+      "Powder"
+    ],
+    "fda_class": "Alkylating Drug",
+    "product_count": 3
+  },
+  "moxifloxacin ophthalmic": {
+    "brands": [],
+    "dosage_forms": [
+      "Solution/ Drops"
+    ],
+    "fda_class": "Fluoroquinolone Antibacterial",
+    "product_count": 2
+  },
+  "mycophenolate mofetil": {
+    "brands": [
+      "MYHIBBIN"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Injection, Powder, Lyophilized, For Solution",
+      "Powder",
+      "Powder, For Suspension"
+    ],
+    "fda_class": "Antimetabolite Immunosuppressant",
+    "product_count": 11
+  },
+  "mycophenolic acid": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet, Delayed Release"
+    ],
+    "fda_class": "Antimetabolite Immunosuppressant",
+    "product_count": 14
+  },
+  "nabumetone": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Nonsteroidal Anti-inflammatory Drug",
+    "product_count": 9
+  },
+  "nadolol": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "beta-Adrenergic Blocker",
+    "product_count": 7
+  },
+  "nafcillin sodium": {
+    "brands": [
+      "Nafcillin"
+    ],
+    "dosage_forms": [
+      "Injection, Powder, For Solution",
+      "Powder"
+    ],
+    "fda_class": "Penicillin-class Antibacterial",
+    "product_count": 4
+  },
+  "naftifine hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Cream",
+      "Gel",
+      "Powder"
+    ],
+    "fda_class": "Allylamine Antifungal",
+    "product_count": 4
+  },
+  "nalbuphine hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Solution"
+    ],
+    "fda_class": "Opioid Agonist/Antagonist",
+    "product_count": 7
+  },
+  "naloxegol oxalate": {
+    "brands": [
+      "MOVANTIK"
+    ],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Opioid Antagonist",
+    "product_count": 2
+  },
+  "nasal": {
+    "brands": [
+      "Meijer Original",
+      "Saline",
+      "Walgreens Saline"
+    ],
+    "dosage_forms": [
+      "Spray"
+    ],
+    "fda_class": "Vasoconstrictor",
+    "product_count": 4
+  },
+  "nasal mist": {
+    "brands": [
+      "CVS Health No Drip",
+      "CVS ULTRA FINE MOISTURIZING SALINE MIST"
+    ],
+    "dosage_forms": [
+      "Aerosol, Spray",
+      "Spray"
+    ],
+    "fda_class": "Vasoconstrictor",
+    "product_count": 2
+  },
+  "nateglinide": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet"
+    ],
+    "fda_class": "Glinide",
+    "product_count": 2
+  },
+  "natrum phosphoricum": {
+    "brands": [
+      "Nat Phos",
+      "Schuessler Tissue Salts Nat Phos Acid Neutralizer 10"
+    ],
+    "dosage_forms": [
+      "Liquid",
+      "Pellet",
+      "Spray",
+      "Tablet, Chewable"
+    ],
+    "fda_class": "Osmotic Laxative",
+    "product_count": 9
+  },
+  "natrum sulphuricum": {
+    "brands": [
+      "Schuessler Tissue Salts Nat Sulph Water Eliminator 11"
+    ],
+    "dosage_forms": [
+      "Pellet",
+      "Spray",
+      "Tablet, Chewable"
+    ],
+    "fda_class": "Osmotic Laxative",
+    "product_count": 11
+  },
+  "nelarabine": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection",
+      "Powder"
+    ],
+    "fda_class": "Nucleoside Metabolic Inhibitor",
+    "product_count": 6
+  },
+  "neomycin sulfate": {
+    "brands": [
+      "Antibiotic",
+      "Single Antibiotic with Neomycin"
+    ],
+    "dosage_forms": [
+      "Ointment",
+      "Powder"
+    ],
+    "fda_class": "Aminoglycoside Antibacterial",
+    "product_count": 9
+  },
+  "neostigmine methylsulfate": {
+    "brands": [
+      "Bloxiverz"
+    ],
+    "dosage_forms": [
+      "Injection",
+      "Powder"
+    ],
+    "fda_class": "Cholinesterase Inhibitor",
+    "product_count": 11
+  },
+  "nevirapine": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet",
+      "Tablet, Extended Release"
+    ],
+    "fda_class": "Human Immunodeficiency Virus 1 Non-Nucleoside Analog Reverse Transcriptase Inhibitor",
+    "product_count": 3
+  },
+  "nexterone (amiodarone hci)": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Antiarrhythmic",
+    "product_count": 2
+  },
+  "nicardipine hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule",
+      "Injection",
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Dihydropyridine Calcium Channel Blocker",
+    "product_count": 12
+  },
+  "niccolum metallicum": {
+    "brands": [],
+    "dosage_forms": [
+      "Pellet"
+    ],
+    "fda_class": "Standardized Chemical Allergen",
+    "product_count": 9
+  },
+  "nicotine": {
+    "brands": [
+      "NICODERM CQ",
+      "NICOTINUM",
+      "Nicotinum",
+      "quit smoking patches"
+    ],
+    "dosage_forms": [
+      "Gum, Chewing",
+      "Liquid",
+      "Lozenge",
+      "Patch"
+    ],
+    "fda_class": "Cholinergic Nicotinic Agonist",
+    "product_count": 14
+  },
+  "nicotine polacrilex": {
+    "brands": [
+      "Basic Care Nicotine",
+      "Equate Nicotine",
+      "Equate nicotine",
+      "GOOD SENSE",
+      "GOOD SENSE NICOTINE",
+      "Good Sense Nicotine"
+    ],
+    "dosage_forms": [
+      "Gum, Chewing",
+      "Lozenge",
+      "Powder"
+    ],
+    "fda_class": "Cholinergic Nicotinic Agonist",
+    "product_count": 89
+  },
+  "nicotine polacrilex mini": {
+    "brands": [
+      "AMAZON BASIC CARE NICOTINE POLACRILEX"
+    ],
+    "dosage_forms": [
+      "Lozenge"
+    ],
+    "fda_class": "Cholinergic Nicotinic Agonist",
+    "product_count": 2
+  },
+  "nicotine transdermal system": {
+    "brands": [],
+    "dosage_forms": [
+      "Patch",
+      "Patch, Extended Release"
+    ],
+    "fda_class": "Cholinergic Nicotinic Agonist",
+    "product_count": 9
+  },
+  "nilotinib": {
+    "brands": [
+      "Tasigna"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Powder"
+    ],
+    "fda_class": "Kinase Inhibitor",
+    "product_count": 7
+  },
+  "nintedanib": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule",
+      "Powder"
+    ],
+    "fda_class": "Kinase Inhibitor",
+    "product_count": 9
+  },
+  "niraparib": {
+    "brands": [
+      "ZEJULA"
+    ],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Poly(ADP-Ribose) Polymerase Inhibitor",
+    "product_count": 2
+  },
+  "nirogacestat": {
+    "brands": [
+      "OGSIVEO"
+    ],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Gamma Secretase Inhibitor",
+    "product_count": 2
+  },
+  "nitazoxanide": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Antiprotozoal",
+    "product_count": 4
+  },
+  "nitisinone": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule",
+      "Powder"
+    ],
+    "fda_class": "4-Hydroxyphenyl-Pyruvate Dioxygenase Inhibitor",
+    "product_count": 4
+  },
+  "nitric oxide": {
+    "brands": [
+      "GENOSYL",
+      "Noxivent"
+    ],
+    "dosage_forms": [
+      "Gas"
+    ],
+    "fda_class": "Vasodilator",
+    "product_count": 4
+  },
+  "nitrofurantoin (macrocrystals)": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule"
+    ],
+    "fda_class": "Nitrofuran Antibacterial",
+    "product_count": 2
+  },
+  "nitrofurantoin macrocrystals": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule",
+      "Powder"
+    ],
+    "fda_class": "Nitrofuran Antibacterial",
+    "product_count": 11
+  },
+  "nizatidine": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Solution"
+    ],
+    "fda_class": "Histamine-2 Receptor Antagonist",
+    "product_count": 2
+  },
+  "norethindrone acetate": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet"
+    ],
+    "fda_class": "Progestin",
+    "product_count": 2
+  },
+  "odevixibat": {
+    "brands": [
+      "BYLVAY"
+    ],
+    "dosage_forms": [
+      "Capsule, Coated Pellets"
+    ],
+    "fda_class": "Ileal Bile Acid Transporter Inhibitor",
+    "product_count": 4
+  },
+  "olaparib": {
+    "brands": [
+      "Lynparza"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Poly(ADP-Ribose) Polymerase Inhibitor",
+    "product_count": 4
+  },
+  "olmesartan medoxomil": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet",
+      "Tablet, Coated",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Angiotensin 2 Receptor Blocker",
+    "product_count": 20
+  },
+  "olopatadine hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Solution",
+      "Spray"
+    ],
+    "fda_class": "Histamine-1 Receptor Antagonist",
+    "product_count": 9
+  },
+  "olopatadine hydrochloride ophthalmic": {
+    "brands": [
+      "Allergy Relief Eye Drops",
+      "Eye Allergy Itch Relief",
+      "OLOPATADINE HYDROCHLORIDE"
+    ],
+    "dosage_forms": [
+      "Solution",
+      "Solution/ Drops"
+    ],
+    "fda_class": "Histamine-1 Receptor Antagonist",
+    "product_count": 7
+  },
+  "omalizumab-igec": {
+    "brands": [
+      "OMLYCLO"
+    ],
+    "dosage_forms": [
+      "Injection"
+    ],
+    "fda_class": "Anti-IgE",
+    "product_count": 3
+  },
+  "omega-3-acid ethyl esters": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule",
+      "Capsule, Liquid Filled",
+      "Liquid"
+    ],
+    "fda_class": "Omega-3 Fatty Acid",
+    "product_count": 8
+  },
+  "orforglipron": {
+    "brands": [
+      "FOUNDAYO"
+    ],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "GLP-1 Receptor Agonist",
+    "product_count": 5
+  },
+  "orlistat": {
+    "brands": [
+      "ALLI"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Powder"
+    ],
+    "fda_class": "Intestinal Lipase Inhibitor",
+    "product_count": 4
+  },
+  "orphenadrine citrate": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection",
+      "Powder",
+      "Tablet, Extended Release"
+    ],
+    "fda_class": "Muscle Relaxant",
+    "product_count": 5
+  },
+  "oxaliplatin": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Platinum-based Drug",
+    "product_count": 8
+  },
+  "oxaprozin": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Nonsteroidal Anti-inflammatory Drug",
+    "product_count": 2
+  },
+  "oxiconazole nitrate": {
+    "brands": [],
+    "dosage_forms": [
+      "Cream",
+      "Powder"
+    ],
+    "fda_class": "Azole Antifungal",
+    "product_count": 2
+  },
+  "oxymetazoline hci": {
+    "brands": [
+      "Mucinex Sinus Max Clear and Cool Severe Congestion",
+      "Mucinex Sinus Max Sinus Pressure Severe Congestion"
+    ],
+    "dosage_forms": [
+      "Spray"
+    ],
+    "fda_class": "Vasoconstrictor",
+    "product_count": 2
+  },
+  "oxymetazoline hcl": {
+    "brands": [
+      "CVS Original Nasal Mist",
+      "Equate Nasal",
+      "Exchange Select Nasal",
+      "Signature Care Nasal Decongestant",
+      "Theraflu Severe Congestion Relief Nasal Mist",
+      "nasal"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Spray",
+      "Spray, Metered"
+    ],
+    "fda_class": "Vasoconstrictor",
+    "product_count": 9
+  },
+  "oxymetazoline hydrochloride": {
+    "brands": [
+      "Afrin No Drip Extra Moisturizing",
+      "Afrin No Drip Severe Congestion",
+      "Afrin Severe Congestion",
+      "Anefrin Nasal Original",
+      "Circle K Congestion Relief",
+      "Discount Drug Mart Maximum Strength Nasal"
+    ],
+    "dosage_forms": [
+      "Spray",
+      "Spray, Metered"
+    ],
+    "fda_class": "Vasoconstrictor",
+    "product_count": 27
+  },
+  "oxymorphone hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet",
+      "Tablet, Film Coated, Extended Release"
+    ],
+    "fda_class": "Opioid Agonist",
+    "product_count": 10
+  },
+  "palbociclib": {
+    "brands": [
+      "Ibrance"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Kinase Inhibitor",
+    "product_count": 9
+  },
+  "palonosetron hydrochloride": {
+    "brands": [
+      "Palonosetron"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Injection",
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Serotonin-3 Receptor Antagonist",
+    "product_count": 7
+  },
+  "paricalcitol": {
+    "brands": [
+      "Zemplar"
+    ],
+    "dosage_forms": [
+      "Capsule, Liquid Filled",
+      "Injection",
+      "Injection, Solution"
+    ],
+    "fda_class": "Vitamin D Analog",
+    "product_count": 4
+  },
+  "paroxetine hydrochloride hemihydrate": {
+    "brands": [
+      "Paroxetine"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Serotonin Reuptake Inhibitor",
+    "product_count": 11
+  },
+  "patiromer": {
+    "brands": [
+      "VELTASSA"
+    ],
+    "dosage_forms": [
+      "Powder, For Suspension"
+    ],
+    "fda_class": "Potassium Binder",
+    "product_count": 4
+  },
+  "pazopanib hydrochloride": {
+    "brands": [
+      "pazopanib"
+    ],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Kinase Inhibitor",
+    "product_count": 3
+  },
+  "pegcetacoplan": {
+    "brands": [
+      "Empaveli"
+    ],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Complement Inhibitor",
+    "product_count": 2
+  },
+  "pegloticase": {
+    "brands": [
+      "Krystexxa"
+    ],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Solution"
+    ],
+    "fda_class": "Uric Acid-specific Enzyme",
+    "product_count": 3
+  },
+  "pegvaliase-pqpz": {
+    "brands": [
+      "Palynziq"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Phenylalanine Metabolizing Enzyme",
+    "product_count": 3
+  },
+  "pemetrexed": {
+    "brands": [
+      "Pemfexy"
+    ],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Powder, Lyophilized, For Solution",
+      "Injection, Solution, Concentrate"
+    ],
+    "fda_class": "Folate Analog Metabolic Inhibitor",
+    "product_count": 6
+  },
+  "pemetrexed disodium": {
+    "brands": [
+      "Alimta",
+      "PEMRYDI RTU",
+      "Pemetrexed",
+      "pemetrexed"
+    ],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Powder, Lyophilized, For Solution",
+      "Powder"
+    ],
+    "fda_class": "Folate Analog Metabolic Inhibitor",
+    "product_count": 12
+  },
+  "penciclovir": {
+    "brands": [],
+    "dosage_forms": [
+      "Cream",
+      "Powder"
+    ],
+    "fda_class": "Herpesvirus Nucleoside Analog DNA Polymerase Inhibitor",
+    "product_count": 3
+  },
+  "penicillamine": {
+    "brands": [
+      "Cuprimine",
+      "Depen"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Powder",
+      "Tablet",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Antirheumatic Agent",
+    "product_count": 5
+  },
+  "penicillin g benzathine": {
+    "brands": [
+      "BICILLIN L-A"
+    ],
+    "dosage_forms": [
+      "Injection, Suspension"
+    ],
+    "fda_class": "Penicillin-class Antibacterial",
+    "product_count": 3
+  },
+  "penicillin g potassium": {
+    "brands": [
+      "Pfizerpen"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Powder, For Solution"
+    ],
+    "fda_class": "Penicillin-class Antibacterial",
+    "product_count": 3
+  },
+  "pentamidine isethionate": {
+    "brands": [],
+    "dosage_forms": [
+      "Inhalant",
+      "Injection, Powder, Lyophilized, For Solution"
+    ],
+    "fda_class": "Antiprotozoal",
+    "product_count": 4
+  },
+  "pentoxifylline": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Extended Release"
+    ],
+    "fda_class": "Blood Viscosity Reducer",
+    "product_count": 4
+  },
+  "phendimetrazine tartrate": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Sympathomimetic Amine Anorectic",
+    "product_count": 4
+  },
+  "phenoxybenzamine hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule",
+      "Powder"
+    ],
+    "fda_class": "alpha-Adrenergic Blocker",
+    "product_count": 2
+  },
+  "phentermine hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule",
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Sympathomimetic Amine Anorectic",
+    "product_count": 24
+  },
+  "phytonadione": {
+    "brands": [
+      "Vitamin K1"
+    ],
+    "dosage_forms": [
+      "Injection, Emulsion",
+      "Liquid",
+      "Oil",
+      "Tablet"
+    ],
+    "fda_class": "Vitamin K",
+    "product_count": 8
+  },
+  "piflufolastat f-18": {
+    "brands": [
+      "PYLARIFY",
+      "PYLARIFY TRUVU"
+    ],
+    "dosage_forms": [
+      "Injection"
+    ],
+    "fda_class": "Radioactive Diagnostic Agent",
+    "product_count": 2
+  },
+  "pilocarpine hydrochloride": {
+    "brands": [
+      "VUITY"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Solution/ Drops"
+    ],
+    "fda_class": "Cholinergic Receptor Agonist",
+    "product_count": 4
+  },
+  "pindolol": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "beta-Adrenergic Blocker",
+    "product_count": 3
+  },
+  "pirfenidone": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule",
+      "Powder",
+      "Tablet, Coated",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Pyridone",
+    "product_count": 9
+  },
+  "piroxicam": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule",
+      "Powder"
+    ],
+    "fda_class": "Nonsteroidal Anti-inflammatory Drug",
+    "product_count": 6
+  },
+  "pirtobrutinib": {
+    "brands": [
+      "JAYPIRCA"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Coated"
+    ],
+    "fda_class": "Kinase Inhibitor",
+    "product_count": 2
+  },
+  "pitavastatin": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "HMG-CoA Reductase Inhibitor",
+    "product_count": 2
+  },
+  "pitolisant hydrochloride": {
+    "brands": [
+      "Wakix"
+    ],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Histamine-3 Receptor Antagonist/Inverse Agonist",
+    "product_count": 2
+  },
+  "plerixafor": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection",
+      "Powder",
+      "Solution"
+    ],
+    "fda_class": "Hematopoietic Stem Cell Mobilizer",
+    "product_count": 3
+  },
+  "polyethylene glycol 3350": {
+    "brands": [
+      "CLEARLAX",
+      "Discount Drug Mart",
+      "GAVILAX",
+      "Good Sense Clear Lax",
+      "MiraLAX Orange Flavor",
+      "basic care clearlax"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Powder, For Solution"
+    ],
+    "fda_class": "Osmotic Laxative",
+    "product_count": 24
+  },
+  "polymyxin b sulfate": {
+    "brands": [
+      "POLYMYXIN B"
+    ],
+    "dosage_forms": [
+      "Injection, Powder, Lyophilized, For Solution",
+      "Powder"
+    ],
+    "fda_class": "Polymyxin-class Antibacterial",
+    "product_count": 3
+  },
+  "pomalidomide": {
+    "brands": [
+      "Pomalyst"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Powder"
+    ],
+    "fda_class": "Thalidomide Analog",
+    "product_count": 20
+  },
+  "potassium chloride extended-release": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet",
+      "Tablet, Extended Release"
+    ],
+    "fda_class": "Osmotic Laxative",
+    "product_count": 5
+  },
+  "pozelimab": {
+    "brands": [
+      "VEOPOZ"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Complement Inhibitor",
+    "product_count": 2
+  },
+  "pramipexole dihydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet",
+      "Tablet, Extended Release"
+    ],
+    "fda_class": "Nonergot Dopamine Agonist",
+    "product_count": 14
+  },
+  "prazosin": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule"
+    ],
+    "fda_class": "alpha-Adrenergic Blocker",
+    "product_count": 2
+  },
+  "prednisone d/p": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet"
+    ],
+    "fda_class": "Corticosteroid",
+    "product_count": 2
+  },
+  "primaquine phosphate": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Antimalarial",
+    "product_count": 2
+  },
+  "procainamide hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection",
+      "Powder"
+    ],
+    "fda_class": "Antiarrhythmic",
+    "product_count": 3
+  },
+  "prochlorperazine edisylate": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Solution"
+    ],
+    "fda_class": "Phenothiazine",
+    "product_count": 3
+  },
+  "proparacaine hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Solution/ Drops"
+    ],
+    "fda_class": "Local Anesthetic",
+    "product_count": 6
+  },
+  "protriptyline hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Tricyclic Antidepressant",
+    "product_count": 3
+  },
+  "prucalopride": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Serotonin-4 Receptor Agonist",
+    "product_count": 7
+  },
+  "pyridostigmine bromide": {
+    "brands": [
+      "PRYIDOSTIGMINE BROMIDE"
+    ],
+    "dosage_forms": [
+      "Granule",
+      "Powder",
+      "Solution",
+      "Tablet"
+    ],
+    "fda_class": "Cholinesterase Inhibitor",
+    "product_count": 5
+  },
+  "pyrimethamine": {
+    "brands": [
+      "Daraprim"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Dihydrofolate Reductase Inhibitor Antimalarial",
+    "product_count": 2
+  },
+  "quinapril": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Angiotensin Converting Enzyme Inhibitor",
+    "product_count": 9
+  },
+  "quinine sulfate": {
+    "brands": [
+      "Chininum sulphuricum"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Pellet",
+      "Powder"
+    ],
+    "fda_class": "Antimalarial",
+    "product_count": 6
+  },
+  "ranibizumab": {
+    "brands": [
+      "LUCENTIS",
+      "Susvimo"
+    ],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Solution, Concentrate"
+    ],
+    "fda_class": "Vascular Endothelial Growth Factor Inhibitor",
+    "product_count": 5
+  },
+  "ranibizumab-leyk": {
+    "brands": [
+      "NUFYMCO"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Vascular Endothelial Growth Factor Inhibitor",
+    "product_count": 2
+  },
+  "ranitidine": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet"
+    ],
+    "fda_class": "Histamine-2 Receptor Antagonist",
+    "product_count": 2
+  },
+  "regadenoson": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Pharmacologic Cardiac Stress Test Agent",
+    "product_count": 2
+  },
+  "repotrectinib": {
+    "brands": [
+      "Augtyro"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Powder"
+    ],
+    "fda_class": "Kinase Inhibitor",
+    "product_count": 2
+  },
+  "rilpivirine": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Human Immunodeficiency Virus 1 Non-Nucleoside Analog Reverse Transcriptase Inhibitor",
+    "product_count": 4
+  },
+  "ritlecitinib": {
+    "brands": [
+      "Litfulo"
+    ],
+    "dosage_forms": [
+      "Capsule"
+    ],
+    "fda_class": "Kinase Inhibitor",
+    "product_count": 2
+  },
+  "ritonavir": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Cytochrome P450 3A Inhibitor",
+    "product_count": 2
+  },
+  "rivastigmine": {
+    "brands": [],
+    "dosage_forms": [
+      "Liquid",
+      "Patch, Extended Release"
+    ],
+    "fda_class": "Cholinesterase Inhibitor",
+    "product_count": 6
+  },
+  "rizatriptan benzoate": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet",
+      "Tablet, Orally Disintegrating"
+    ],
+    "fda_class": "Serotonin-1b and Serotonin-1d Receptor Agonist",
+    "product_count": 10
+  },
+  "rolapitant": {
+    "brands": [
+      "Varubi"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Substance P/Neurokinin-1 Receptor Antagonist",
+    "product_count": 2
+  },
+  "ropivacaine hydrochloride": {
+    "brands": [
+      "Naropin"
+    ],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Amide Local Anesthetic",
+    "product_count": 31
+  },
+  "rosuvstatin": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "HMG-CoA Reductase Inhibitor",
+    "product_count": 4
+  },
+  "rotigotine": {
+    "brands": [
+      "Neupro"
+    ],
+    "dosage_forms": [
+      "Patch, Extended Release",
+      "Powder"
+    ],
+    "fda_class": "Nonergot Dopamine Agonist",
+    "product_count": 6
+  },
+  "rozanolixizumab": {
+    "brands": [
+      "RYSTIGGO"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Neonatal Fc Receptor Blocker",
+    "product_count": 4
+  },
+  "safinamide mesylate": {
+    "brands": [
+      "Xadago"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Monoamine Oxidase Type B Inhibitor",
+    "product_count": 5
+  },
+  "sapropterin dihydrochloride": {
+    "brands": [
+      "JAVYGTOR",
+      "Kuvan"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Powder, For Solution",
+      "Tablet"
+    ],
+    "fda_class": "Phenylalanine Hydroxylase Activator",
+    "product_count": 5
+  },
+  "scolopamine transdermal system": {
+    "brands": [
+      "Scopolamine Trandermal System"
+    ],
+    "dosage_forms": [
+      "Patch, Extended Release"
+    ],
+    "fda_class": "Anticholinergic",
+    "product_count": 3
+  },
+  "scopolamine": {
+    "brands": [],
+    "dosage_forms": [
+      "Patch, Extended Release",
+      "Powder"
+    ],
+    "fda_class": "Anticholinergic",
+    "product_count": 3
+  },
+  "secnidazole": {
+    "brands": [
+      "Solosec"
+    ],
+    "dosage_forms": [
+      "Granule",
+      "Powder"
+    ],
+    "fda_class": "Nitroimidazole Antimicrobial",
+    "product_count": 3
+  },
+  "selpercatinib": {
+    "brands": [
+      "RETEVMO"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Coated"
+    ],
+    "fda_class": "Kinase Inhibitor",
+    "product_count": 7
+  },
+  "sevoflurane": {
+    "brands": [
+      "Ultane"
+    ],
+    "dosage_forms": [
+      "Liquid"
+    ],
+    "fda_class": "General Anesthetic",
+    "product_count": 4
+  },
+  "silodosin": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule",
+      "Powder"
+    ],
+    "fda_class": "alpha-Adrenergic Blocker",
+    "product_count": 8
+  },
+  "silver sulfadiazine": {
+    "brands": [
+      "SILVADENE",
+      "SSD Cream"
+    ],
+    "dosage_forms": [
+      "Cream"
+    ],
+    "fda_class": "Sulfonamide Antibacterial",
+    "product_count": 5
+  },
+  "sincalide": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Powder, Lyophilized, For Solution",
+      "Powder"
+    ],
+    "fda_class": "Cholecystokinin Analog",
+    "product_count": 3
+  },
+  "siponimod": {
+    "brands": [
+      "MAYZENT"
+    ],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Sphingosine 1-phosphate Receptor Modulator",
+    "product_count": 2
+  },
+  "smallpox and mpox (vaccinia) vaccine, live": {
+    "brands": [
+      "ACAM2000"
+    ],
+    "dosage_forms": [
+      "Injection, Powder, Lyophilized, For Solution"
+    ],
+    "fda_class": "Live Vaccinia Virus Vaccine",
+    "product_count": 2
+  },
+  "sodium bicarbonate": {
+    "brands": [
+      "EcoDent Ultimate Essential Mouthcare Sparkling Clean Mint",
+      "EcoDent Ultimate Essential Mouthcare Spicy-Cool Cinnamon"
+    ],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Liquid",
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Osmotic Laxative",
+    "product_count": 18
+  },
+  "sodium citrate dihydrate": {
+    "brands": [
+      "CVS Health Nausea Relief",
+      "WALGREENS UPSET STOMACH and NAUSEA RELIEF"
+    ],
+    "dosage_forms": [
+      "Tablet, Chewable"
+    ],
+    "fda_class": "Anti-coagulant",
+    "product_count": 2
+  },
+  "sodium nitroprusside": {
+    "brands": [
+      "NIPRIDE RTU"
+    ],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Vasodilator",
+    "product_count": 4
+  },
+  "sodium oxybate": {
+    "brands": [
+      "Xyrem"
+    ],
+    "dosage_forms": [
+      "For Suspension, Extended Release",
+      "Solution"
+    ],
+    "fda_class": "Central Nervous System Depressant",
+    "product_count": 3
+  },
+  "sodium phenylbutyrate": {
+    "brands": [
+      "BUPHENYL",
+      "Buphenyl"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Nitrogen Binding Agent",
+    "product_count": 6
+  },
+  "sorafenib": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Kinase Inhibitor",
+    "product_count": 2
+  },
+  "spesolimab": {
+    "brands": [
+      "SPEVIGO"
+    ],
+    "dosage_forms": [
+      "Injection",
+      "Liquid"
+    ],
+    "fda_class": "Interleukin-36 Receptor Antagonist",
+    "product_count": 4
+  },
+  "spinosad": {
+    "brands": [
+      "Natroba"
+    ],
+    "dosage_forms": [
+      "Suspension",
+      "Tablet, Chewable"
+    ],
+    "fda_class": "Pediculicide",
+    "product_count": 3
+  },
+  "sulfacetamide sodium": {
+    "brands": [
+      "Ovace Plus",
+      "PLEXION NS"
+    ],
+    "dosage_forms": [
+      "Lotion",
+      "Powder",
+      "Shampoo",
+      "Solution/ Drops"
+    ],
+    "fda_class": "Sulfonamide Antibacterial",
+    "product_count": 6
+  },
+  "sulindac": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Nonsteroidal Anti-inflammatory Drug",
+    "product_count": 6
+  },
+  "sunitinib malate": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule",
+      "Powder"
+    ],
+    "fda_class": "Kinase Inhibitor",
+    "product_count": 11
+  },
+  "talazoparib": {
+    "brands": [
+      "Talzenna"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Capsule, Liquid Filled"
+    ],
+    "fda_class": "Poly(ADP-Ribose) Polymerase Inhibitor",
+    "product_count": 3
+  },
+  "tapentadol hydrochloride": {
+    "brands": [
+      "TAPENTADOL"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Film Coated, Extended Release"
+    ],
+    "fda_class": "Opioid Agonist",
+    "product_count": 4
+  },
+  "tasimelteon": {
+    "brands": [
+      "Hetlioz",
+      "Hetlioz LQ"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Suspension"
+    ],
+    "fda_class": "Melatonin Receptor Agonist",
+    "product_count": 2
+  },
+  "tavaborole": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Solution"
+    ],
+    "fda_class": "Oxaborole Antifungal",
+    "product_count": 4
+  },
+  "tenofovir disoproxil fumarate": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet",
+      "Tablet, Coated"
+    ],
+    "fda_class": "Hepatitis B Virus Nucleoside Analog Reverse Transcriptase Inhibitor",
+    "product_count": 5
+  },
+  "teprotumumab": {
+    "brands": [
+      "TEPEZZA"
+    ],
+    "dosage_forms": [
+      "Injection, Powder, Lyophilized, For Solution"
+    ],
+    "fda_class": "Insulin-like Growth Factor-1 Receptor Inhibitor",
+    "product_count": 2
+  },
+  "terconazole": {
+    "brands": [],
+    "dosage_forms": [
+      "Cream",
+      "Powder",
+      "Suppository"
+    ],
+    "fda_class": "Azole Antifungal",
+    "product_count": 6
+  },
+  "teriflunomide": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Pyrimidine Synthesis Inhibitor",
+    "product_count": 12
+  },
+  "testosterone cypionate": {
+    "brands": [
+      "AZMIRO"
+    ],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Androgen",
+    "product_count": 17
+  },
+  "testosterone enanthate": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Powder"
+    ],
+    "fda_class": "Androgen",
+    "product_count": 3
+  },
+  "tetracaine": {
+    "brands": [
+      "Painless Tattoo 3"
+    ],
+    "dosage_forms": [
+      "Cream",
+      "Powder"
+    ],
+    "fda_class": "Ester Local Anesthetic",
+    "product_count": 3
+  },
+  "thioridazine hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Phenothiazine",
+    "product_count": 4
+  },
+  "thiotepa": {
+    "brands": [
+      "TEPADINA"
+    ],
+    "dosage_forms": [
+      "Injection, Powder, Lyophilized, For Solution"
+    ],
+    "fda_class": "Alkylating Drug",
+    "product_count": 3
+  },
+  "thrombin, topical (bovine)": {
+    "brands": [
+      "THROMBIN-JMI"
+    ],
+    "dosage_forms": [
+      "Liquid"
+    ],
+    "fda_class": "Blood Coagulation Factor",
+    "product_count": 2
+  },
+  "tiagabine hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Anti-epileptic Agent",
+    "product_count": 2
+  },
+  "timolol hemihydrate": {
+    "brands": [],
+    "dosage_forms": [
+      "Solution/ Drops"
+    ],
+    "fda_class": "beta-Adrenergic Blocker",
+    "product_count": 3
+  },
+  "timolol maleate": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Solution",
+      "Solution, Gel Forming / Drops",
+      "Solution/ Drops"
+    ],
+    "fda_class": "beta-Adrenergic Blocker",
+    "product_count": 16
+  },
+  "tioconazole": {
+    "brands": [
+      "VAGISTAT"
+    ],
+    "dosage_forms": [
+      "Ointment"
+    ],
+    "fda_class": "Azole Antifungal",
+    "product_count": 5
+  },
+  "tiopronin": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet, Delayed Release"
+    ],
+    "fda_class": "Reducing and Complexing Thiol",
+    "product_count": 2
+  },
+  "tirofiban": {
+    "brands": [
+      "AGGRASTAT"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Platelet Aggregation Inhibitor",
+    "product_count": 4
+  },
+  "tizanidne hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule"
+    ],
+    "fda_class": "Central alpha-2 Adrenergic Agonist",
+    "product_count": 2
+  },
+  "tolcapone": {
+    "brands": [
+      "Tasmar"
+    ],
+    "dosage_forms": [
+      "Tablet",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Catechol-O-Methyltransferase Inhibitor",
+    "product_count": 2
+  },
+  "tolmetin sodium": {
+    "brands": [
+      "Tolectin"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Nonsteroidal Anti-inflammatory Drug",
+    "product_count": 2
+  },
+  "tolnaftate": {
+    "brands": [
+      "ACTIV-CHARCOAL ANTIFUNGAL",
+      "Antifungal Liquid",
+      "Antifungal Medicated Bar",
+      "Antifungal Solution Maximum Strength",
+      "Athletes Foot",
+      "Athletes Foot Antifungal"
+    ],
+    "dosage_forms": [
+      "Aerosol, Powder",
+      "Aerosol, Spray",
+      "Cream",
+      "Liquid"
+    ],
+    "fda_class": "Azole Antifungal",
+    "product_count": 36
+  },
+  "tolvaptan": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Vasopressin V2 Receptor Antagonist",
+    "product_count": 8
+  },
+  "topotecan hydrochloride": {
+    "brands": [
+      "HYCAMTIN"
+    ],
+    "dosage_forms": [
+      "Injection, Powder, Lyophilized, For Solution",
+      "Powder"
+    ],
+    "fda_class": "Topoisomerase Inhibitor",
+    "product_count": 3
+  },
+  "tralokinumab-ldrm": {
+    "brands": [
+      "Adbry"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Interleukin-13 Antagonist",
+    "product_count": 2
+  },
+  "trandolapril": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet"
+    ],
+    "fda_class": "Angiotensin Converting Enzyme Inhibitor",
+    "product_count": 3
+  },
+  "tranexamic acid": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Solution",
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Antifibrinolytic Agent",
+    "product_count": 15
+  },
+  "travoprost": {
+    "brands": [],
+    "dosage_forms": [
+      "Oil",
+      "Solution/ Drops"
+    ],
+    "fda_class": "Prostaglandin Analog",
+    "product_count": 4
+  },
+  "triamcinolone acetonide": {
+    "brands": [
+      "24 Hour Nasal Allergy",
+      "Equaline nasal allergy",
+      "Equate Nasal Allergy",
+      "Good Sense Nasal Allergy",
+      "KENALOG-10",
+      "KENALOG-40"
+    ],
+    "dosage_forms": [
+      "Cream",
+      "Injection, Suspension",
+      "Ointment",
+      "Paste"
+    ],
+    "fda_class": "Corticosteroid",
+    "product_count": 51
+  },
+  "trifluoperazine hydrochloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Phenothiazine",
+    "product_count": 13
+  },
+  "trimethoprim": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet"
+    ],
+    "fda_class": "Dihydrofolate Reductase Inhibitor Antibacterial",
+    "product_count": 2
+  },
+  "trisodium citrate dihydrate": {
+    "brands": [
+      "ANTICOAGULANT SODIUM CITRATE",
+      "Anticoagulant Sodium Citrate",
+      "Sodium Citrate 4% w/v Anticoagulant",
+      "Sodium Citrate w/v Anticoagulant"
+    ],
+    "dosage_forms": [
+      "Injection, Solution",
+      "Powder",
+      "Solution"
+    ],
+    "fda_class": "Anti-coagulant",
+    "product_count": 8
+  },
+  "tropicamide": {
+    "brands": [
+      "Mydriacyl"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Solution/ Drops"
+    ],
+    "fda_class": "Anticholinergic",
+    "product_count": 5
+  },
+  "trospium chloride": {
+    "brands": [],
+    "dosage_forms": [
+      "Capsule, Extended Release",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Cholinergic Muscarinic Antagonist",
+    "product_count": 5
+  },
+  "ultramicrosize griseofulvin": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet"
+    ],
+    "fda_class": "Tubulin Inhibiting Agent",
+    "product_count": 2
+  },
+  "ustekinumab-auub": {
+    "brands": [
+      "WEZLANA"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Interleukin-12 Antagonist",
+    "product_count": 7
+  },
+  "ustekinumab-stba": {
+    "brands": [
+      "STEQEYMA"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Interleukin-12 Antagonist",
+    "product_count": 4
+  },
+  "vadadustat": {
+    "brands": [
+      "VAFSEO"
+    ],
+    "dosage_forms": [
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Hypoxia-inducible Factor Prolyl Hydroxylase Inhibitor",
+    "product_count": 3
+  },
+  "valproic acid": {
+    "brands": [],
+    "dosage_forms": [
+      "Solution"
+    ],
+    "fda_class": "Anti-epileptic Agent",
+    "product_count": 4
+  },
+  "vecuronium bromide": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Powder, Lyophilized, For Solution",
+      "Powder"
+    ],
+    "fda_class": "Nondepolarizing Neuromuscular Blocker",
+    "product_count": 5
+  },
+  "vibegron": {
+    "brands": [
+      "GEMTESA"
+    ],
+    "dosage_forms": [
+      "Poultice",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "beta3-Adrenergic Agonist",
+    "product_count": 2
+  },
+  "viloxazine hydrochloride": {
+    "brands": [
+      "QELBREE"
+    ],
+    "dosage_forms": [
+      "Capsule, Extended Release",
+      "Powder"
+    ],
+    "fda_class": "Norepinephrine Reuptake Inhibitor",
+    "product_count": 4
+  },
+  "vimseltinib": {
+    "brands": [
+      "ROMVIMZA"
+    ],
+    "dosage_forms": [
+      "Capsule"
+    ],
+    "fda_class": "Kinase Inhibitor",
+    "product_count": 3
+  },
+  "voclosporin": {
+    "brands": [
+      "LUPKYNIS"
+    ],
+    "dosage_forms": [
+      "Capsule",
+      "Powder"
+    ],
+    "fda_class": "Calcineurin Inhibitor Immunosuppressant",
+    "product_count": 3
+  },
+  "voxelotor": {
+    "brands": [
+      "OXBRYTA"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Film Coated",
+      "Tablet, For Suspension"
+    ],
+    "fda_class": "Hemoglobin S Polymerization Inhibitor",
+    "product_count": 7
+  },
+  "xenon": {
+    "brands": [],
+    "dosage_forms": [
+      "Gas"
+    ],
+    "fda_class": "Inhalation Diagnostic Agent",
+    "product_count": 2
+  },
+  "zafirlukast": {
+    "brands": [],
+    "dosage_forms": [
+      "Tablet, Coated"
+    ],
+    "fda_class": "Leukotriene Receptor Antagonist",
+    "product_count": 2
+  },
+  "zileuton": {
+    "brands": [],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Multilayer, Extended Release"
+    ],
+    "fda_class": "5-Lipoxygenase Inhibitor",
+    "product_count": 3
+  },
+  "zilucoplan": {
+    "brands": [
+      "ZILBRYSQ"
+    ],
+    "dosage_forms": [
+      "Injection, Solution"
+    ],
+    "fda_class": "Complement Inhibitor",
+    "product_count": 3
+  },
+  "zincum bromatum": {
+    "brands": [],
+    "dosage_forms": [
+      "Pellet"
+    ],
+    "fda_class": "Copper Absorption Inhibitor",
+    "product_count": 7
+  },
+  "zincum sulphuricum": {
+    "brands": [],
+    "dosage_forms": [
+      "Pellet"
+    ],
+    "fda_class": "Copper Absorption Inhibitor",
+    "product_count": 6
+  },
+  "zoledronic acid": {
+    "brands": [],
+    "dosage_forms": [
+      "Injection",
+      "Injection, Solution",
+      "Injection, Solution, Concentrate",
+      "Powder"
+    ],
+    "fda_class": "Bisphosphonate",
+    "product_count": 9
+  },
+  "zongertinib": {
+    "brands": [
+      "HERNEXEOS"
+    ],
+    "dosage_forms": [
+      "Powder",
+      "Tablet, Film Coated"
+    ],
+    "fda_class": "Kinase Inhibitor",
+    "product_count": 2
+  }
+}

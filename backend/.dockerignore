@@ -1,0 +1,9 @@
+# Compose supplies both of these at runtime (env_file and the data volume), so
+# the image needs neither. Without this file, COPY . . baked .env - and any API
+# keys in it - into every image layer.
+.env
+data/
+__pycache__/
+*.pyc
+.pytest_cache/
+tests/

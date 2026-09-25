@@ -1,7 +1,26 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { HeartPulse, Stethoscope, Pill, Activity, MessageSquareText, FileText } from 'lucide-react'
 import { useAuth } from '../context/AuthContext.jsx'
 import { Button, Field, inputClass } from '../components/ui.jsx'
+import { Logo } from '../components/Logo.jsx'
+import { apiErrorMessage } from '../api/errors.js'
+
+const TRUST_BADGES = ['RAG-Grounded', 'Role-Based Access', 'MIT Licensed']
+
+const ORBIT_ICONS = [
+  { icon: Stethoscope, top: '14%', left: '50%' },
+  { icon: Pill, top: '39%', left: '84%' },
+  { icon: Activity, top: '79%', left: '71%' },
+  { icon: MessageSquareText, top: '79%', left: '29%' },
+  { icon: FileText, top: '39%', left: '16%' },
+]
+
+const STEPS = [
+  'Sign in to your dashboard',
+  'Ask, check, or assess',
+  'Get grounded, sourced answers',
+]
 
 export default function Login() {
   const { login } = useAuth()
@@ -17,9 +36,9 @@ export default function Login() {
     setBusy(true)
     try {
       await login(email, password)
-      navigate('/')
+      navigate('/dashboard')
     } catch (err) {
-      setError(err.response?.data?.detail || 'Could not sign in. Check your email and password.')
+      setError(apiErrorMessage(err, 'Could not sign in. Check your email and password.'))
     } finally {
       setBusy(false)
     }
@@ -27,26 +46,50 @@ export default function Login() {
 
   return (
     <div className="flex min-h-screen bg-ink">
-      {/* Left: brand + waveform signature */}
-      <div className="relative hidden w-1/2 flex-col justify-between overflow-hidden p-12 md:flex">
-        <div>
-          <span className="font-display text-2xl font-semibold text-paper">MedVerse AI</span>
+      {/* Left: brand + feature grid */}
+      <div className="relative hidden w-1/2 flex-col overflow-hidden p-12 md:flex">
+        <div className="absolute right-10 top-10 w-36 opacity-80">
+          <PulseWaveform />
+        </div>
+
+        <div className="pr-32">
+          <Logo tone="dark" size={36} textClass="text-2xl" />
           <p className="mt-2 max-w-xs text-sm text-paper/60">
             Clinical intelligence platform — a grounded assistant, medical report understanding,
             and predictive risk scoring, in one console.
           </p>
         </div>
 
-        <PulseWaveform />
+        <div className="mt-6 flex flex-wrap gap-2">
+          {TRUST_BADGES.map((label) => (
+            <span
+              key={label}
+              className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium text-paper/70"
+            >
+              {label}
+            </span>
+          ))}
+        </div>
 
-        <div className="readout-label text-paper/40">Secure clinician & patient access</div>
+        <div className="flex flex-1 items-center justify-center">
+          <CareOrbit />
+        </div>
+
+        <div className="grid grid-cols-3 gap-3">
+          {STEPS.map((label, i) => (
+            <div key={label} className="rounded-lg border border-white/10 bg-white/5 p-3">
+              <span className="font-mono text-xs text-pulse">0{i + 1}</span>
+              <div className="mt-1 text-xs leading-snug text-paper/60">{label}</div>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Right: form */}
       <div className="flex w-full items-center justify-center bg-paper px-6 py-12 md:w-1/2">
         <div className="w-full max-w-sm">
           <div className="mb-8 md:hidden">
-            <span className="font-display text-2xl font-semibold text-ink">MedVerse AI</span>
+            <Logo size={36} textClass="text-2xl" />
           </div>
 
           <h1 className="font-display text-2xl font-semibold text-ink">Sign in</h1>
@@ -127,5 +170,33 @@ function PulseWaveform() {
         }
       `}</style>
     </svg>
+  )
+}
+
+function CareOrbit() {
+  return (
+    <div className="relative h-64 w-64">
+      <div className="absolute inset-0 rounded-full bg-pulse/15 blur-3xl" />
+
+      {/* Orbit rings */}
+      <div className="absolute inset-0 rounded-full border border-dashed border-white/15" />
+      <div className="absolute inset-8 rounded-full border border-dashed border-white/10" />
+
+      {/* Center: platform icon */}
+      <div className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-pulse shadow-lg">
+        <HeartPulse size={24} className="text-paper" />
+      </div>
+
+      {/* Orbiting feature icons */}
+      {ORBIT_ICONS.map(({ icon: Icon, top, left }) => (
+        <div
+          key={top + left}
+          className="absolute flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-paper shadow-md"
+          style={{ top, left }}
+        >
+          <Icon size={16} className="text-pulse-dark" />
+        </div>
+      ))}
+    </div>
   )
 }

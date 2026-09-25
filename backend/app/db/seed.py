@@ -56,6 +56,16 @@ def run_seed(db: Session) -> None:
         gender="Non-binary",
         blood_group="O+",
         allergies="Penicillin",
+        height_cm=170,
+        weight_kg=72,
+        phone="+1 555-0142",
+        address="482 Birchwood Lane, Springfield",
+        emergency_contact_name="Riley Patient",
+        emergency_contact_phone="+1 555-0199",
+        smoking_status="never",
+        alcohol_use="occasional",
+        chronic_conditions="Type 2 diabetes",
+        family_history="Father: hypertension. Mother: type 2 diabetes.",
     )
     db.add(patient_profile)
     db.flush()

@@ -1,3 +1,5 @@
+import { Counter } from './motion.jsx'
+
 export function PageHeader({ title, subtitle }) {
   return (
     <div className="mb-6">
@@ -22,10 +24,18 @@ export function Readout({ label, value, unit, tone = 'default' }) {
 }
 
 export function StatCard({ label, value, sub }) {
+  // Numeric stats count up on first view; anything else renders as-is.
+  const numeric = typeof value === 'number' && Number.isFinite(value)
   return (
-    <div className="card p-5">
+    <div className="card group relative overflow-hidden p-5 transition-shadow duration-300 hover:shadow-lg">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-br from-pulse/0 via-pulse/0 to-pulse/[0.06] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+      />
       <div className="readout-label">{label}</div>
-      <div className="mt-2 font-mono text-3xl font-medium text-ink">{value}</div>
+      <div className="mt-2 font-mono text-3xl font-medium text-ink">
+        {numeric ? <Counter value={value} /> : value}
+      </div>
       {sub && <div className="mt-1 text-xs text-muted">{sub}</div>}
     </div>
   )

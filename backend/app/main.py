@@ -7,6 +7,7 @@ from app.api import appointments, assistant, auth, dashboard, medications, patie
 from app.core.config import settings
 from app.db import models
 from app.db.database import Base, SessionLocal, engine, run_lightweight_migrations
+from app.db.migrate import run_light_migrations
 from app.db.seed import run_seed
 
 
@@ -15,6 +16,7 @@ async def lifespan(app: FastAPI):
     # Startup: create tables, run lightweight migrations, seed data, warm up RAG index + risk models
     Base.metadata.create_all(bind=engine)
     run_lightweight_migrations()
+    run_light_migrations(engine)
 
     db = SessionLocal()
     try:

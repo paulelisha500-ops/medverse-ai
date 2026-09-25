@@ -1,4 +1,5 @@
-from typing import List
+from datetime import date, datetime
+from typing import List, Optional
 
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
@@ -16,6 +17,24 @@ from app.schemas import (
 router = APIRouter(prefix="/api/patients", tags=["patients"])
 
 
+def _compute_age(date_of_birth: Optional[str]) -> Optional[int]:
+    if not date_of_birth:
+        return None
+    try:
+        dob = datetime.strptime(date_of_birth, "%Y-%m-%d").date()
+    except ValueError:
+        return None
+    today = date.today()
+    return today.year - dob.year - ((today.month, today.day) < (dob.month, dob.day))
+
+
+def _compute_bmi(height_cm: Optional[float], weight_kg: Optional[float]) -> Optional[float]:
+    if not height_cm or not weight_kg:
+        return None
+    height_m = height_cm / 100
+    return round(weight_kg / (height_m * height_m), 1)
+
+
 def _profile_to_out(profile: models.PatientProfile) -> PatientProfileOut:
     return PatientProfileOut(
         id=profile.id,
@@ -24,8 +43,20 @@ def _profile_to_out(profile: models.PatientProfile) -> PatientProfileOut:
         gender=profile.gender,
         blood_group=profile.blood_group,
         allergies=profile.allergies,
+        height_cm=profile.height_cm,
+        weight_kg=profile.weight_kg,
+        phone=profile.phone,
+        address=profile.address,
+        emergency_contact_name=profile.emergency_contact_name,
+        emergency_contact_phone=profile.emergency_contact_phone,
+        smoking_status=profile.smoking_status,
+        alcohol_use=profile.alcohol_use,
+        chronic_conditions=profile.chronic_conditions,
+        family_history=profile.family_history,
         full_name=profile.user.full_name if profile.user else None,
         email=profile.user.email if profile.user else None,
+        age=_compute_age(profile.date_of_birth),
+        bmi=_compute_bmi(profile.height_cm, profile.weight_kg),
     )
 
 
@@ -90,6 +121,22 @@ def get_patient(
 ):
     profile = _get_profile_or_404(db, profile_id)
     _authorize_patient_access(user, profile)
+    return _profile_to_out(profile)
+
+
+@router.put("/{profile_id}", response_model=PatientProfileOut)
+def update_patient(
+    profile_id: int,
+    payload: PatientProfileUpdate,
+    db: Session = Depends(get_db),
+    _user: models.User = Depends(require_roles("admin", "doctor")),
+):
+    """Admin/doctor intake: fill in or correct a patient's details directly."""
+    profile = _get_profile_or_404(db, profile_id)
+    for field, value in payload.model_dump(exclude_unset=True).items():
+        setattr(profile, field, value)
+    db.commit()
+    db.refresh(profile)
     return _profile_to_out(profile)
 
 
