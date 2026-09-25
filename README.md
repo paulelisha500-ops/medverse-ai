@@ -1,5 +1,7 @@
 # MedVerse AI — Clinical Intelligence Platform
 
+**Links:** [GitHub](https://github.com/paulelisha500-ops/medverse-ai) · [Hugging Face](https://huggingface.co/Elisha622/medverse-ai)
+
 A full-stack healthcare AI platform centered on **Retrieval-Augmented Generation, LLMs, and NLP**: a
 grounded clinical/patient assistant, medical report understanding, predictive risk scoring, and a
 medication interaction checker — behind real authentication and role-based dashboards for admins,
