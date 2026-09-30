@@ -33,6 +33,8 @@ export default function PatientDetail() {
   const [loading, setLoading] = useState(true)
   const [showForm, setShowForm] = useState(false)
   const [form, setForm] = useState({ type: 'visit', title: '', details: '' })
+  const [addingRecord, setAddingRecord] = useState(false)
+  const [addRecordError, setAddRecordError] = useState(false)
   const [question, setQuestion] = useState('')
   const [answer, setAnswer] = useState(null)
   const [asking, setAsking] = useState(false)
@@ -58,11 +60,19 @@ export default function PatientDetail() {
 
   async function addRecord(e) {
     e.preventDefault()
-    if (!form.title.trim()) return
-    await client.post(`/patients/${id}/records`, form)
-    setForm({ type: 'visit', title: '', details: '' })
-    setShowForm(false)
-    load()
+    if (!form.title.trim() || addingRecord) return
+    setAddingRecord(true)
+    setAddRecordError(false)
+    try {
+      await client.post(`/patients/${id}/records`, form)
+      setForm({ type: 'visit', title: '', details: '' })
+      setShowForm(false)
+      load()
+    } catch (err) {
+      setAddRecordError(true)
+    } finally {
+      setAddingRecord(false)
+    }
   }
 
   function startEditing() {
@@ -351,7 +361,8 @@ export default function PatientDetail() {
               />
             </Field>
           </div>
-          <Button type="submit">Save entry</Button>
+          <Button type="submit" disabled={addingRecord}>{addingRecord ? 'Saving…' : 'Save entry'}</Button>
+          {addRecordError && <span className="ml-3 text-sm text-alert">Couldn't save. Please try again.</span>}
         </form>
       )}
 

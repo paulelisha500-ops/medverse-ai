@@ -27,16 +27,18 @@ async def lifespan(app: FastAPI):
         db.close()
 
     try:
-        from app.rag.vector_store import ensure_index_ready
+        from app.rag.vector_store import warm_up
 
-        ensure_index_ready()
+        # Loads the embedding model into memory now (several seconds, torch +
+        # tokenizer + weights) instead of on a user's first assistant message.
+        warm_up()
     except Exception as exc:  # pragma: no cover
-        print(f"[startup] RAG index not built yet ({exc}). It will build on first request.")
+        print(f"[startup] RAG index/model not ready yet ({exc}). It will build on first request.")
 
     try:
-        from app.ml.train_risk_model import ensure_models_trained
+        from app.ml.risk_model import warm_up as warm_up_risk_models
 
-        ensure_models_trained()
+        warm_up_risk_models()
     except Exception as exc:  # pragma: no cover
         print(f"[startup] Risk models not trained yet ({exc}).")
 

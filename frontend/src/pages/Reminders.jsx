@@ -11,6 +11,7 @@ export default function Reminders() {
   const [form, setForm] = useState({ medication_name: '', dosage: '', frequency: '' })
   const [adding, setAdding] = useState(false)
   const [addError, setAddError] = useState('')
+  const [loggingId, setLoggingId] = useState(null)
 
   function load() {
     setError(false)
@@ -42,11 +43,16 @@ export default function Reminders() {
   }
 
   async function logDose(reminderId, status) {
+    setLoggingId(reminderId)
     try {
       await client.post(`/reminders/${reminderId}/log`, { status })
-      client.get('/reminders/progress').then((res) => setProgress(res.data)).catch(() => {})
+      const res = await client.get('/reminders/progress')
+      setProgress(res.data)
     } catch (err) {
-      // best-effort
+      // best-effort — the log call itself either landed or didn't; there's
+      // nothing local to roll back since progress is server-computed.
+    } finally {
+      setLoggingId(null)
     }
   }
 
@@ -124,13 +130,15 @@ export default function Reminders() {
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => logDose(r.id, 'taken')}
-                    className="rounded border border-line px-3 py-1.5 text-xs font-medium text-pulse-dark hover:border-pulse"
+                    disabled={loggingId === r.id}
+                    className="rounded border border-line px-3 py-1.5 text-xs font-medium text-pulse-dark hover:border-pulse disabled:opacity-40"
                   >
-                    Mark taken
+                    {loggingId === r.id ? '…' : 'Mark taken'}
                   </button>
                   <button
                     onClick={() => logDose(r.id, 'skipped')}
-                    className="rounded border border-line px-3 py-1.5 text-xs font-medium text-muted hover:border-alert hover:text-alert"
+                    disabled={loggingId === r.id}
+                    className="rounded border border-line px-3 py-1.5 text-xs font-medium text-muted hover:border-alert hover:text-alert disabled:opacity-40"
                   >
                     Skip today
                   </button>
