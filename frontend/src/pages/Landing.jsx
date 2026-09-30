@@ -42,7 +42,7 @@ const GALLERY = [
 ]
 
 const STEPS = [
-  { icon: LogIn, title: 'Sign in', body: 'Use a demo account or create your own patient login — no setup required.' },
+  { icon: LogIn, title: 'Sign in', body: 'Create your own patient login — no setup required.' },
   { icon: Search, title: 'Ask, check, or assess', body: 'Chat with the assistant, run a medication check, or calculate disease risk.' },
   { icon: Sparkles, title: 'Get grounded answers', body: 'Every answer shows its sources — retrieved from a real knowledge base, not invented.' },
 ]
@@ -93,7 +93,7 @@ const TECH_DETAILS = [
 const FAQS = [
   {
     q: 'Is this connected to a real hospital system or EHR?',
-    a: 'No. This is a self-contained portfolio project with its own database, seeded with synthetic demo data — it has no connection to any real patient records or health system.',
+    a: 'No. This is a self-contained application with its own database — it has no connection to any real patient records or health system. Accounts you create live only in this app.',
   },
   {
     q: 'Do I need an API key to try it?',
@@ -101,11 +101,11 @@ const FAQS = [
   },
   {
     q: 'Can I use this for real medical decisions?',
-    a: 'No — it\'s a demonstration of RAG, NLP, and ML engineering, not a certified medical device. Risk scores, extracted report data, and assistant answers are educational, not diagnostic.',
+    a: 'No — it\'s built to showcase RAG, NLP, and ML engineering, not to serve as a certified medical device. Risk scores, extracted report data, and assistant answers are educational, not diagnostic.',
   },
   {
     q: 'What can I actually do without creating an account?',
-    a: 'You can look around this page and the demo accounts\' credentials are available on request — sign in to explore the AI Assistant, Report Analysis, Risk Check, Medication Checker, and role-based dashboards.',
+    a: 'You can look around this page — sign in or register to explore the AI Assistant, Report Analysis, Risk Check, Medication Checker, and role-based dashboards.',
   },
   {
     q: 'Is the medication database exhaustive?',
@@ -445,7 +445,7 @@ export default function Landing() {
               Ready to take a look?
             </h2>
             <p className="relative mt-3 text-muted">
-              Sign in with a demo account or create your own patient login.
+              Create your own patient login, or sign in if you already have one.
             </p>
             <div className="relative mt-6 flex flex-wrap items-center justify-center gap-3">
               <Link to="/login">

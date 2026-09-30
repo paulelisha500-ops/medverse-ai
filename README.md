@@ -7,8 +7,8 @@ grounded clinical/patient assistant, medical report understanding, predictive ri
 medication interaction checker — behind real authentication and role-based dashboards for admins,
 doctors, and patients.
 
-> **This is a portfolio/demonstration project.** It does not provide medical advice, diagnosis, or
-> treatment, and should not be used to make real clinical decisions. See [Disclaimer](#disclaimer).
+> **This application does not provide medical advice, diagnosis, or treatment**, and should not be
+> used to make real clinical decisions. See [Disclaimer](#disclaimer).
 
 ## Features
 
@@ -155,7 +155,7 @@ medverse-ai/
 │   └── app/
 │       ├── main.py            # FastAPI app, startup: DB + seed + RAG index + risk models
 │       ├── core/               # config, security (JWT/hashing)
-│       ├── db/                 # SQLAlchemy models, session, demo data seed
+│       ├── db/                 # SQLAlchemy models, session, sample data seed
 │       ├── api/                 # auth, patients, assistant, reports, risk, medications, dashboard
 │       ├── rag/                 # vector store (FAISS), LLM providers, knowledge base
 │       ├── ml/                  # synthetic-data risk model training + inference
@@ -183,9 +183,8 @@ the index rebuilds automatically.
 
 ## Disclaimer
 
-MedVerse AI is a portfolio/demonstration project built to showcase RAG, LLM, and NLP engineering.
-It is **not a certified medical device** and does not provide medical advice, diagnosis, or
-treatment. All AI-generated content should be treated as general educational information only.
+MedVerse AI is **not a certified medical device** and does not provide medical advice, diagnosis,
+or treatment. All AI-generated content should be treated as general educational information only.
 Always consult a licensed healthcare professional for real medical decisions.
 
 ## License
