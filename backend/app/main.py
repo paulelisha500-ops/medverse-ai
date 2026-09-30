@@ -1,7 +1,9 @@
+import os
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 
 from app.api import appointments, assistant, auth, dashboard, medications, patients, reminders, reports, risk
 from app.core.config import settings
@@ -66,3 +68,20 @@ app.include_router(reminders.router)
 @app.get("/api/health")
 def health():
     return {"status": "ok", "app": settings.APP_NAME}
+
+
+# ---------- Built frontend (single-container deployment, e.g. HF Spaces) ----------
+# When the Vite build is copied in at STATIC_DIR (see root Dockerfile), serve it and
+# fall back to index.html for any non-API path so React Router can handle it. Local
+# dev (npm run dev / docker-compose) doesn't set this, so nothing changes there.
+
+STATIC_DIR = os.environ.get("STATIC_DIR", "")
+
+if STATIC_DIR and os.path.isdir(STATIC_DIR):
+
+    @app.get("/{full_path:path}")
+    def spa(full_path: str):
+        candidate = os.path.join(STATIC_DIR, full_path)
+        if full_path and os.path.isfile(candidate):
+            return FileResponse(candidate)
+        return FileResponse(os.path.join(STATIC_DIR, "index.html"))
