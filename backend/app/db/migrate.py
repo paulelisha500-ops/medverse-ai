@@ -1,6 +1,6 @@
 """
 Tiny additive migration: adds any model columns missing from existing tables.
-There's no Alembic in this project (SQLite, demo scale) — this keeps local/dev
+There's no Alembic in this project (SQLite, small scale) — this keeps local/dev
 databases in sync with models.py across schema changes without wiping data.
 """
 from sqlalchemy import inspect, text
