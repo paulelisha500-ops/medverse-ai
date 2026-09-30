@@ -19,7 +19,10 @@ TIPS = {
 }
 
 
-def _load():
+def warm_up():
+    """Trains (if needed) and loads both model pickles into memory. Called at
+    startup so the first /api/risk/assess request doesn't pay the disk-read
+    cost that would otherwise happen lazily on first use."""
     global _diabetes_bundle, _heart_bundle
     ensure_models_trained()
     if _diabetes_bundle is None:
@@ -42,7 +45,7 @@ def _predict(bundle, feature_values):
 
 
 def assess(age, bmi, systolic_bp, glucose, cholesterol, smoker, family_history, activity_level):
-    _load()
+    warm_up()
     feature_values = [
         age, bmi, systolic_bp, glucose, cholesterol,
         int(bool(smoker)), int(bool(family_history)), activity_level,

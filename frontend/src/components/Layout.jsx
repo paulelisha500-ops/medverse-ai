@@ -16,17 +16,18 @@ import {
 } from 'lucide-react'
 import { useAuth } from '../context/AuthContext.jsx'
 import { Logo } from './Logo.jsx'
+import { pageLoaders } from '../pageLoaders.js'
 
 const NAV_ITEMS = [
-  { to: '/dashboard', label: 'Dashboard', icon: LayoutDashboard, roles: ['admin', 'doctor', 'patient'] },
-  { to: '/assistant', label: 'AI Assistant', icon: MessageSquareText, roles: ['admin', 'doctor', 'patient'] },
-  { to: '/reports', label: 'Report Analysis', icon: FileText, roles: ['admin', 'doctor', 'patient'] },
-  { to: '/risk-check', label: 'Risk Check', icon: Activity, roles: ['admin', 'doctor', 'patient'] },
-  { to: '/medications', label: 'Medication Checker', icon: Pill, roles: ['admin', 'doctor', 'patient'] },
-  { to: '/appointments', label: 'Appointments', icon: CalendarClock, roles: ['admin', 'doctor', 'patient'] },
-  { to: '/reminders', label: 'My Medications', icon: BellRing, roles: ['patient'] },
-  { to: '/patients', label: 'Patients', icon: Users, roles: ['admin', 'doctor'] },
-  { to: '/profile', label: 'Profile', icon: UserCircle, roles: ['admin', 'doctor', 'patient'] },
+  { to: '/dashboard', label: 'Dashboard', icon: LayoutDashboard, roles: ['admin', 'doctor', 'patient'], load: pageLoaders.dashboard },
+  { to: '/assistant', label: 'AI Assistant', icon: MessageSquareText, roles: ['admin', 'doctor', 'patient'], load: pageLoaders.assistant },
+  { to: '/reports', label: 'Report Analysis', icon: FileText, roles: ['admin', 'doctor', 'patient'], load: pageLoaders.reports },
+  { to: '/risk-check', label: 'Risk Check', icon: Activity, roles: ['admin', 'doctor', 'patient'], load: pageLoaders.riskCheck },
+  { to: '/medications', label: 'Medication Checker', icon: Pill, roles: ['admin', 'doctor', 'patient'], load: pageLoaders.medications },
+  { to: '/appointments', label: 'Appointments', icon: CalendarClock, roles: ['admin', 'doctor', 'patient'], load: pageLoaders.appointments },
+  { to: '/reminders', label: 'My Medications', icon: BellRing, roles: ['patient'], load: pageLoaders.reminders },
+  { to: '/patients', label: 'Patients', icon: Users, roles: ['admin', 'doctor'], load: pageLoaders.patients },
+  { to: '/profile', label: 'Profile', icon: UserCircle, roles: ['admin', 'doctor', 'patient'], load: pageLoaders.profile },
 ]
 
 export default function Layout() {
@@ -64,12 +65,14 @@ export default function Layout() {
           </div>
 
           <nav className="flex-1 space-y-1 pt-16 md:pt-0">
-            {items.map(({ to, label, icon: Icon }) => (
+            {items.map(({ to, label, icon: Icon, load }) => (
               <NavLink
                 key={to}
                 to={to}
                 end={to === '/dashboard'}
                 onClick={() => setMobileOpen(false)}
+                onMouseEnter={load}
+                onFocus={load}
                 className={({ isActive }) =>
                   `flex items-center gap-3 rounded px-3 py-2 text-sm font-medium transition-colors ${
                     isActive

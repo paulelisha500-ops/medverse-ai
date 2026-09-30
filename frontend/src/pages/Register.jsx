@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext.jsx'
 import { Button, Field, inputClass } from '../components/ui.jsx'
 import { Logo } from '../components/Logo.jsx'
 import { apiErrorMessage } from '../api/errors.js'
+import { idlePrefetch, pageLoaders } from '../pageLoaders.js'
 
 export default function Register() {
   const { register } = useAuth()
@@ -13,6 +14,10 @@ export default function Register() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [busy, setBusy] = useState(false)
+
+  useEffect(() => {
+    idlePrefetch(pageLoaders.dashboard, pageLoaders.login)
+  }, [])
 
   async function handleSubmit(e) {
     e.preventDefault()

@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { idlePrefetch, pageLoaders } from '../pageLoaders.js'
 import {
   Stethoscope,
   UserCircle,
@@ -114,6 +115,12 @@ const FAQS = [
 ]
 
 export default function Landing() {
+  // Sign in / Create account are this page's two real destinations — warm
+  // both chunks in the background so the click through feels instant.
+  useEffect(() => {
+    idlePrefetch(pageLoaders.login, pageLoaders.register)
+  }, [])
+
   return (
     <div className="bg-paper">
       <AnnouncementBar />

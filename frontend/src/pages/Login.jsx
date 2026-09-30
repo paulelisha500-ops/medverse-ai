@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { HeartPulse, Stethoscope, Pill, Activity, MessageSquareText, FileText } from 'lucide-react'
 import { useAuth } from '../context/AuthContext.jsx'
 import { Button, Field, inputClass } from '../components/ui.jsx'
 import { Logo } from '../components/Logo.jsx'
 import { apiErrorMessage } from '../api/errors.js'
+import { idlePrefetch, pageLoaders } from '../pageLoaders.js'
 
 const TRUST_BADGES = ['RAG-Grounded', 'Role-Based Access', 'MIT Licensed']
 
@@ -29,6 +30,13 @@ export default function Login() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [busy, setBusy] = useState(false)
+
+  // Signing in almost always lands on the dashboard next; the register page
+  // is the other click available from here. Warm both in the background so
+  // neither has to wait on its own chunk once idlePrefetch fires.
+  useEffect(() => {
+    idlePrefetch(pageLoaders.dashboard, pageLoaders.register)
+  }, [])
 
   async function handleSubmit(e) {
     e.preventDefault()

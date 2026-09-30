@@ -23,6 +23,7 @@ export default function Appointments() {
   const [form, setForm] = useState({ doctor_id: '', patient_id: '', scheduled_at: '', reason: '' })
   const [booking, setBooking] = useState(false)
   const [bookError, setBookError] = useState('')
+  const [updatingId, setUpdatingId] = useState(null)
 
   function load() {
     setError(false)
@@ -63,11 +64,20 @@ export default function Appointments() {
   }
 
   async function updateStatus(id, status) {
+    // Flip the badge immediately rather than waiting on the round trip, then
+    // reconcile with whatever the server actually saved. A full reload()
+    // would also be correct but re-fetches doctors (and patients, for
+    // staff) for a change that only ever touches one appointment.
+    const previous = appointments
+    setUpdatingId(id)
+    setAppointments((list) => list.map((a) => (a.id === id ? { ...a, status } : a)))
     try {
-      await client.patch(`/appointments/${id}`, { status })
-      load()
+      const res = await client.patch(`/appointments/${id}`, { status })
+      setAppointments((list) => list.map((a) => (a.id === id ? res.data : a)))
     } catch (err) {
-      // best-effort; the list simply won't update if this fails
+      setAppointments(previous)
+    } finally {
+      setUpdatingId(null)
     }
   }
 
@@ -158,7 +168,8 @@ export default function Appointments() {
                 {isStaff && a.status === 'requested' && (
                   <button
                     onClick={() => updateStatus(a.id, 'confirmed')}
-                    className="text-xs font-medium text-pulse-dark underline"
+                    disabled={updatingId === a.id}
+                    className="text-xs font-medium text-pulse-dark underline disabled:opacity-40"
                   >
                     Confirm
                   </button>
@@ -166,7 +177,8 @@ export default function Appointments() {
                 {isStaff && a.status === 'confirmed' && (
                   <button
                     onClick={() => updateStatus(a.id, 'completed')}
-                    className="text-xs font-medium text-pulse-dark underline"
+                    disabled={updatingId === a.id}
+                    className="text-xs font-medium text-pulse-dark underline disabled:opacity-40"
                   >
                     Mark completed
                   </button>
@@ -174,7 +186,8 @@ export default function Appointments() {
                 {isStaff && (a.status === 'requested' || a.status === 'confirmed') && (
                   <button
                     onClick={() => updateStatus(a.id, 'cancelled')}
-                    className="text-xs font-medium text-alert underline"
+                    disabled={updatingId === a.id}
+                    className="text-xs font-medium text-alert underline disabled:opacity-40"
                   >
                     Cancel
                   </button>

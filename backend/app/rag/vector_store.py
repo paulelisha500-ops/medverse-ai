@@ -82,6 +82,19 @@ def ensure_index_ready() -> None:
         build_index(force=False)
 
 
+def warm_up() -> None:
+    """Loads the FAISS index and the embedding model into memory eagerly.
+
+    Without this, both are lazy-loaded on the first /assistant/chat request —
+    the sentence-transformers model in particular takes several seconds to
+    load (torch + tokenizer + weights), so the first real user query would
+    otherwise stall for that long. Called once at startup instead.
+    """
+    ensure_index_ready()
+    model = get_embedding_model()
+    model.encode(["warm-up"], normalize_embeddings=True, show_progress_bar=False)
+
+
 def search(query: str, top_k: int = 4) -> List[Dict]:
     ensure_index_ready()
     model = get_embedding_model()

@@ -30,6 +30,7 @@ export default function Profile() {
   const [profile, setProfile] = useState(null)
   const [saved, setSaved] = useState(false)
   const [saveError, setSaveError] = useState(false)
+  const [saving, setSaving] = useState(false)
 
   const [account, setAccount] = useState({
     full_name: user.full_name,
@@ -55,6 +56,8 @@ export default function Profile() {
 
   async function handleSave(e) {
     e.preventDefault()
+    if (saving) return
+    setSaving(true)
     setSaveError(false)
     try {
       const payload = {}
@@ -67,6 +70,8 @@ export default function Profile() {
       setTimeout(() => setSaved(false), 2000)
     } catch (err) {
       setSaveError(true)
+    } finally {
+      setSaving(false)
     }
   }
 
@@ -257,7 +262,7 @@ export default function Profile() {
           </div>
 
           <div className="flex items-center gap-3">
-            <Button type="submit">Save changes</Button>
+            <Button type="submit" disabled={saving}>{saving ? 'Saving…' : 'Save changes'}</Button>
             {saved && <span className="text-sm text-pulse-dark">Saved.</span>}
             {saveError && <span className="text-sm text-alert">Couldn't save. Please try again.</span>}
           </div>

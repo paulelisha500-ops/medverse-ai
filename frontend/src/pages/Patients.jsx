@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Search } from 'lucide-react'
 import client from '../api/client.js'
 import { PageHeader, EmptyState } from '../components/ui.jsx'
+import { pageLoaders } from '../pageLoaders.js'
 
 export default function Patients() {
   const [patients, setPatients] = useState([])
@@ -68,7 +69,11 @@ export default function Patients() {
               {filtered.map((p) => (
                 <tr key={p.id} className="border-b border-line last:border-0 hover:bg-pulse-dim">
                   <td className="px-4 py-3">
-                    <Link to={`/patients/${p.id}`} className="font-medium text-ink hover:text-pulse-dark">
+                    <Link
+                      to={`/patients/${p.id}`}
+                      onMouseEnter={pageLoaders.patientDetail}
+                      className="font-medium text-ink hover:text-pulse-dark"
+                    >
                       {p.full_name || 'Unnamed patient'}
                     </Link>
                   </td>
