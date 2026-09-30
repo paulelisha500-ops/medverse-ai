@@ -197,7 +197,7 @@ export default function Landing() {
         {/* Capability tiles. The hero grid is text-left/photo-right, so the row
             under the shorter column used to bottom out into empty paper before
             the marquee — these carry the eye across that band instead. */}
-        <div className="mx-auto max-w-6xl px-6">
+        <div id="platform" className="mx-auto max-w-6xl scroll-mt-20 px-6">
           <div className="grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
             {PLATFORM_ITEMS.map(({ icon: Icon, label, body }, i) => (
               <Reveal key={label} delay={i * 80} className="h-full">
@@ -503,13 +503,18 @@ function Nav() {
               onMouseEnter={() => setPlatformOpen(true)}
               onMouseLeave={() => setPlatformOpen(false)}
             >
-              <button className="flex items-center gap-1 text-sm font-medium text-ink hover:text-pulse-dark">
+              <a href="#platform" className="flex items-center gap-1 text-sm font-medium text-ink hover:text-pulse-dark">
                 Platform <ChevronDown size={14} />
-              </button>
+              </a>
               {platformOpen && (
                 <div className="absolute left-0 top-full w-72 rounded-lg border border-line bg-surface p-2 shadow-xl">
                   {PLATFORM_ITEMS.map(({ icon: Icon, label, body }) => (
-                    <div key={label} className="flex gap-3 rounded-md p-2 hover:bg-pulse-dim">
+                    <a
+                      key={label}
+                      href="#platform"
+                      onClick={() => setPlatformOpen(false)}
+                      className="flex gap-3 rounded-md p-2 hover:bg-pulse-dim"
+                    >
                       <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-pulse-dim text-pulse-dark">
                         <Icon size={15} />
                       </div>
@@ -517,7 +522,7 @@ function Nav() {
                         <div className="text-sm font-medium text-ink">{label}</div>
                         <div className="text-xs text-muted">{body}</div>
                       </div>
-                    </div>
+                    </a>
                   ))}
                 </div>
               )}
