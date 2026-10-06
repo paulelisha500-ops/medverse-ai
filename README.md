@@ -203,7 +203,10 @@ passes on `main` it:
 
 1. mirrors `main` to the [model repo](https://huggingface.co/Elisha622/medverse-ai);
 2. creates the Space on the first run (Docker, **private**, with a random `SECRET_KEY` secret so
-   logins survive restarts) and uploads the same code;
+   logins survive restarts) and uploads the same code. Hugging Face hosts Docker Spaces only for
+   [PRO](https://huggingface.co/pro) accounts; on a free account this step is skipped with a
+   warning, the model repo is still synced, and the Space is created on the first run after
+   upgrading;
 3. waits for the Space to build, then smoke-tests the live Space: health, frontend routing, the
    path-traversal fix, login, report analysis and the assistant.
 

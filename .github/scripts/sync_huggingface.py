@@ -6,7 +6,8 @@ Run by .github/workflows/sync-huggingface.yml after CI passes on main:
    longer exist on GitHub, so it can't keep serving stale code.
 2. Space (HF_SPACE_ID): created on the first run as a private Docker Space
    with a random SECRET_KEY secret, so logins survive restarts. Then the same
-   upload.
+   upload. Hugging Face only hosts Docker Spaces for PRO accounts; on a free
+   account this step is skipped with a warning and the run still passes.
 3. Wait for the Space to build and run the new commit, then smoke-test it over
    HTTPS: health, frontend routing, the path-traversal fix, login, report
    analysis and the assistant.
@@ -206,6 +207,10 @@ def smoke_test(api: HfApi, token: str) -> None:
     check(chat.status_code == 200 and bool(chat.json()["sources"]), "assistant answers with sources")
 
 
+def _status(err: HfHubHTTPError):
+    return err.response.status_code if err.response is not None else None
+
+
 def main() -> None:
     token = os.environ.get("HF_TOKEN", "")
     if not token:
@@ -216,12 +221,26 @@ def main() -> None:
         user = api.whoami()["name"]
         log(f"Authenticated to Hugging Face as {user}")
         upload(api, REPO_ID, "model")
-        ensure_space(api)
+        summary(f"### Hugging Face sync ({SYNC_SHA[:7]})")
+        summary(f"- Model repo synced: https://huggingface.co/{REPO_ID}")
+        try:
+            ensure_space(api)
+        except HfHubHTTPError as err:
+            if _status(err) != 402:
+                raise
+            # Hugging Face only hosts Docker Spaces for PRO accounts (static
+            # Spaces stay free). Keep the model repo in sync and stay green;
+            # the Space is created on the first run after an upgrade.
+            log(f"::warning::Space not deployed: Hugging Face requires a PRO subscription to host "
+                f"Docker Spaces (402 Payment Required). The model repo is synced. {err}")
+            summary("- Space skipped: Docker Spaces need a Hugging Face PRO subscription "
+                    "(https://huggingface.co/pro). It is created automatically on the next run after upgrading.")
+            return
         commit_oid = upload(api, SPACE_ID, "space")
         log("Waiting for the Space to build ...")
         wait_for_space(api, commit_oid)
     except HfHubHTTPError as err:
-        status = err.response.status_code if err.response is not None else "?"
+        status = _status(err) or "?"
         hint = {
             401: "HF_TOKEN is invalid or expired. Create a new token and update the GitHub secret.",
             403: "HF_TOKEN can't write. Use a 'Write' token, or for a fine-grained token tick "
@@ -232,9 +251,8 @@ def main() -> None:
     smoke_test(api, token)
 
     log("Hugging Face sync and live Space test passed.")
-    summary(f"### Hugging Face sync: passed ({SYNC_SHA[:7]})")
-    summary(f"- Model repo: https://huggingface.co/{REPO_ID}")
-    summary(f"- Space: https://huggingface.co/spaces/{SPACE_ID} ({os.environ.get('HF_SPACE_URL') or space_url(SPACE_ID)})")
+    summary(f"- Space deployed and smoke-tested: https://huggingface.co/spaces/{SPACE_ID} "
+            f"({os.environ.get('HF_SPACE_URL') or space_url(SPACE_ID)})")
 
 
 if __name__ == "__main__":
