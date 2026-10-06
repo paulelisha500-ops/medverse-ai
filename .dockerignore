@@ -1,0 +1,21 @@
+# The root Dockerfile builds from the repository root, so this file — not
+# backend/.dockerignore, which only covers docker-compose's ./backend context —
+# decides what reaches that image.
+
+# Local secrets and data. `COPY backend/ .` would otherwise bake a local
+# backend/.env (SECRET_KEY, LLM API keys) and backend/data (the SQLite
+# database with password hashes and patient records) into the image layers.
+**/.env
+backend/data/*
+backend/venv/
+
+# Host-built dependencies and output. `COPY frontend/ ./` would otherwise
+# replace the container's Linux node_modules with the host's (on Windows,
+# win32 native binaries that break the Linux build).
+frontend/node_modules/
+frontend/dist/
+
+**/__pycache__/
+**/*.pyc
+.git/
+.claude/
