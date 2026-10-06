@@ -197,12 +197,30 @@ boots it the way a Space does (port 7860, no `SECRET_KEY`, non-root) and smoke-t
 
 ## Deploying to Hugging Face Spaces
 
+Deployment runs through GitHub Actions
+([`.github/workflows/sync-huggingface.yml`](.github/workflows/sync-huggingface.yml)). After CI
+passes on `main` it:
+
+1. mirrors `main` to the [model repo](https://huggingface.co/Elisha622/medverse-ai);
+2. creates the Space on the first run (Docker, **private**, with a random `SECRET_KEY` secret so
+   logins survive restarts) and uploads the same code;
+3. waits for the Space to build, then smoke-tests the live Space: health, frontend routing, the
+   path-traversal fix, login, report analysis and the assistant.
+
+One-time setup: create a Hugging Face token with write access
+(<https://huggingface.co/settings/tokens>; for a fine-grained token tick *Write access to
+contents/settings of all repos under your personal namespace*) and add it as the `HF_TOKEN`
+repository secret under **Settings → Secrets and variables → Actions**. To run it on demand:
+**Actions → Sync to Hugging Face → Run workflow**.
+
 The YAML header at the top of this README is the Space configuration (`sdk: docker`,
 `app_port: 7860`), and the root `Dockerfile` builds one container that serves both the API and the
-built frontend. Create a Docker Space and push this repository to it. Set `SECRET_KEY` as a Space
-secret if you want logins to survive restarts (otherwise one is generated per boot), and optionally
-an LLM provider key. `GET /api/health` reports `"retrieval": "semantic"` once the embedding model
-has loaded, or `"keyword"` if it fell back.
+built frontend. To use an LLM, add its key (e.g. `ANTHROPIC_API_KEY`) as a Space secret and
+`LLM_PROVIDER` as a Space variable. `GET /api/health` reports `"retrieval": "semantic"` once the
+embedding model has loaded, or `"keyword"` if it fell back.
+
+The seeded accounts' passwords are published above and the app has no password change yet, so keep
+the Space private: on a public Space anyone could sign in as the admin.
 
 ## Extending the knowledge base
 
