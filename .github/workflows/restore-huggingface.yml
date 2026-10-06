@@ -1,0 +1,64 @@
+name: Restore Hugging Face model repo
+
+# One-time, temporary: puts Elisha622/medverse-ai back to the commit it had
+# before the first "Sync from GitHub" upload, as part of undoing this
+# session's MedVerse changes. Removed again right after it has run.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install "huggingface_hub>=1.0"
+
+      - name: Restore the model repo to its pre-sync commit
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          python - <<'EOF'
+          import os, sys, tempfile
+          from huggingface_hub import HfApi, snapshot_download
+
+          repo = "Elisha622/medverse-ai"
+          api = HfApi(token=os.environ["HF_TOKEN"])
+          commits = api.list_repo_commits(repo)  # newest first
+          for c in commits[:10]:
+              print(f"  {c.commit_id[:7]} {c.created_at:%Y-%m-%d %H:%M} {c.title}")
+
+          syncs = [i for i, c in enumerate(commits) if c.title.startswith("Sync from GitHub")]
+          if not syncs:
+              sys.exit("No 'Sync from GitHub' commits found: nothing to restore.")
+          first_sync = max(syncs)
+          # Only roll back if every commit since the first sync came from the
+          # sync, so nothing made on Hugging Face by hand is lost.
+          others = [c.title for c in commits[:first_sync] if not c.title.startswith("Sync from GitHub")]
+          if others:
+              sys.exit(f"Stopping: commits not made by the sync exist since then: {others}")
+          if first_sync + 1 >= len(commits):
+              sys.exit("Stopping: no commit exists before the first sync.")
+          target = commits[first_sync + 1]
+          print(f"Restoring to {target.commit_id[:7]} ({target.title})")
+
+          folder = snapshot_download(repo, revision=target.commit_id, local_dir=tempfile.mkdtemp())
+          api.upload_folder(
+              repo_id=repo,
+              folder_path=folder,
+              commit_message=f"Restore to {target.commit_id[:7]} (undo the GitHub sync)",
+              delete_patterns=["*"],
+          )
+
+          now = sorted(api.list_repo_files(repo))
+          before = sorted(api.list_repo_files(repo, revision=target.commit_id))
+          if now != before:
+              sys.exit(f"File lists differ after restore.\nnow:    {now}\nbefore: {before}")
+          print(f"Restored: {len(now)} files, identical file list to {target.commit_id[:7]}.")
+          EOF

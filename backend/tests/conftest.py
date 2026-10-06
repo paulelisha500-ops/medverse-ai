@@ -28,32 +28,6 @@ from app.main import app  # noqa: E402
 DEMO_PASSWORDS = {"admin": "Admin@123", "doctor": "Doctor@123", "patient": "Patient@123"}
 
 
-@pytest.fixture(autouse=True, scope="session")
-def _offline_drug_lookups():
-    """openFDA and RxNorm are live public APIs. Calling them made the medication
-    tests depend on network access and on label wording that changes between
-    label revisions. Every lookup now fails like an unreachable network, so the
-    checker exercises its curated fallback deterministically; the live-label
-    matching itself is covered with recorded payloads in test_drug_data.py.
-
-    Patches drug_data's own `requests` reference only, so other HTTP users
-    (e.g. the embedding model download) are unaffected."""
-    import types
-
-    import requests
-
-    from app.nlp import drug_data
-
-    def _unreachable(*args, **kwargs):
-        raise requests.ConnectionError("network access is disabled in tests")
-
-    offline = types.SimpleNamespace(get=_unreachable, RequestException=requests.RequestException)
-    with pytest.MonkeyPatch.context() as mp:
-        mp.setattr(drug_data, "requests", offline)
-        mp.setattr(drug_data, "_cache", {})
-        yield
-
-
 @pytest.fixture(scope="session")
 def client():
     # Entering the context runs the lifespan: tables, demo seed, RAG index and

@@ -1,41 +1,32 @@
 import json
 import re
-from typing import Dict, Optional
+from typing import Dict
 
-from app.nlp.report_rules import analyze_with_rules
-from app.rag.llm_providers import FallbackProvider, get_llm_provider
+from app.rag.llm_providers import get_llm_provider
 
 # Real pattern-based extraction for common lab values — works even
-# without any LLM provider configured. Group 1 is the value, group 2 the unit
-# when one is written (SI units included, so report_rules can convert them).
-_NUM = r"(\d+(?:\.\d+)?)"
+# without any LLM provider configured.
 LAB_PATTERNS = {
-    "glucose": rf"(?:fasting glucose|blood glucose|glucose)[:\s]+{_NUM}\s*(mg/dl|mmol/l)?",
-    "hba1c": rf"(?:hba1c|a1c)[:\s]+{_NUM}\s*(%|mmol/mol)?",
-    "total_cholesterol": rf"(?:total cholesterol|cholesterol)[:\s]+{_NUM}\s*(mg/dl|mmol/l)?",
-    "ldl": rf"\bldl[:\s]+{_NUM}\s*(mg/dl|mmol/l)?",
-    "hdl": rf"\bhdl[:\s]+{_NUM}\s*(mg/dl|mmol/l)?",
+    "glucose": r"(?:fasting glucose|blood glucose|glucose)[:\s]+([\d.]+)\s*(mg/dl|mmol/l)?",
+    "hba1c": r"(?:hba1c|a1c)[:\s]+([\d.]+)\s*%?",
+    "total_cholesterol": r"(?:total cholesterol|cholesterol)[:\s]+([\d.]+)\s*(mg/dl)?",
+    "ldl": r"\bldl[:\s]+([\d.]+)\s*(mg/dl)?",
+    "hdl": r"\bhdl[:\s]+([\d.]+)\s*(mg/dl)?",
     "blood_pressure": r"(?:blood pressure|bp)[:\s]+(\d{2,3}\s*/\s*\d{2,3})",
-    "creatinine": rf"creatinine[:\s]+{_NUM}\s*(mg/dl|µmol/l|umol/l)?",
-    "hemoglobin": rf"(?:hemoglobin|hb)[:\s]+{_NUM}\s*(g/dl|g/l)?",
-    "tsh": rf"\btsh[:\s]+{_NUM}\s*(uiu/ml|miu/l)?",
+    "creatinine": r"creatinine[:\s]+([\d.]+)\s*(mg/dl)?",
+    "hemoglobin": r"(?:hemoglobin|hb)[:\s]+([\d.]+)\s*(g/dl)?",
+    "tsh": r"\btsh[:\s]+([\d.]+)\s*(uiu/ml|miu/l)?",
 }
 
 
-def extract_lab_measurements(text: str) -> Dict[str, Dict[str, Optional[str]]]:
-    """{test: {"value": "126", "unit": "mg/dl" or None}} for each lab found."""
+def extract_lab_values(text: str) -> Dict[str, str]:
     found = {}
     lowered = text.lower()
     for key, pattern in LAB_PATTERNS.items():
         match = re.search(pattern, lowered, re.IGNORECASE)
         if match:
-            unit = match.group(2) if match.re.groups >= 2 else None
-            found[key] = {"value": match.group(1).strip(), "unit": unit}
+            found[key] = match.group(1).strip()
     return found
-
-
-def extract_lab_values(text: str) -> Dict[str, str]:
-    return {key: m["value"] for key, m in extract_lab_measurements(text).items()}
 
 
 EXTRACTION_SYSTEM_PROMPT = (
@@ -57,67 +48,29 @@ def _safe_json_parse(text: str, fallback: dict) -> dict:
         start = text.find("{")
         end = text.rfind("}")
         if start != -1 and end != -1:
-            parsed = json.loads(text[start:end + 1])
-            if isinstance(parsed, dict):
-                return parsed
+            return json.loads(text[start:end + 1])
     except Exception:
         pass
     return fallback
 
 
-def _string_list(value) -> Optional[list]:
-    if isinstance(value, list) and all(isinstance(v, str) for v in value):
-        return value
-    return None
-
-
 def analyze_report(text: str) -> dict:
-    """Lab values and their range flags always come from the deterministic
-    patterns. Diagnoses, medications, follow-up and summaries come from the
-    LLM when one is configured and answers usefully, else from report_rules —
-    so a keyless deployment still gets a real analysis, and a failing provider
-    (bad key, outage, rate limit) degrades instead of erroring."""
-    measurements = extract_lab_measurements(text)
-    rules = analyze_with_rules(text, measurements)
-    entities = {
-        "diagnoses": rules["diagnoses"],
-        "medications": rules["medications"],
-        "follow_up": rules["follow_up"],
-        "lab_values": {key: m["value"] for key, m in measurements.items()},
-        "lab_flags": rules["lab_flags"],
-        "method": "rules",
-    }
-    summaries = {
-        "patient_summary": rules["patient_summary"],
-        "clinical_summary": rules["clinical_summary"],
-    }
-
+    lab_values = extract_lab_values(text)
     provider = get_llm_provider()
-    if isinstance(provider, FallbackProvider):
-        return {"entities": entities, **summaries}
 
-    try:
-        entities_raw = provider.generate(
-            EXTRACTION_SYSTEM_PROMPT, f"Report text:\n{text}\n\nQuestion: Extract the entities."
-        )
-        summaries_raw = provider.generate(
-            SUMMARY_SYSTEM_PROMPT, f"Report text:\n{text}\n\nQuestion: Summarize this report."
-        )
-    except Exception as exc:
-        print(f"[reports] LLM call failed ({type(exc).__name__}: {exc}); using rule-based analysis.")
-        return {"entities": entities, **summaries}
+    entities_raw = provider.generate(EXTRACTION_SYSTEM_PROMPT, f"Report text:\n{text}\n\nQuestion: Extract the entities.")
+    entities = _safe_json_parse(entities_raw, {"diagnoses": [], "medications": [], "follow_up": []})
+    entities["lab_values"] = lab_values
 
-    llm_entities = _safe_json_parse(entities_raw, {})
-    for key in ("diagnoses", "medications", "follow_up"):
-        value = _string_list(llm_entities.get(key))
-        if value is not None:
-            entities[key] = value
-            entities["method"] = "llm"
-    llm_summaries = _safe_json_parse(summaries_raw, {})
-    for key in summaries:
-        value = llm_summaries.get(key)
-        if isinstance(value, str) and value.strip():
-            summaries[key] = value.strip()
-            entities["method"] = "llm"
+    summaries_raw = provider.generate(SUMMARY_SYSTEM_PROMPT, f"Report text:\n{text}\n\nQuestion: Summarize this report.")
+    fallback_note = "A summary could not be generated for this report."
+    summaries = _safe_json_parse(summaries_raw, {
+        "patient_summary": fallback_note,
+        "clinical_summary": fallback_note,
+    })
 
-    return {"entities": entities, **summaries}
+    return {
+        "entities": entities,
+        "patient_summary": summaries.get("patient_summary", fallback_note),
+        "clinical_summary": summaries.get("clinical_summary", fallback_note),
+    }
