@@ -1,0 +1,15 @@
+# Build context for the root Dockerfile (the Hugging Face Space image).
+# backend/.dockerignore only applies to docker-compose's ./backend context, so
+# without this file `COPY backend/ .` baked a local backend/.env (API keys) and
+# backend/data (the SQLite database, trained models) into the image layers.
+.git
+.github
+**/__pycache__
+**/*.pyc
+**/.pytest_cache
+backend/.env
+backend/data
+backend/tests
+frontend/node_modules
+frontend/dist
+frontend/.env
