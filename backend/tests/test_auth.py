@@ -70,3 +70,39 @@ def test_demo_passwords_fixture_matches_seed():
     from app.db.seed import SEED_USERS
 
     assert {u["role"]: u["password"] for u in SEED_USERS} == DEMO_PASSWORDS
+
+
+# bcrypt reads at most 72 bytes and bcrypt>=5 raises past that; these used to
+# surface as 500s.
+
+def test_overlong_password_is_a_validation_error_at_sign_up(client):
+    res = client.post(
+        "/api/auth/register",
+        json={"email": _email("long"), "password": "a" * 73, "full_name": "Long Password"},
+    )
+    assert res.status_code == 422
+    assert "72 characters or fewer" in res.text
+
+
+def test_password_limit_counts_bytes_not_characters(client):
+    # 40 characters, but 80 bytes in UTF-8 — still over bcrypt's limit.
+    res = client.post(
+        "/api/auth/register",
+        json={"email": _email("utf8"), "password": "é" * 40, "full_name": "Accented"},
+    )
+    assert res.status_code == 422
+
+
+def test_password_at_the_limit_still_works(client):
+    email, password = _email("max"), "b" * 72
+    res = client.post(
+        "/api/auth/register", json={"email": email, "password": password, "full_name": "At Limit"}
+    )
+    assert res.status_code == 200
+    login = client.post("/api/auth/login", data={"username": email, "password": password})
+    assert login.status_code == 200
+
+
+def test_overlong_password_at_login_is_just_wrong(client):
+    res = client.post("/api/auth/login", data={"username": "admin@medverse.ai", "password": "a" * 200})
+    assert res.status_code == 401

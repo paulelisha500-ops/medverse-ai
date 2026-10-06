@@ -29,6 +29,15 @@ class UserCreate(BaseModel):
     password: str = Field(min_length=6)
     full_name: NonEmptyStr
 
+    @field_validator("password")
+    @classmethod
+    def _within_bcrypt_limit(cls, v: str) -> str:
+        # bcrypt's limit is 72 *bytes*; past it, hashing raises (a 500 before
+        # this check). Accented letters and emoji use more than one byte each.
+        if len(v.encode("utf-8")) > 72:
+            raise ValueError("must be 72 characters or fewer")
+        return v
+
 
 class StaffCreate(UserCreate):
     role: str  # "doctor" or "admin" — only usable by an existing admin

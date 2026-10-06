@@ -1,7 +1,8 @@
 import os
 from contextlib import asynccontextmanager
+from typing import Optional
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 
@@ -77,13 +78,44 @@ def health():
 # fall back to index.html for any non-API path so React Router can handle it. Local
 # dev (npm run dev / docker-compose) doesn't set this, so nothing changes there.
 
+
+def resolve_static_file(static_dir: str, request_path: str) -> Optional[str]:
+    """Maps a request path to a real file inside static_dir, or None.
+
+    The path arrives percent-decoded, so "..%2f" is already "../" by the time it
+    gets here, and an absolute path ("/etc/passwd", or "C:/..." on Windows)
+    makes os.path.join throw static_dir away entirely. Joining it naively let
+    GET /..%2fdata%2fmedverse.db download the whole database. Resolving ".."
+    and symlinks first, then requiring the result to still sit under
+    static_dir, closes all of those at once.
+    """
+    if not request_path or "\x00" in request_path:
+        return None
+    root = os.path.realpath(static_dir)
+    candidate = os.path.realpath(os.path.join(root, request_path))
+    try:
+        inside = os.path.commonpath([root, candidate]) == root
+    except ValueError:  # different drives on Windows
+        return None
+    if inside and candidate != root and os.path.isfile(candidate):
+        return candidate
+    return None
+
+
+def mount_frontend(app: FastAPI, static_dir: str) -> None:
+    index_html = os.path.join(static_dir, "index.html")
+
+    @app.get("/{full_path:path}", include_in_schema=False)
+    def spa(full_path: str):
+        # A mistyped API call should fail the way the API does, not come back
+        # 200 with the app's HTML (which the client would then try to parse).
+        if full_path == "api" or full_path.startswith("api/"):
+            raise HTTPException(status_code=404, detail="Not Found")
+        static_file = resolve_static_file(static_dir, full_path)
+        return FileResponse(static_file or index_html)
+
+
 STATIC_DIR = os.environ.get("STATIC_DIR", "")
 
 if STATIC_DIR and os.path.isdir(STATIC_DIR):
-
-    @app.get("/{full_path:path}")
-    def spa(full_path: str):
-        candidate = os.path.join(STATIC_DIR, full_path)
-        if full_path and os.path.isfile(candidate):
-            return FileResponse(candidate)
-        return FileResponse(os.path.join(STATIC_DIR, "index.html"))
+    mount_frontend(app, STATIC_DIR)
