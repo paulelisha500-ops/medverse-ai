@@ -1,0 +1,134 @@
+name: CI
+
+on:
+  push:
+    branches: [main, "claude/**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend-tests:
+    name: Backend tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11" # matches the Docker images
+          cache: pip
+          cache-dependency-path: backend/requirements*.txt
+
+      - name: Cache the embedding model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-models-all-MiniLM-L6-v2
+
+      - name: Install dependencies
+        # CPU-only torch first, as in the Dockerfiles: the default wheel pulls
+        # in several GB of CUDA libraries the tests never use.
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -r requirements-dev.txt
+
+      - name: Run pytest
+        run: python -m pytest -v
+
+  frontend-build:
+    name: Frontend build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20" # matches the Docker images
+      - run: npm install --no-audit --no-fund
+      - run: npm run build
+
+  space-image:
+    name: Hugging Face Space image (build + smoke test)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build the single-container image
+        run: docker build -t medverse-space .
+
+      - name: Start it the way a Space does (no SECRET_KEY, port 7860, non-root)
+        run: docker run -d --name space --user 1000:1000 -p 7860:7860 medverse-space
+
+      - name: Wait for startup
+        run: |
+          for i in $(seq 1 90); do
+            if curl -sf http://localhost:7860/api/health; then echo; exit 0; fi
+            sleep 2
+          done
+          docker logs space
+          exit 1
+
+      - name: Smoke test
+        run: |
+          set -euo pipefail
+          base=http://localhost:7860
+          fail() { echo "FAIL: $*"; docker logs space; exit 1; }
+
+          health=$(curl -sf $base/api/health)
+          echo "health: $health"
+          # The image must reach the Hub and load the embedding model, not limp
+          # along on the keyword fallback.
+          echo "$health" | jq -e '.retrieval == "semantic"' >/dev/null || fail "embedding model not loaded"
+
+          # No `curl | grep -q` anywhere: with pipefail, grep exiting early can
+          # SIGPIPE the writer and flip the result.
+          page=$(curl -sf $base/)
+          [[ "$page" == *'<div id="root">'* ]] || fail "frontend not served at /"
+          page=$(curl -sf $base/dashboard)
+          [[ "$page" == *'<div id="root">'* ]] || fail "client-side route did not fall back to index.html"
+
+          code=$(curl -s -o /dev/null -w '%{http_code}' $base/api/does-not-exist)
+          [ "$code" = "404" ] || fail "unknown API route returned $code, expected 404"
+
+          for path in '/..%2fdata%2fmedverse.db' '/%2e%2e/data/medverse.db' '/..%2f..%2fproc%2fself%2fenviron'; do
+            body=$(curl -s "$base$path" | tr -d '\0')
+            if grep -qE 'SQLite format|SECRET_KEY|HOME=' <<<"$body"; then fail "path traversal via $path"; fi
+            [[ "$body" == *'<div id="root">'* ]] || fail "unexpected response for $path"
+          done
+
+          token=$(curl -sf -X POST $base/api/auth/login \
+            -d 'username=doctor@medverse.ai&password=Doctor@123' | jq -r .access_token)
+          [ -n "$token" ] && [ "$token" != "null" ] || fail "login failed"
+          auth="Authorization: Bearer $token"
+
+          report=$(curl -sf -X POST $base/api/reports/analyze -H "$auth" -H 'Content-Type: application/json' \
+            -d '{"text": "HbA1c: 6.7%. Assessment: prediabetes. Prescribed: Metformin 500mg twice daily."}')
+          echo "report: ${report:0:600}"
+          echo "$report" | jq -e '.entities.medications | length > 0' >/dev/null || fail "no medications extracted"
+          echo "$report" | jq -e '.entities.diagnoses | index("Prediabetes")' >/dev/null || fail "no diagnosis extracted"
+
+          chat=$(curl -sf -X POST $base/api/assistant/chat -H "$auth" -H 'Content-Type: application/json' \
+            -d '{"message": "What are the warning signs of a stroke?"}')
+          echo "$chat" | jq -e '.sources | length > 0' >/dev/null || fail "assistant returned no sources"
+          echo "$chat" | jq -r '.sources[].title'
+
+          echo "Space image smoke test passed"
+
+      - name: Container logs
+        if: always()
+        run: docker logs space || true

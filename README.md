@@ -1,6 +1,20 @@
+---
+title: MedVerse AI
+emoji: 🩺
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 7860
+pinned: false
+license: mit
+short_description: Clinical AI platform with RAG, report NLP and risk ML
+---
+
 # MedVerse AI — Clinical Intelligence Platform
 
 **Links:** [GitHub](https://github.com/paulelisha500-ops/medverse-ai) · [Hugging Face](https://huggingface.co/Elisha622/medverse-ai)
+
+[![CI](https://github.com/paulelisha500-ops/medverse-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/paulelisha500-ops/medverse-ai/actions/workflows/ci.yml)
 
 A full-stack healthcare AI platform centered on **Retrieval-Augmented Generation, LLMs, and NLP**: a
 grounded clinical/patient assistant, medical report understanding, predictive risk scoring, and a
@@ -15,8 +29,8 @@ doctors, and patients.
 | Module | What it does |
 |---|---|
 | **Auth & roles** | JWT login/register, 3 roles (admin / doctor / patient), protected routes |
-| **RAG AI Assistant** | Sentence-transformer embeddings + FAISS retrieval over a health knowledge base, fed into a pluggable LLM. Answers show their sources. Doctors can ask questions "with patient context," fusing retrieved record data into the prompt |
-| **Report Understanding (NLP)** | Regex-based lab-value extraction (a real pattern-matching component, works with zero API keys) + LLM-based diagnosis/medication extraction and dual patient/clinical summaries |
+| **RAG AI Assistant** | Sentence-transformer embeddings + FAISS retrieval over a health knowledge base, fed into a pluggable LLM. Answers show their sources. Doctors can ask questions "with patient context," fusing retrieved record data into the prompt. If the embedding model can't be loaded (e.g. the Hugging Face Hub is unreachable), retrieval falls back to TF-IDF keyword search instead of failing |
+| **Report Understanding (NLP)** | Lab values extracted by pattern matching and flagged against adult reference ranges (SI units detected and converted). With zero API keys, built-in clinical rules extract medications (with dose and frequency, skipping allergies and stopped drugs), conditions (skipping negated and family-history mentions) and follow-up, and write patient/clinical summaries; a configured LLM takes over those parts, and the rules remain the fallback if it fails |
 | **Disease Risk Prediction** | Two real `scikit-learn` logistic regression models (diabetes, heart disease) trained on synthetic data at first run, with coefficient-based "top contributing factor" explainability |
 | **Medication Interaction Checker** | Pairwise lookup against a curated set of well-established drug interactions |
 | **Dashboards** | Role-aware stats and charts (admin: platform-wide; doctor: patient panel; patient: personal summary) |
@@ -166,6 +180,29 @@ medverse-ai/
         ├── components/          # Layout, ProtectedRoute, shared UI primitives
         └── pages/                # Login, Register, Dashboard, Assistant, Reports, RiskCheck, ...
 ```
+
+## Running the tests
+
+```bash
+cd backend
+pip install -r requirements-dev.txt
+python -m pytest
+```
+
+The suite pins `LLM_PROVIDER=none`, uses a throwaway SQLite database, and stubs the live
+openFDA/RxNorm lookups, so it never makes paid or network-dependent calls for those. GitHub
+Actions ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)) runs it on every push and pull
+request, builds the frontend, and builds the Hugging Face Space image from the root `Dockerfile`,
+boots it the way a Space does (port 7860, no `SECRET_KEY`, non-root) and smoke-tests it.
+
+## Deploying to Hugging Face Spaces
+
+The YAML header at the top of this README is the Space configuration (`sdk: docker`,
+`app_port: 7860`), and the root `Dockerfile` builds one container that serves both the API and the
+built frontend. Create a Docker Space and push this repository to it. Set `SECRET_KEY` as a Space
+secret if you want logins to survive restarts (otherwise one is generated per boot), and optionally
+an LLM provider key. `GET /api/health` reports `"retrieval": "semantic"` once the embedding model
+has loaded, or `"keyword"` if it fell back.
 
 ## Extending the knowledge base
 

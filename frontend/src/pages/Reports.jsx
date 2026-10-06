@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import client from '../api/client.js'
-import { PageHeader, Button } from '../components/ui.jsx'
+import { PageHeader, Button, Badge } from '../components/ui.jsx'
 
 const SAMPLE_REPORT = `Patient Lab Report - Annual Check-up
 Fasting Glucose: 126 mg/dL
@@ -38,7 +38,7 @@ export default function Reports() {
     <div>
       <PageHeader
         title="Medical Report Understanding"
-        subtitle="Paste a lab report or prescription. Lab values are extracted with pattern matching; diagnoses, medications, and summaries use the configured LLM."
+        subtitle="Paste a lab report or prescription. Lab values are checked against typical reference ranges; conditions, medications and follow-up are extracted with built-in clinical rules, or by the configured LLM when one is connected."
       />
 
       <form onSubmit={handleAnalyze} className="space-y-3">
@@ -67,10 +67,14 @@ export default function Reports() {
       {result && (
         <div className="mt-8 space-y-6">
           <div className="grid gap-4 md:grid-cols-3">
-            <LabValueCard values={result.entities?.lab_values} />
+            <LabValueCard values={result.entities?.lab_values} flags={result.entities?.lab_flags} />
             <ListCard title="Diagnoses mentioned" items={result.entities?.diagnoses} />
             <ListCard title="Medications mentioned" items={result.entities?.medications} />
           </div>
+
+          {result.entities?.follow_up?.length > 0 && (
+            <ListCard title="Follow-up noted" items={result.entities.follow_up} />
+          )}
 
           <div className={`grid gap-4 ${result.clinical_summary ? 'md:grid-cols-2' : ''}`}>
             <div className="card p-5">
@@ -84,25 +88,47 @@ export default function Reports() {
               </div>
             )}
           </div>
+
+          {result.entities?.method === 'rules' && (
+            <p className="text-xs text-muted">
+              Extracted with built-in clinical rules — no language model is connected. Always check
+              these findings against the original report.
+            </p>
+          )}
         </div>
       )}
     </div>
   )
 }
 
-function LabValueCard({ values }) {
+// Out-of-range results reuse the risk badge colors: red for high or low,
+// amber for borderline. In-range results get no badge, so flags stand out.
+const LAB_STATUS_SEVERITY = { high: 'high', low: 'high', borderline: 'moderate' }
+
+function LabValueCard({ values, flags }) {
+  const flagByTest = Object.fromEntries((flags || []).map((f) => [f.test, f]))
   const entries = Object.entries(values || {})
   return (
     <div className="card p-5">
       <div className="readout-label mb-3">Lab values found</div>
       {entries.length === 0 && <p className="text-sm text-muted">None detected in this text.</p>}
       <div className="space-y-2">
-        {entries.map(([key, value]) => (
-          <div key={key} className="flex items-center justify-between">
-            <span className="text-xs uppercase tracking-wide text-muted">{key.replace(/_/g, ' ')}</span>
-            <span className="font-mono text-sm font-medium text-ink">{value}</span>
-          </div>
-        ))}
+        {entries.map(([key, value]) => {
+          const flag = flagByTest[key]
+          const severity = flag && LAB_STATUS_SEVERITY[flag.status]
+          return (
+            <div key={key} className="flex items-center justify-between gap-2" title={flag ? `Typical: ${flag.reference}` : undefined}>
+              <span className="text-xs uppercase tracking-wide text-muted">{flag?.label || key.replace(/_/g, ' ')}</span>
+              <span className="flex items-center gap-2">
+                <span className="font-mono text-sm font-medium text-ink">
+                  {value}
+                  {flag?.unit && <span className="ml-1 text-xs font-normal text-muted">{flag.unit}</span>}
+                </span>
+                {severity && <Badge severity={severity}>{flag.status}</Badge>}
+              </span>
+            </div>
+          )
+        })}
       </div>
     </div>
   )
