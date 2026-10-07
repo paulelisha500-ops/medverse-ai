@@ -221,6 +221,9 @@ function authorizePatientAccess(user, profile) {
 
 function getPatient({ params, user }) {
   const id = intParam(params.id, 'profile_id')
+  // Staff can ask the assistant about the patient from this page, so start
+  // fetching the on-device model now, as the assistant page does.
+  if (user.role !== 'patient') warmUpAssistant()
   return read((db) => {
     const profile = profileOr404(db, id)
     authorizePatientAccess(user, profile)
@@ -334,12 +337,17 @@ async function chat({ body, user }) {
   return result
 }
 
-async function chatHistory({ user }) {
-  // Opening the assistant is the cue to start fetching the on-device model,
-  // so it's usually ready by the time the first question is typed.
+// Starts fetching the on-device model without waiting for it, so it's usually
+// ready by the time the first question is typed.
+function warmUpAssistant() {
   import('./rag.js')
     .then((rag) => rag.warmUp())
     .catch(() => {})
+}
+
+async function chatHistory({ user }) {
+  // Opening the assistant is the cue to start fetching the model.
+  warmUpAssistant()
   return read((db) =>
     db.chat_messages
       .filter((m) => m.user_id === user.id)
