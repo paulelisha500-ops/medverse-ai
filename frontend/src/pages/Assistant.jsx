@@ -114,7 +114,7 @@ export default function Assistant() {
         />
         <button
           type="submit"
-          disabled={sending}
+          disabled={sending || !input.trim()}
           className="flex items-center justify-center rounded bg-ink p-2.5 text-paper hover:bg-pulse-dark disabled:opacity-50"
           aria-label="Send"
         >

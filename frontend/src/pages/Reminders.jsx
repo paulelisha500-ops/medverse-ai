@@ -28,7 +28,10 @@ export default function Reminders() {
 
   async function handleAdd(e) {
     e.preventDefault()
-    if (!form.medication_name.trim()) return
+    if (!form.medication_name.trim()) {
+      setAddError('Enter a medication name.')
+      return
+    }
     setAdding(true)
     setAddError('')
     try {
@@ -73,6 +76,7 @@ export default function Reminders() {
         <div className="grid gap-3 sm:grid-cols-3">
           <Field label="Medication">
             <input
+              required
               className={inputClass}
               placeholder="e.g. Metformin"
               value={form.medication_name}

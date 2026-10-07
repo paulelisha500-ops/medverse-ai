@@ -32,13 +32,20 @@ function capitalize(s) {
   return s.charAt(0).toUpperCase() + s.slice(1)
 }
 
+// Matches MedicationCheckRequest's max_length on the API. Past this the check
+// fails with a 422, so the form stops offering more fields instead.
+const MAX_MEDS = 10
+
 export default function Medications() {
   const [meds, setMeds] = useState(['', ''])
   const [result, setResult] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [directory, setDirectory] = useState([])
+  // Which field's suggestion list is open, and which suggestion in it the
+  // arrow keys have highlighted (-1 = none).
   const [activeIndex, setActiveIndex] = useState(null)
+  const [highlight, setHighlight] = useState(-1)
 
   useEffect(() => {
     client
@@ -47,21 +54,65 @@ export default function Medications() {
       .catch(() => {})
   }, [])
 
-  function updateMed(index, value) {
+  function setMed(index, value) {
     setMeds((prev) => prev.map((m, i) => (i === index ? value : m)))
   }
 
+  // Typing (re)opens the list. Without this, picking a suggestion closed it
+  // for good: the field keeps focus, so onFocus never fires again to reopen.
+  function typeMed(index, value) {
+    setMed(index, value)
+    setActiveIndex(index)
+    setHighlight(-1)
+  }
+
   function selectSuggestion(index, name) {
-    updateMed(index, name)
+    setMed(index, name)
     setActiveIndex(null)
+    setHighlight(-1)
+  }
+
+  function visibleSuggestions(med, index) {
+    if (activeIndex !== index) return []
+    const found = getSuggestions(med, directory)
+    // Once the field holds the only match there's nothing left to choose, and
+    // an open list would just sit on top of the Check button.
+    if (found.length === 1 && found[0].matchedName.toLowerCase() === med.trim().toLowerCase()) return []
+    return found
+  }
+
+  function handleKeyDown(e, index, suggestions) {
+    if (e.key === 'ArrowDown' && activeIndex !== index) {
+      e.preventDefault()
+      setActiveIndex(index)
+      setHighlight(0)
+      return
+    }
+    if (!suggestions.length) return
+    if (e.key === 'ArrowDown') {
+      e.preventDefault()
+      setHighlight((h) => (h + 1) % suggestions.length)
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault()
+      setHighlight((h) => (h <= 0 ? suggestions.length - 1 : h - 1))
+    } else if (e.key === 'Enter' && highlight >= 0 && suggestions[highlight]) {
+      e.preventDefault() // pick the suggestion instead of submitting the form
+      selectSuggestion(index, suggestions[highlight].matchedName)
+    } else if (e.key === 'Escape') {
+      e.preventDefault()
+      setActiveIndex(null)
+      setHighlight(-1)
+    }
   }
 
   function addField() {
-    setMeds((prev) => [...prev, ''])
+    setMeds((prev) => (prev.length < MAX_MEDS ? [...prev, ''] : prev))
   }
 
   function removeField(index) {
     setMeds((prev) => prev.filter((_, i) => i !== index))
+    setActiveIndex(null)
+    setHighlight(-1)
   }
 
   async function handleCheck(e) {
@@ -98,19 +149,30 @@ export default function Medications() {
 
       <form onSubmit={handleCheck} className="max-w-lg space-y-3">
         {meds.map((med, i) => {
-          const suggestions = activeIndex === i ? getSuggestions(med, directory) : []
+          const suggestions = visibleSuggestions(med, i)
           const exact = findExactDrug(med, directory)
+          const listId = `med-suggestions-${i}`
           return (
             <div key={i}>
               <div className="relative flex items-center gap-2">
                 <input
                   value={med}
-                  onChange={(e) => updateMed(i, e.target.value)}
-                  onFocus={() => setActiveIndex(i)}
+                  onChange={(e) => typeMed(i, e.target.value)}
+                  onFocus={() => {
+                    setActiveIndex(i)
+                    setHighlight(-1)
+                  }}
                   onBlur={() => setTimeout(() => setActiveIndex((cur) => (cur === i ? null : cur)), 150)}
+                  onKeyDown={(e) => handleKeyDown(e, i, suggestions)}
                   placeholder={`Medication ${i + 1} (e.g. Warfarin)`}
                   className={inputClass}
                   autoComplete="off"
+                  role="combobox"
+                  aria-label={`Medication ${i + 1}`}
+                  aria-autocomplete="list"
+                  aria-expanded={suggestions.length > 0}
+                  aria-controls={listId}
+                  aria-activedescendant={suggestions[highlight] ? `${listId}-${highlight}` : undefined}
                 />
                 {meds.length > 2 && (
                   <button
@@ -124,14 +186,24 @@ export default function Medications() {
                 )}
 
                 {suggestions.length > 0 && (
-                  <div className="absolute left-0 top-full z-10 mt-1 w-full max-h-64 overflow-auto rounded border border-line bg-surface shadow-lg">
-                    {suggestions.map(({ drug, matchedName }) => (
-                      <button
+                  <ul
+                    id={listId}
+                    role="listbox"
+                    aria-label={`Suggestions for medication ${i + 1}`}
+                    className="absolute left-0 top-full z-10 mt-1 w-full max-h-64 overflow-auto rounded border border-line bg-surface shadow-lg"
+                  >
+                    {suggestions.map(({ drug, matchedName }, j) => (
+                      <li
                         key={drug.name + matchedName}
-                        type="button"
+                        id={`${listId}-${j}`}
+                        role="option"
+                        aria-selected={j === highlight}
                         onMouseDown={(e) => e.preventDefault()}
+                        onMouseEnter={() => setHighlight(j)}
                         onClick={() => selectSuggestion(i, matchedName)}
-                        className="flex w-full flex-col items-start gap-0.5 border-b border-line px-3 py-2 text-left last:border-0 hover:bg-pulse-dim"
+                        className={`flex w-full cursor-pointer flex-col items-start gap-0.5 border-b border-line px-3 py-2 text-left last:border-0 ${
+                          j === highlight ? 'bg-pulse-dim' : ''
+                        }`}
                       >
                         <span className="flex items-center gap-1.5 text-sm font-medium text-ink">
                           {matchedName}
@@ -151,12 +223,12 @@ export default function Medications() {
                           )}
                         </span>
                         <span className="font-mono text-xs text-muted">{drug.dosage}</span>
-                      </button>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 )}
               </div>
-              {exact && activeIndex !== i && (
+              {exact && suggestions.length === 0 && (
                 <p className="mt-1 pl-1 text-xs text-muted">
                   {exact.category} ·{' '}
                   {exact.tier === 'reference' ? exact.dosage : `Typical dosage: ${exact.dosage}`}
@@ -175,18 +247,21 @@ export default function Medications() {
         })}
 
         <div className="flex items-center gap-3">
-          <button
-            type="button"
-            onClick={addField}
-            className="flex items-center gap-1 text-sm font-medium text-pulse-dark"
-          >
-            <Plus size={16} /> Add another
-          </button>
+          {meds.length < MAX_MEDS ? (
+            <button
+              type="button"
+              onClick={addField}
+              className="flex items-center gap-1 text-sm font-medium text-pulse-dark"
+            >
+              <Plus size={16} /> Add another
+            </button>
+          ) : (
+            <p className="text-xs text-muted">You can check up to {MAX_MEDS} medications at a time.</p>
+          )}
         </div>
 
         {error && <p role="alert" className="text-sm text-alert">{error}</p>}
         <Button type="submit" disabled={loading}>{loading ? 'Checking…' : 'Check interactions'}</Button>
-        {error && <p className="text-sm text-alert">{error}</p>}
       </form>
 
       {result && (
@@ -277,10 +352,24 @@ function DoseConverter() {
     }
   }
 
+  // A result belongs to the inputs that produced it. Left on screen after the
+  // drugs or dose change, it reads as the answer for the new ones.
+  function edit(setter) {
+    return (e) => {
+      setter(e.target.value)
+      setResult(null)
+      setError('')
+    }
+  }
+
   async function handleConvert(e) {
     e.preventDefault()
     const value = Number(dose)
-    if (!value || value <= 0) return
+    if (!(value > 0)) {
+      setResult(null)
+      setError('Enter a dose greater than 0 mg.')
+      return
+    }
     setBusy(true)
     setError('')
     setResult(null)
@@ -329,7 +418,7 @@ function DoseConverter() {
         <div className="grid gap-3 sm:grid-cols-3">
           <label className="block">
             <span className="mb-1.5 block text-sm font-medium text-ink">From</span>
-            <select className={inputClass} value={fromDrug} onChange={(e) => setFromDrug(e.target.value)}>
+            <select className={inputClass} value={fromDrug} onChange={edit(setFromDrug)}>
               {active?.drugs.map((d) => (
                 <option key={d} value={d}>{capitalize(d)}</option>
               ))}
@@ -337,19 +426,22 @@ function DoseConverter() {
           </label>
           <label className="block">
             <span className="mb-1.5 block text-sm font-medium text-ink">Dose (mg)</span>
+            {/* step="any": a fixed step made the browser refuse real doses that
+                aren't on it, like 0.2 mg. */}
             <input
               type="number"
               min="0"
-              step="0.25"
+              step="any"
+              required
               value={dose}
-              onChange={(e) => setDose(e.target.value)}
+              onChange={edit(setDose)}
               placeholder="e.g. 30"
               className={inputClass}
             />
           </label>
           <label className="block">
             <span className="mb-1.5 block text-sm font-medium text-ink">To</span>
-            <select className={inputClass} value={toDrug} onChange={(e) => setToDrug(e.target.value)}>
+            <select className={inputClass} value={toDrug} onChange={edit(setToDrug)}>
               {active?.drugs.map((d) => (
                 <option key={d} value={d}>{capitalize(d)}</option>
               ))}
@@ -358,7 +450,7 @@ function DoseConverter() {
         </div>
 
         <Button type="submit" disabled={busy}>{busy ? 'Converting…' : 'Convert dose'}</Button>
-        {error && <p className="text-sm text-alert">{error}</p>}
+        {error && <p role="alert" className="text-sm text-alert">{error}</p>}
       </form>
 
       {result && (

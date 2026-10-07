@@ -2,16 +2,20 @@ import { useState } from 'react'
 import client from '../api/client.js'
 import { PageHeader, Button, Field, inputClass, Readout } from '../components/ui.jsx'
 
+// Number fields hold exactly what's typed and are converted on submit.
+// Converting on every keystroke turned a cleared field into "0" straight away,
+// so a value couldn't be deleted and retyped.
 const DEFAULTS = {
-  age: 45,
-  bmi: 26,
-  systolic_bp: 122,
-  glucose: 98,
-  cholesterol: 190,
+  age: '45',
+  bmi: '26',
+  systolic_bp: '122',
+  glucose: '98',
+  cholesterol: '190',
   smoker: false,
   family_history: false,
   activity_level: 1,
 }
+const NUMBER_FIELDS = ['age', 'bmi', 'systolic_bp', 'glucose', 'cholesterol']
 
 export default function RiskCheck() {
   const [form, setForm] = useState(DEFAULTS)
@@ -27,8 +31,10 @@ export default function RiskCheck() {
     e.preventDefault()
     setLoading(true)
     setError('')
+    const payload = { ...form }
+    for (const field of NUMBER_FIELDS) payload[field] = Number(form[field])
     try {
-      const res = await client.post('/risk/assess', form)
+      const res = await client.post('/risk/assess', payload)
       setResult(res.data)
     } catch (err) {
       setError('Could not calculate risk. Please check the values and try again.')
@@ -48,24 +54,24 @@ export default function RiskCheck() {
         <div className="card space-y-4 p-5">
           <div className="grid grid-cols-2 gap-4">
             <Field label="Age">
-              <input type="number" className={inputClass} value={form.age} min={1} max={120}
-                onChange={(e) => update('age', Number(e.target.value))} />
+              <input type="number" required className={inputClass} value={form.age} min={1} max={120}
+                onChange={(e) => update('age', e.target.value)} />
             </Field>
             <Field label="BMI">
-              <input type="number" step="0.1" className={inputClass} value={form.bmi} min={10} max={70}
-                onChange={(e) => update('bmi', Number(e.target.value))} />
+              <input type="number" required step="0.1" className={inputClass} value={form.bmi} min={10} max={70}
+                onChange={(e) => update('bmi', e.target.value)} />
             </Field>
             <Field label="Systolic BP (mmHg)">
-              <input type="number" className={inputClass} value={form.systolic_bp} min={70} max={250}
-                onChange={(e) => update('systolic_bp', Number(e.target.value))} />
+              <input type="number" required className={inputClass} value={form.systolic_bp} min={70} max={250}
+                onChange={(e) => update('systolic_bp', e.target.value)} />
             </Field>
             <Field label="Fasting glucose (mg/dL)">
-              <input type="number" className={inputClass} value={form.glucose} min={40} max={500}
-                onChange={(e) => update('glucose', Number(e.target.value))} />
+              <input type="number" required className={inputClass} value={form.glucose} min={40} max={500}
+                onChange={(e) => update('glucose', e.target.value)} />
             </Field>
             <Field label="Total cholesterol (mg/dL)">
-              <input type="number" className={inputClass} value={form.cholesterol} min={80} max={500}
-                onChange={(e) => update('cholesterol', Number(e.target.value))} />
+              <input type="number" required className={inputClass} value={form.cholesterol} min={80} max={500}
+                onChange={(e) => update('cholesterol', e.target.value)} />
             </Field>
             <Field label="Activity level">
               <select className={inputClass} value={form.activity_level}

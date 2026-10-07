@@ -60,11 +60,29 @@ def test_serves_built_assets(frontend):
     assert res.text == APP_JS
 
 
-@pytest.mark.parametrize("path", ["/", "/dashboard", "/patients/3", "/assets/missing.js"])
+@pytest.mark.parametrize("path", ["/", "/dashboard", "/patients/3"])
 def test_client_routes_get_the_app_shell(frontend, path):
     res = frontend.get(path)
     assert res.status_code == 200
     assert res.text == INDEX
+
+
+def test_missing_bundles_404_instead_of_getting_html(frontend):
+    # An open tab from the previous deploy asks for a chunk that's gone. HTML
+    # handed back as that chunk gets parsed as JavaScript and blanks the page.
+    res = frontend.get("/assets/index-old123.js")
+    assert res.status_code == 404
+    assert res.text != INDEX
+
+
+def test_app_shell_is_revalidated_every_load(frontend):
+    # Otherwise a browser can keep serving the previous deploy's index.html.
+    for path in ("/", "/dashboard"):
+        assert frontend.get(path).headers["cache-control"] == "no-cache"
+
+
+def test_fingerprinted_assets_are_cached_for_good(frontend):
+    assert "immutable" in frontend.get("/assets/app.js").headers["cache-control"]
 
 
 @pytest.mark.parametrize(
@@ -79,7 +97,8 @@ def test_client_routes_get_the_app_shell(frontend, path):
 def test_traversal_never_leaves_the_static_dir(frontend, path):
     res = frontend.get(path)
     assert SECRET not in res.text
-    assert res.text == INDEX
+    # The app shell, or a 404 for anything under assets/ — never the file.
+    assert res.text == INDEX or res.status_code == 404
 
 
 def test_database_is_not_downloadable(frontend):
