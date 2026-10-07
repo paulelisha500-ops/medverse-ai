@@ -44,7 +44,7 @@ const DB = {
   reference: 506,
   interactions: 230,
   aliases: 674,
-  topics: 76,
+  topics: 78,
 }
 
 const STEPS = [

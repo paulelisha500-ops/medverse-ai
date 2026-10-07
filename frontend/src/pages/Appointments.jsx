@@ -11,6 +11,13 @@ const STATUS_TONE = {
   cancelled: 'high',
 }
 
+// "YYYY-MM-DDTHH:MM" in local time, the format datetime-local's `min` takes.
+function localDateTimeNow() {
+  const d = new Date()
+  const pad = (n) => String(n).padStart(2, '0')
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`
+}
+
 export default function Appointments() {
   const { user } = useAuth()
   const [appointments, setAppointments] = useState([])
@@ -49,6 +56,11 @@ export default function Appointments() {
     // this is the fallback so the button never silently does nothing.
     if (!form.doctor_id || !form.scheduled_at || (isStaff && !form.patient_id)) {
       setBookError(isStaff ? 'Choose a patient, a doctor, and a date and time.' : 'Choose a doctor and a date and time.')
+      return
+    }
+    // Also the fallback for `min`, which goes stale while the page stays open.
+    if (new Date(form.scheduled_at) <= new Date()) {
+      setBookError('Choose a date and time in the future.')
       return
     }
     setBooking(true)
@@ -128,6 +140,7 @@ export default function Appointments() {
             <input
               type="datetime-local"
               required
+              min={localDateTimeNow()}
               className={inputClass}
               value={form.scheduled_at}
               onChange={(e) => setForm((f) => ({ ...f, scheduled_at: e.target.value }))}
