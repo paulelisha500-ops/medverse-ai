@@ -50,9 +50,10 @@ npm install
 npm run dev:browser        # or: npm run build:browser && npm run preview:browser
 ```
 
-`.github/workflows/deploy.yml` builds it on every push to `main` and publishes it to GitHub Pages
-and the Hugging Face Space, then mirrors the repository to the Hugging Face model repo. It needs a
-repository secret `HF_TOKEN` holding a Hugging Face token with write access.
+`.github/workflows/deploy.yml` builds it and runs the backend tests on every pull request and push
+to `main`. On `main`, once both pass, it publishes the build to GitHub Pages and the Hugging Face
+Space, then mirrors the repository to the Hugging Face model repo. It needs a repository secret
+`HF_TOKEN` holding a Hugging Face token with write access.
 
 **Deliberately out of scope** (to keep the RAG/LLM/NLP core deep instead of shallow): medical
 imaging/computer vision, wearable device integration, hospital bed/ICU management, and a mobile
