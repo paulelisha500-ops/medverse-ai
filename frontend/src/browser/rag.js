@@ -284,23 +284,26 @@ async function extractAnswer(question, passages, retrieval) {
   const sentences = used.flatMap((p, pi) => splitSentences(p.text).map((text, si) => ({ text, pi, si })))
   const similarity = await scoreTexts(sentences.map((s) => s.text), retrieval, question)
   sentences.forEach((s, i) => {
-    // Mostly the sentence's own match, nudged towards the better passages.
-    const passageWeight = 1 - s.pi * 0.08
-    s.score = similarity[i] * passageWeight
+    s.score = similarity[i]
   })
 
+  // The passage holding the best-matching sentence leads the answer. Other
+  // passages add only sentences that match nearly as well, so a loosely
+  // related topic (HbA1c "monitoring" under a question about hemoglobin)
+  // can't pad it out.
   const ranked = [...sentences].sort((a, b) => b.score - a.score)
-  const floor = ranked[0].score - (retrieval.mode === 'semantic' ? 0.12 : ranked[0].score * 0.5)
+  const top = ranked[0]
+  const semantic = retrieval.mode === 'semantic'
+  const leadFloor = semantic ? top.score - 0.12 : top.score * 0.5
+  const otherFloor = semantic ? top.score - 0.06 : top.score * 0.75
   const chosen = []
   let length = 0
   for (const s of ranked) {
-    if (chosen.length >= 3 || s.score < floor) break
+    if (chosen.length >= 3) break
+    if (s.score < (s.pi === top.pi ? leadFloor : otherFloor)) continue
     if (chosen.length && length + s.text.length > ANSWER_CHAR_BUDGET) continue
     chosen.push(s)
     length += s.text.length
-  }
-  if (!chosen.some((s) => s.pi === 0)) {
-    chosen.push(sentences.filter((s) => s.pi === 0).sort((a, b) => b.score - a.score)[0])
   }
 
   // Back in reading order, one paragraph per passage.
