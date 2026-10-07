@@ -537,6 +537,7 @@ function createAppointment({ body, user }) {
   return transaction((tx) => {
     const doctor = tx.db.users.find((u) => u.id === payload.doctor_id && u.role === 'doctor')
     if (!doctor) throw new HttpError(404, 'Doctor not found')
+    if (new Date(payload.scheduled_at) <= new Date()) throw new HttpError(400, 'Choose a date and time in the future.')
     let patientId
     let status
     if (user.role === 'patient') {

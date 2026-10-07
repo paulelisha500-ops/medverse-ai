@@ -1,3 +1,4 @@
+from datetime import datetime, timezone
 from typing import List
 
 from fastapi import APIRouter, Depends, HTTPException
@@ -35,6 +36,9 @@ def create_appointment(
     doctor = db.query(models.User).filter(models.User.id == payload.doctor_id, models.User.role == "doctor").first()
     if not doctor:
         raise HTTPException(status_code=404, detail="Doctor not found")
+    # scheduled_at is naive UTC (see AppointmentCreate).
+    if payload.scheduled_at <= datetime.now(timezone.utc).replace(tzinfo=None):
+        raise HTTPException(status_code=400, detail="Choose a date and time in the future.")
 
     if user.role == "patient":
         patient_id = user.id
