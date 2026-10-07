@@ -87,7 +87,7 @@ function DoctorView({ stats }) {
     <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
       <StatCard label="Total patients" value={stats.total_patients} />
       <StatCard label="Your assistant queries" value={stats.total_chats} />
-      <StatCard label="Reports analyzed" value={stats.total_reports_analyzed} />
+      <StatCard label="Your reports analyzed" value={stats.total_reports_analyzed} />
       <Link to="/patients" className="card flex flex-col justify-between p-5 hover:border-pulse">
         <div className="readout-label">Quick action</div>
         <div className="mt-2 font-display text-lg font-medium text-ink">Review patients →</div>
