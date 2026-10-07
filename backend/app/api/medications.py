@@ -6,7 +6,7 @@ from app.api.deps import get_current_user
 from app.db import models
 from app.nlp.dose_conversion import convert_dose, get_conversion_families
 from app.nlp.drug_data import check_pair_live, lookup_drug
-from app.nlp.medication_data import check_curated_pair, get_drug_directory
+from app.nlp.medication_data import check_curated_pair, get_drug_directory, normalize
 from app.schemas import (
     ConversionFamiliesResponse,
     DoseConversionRequest,
@@ -43,21 +43,30 @@ def check(
     for i in range(len(names)):
         for j in range(i + 1, len(names)):
             drug_a, drug_b = names[i], names[j]
-            live = check_pair_live(drug_a, drug_b, infos[drug_a], infos[drug_b])
+            live = check_pair_live(
+                drug_a, drug_b, infos[drug_a], infos[drug_b], normalize(drug_a), normalize(drug_b)
+            )
 
             if live["status"] == "hit":
+                mentioned = live["mentioned_drug"]
+                if live["matched_name"].lower() != mentioned.lower():
+                    mentioned = f"{mentioned} ({live['matched_name']})"
                 interactions.append(InteractionOut(
                     drug_a=drug_a,
                     drug_b=drug_b,
                     description=(
-                        f"{live['mentioned_drug']} is mentioned in {live['labeled_drug']}'s "
-                        "official FDA labeling as a potential interaction."
+                        f"{mentioned} is mentioned in {live['labeled_drug']}'s official FDA labeling "
+                        "as a potential interaction."
                     ),
                     source="fda_label",
                     excerpt=live["excerpt"],
                     severity=(check_curated_pair(drug_a, drug_b) or {}).get("severity"),
                 ))
-            elif live["status"] == "unavailable":
+            else:
+                # Neither label names the other drug, or one couldn't be read.
+                # That doesn't rule an interaction out — labels often warn
+                # about a whole class ("NSAIDs") — so the hand-reviewed pairs
+                # still apply.
                 curated = check_curated_pair(drug_a, drug_b)
                 if curated:
                     interactions.append(InteractionOut(**curated))

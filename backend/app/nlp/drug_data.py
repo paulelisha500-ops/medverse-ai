@@ -17,7 +17,7 @@ callers fall back to the curated INTERACTIONS list in medication_data.py.
 import re
 import threading
 import time
-from typing import Dict, Optional
+from typing import Dict, List, Optional, Tuple
 
 import requests
 
@@ -138,30 +138,59 @@ def _mentions(haystack: str, needle: str) -> Optional[str]:
     return None
 
 
-def check_pair_live(drug_a: str, drug_b: str, a: Optional[Dict] = None, b: Optional[Dict] = None) -> Dict:
+def _search_names(info: Dict, typed: str, generic: Optional[str]) -> List[str]:
+    """The names another drug's label could use for this one: its RxNorm
+    name, the name as typed, and its generic. Labels name ingredients, so
+    a warfarin label warns about "ibuprofen", never "Advil"."""
+    names, seen = [], set()
+    for name in (info["canonical_name"], typed, generic):
+        if name and name.strip().lower() not in seen:
+            seen.add(name.strip().lower())
+            names.append(name.strip())
+    return names
+
+
+def _first_mention(text: str, names: List[str]) -> Optional[Tuple[str, str]]:
+    for name in names:
+        sentence = _mentions(text, name)
+        if sentence:
+            return name, sentence
+    return None
+
+
+def check_pair_live(
+    drug_a: str,
+    drug_b: str,
+    a: Optional[Dict] = None,
+    b: Optional[Dict] = None,
+    generic_a: Optional[str] = None,
+    generic_b: Optional[str] = None,
+) -> Dict:
     """Checks whether drug_a's or drug_b's official FDA label text mentions
-    the other (searching by RxNorm-resolved canonical name, so typos and
-    brand names still match). Pass pre-fetched lookups `a`/`b` to avoid
-    repeat network calls. Returns a dict with status "hit" (interaction
-    found), "no_match" (both labels found, neither mentions the other), or
-    "unavailable" (at least one label could not be found/reached — the
-    result is then unverified, see medications.py)."""
+    the other (searching by RxNorm-resolved canonical name, the name as typed
+    and, when given, the generic name, so typos and brand names still match).
+    Pass pre-fetched lookups `a`/`b` to avoid repeat network calls. Returns a
+    dict with status "hit" (interaction found), "no_match" (both labels found,
+    neither names the other), or "unavailable" (at least one label could not
+    be found/reached — the result is then unverified, see medications.py)."""
     a = a or lookup_drug(drug_a)
     b = b or lookup_drug(drug_b)
 
     if a["label_text"]:
-        match = _mentions(a["label_text"], b["canonical_name"]) or _mentions(a["label_text"], drug_b)
-        if match:
+        found = _first_mention(a["label_text"], _search_names(b, drug_b, generic_b))
+        if found:
             return {
                 "status": "hit", "drug_a": drug_a, "drug_b": drug_b, "source": "fda_label",
-                "excerpt": match, "labeled_drug": drug_a, "mentioned_drug": drug_b,
+                "excerpt": found[1], "labeled_drug": drug_a, "mentioned_drug": drug_b,
+                "matched_name": found[0],
             }
     if b["label_text"]:
-        match = _mentions(b["label_text"], a["canonical_name"]) or _mentions(b["label_text"], drug_a)
-        if match:
+        found = _first_mention(b["label_text"], _search_names(a, drug_a, generic_a))
+        if found:
             return {
                 "status": "hit", "drug_a": drug_a, "drug_b": drug_b, "source": "fda_label",
-                "excerpt": match, "labeled_drug": drug_b, "mentioned_drug": drug_a,
+                "excerpt": found[1], "labeled_drug": drug_b, "mentioned_drug": drug_a,
+                "matched_name": found[0],
             }
 
     if a["label_text"] is None or b["label_text"] is None:
