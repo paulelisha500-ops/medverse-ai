@@ -105,8 +105,36 @@ def test_curated_pair_reported_when_labels_dont_name_each_other(client, tokens, 
     import app.api.medications as medications_api
 
     monkeypatch.setattr(
-        medications_api, "lookup_drug", lambda name: {"canonical_name": name, "label_text": "Store at room temperature."}
+        medications_api,
+        "lookup_drug",
+        lambda name, generic=None: {"canonical_name": name, "label_text": "Store at room temperature."},
     )
     found = check(client, tokens["patient"], ["warfarin", "ibuprofen"])
     assert [f["source"] for f in found] == ["curated"]
     assert found[0]["severity"] == "high"
+
+
+def test_label_lookup_falls_back_to_the_generic(monkeypatch):
+    # Coumadin is off the market: openFDA has no label under that name, and
+    # RxNorm just echoes the brand. Warfarin's label is the one to read.
+    from app.nlp import drug_data
+
+    monkeypatch.setattr(drug_data, "_cache", {})
+    monkeypatch.setattr(drug_data, "resolve_drug_name", lambda name: "Coumadin")
+    labels = {"warfarin": "Drugs that increase the risk of bleeding include omeprazole."}
+    monkeypatch.setattr(drug_data, "_fetch_label_by_name", lambda name: labels.get(name.lower()))
+
+    info = drug_data.lookup_drug("Coumadin", "warfarin")
+    assert info["label_text"] == labels["warfarin"]
+
+
+def test_label_excerpt_shows_the_drug_it_cites():
+    # Labels flatten tables into one huge "sentence"; the quote has to come
+    # from around the match, not just its first 400 characters.
+    from app.nlp.drug_data import _mentions
+
+    table = "Table 2: CYP450 interactions " + "amiodarone, capecitabine, fluconazole, " * 40 + "omeprazole, lansoprazole and others."
+    excerpt = _mentions(table, "omeprazole")
+    assert "omeprazole" in excerpt
+    assert len(excerpt) <= 402
+    assert excerpt.startswith("…")

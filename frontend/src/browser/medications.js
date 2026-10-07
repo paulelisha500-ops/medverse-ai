@@ -116,7 +116,9 @@ async function fetchLabelByName(name) {
   }
 }
 
-async function lookupDrug(name) {
+// `generic` is the last place to look for a label: a brand that's off the
+// market (Coumadin) has none of its own, but its generic (warfarin) does.
+async function lookupDrug(name, generic) {
   const key = name.trim().toLowerCase()
   const cached = cache.get(key)
   if (cached && Date.now() - cached.at < CACHE_TTL_MS) return cached.result
@@ -124,7 +126,13 @@ async function lookupDrug(name) {
   const [labelText, resolved] = await Promise.all([fetchLabelByName(name), resolveDrugName(name)])
   const canonical = resolved || clean(name)
   let text = labelText
-  if (text === null && canonical.toLowerCase() !== key) text = await fetchLabelByName(canonical)
+  const tried = new Set([key])
+  for (const alternative of [canonical, generic]) {
+    if (text === null && alternative && !tried.has(alternative.trim().toLowerCase())) {
+      tried.add(alternative.trim().toLowerCase())
+      text = await fetchLabelByName(alternative)
+    }
+  }
 
   const result = { canonical_name: canonical, label_text: text }
   if (text !== null) cache.set(key, { at: Date.now(), result }) // never cache failures
@@ -134,12 +142,34 @@ async function lookupDrug(name) {
 const escapeRegExp = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 
 // The sentence of `haystack` that names `needle` as a whole word/phrase.
+const EXCERPT_CHARS = 400
+
+// The sentence, or for one too long to quote whole the stretch around the
+// match: labels often flatten a table into one "sentence" thousands of
+// characters long, and a quote cut from its start may never reach the drug.
+function excerpt(sentence, start, end) {
+  if (sentence.length <= EXCERPT_CHARS) return sentence
+  let left = Math.max(0, start - Math.floor(EXCERPT_CHARS / 3))
+  let right = Math.min(sentence.length, left + EXCERPT_CHARS)
+  if (left > 0) {
+    const space = sentence.indexOf(' ', left)
+    if (space !== -1 && space < start) left = space + 1
+  }
+  if (right < sentence.length) {
+    const space = sentence.lastIndexOf(' ', right - 1)
+    if (space !== -1 && space >= end) right = space
+  }
+  return (left > 0 ? '…' : '') + sentence.slice(left, right).trim() + (right < sentence.length ? '…' : '')
+}
+
 function mentions(haystack, needle) {
   const n = needle.trim()
   if (n.length < 3) return null
   const pattern = new RegExp(`(?<![\\p{L}\\p{N}_])${escapeRegExp(n)}(?![\\p{L}\\p{N}_])`, 'iu')
-  for (const sentence of haystack.split(/(?<=[.!?])\s+/)) {
-    if (pattern.test(sentence)) return sentence.trim().slice(0, 400)
+  for (const raw of haystack.split(/(?<=[.!?])\s+/)) {
+    const sentence = raw.trim()
+    const match = pattern.exec(sentence)
+    if (match) return excerpt(sentence, match.index, match.index + match[0].length)
   }
   return null
 }
@@ -193,7 +223,7 @@ export async function checkMedications(medications) {
     }
   }
 
-  const infos = new Map(await Promise.all(names.map(async (n) => [n, await lookupDrug(n)])))
+  const infos = new Map(await Promise.all(names.map(async (n) => [n, await lookupDrug(n, normalize(data, n))])))
   const unverified = names.filter((n) => infos.get(n).label_text === null)
   const interactions = []
 

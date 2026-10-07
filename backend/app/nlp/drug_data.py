@@ -100,13 +100,16 @@ def _fetch_label_by_name(name: str) -> Optional[str]:
         return None
 
 
-def lookup_drug(name: str) -> Dict:
+def lookup_drug(name: str, generic: Optional[str] = None) -> Dict:
     """Resolves a (possibly misspelled or brand) drug name and fetches its
     official FDA label interaction text. Returns
     {canonical_name, label_text} — canonical_name falls back to the RxNorm
     resolution (or the original input) even when no label text was found,
     so callers can still search for mentions of it by its standardized
-    name rather than a user's typo."""
+    name rather than a user's typo.
+
+    `generic` is the last place to look for a label: a brand that's off the
+    market (Coumadin) has none of its own, but its generic (warfarin) does."""
     key = name.strip().lower()
     with _cache_lock:
         cached = _cache.get(key)
@@ -116,14 +119,39 @@ def lookup_drug(name: str) -> Dict:
     text = _fetch_label_by_name(name)
     canonical = resolve_drug_name(name) or _clean(name)
 
-    if text is None and canonical.lower() != name.strip().lower():
-        text = _fetch_label_by_name(canonical)
+    tried = {key}
+    for alternative in (canonical, generic):
+        if text is None and alternative and alternative.strip().lower() not in tried:
+            tried.add(alternative.strip().lower())
+            text = _fetch_label_by_name(alternative)
 
     result = {"canonical_name": canonical, "label_text": text}
     if text is not None:  # never cache failures — they may be transient network errors
         with _cache_lock:
             _cache[key] = (time.time(), result)
     return result
+
+
+EXCERPT_CHARS = 400
+
+
+def _excerpt(sentence: str, start: int, end: int) -> str:
+    """The sentence, or for one too long to quote whole the stretch around the
+    match. Labels often flatten a table into one "sentence" thousands of
+    characters long, and a quote cut from its start may never reach the
+    drug it is cited for."""
+    sentence = sentence.strip()
+    if len(sentence) <= EXCERPT_CHARS:
+        return sentence
+    left = max(0, start - EXCERPT_CHARS // 3)
+    right = min(len(sentence), left + EXCERPT_CHARS)
+    if left > 0:
+        space = sentence.find(" ", left, start)
+        left = space + 1 if space != -1 else left
+    if right < len(sentence):
+        space = sentence.rfind(" ", end, right)
+        right = space if space != -1 else right
+    return ("…" if left > 0 else "") + sentence[left:right].strip() + ("…" if right < len(sentence) else "")
 
 
 def _mentions(haystack: str, needle: str) -> Optional[str]:
@@ -133,8 +161,10 @@ def _mentions(haystack: str, needle: str) -> Optional[str]:
         return None
     pattern = re.compile(rf"(?<!\w){re.escape(needle)}(?!\w)", re.IGNORECASE)
     for sentence in re.split(r"(?<=[.!?])\s+", haystack):
-        if pattern.search(sentence):
-            return sentence.strip()[:400]
+        stripped = sentence.strip()
+        match = pattern.search(stripped)
+        if match:
+            return _excerpt(stripped, match.start(), match.end())
     return None
 
 
