@@ -35,6 +35,8 @@ function capitalize(s) {
 // Matches MedicationCheckRequest's max_length on the API. Past this the check
 // fails with a 422, so the form stops offering more fields instead.
 const MAX_MEDS = 10
+// The API's upper bound for dose_mg (DoseConversionRequest).
+const MAX_DOSE_MG = 10000
 
 export default function Medications() {
   const [meds, setMeds] = useState(['', ''])
@@ -368,6 +370,11 @@ function DoseConverter() {
     if (!(value > 0)) {
       setResult(null)
       setError('Enter a dose greater than 0 mg.')
+      return
+    }
+    if (value > MAX_DOSE_MG) {
+      setResult(null)
+      setError(`Enter a dose of ${MAX_DOSE_MG.toLocaleString()} mg or less.`)
       return
     }
     setBusy(true)
