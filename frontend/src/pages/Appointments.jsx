@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import client from '../api/client.js'
 import { useAuth } from '../context/AuthContext.jsx'
 import { PageHeader, Button, Field, inputClass, EmptyState, Badge } from '../components/ui.jsx'
+import { apiErrorMessage } from '../api/errors.js'
 
 const STATUS_TONE = {
   requested: 'moderate',
@@ -62,7 +63,7 @@ export default function Appointments() {
       setForm({ doctor_id: '', patient_id: '', scheduled_at: '', reason: '' })
       load()
     } catch (err) {
-      setBookError(err.response?.data?.detail || "Couldn't book this appointment. Please try again.")
+      setBookError(apiErrorMessage(err, "Couldn't book this appointment. Please try again."))
     } finally {
       setBooking(false)
     }

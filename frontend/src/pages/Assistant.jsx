@@ -23,9 +23,10 @@ export default function Assistant() {
     client
       .get('/assistant/history')
       .then((res) => {
-        setMessages(
-          res.data.map((m) => ({ role: m.role, content: m.content, sources: [] }))
-        )
+        const past = res.data.map((m) => ({ role: m.role, content: m.content, sources: [] }))
+        // A question asked while this was loading is already on screen;
+        // keep it (and don't show it twice if the history includes it).
+        setMessages((current) => mergeHistory(past, current))
       })
       .catch(() => {
         // History failed to load — chat still works from a blank slate.
@@ -130,6 +131,15 @@ export default function Assistant() {
       </form>
     </div>
   )
+}
+
+function mergeHistory(past, current) {
+  const same = (a, b) => a.role === b.role && a.content === b.content
+  let overlap = Math.min(past.length, current.length)
+  while (overlap > 0 && !current.slice(0, overlap).every((m, i) => same(m, past[past.length - overlap + i]))) {
+    overlap--
+  }
+  return [...past.slice(0, past.length - overlap), ...current]
 }
 
 // Browser edition: the embedding model downloads on first use (~25 MB).

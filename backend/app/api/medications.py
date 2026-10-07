@@ -35,7 +35,7 @@ def check(
 
     # One lookup per drug (not per pair), fetched concurrently.
     with ThreadPoolExecutor(max_workers=4) as pool:
-        infos = dict(zip(names, pool.map(lookup_drug, names)))
+        infos = dict(zip(names, pool.map(lambda name: lookup_drug(name, normalize(name)), names)))
 
     unverified = [n for n in names if infos[n]["label_text"] is None]
     interactions = []

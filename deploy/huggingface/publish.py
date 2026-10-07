@@ -56,19 +56,53 @@ def publish_space(build_dir: str) -> None:
     print(f"Published https://huggingface.co/spaces/{SPACE_ID}")
 
 
+# The Hub reads a repo card's metadata from YAML front matter at the top of
+# README.md, and warns when there is none. GitHub would render that block as a
+# table, so it's added to the Hub's copy only.
+MODEL_CARD_METADATA = """---
+license: mit
+language:
+- en
+tags:
+- medical
+- healthcare
+- rag
+- nlp
+- scikit-learn
+- sentence-transformers
+- transformers.js
+---
+
+"""
+
+
 def mirror_repo() -> None:
     api = _api()
     api.create_repo(MODEL_REPO_ID, repo_type="model", exist_ok=True)
-    api.upload_folder(
-        repo_id=MODEL_REPO_ID,
-        repo_type="model",
-        folder_path=REPO_ROOT,
-        commit_message=f"Sync with GitHub main{_from_commit()}",
-        # A CI checkout holds only tracked files; these guard local runs.
-        ignore_patterns=["**/node_modules/**", "frontend/dist*/**", "backend/data/*.db", "**/__pycache__/**"],
-        # Files deleted on GitHub are deleted here too.
-        delete_patterns="*",
-    )
+    with tempfile.TemporaryDirectory() as stage:
+        # A CI checkout holds only tracked files; the ignores guard local runs.
+        shutil.copytree(
+            REPO_ROOT,
+            stage,
+            dirs_exist_ok=True,
+            ignore=shutil.ignore_patterns(
+                ".git", ".claude", "node_modules", "dist", "dist-browser", "__pycache__", ".pytest_cache",
+                "venv", ".venv", "*.db", "*.faiss", "*.pkl", "kb_chunks.json",
+            ),
+        )
+        readme = os.path.join(stage, "README.md")
+        with open(readme, encoding="utf-8") as f:
+            body = f.read()
+        with open(readme, "w", encoding="utf-8", newline="\n") as f:
+            f.write(MODEL_CARD_METADATA + body)
+        api.upload_folder(
+            repo_id=MODEL_REPO_ID,
+            repo_type="model",
+            folder_path=stage,
+            commit_message=f"Sync with GitHub main{_from_commit()}",
+            # Files deleted on GitHub are deleted here too.
+            delete_patterns="*",
+        )
     print(f"Mirrored to https://huggingface.co/{MODEL_REPO_ID}")
 
 

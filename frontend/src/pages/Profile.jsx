@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import client from '../api/client.js'
 import { useAuth } from '../context/AuthContext.jsx'
 import { PageHeader, Button, Field, inputClass, Readout } from '../components/ui.jsx'
+import { apiErrorMessage } from '../api/errors.js'
 
 const GENDER_OPTIONS = ['Female', 'Male', 'Non-binary', 'Other', 'Prefer not to say']
 const BLOOD_GROUPS = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-', 'Unknown']
@@ -86,7 +87,7 @@ export default function Profile() {
       setAccountSaved(true)
       setTimeout(() => setAccountSaved(false), 2000)
     } catch (err) {
-      setAccountError(err.response?.data?.detail || "Couldn't save your details. Please try again.")
+      setAccountError(apiErrorMessage(err, "Couldn't save your details. Please try again."))
     } finally {
       setAccountBusy(false)
     }

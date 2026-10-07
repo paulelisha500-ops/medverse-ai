@@ -3,7 +3,8 @@ name: Deploy
 # Builds the browser edition (the whole app, API included, as static files)
 # and publishes it to GitHub Pages and a Hugging Face static Space, then
 # mirrors the repository to the Hugging Face model repo. Pull requests only
-# build, so a broken build is caught before it reaches main.
+# build and run the backend tests, so a broken build or a failing test is
+# caught before it reaches main; nothing deploys unless both pass.
 
 on:
   push:
@@ -37,10 +38,29 @@ jobs:
         with:
           path: frontend/dist-browser
 
+  test:
+    name: Backend tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: backend/requirements*.txt
+      # The CPU build of torch: the default one sentence-transformers pulls in
+      # brings several GB of CUDA libraries the tests never use.
+      - run: pip install -r requirements-dev.txt --extra-index-url https://download.pytorch.org/whl/cpu
+        working-directory: backend
+      # Linux runners also run the symlink test that Windows skips without
+      # the privilege to create symlinks.
+      - run: python -m pytest -rs
+        working-directory: backend
+
   github-pages:
     name: GitHub Pages
     if: github.event_name != 'pull_request'
-    needs: build
+    needs: [build, test]
     runs-on: ubuntu-latest
     permissions:
       pages: write
@@ -55,7 +75,7 @@ jobs:
   huggingface-space:
     name: Hugging Face Space
     if: github.event_name != 'pull_request'
-    needs: build
+    needs: [build, test]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -76,7 +96,7 @@ jobs:
   huggingface-mirror:
     name: Mirror to Hugging Face
     if: github.event_name != 'pull_request'
-    needs: build
+    needs: [build, test]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
