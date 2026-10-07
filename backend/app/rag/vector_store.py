@@ -53,13 +53,17 @@ def build_index(force: bool = False) -> None:
 
     os.makedirs(DATA_DIR, exist_ok=True)
 
-    if not force and os.path.exists(INDEX_PATH) and os.path.exists(CHUNKS_PATH):
-        _index = faiss.read_index(INDEX_PATH)
-        with open(CHUNKS_PATH, "r", encoding="utf-8") as f:
-            _chunks = json.load(f)
-        return
-
     chunks = parse_knowledge_base()
+    if not force and os.path.exists(INDEX_PATH) and os.path.exists(CHUNKS_PATH):
+        with open(CHUNKS_PATH, "r", encoding="utf-8") as f:
+            cached_chunks = json.load(f)
+        # The saved index is reused only while it matches the knowledge base,
+        # so an edited health_topics.md is picked up on the next start.
+        if cached_chunks == chunks:
+            _index = faiss.read_index(INDEX_PATH)
+            _chunks = cached_chunks
+            return
+
     model = get_embedding_model()
     texts = [f"{c['title']}. {c['text']}" for c in chunks]
     embeddings = model.encode(texts, normalize_embeddings=True, show_progress_bar=False)
