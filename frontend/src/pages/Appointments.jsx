@@ -44,7 +44,12 @@ export default function Appointments() {
 
   async function handleBook(e) {
     e.preventDefault()
-    if (!form.doctor_id || !form.scheduled_at || (isStaff && !form.patient_id)) return
+    // The fields are `required`, so the browser normally stops this first;
+    // this is the fallback so the button never silently does nothing.
+    if (!form.doctor_id || !form.scheduled_at || (isStaff && !form.patient_id)) {
+      setBookError(isStaff ? 'Choose a patient, a doctor, and a date and time.' : 'Choose a doctor and a date and time.')
+      return
+    }
     setBooking(true)
     setBookError('')
     try {
@@ -93,6 +98,7 @@ export default function Appointments() {
         {isStaff && (
           <Field label="Patient">
             <select
+              required
               className={inputClass}
               value={form.patient_id}
               onChange={(e) => setForm((f) => ({ ...f, patient_id: e.target.value }))}
@@ -106,6 +112,7 @@ export default function Appointments() {
         )}
           <Field label="Doctor">
             <select
+              required
               className={inputClass}
               value={form.doctor_id}
               onChange={(e) => setForm((f) => ({ ...f, doctor_id: e.target.value }))}
@@ -119,6 +126,7 @@ export default function Appointments() {
           <Field label="Date & time">
             <input
               type="datetime-local"
+              required
               className={inputClass}
               value={form.scheduled_at}
               onChange={(e) => setForm((f) => ({ ...f, scheduled_at: e.target.value }))}

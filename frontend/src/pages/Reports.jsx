@@ -21,7 +21,10 @@ export default function Reports() {
 
   async function handleAnalyze(e) {
     e.preventDefault()
-    if (!text.trim()) return
+    if (!text.trim()) {
+      setError('Paste a report first, or use the sample report.')
+      return
+    }
     setLoading(true)
     setError('')
     try {
@@ -43,6 +46,7 @@ export default function Reports() {
 
       <form onSubmit={handleAnalyze} className="space-y-3">
         <textarea
+          required
           value={text}
           onChange={(e) => setText(e.target.value)}
           rows={10}
@@ -61,7 +65,7 @@ export default function Reports() {
             Use a sample report
           </button>
         </div>
-        {error && <p className="text-sm text-alert">{error}</p>}
+        {error && <p role="alert" className="text-sm text-alert">{error}</p>}
       </form>
 
       {result && (

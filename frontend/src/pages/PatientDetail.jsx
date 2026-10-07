@@ -34,7 +34,7 @@ export default function PatientDetail() {
   const [showForm, setShowForm] = useState(false)
   const [form, setForm] = useState({ type: 'visit', title: '', details: '' })
   const [addingRecord, setAddingRecord] = useState(false)
-  const [addRecordError, setAddRecordError] = useState(false)
+  const [addRecordError, setAddRecordError] = useState('')
   const [question, setQuestion] = useState('')
   const [answer, setAnswer] = useState(null)
   const [asking, setAsking] = useState(false)
@@ -60,16 +60,20 @@ export default function PatientDetail() {
 
   async function addRecord(e) {
     e.preventDefault()
-    if (!form.title.trim() || addingRecord) return
+    if (addingRecord) return
+    if (!form.title.trim()) {
+      setAddRecordError('Enter a title for this entry.')
+      return
+    }
     setAddingRecord(true)
-    setAddRecordError(false)
+    setAddRecordError('')
     try {
       await client.post(`/patients/${id}/records`, form)
       setForm({ type: 'visit', title: '', details: '' })
       setShowForm(false)
       load()
     } catch (err) {
-      setAddRecordError(true)
+      setAddRecordError("Couldn't save. Please try again.")
     } finally {
       setAddingRecord(false)
     }
@@ -102,7 +106,11 @@ export default function PatientDetail() {
 
   async function askAboutPatient(e) {
     e.preventDefault()
-    if (!question.trim()) return
+    if (!question.trim()) {
+      setAnswer(null)
+      setAskError('Type a question first.')
+      return
+    }
     setAsking(true)
     setAnswer(null)
     setAskError(null)
@@ -301,6 +309,7 @@ export default function PatientDetail() {
         <div className="readout-label mb-2">Ask the assistant about this patient</div>
         <form onSubmit={askAboutPatient} className="flex gap-2">
           <input
+            required
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
             placeholder="e.g. What should I check given their glucose trend?"
@@ -346,6 +355,7 @@ export default function PatientDetail() {
             </Field>
             <Field label="Title">
               <input
+                required
                 className={inputClass}
                 value={form.title}
                 onChange={(e) => setForm((f) => ({ ...f, title: e.target.value }))}
@@ -362,7 +372,7 @@ export default function PatientDetail() {
             </Field>
           </div>
           <Button type="submit" disabled={addingRecord}>{addingRecord ? 'Saving…' : 'Save entry'}</Button>
-          {addRecordError && <span className="ml-3 text-sm text-alert">Couldn't save. Please try again.</span>}
+          {addRecordError && <span role="alert" className="ml-3 text-sm text-alert">{addRecordError}</span>}
         </form>
       )}
 

@@ -102,6 +102,14 @@ def resolve_static_file(static_dir: str, request_path: str) -> Optional[str]:
     return None
 
 
+# Vite fingerprints everything under assets/ (index-3f9a1c.js), so those can be
+# cached for good. index.html has to be revalidated on every load: with no
+# Cache-Control a browser may keep its copy, which still points at the
+# previous deploy's bundles. Same policy as frontend/nginx.conf.
+IMMUTABLE = {"Cache-Control": "public, max-age=31536000, immutable"}
+REVALIDATE = {"Cache-Control": "no-cache"}
+
+
 def mount_frontend(app: FastAPI, static_dir: str) -> None:
     index_html = os.path.join(static_dir, "index.html")
 
@@ -112,7 +120,14 @@ def mount_frontend(app: FastAPI, static_dir: str) -> None:
         if full_path == "api" or full_path.startswith("api/"):
             raise HTTPException(status_code=404, detail="Not Found")
         static_file = resolve_static_file(static_dir, full_path)
-        return FileResponse(static_file or index_html)
+        if static_file:
+            return FileResponse(static_file, headers=IMMUTABLE if full_path.startswith("assets/") else REVALIDATE)
+        # A bundle that doesn't exist (an open tab asking for the previous
+        # deploy's chunk) has to 404. Answering with index.html gets the HTML
+        # parsed as JavaScript, and the page goes blank.
+        if full_path.startswith("assets/"):
+            raise HTTPException(status_code=404, detail="Not Found")
+        return FileResponse(index_html, headers=REVALIDATE)
 
 
 STATIC_DIR = os.environ.get("STATIC_DIR", "")
