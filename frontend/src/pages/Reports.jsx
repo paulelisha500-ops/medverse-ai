@@ -41,7 +41,11 @@ export default function Reports() {
     <div>
       <PageHeader
         title="Medical Report Understanding"
-        subtitle="Paste a lab report or prescription. Lab values are extracted with pattern matching; diagnoses, medications, and summaries use the configured LLM."
+        subtitle={
+          __BROWSER_EDITION__
+            ? 'Paste a lab report or prescription. Lab values, diagnoses, and medications are extracted on your device and summarized against standard reference ranges.'
+            : 'Paste a lab report or prescription. Lab values are extracted with pattern matching; diagnoses, medications, and summaries use the configured LLM.'
+        }
       />
 
       <form onSubmit={handleAnalyze} className="space-y-3">

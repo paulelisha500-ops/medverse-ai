@@ -33,6 +33,24 @@ SEED_RECORDS = [
 ]
 
 
+SEED_PATIENT_PROFILE = {
+    "date_of_birth": "1990-04-12",
+    "gender": "Non-binary",
+    "blood_group": "O+",
+    "allergies": "Penicillin",
+    "height_cm": 170,
+    "weight_kg": 72,
+    "phone": "+1 555-0142",
+    "address": "482 Birchwood Lane, Springfield",
+    "emergency_contact_name": "Riley Patient",
+    "emergency_contact_phone": "+1 555-0199",
+    "smoking_status": "never",
+    "alcohol_use": "occasional",
+    "chronic_conditions": "Type 2 diabetes",
+    "family_history": "Father: hypertension. Mother: type 2 diabetes.",
+}
+
+
 def run_seed(db: Session) -> None:
     """Idempotent: only seeds if the users table is empty."""
     if db.query(models.User).first() is not None:
@@ -50,23 +68,7 @@ def run_seed(db: Session) -> None:
         db.flush()
         created[u["role"]] = user
 
-    patient_profile = models.PatientProfile(
-        user_id=created["patient"].id,
-        date_of_birth="1990-04-12",
-        gender="Non-binary",
-        blood_group="O+",
-        allergies="Penicillin",
-        height_cm=170,
-        weight_kg=72,
-        phone="+1 555-0142",
-        address="482 Birchwood Lane, Springfield",
-        emergency_contact_name="Riley Patient",
-        emergency_contact_phone="+1 555-0199",
-        smoking_status="never",
-        alcohol_use="occasional",
-        chronic_conditions="Type 2 diabetes",
-        family_history="Father: hypertension. Mother: type 2 diabetes.",
-    )
+    patient_profile = models.PatientProfile(user_id=created["patient"].id, **SEED_PATIENT_PROFILE)
     db.add(patient_profile)
     db.flush()
 

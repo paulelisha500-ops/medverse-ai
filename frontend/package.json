@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "dev:browser": "vite --mode browser",
+    "build:browser": "vite build --mode browser",
+    "preview:browser": "vite preview --mode browser"
   },
   "dependencies": {
     "react": "^18.3.1",

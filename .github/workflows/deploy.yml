@@ -1,0 +1,89 @@
+name: Deploy
+
+# Builds the browser edition (the whole app, API included, as static files)
+# and publishes it to GitHub Pages and a Hugging Face static Space, then
+# mirrors the repository to the Hugging Face model repo. Pull requests only
+# build, so a broken build is caught before it reaches main.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  build:
+    name: Build browser edition
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+        working-directory: frontend
+      - run: npm run build:browser
+        working-directory: frontend
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: frontend/dist-browser
+
+  github-pages:
+    name: GitHub Pages
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v5
+
+  huggingface-space:
+    name: Hugging Face Space
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      # The same build GitHub Pages serves.
+      - uses: actions/download-artifact@v8
+        with:
+          name: github-pages
+          path: ${{ runner.temp }}/site
+      - run: mkdir -p frontend/dist-browser && tar -xf "$RUNNER_TEMP/site/artifact.tar" -C frontend/dist-browser
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: pip install "huggingface_hub>=1,<3"
+      - run: python deploy/huggingface/publish.py space frontend/dist-browser
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+
+  huggingface-mirror:
+    name: Mirror to Hugging Face
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: pip install "huggingface_hub>=1,<3"
+      - run: python deploy/huggingface/publish.py mirror
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}

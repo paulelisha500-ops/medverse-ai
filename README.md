@@ -1,6 +1,9 @@
 # MedVerse AI — Clinical Intelligence Platform
 
-**Links:** [GitHub](https://github.com/paulelisha500-ops/medverse-ai) · [Hugging Face](https://huggingface.co/Elisha622/medverse-ai)
+**Use it now, nothing to install:** [Hugging Face Space](https://huggingface.co/spaces/Elisha622/medverse-ai) ·
+[GitHub Pages](https://paulelisha500-ops.github.io/medverse-ai/)
+
+**Code:** [GitHub](https://github.com/paulelisha500-ops/medverse-ai) · [Hugging Face mirror](https://huggingface.co/Elisha622/medverse-ai)
 
 A full-stack healthcare AI platform centered on **Retrieval-Augmented Generation, LLMs, and NLP**: a
 grounded clinical/patient assistant, medical report understanding, predictive risk scoring, and a
@@ -18,9 +21,38 @@ doctors, and patients.
 | **RAG AI Assistant** | Sentence-transformer embeddings + FAISS retrieval over a health knowledge base, fed into a pluggable LLM. Answers show their sources. Doctors can ask questions "with patient context," fusing retrieved record data into the prompt |
 | **Report Understanding (NLP)** | Regex-based lab-value extraction (a real pattern-matching component, works with zero API keys) + LLM-based diagnosis/medication extraction and dual patient/clinical summaries |
 | **Disease Risk Prediction** | Two real `scikit-learn` logistic regression models (diabetes, heart disease) trained on synthetic data at first run, with coefficient-based "top contributing factor" explainability |
-| **Medication Interaction Checker** | Pairwise lookup against a curated set of well-established drug interactions |
+| **Medication Interaction Checker** | Live check of official FDA drug labels (openFDA) with RxNorm name resolution, backed by 230 hand-reviewed interaction pairs; brand names and typos resolve to generics. Plus an equivalent-dose converter (opioids, corticosteroids, benzodiazepines) |
 | **Dashboards** | Role-aware stats and charts (admin: platform-wide; doctor: patient panel; patient: personal summary) |
 | **Patient records** | CRUD medical history entries (conditions, medications, labs, visits, vaccinations) |
+
+## Two editions
+
+| | Browser edition | Full stack |
+|---|---|---|
+| **Where** | [Hugging Face Space](https://huggingface.co/spaces/Elisha622/medverse-ai), [GitHub Pages](https://paulelisha500-ops.github.io/medverse-ai/), or any static host | Your machine or server, with Docker or manually |
+| **Install** | Nothing: open the link | Python and Node, or Docker |
+| **Data** | Stored in the visitor's browser | SQLite (or Postgres) |
+| **Assistant** | all-MiniLM-L6-v2 on the device (Transformers.js); answers quote the retrieved passages | sentence-transformers + FAISS, with a pluggable LLM |
+| **Reports** | Lab values, diagnoses, medications and both summaries produced on the device | Regex lab values, plus the configured LLM |
+
+Both run the same React pages. In the browser edition, `frontend/src/browser/` implements every
+`/api` route inside the page and `api/client.js` hands requests to it instead of the network.
+Risk models, the drug directory, interaction pairs, dose tables and the knowledge base (with its
+embeddings) are exported from the Python code by `backend/scripts/export_browser_data.py`, and
+`backend/tests/test_browser_export.py` fails if that export falls out of date, so both editions
+give the same results.
+
+Run the browser edition locally:
+
+```bash
+cd frontend
+npm install
+npm run dev:browser        # or: npm run build:browser && npm run preview:browser
+```
+
+`.github/workflows/deploy.yml` builds it on every push to `main` and publishes it to GitHub Pages
+and the Hugging Face Space, then mirrors the repository to the Hugging Face model repo. It needs a
+repository secret `HF_TOKEN` holding a Hugging Face token with write access.
 
 **Deliberately out of scope** (to keep the RAG/LLM/NLP core deep instead of shallow): medical
 imaging/computer vision, wearable device integration, hospital bed/ICU management, and a mobile
@@ -69,7 +101,9 @@ flowchart LR
 - **LLM:** pluggable provider — OpenAI, Anthropic, or local Ollama. With none configured, the
   assistant still returns the most relevant retrieved knowledge-base context directly.
 - **Predictive ML:** `scikit-learn` logistic regression, trained on synthetic data at first run
-- **Deployment:** Docker + Docker Compose
+- **Browser edition:** Transformers.js (ONNX Runtime Web) for on-device embeddings, WebCrypto
+  (PBKDF2) password hashing, browser storage
+- **Deployment:** Docker + Docker Compose; GitHub Actions to GitHub Pages and Hugging Face Spaces
 
 ## Quick start (Docker — recommended)
 
@@ -117,7 +151,9 @@ Created automatically on first run:
 | Doctor | `doctor@medverse.ai` | `Doctor@123` |
 | Patient | `patient@medverse.ai` | `Patient@123` |
 
-Change or remove these before deploying anywhere public.
+Change or remove these before deploying the full stack anywhere public. In the browser edition
+they exist only inside each visitor's own browser, and the sign-in screen offers them as one-click
+sign-ins.
 
 ## Connecting an LLM provider
 
@@ -151,7 +187,10 @@ Adding a new provider is a matter of implementing one class in
 
 ```
 medverse-ai/
+├── .github/workflows/deploy.yml   # browser edition -> GitHub Pages + Hugging Face
+├── deploy/huggingface/          # Space card + publish script
 ├── backend/
+│   ├── scripts/export_browser_data.py   # data for the browser edition
 │   └── app/
 │       ├── main.py            # FastAPI app, startup: DB + seed + RAG index + risk models
 │       ├── core/               # config, security (JWT/hashing)
@@ -162,6 +201,7 @@ medverse-ai/
 │       └── nlp/                 # lab-value regex extraction, medication interaction data
 └── frontend/
     └── src/
+        ├── browser/             # the API, reimplemented to run in the page (browser edition)
         ├── context/AuthContext.jsx
         ├── components/          # Layout, ProtectedRoute, shared UI primitives
         └── pages/                # Login, Register, Dashboard, Assistant, Reports, RiskCheck, ...
@@ -170,8 +210,9 @@ medverse-ai/
 ## Extending the knowledge base
 
 Add a new section to `backend/app/rag/knowledge_base/health_topics.md` using the same
-`# TOPIC: Title` format, delete `backend/data/kb_index.faiss` and `kb_chunks.json`, and restart —
-the index rebuilds automatically.
+`# TOPIC: Title` format and restart the backend; the index notices the change and rebuilds
+automatically. Then run `python scripts/export_browser_data.py` from `backend/`
+so the browser edition gets the new topic too.
 
 ## Roadmap / natural extensions
 

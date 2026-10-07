@@ -3,6 +3,7 @@ import { Send } from 'lucide-react'
 import client from '../api/client.js'
 import { useAuth } from '../context/AuthContext.jsx'
 import { PageHeader, LoadingDots } from '../components/ui.jsx'
+import { useModelStatus } from '../browser/modelStatus.js'
 
 const SUGGESTIONS = [
   'Explain my last fasting glucose result',
@@ -44,7 +45,12 @@ export default function Assistant() {
     setSending(true)
 
     try {
-      const res = await client.post('/assistant/chat', { message: messageText })
+      // A patient's questions are about themselves ("Explain my last fasting
+      // glucose result"), so their own record goes along as context.
+      const res = await client.post('/assistant/chat', {
+        message: messageText,
+        ...(user?.role === 'patient' && { patient_id: user.id }),
+      })
       setMessages((prev) => [
         ...prev,
         { role: 'assistant', content: res.data.answer, sources: res.data.sources },
@@ -69,6 +75,7 @@ export default function Assistant() {
         title="AI Health Assistant"
         subtitle="Grounded in the MedVerse knowledge base — every answer shows its sources."
       />
+      {__BROWSER_EDITION__ && <ModelStatusNote />}
 
 
       <div className="flex-1 space-y-4 overflow-y-auto pb-4">
@@ -122,6 +129,28 @@ export default function Assistant() {
         </button>
       </form>
     </div>
+  )
+}
+
+// Browser edition: the embedding model downloads on first use (~25 MB).
+function ModelStatusNote() {
+  const { state, loaded, total } = useModelStatus()
+  const mb = (bytes) => (bytes / 1e6).toFixed(1)
+  let text = null
+  if (state === 'loading') {
+    text = total
+      ? `Downloading the on-device language model: ${mb(loaded)} of ${mb(total)} MB (first visit only).`
+      : 'Downloading the on-device language model (first visit only)…'
+  } else if (state === 'ready') {
+    text = 'On-device language model ready. Your questions stay on this device.'
+  } else if (state === 'unavailable') {
+    text = "Couldn't download the language model, so answers use keyword search for now."
+  }
+  if (!text) return null
+  return (
+    <p aria-live="polite" className="-mt-4 mb-4 text-xs text-muted">
+      {text}
+    </p>
   )
 }
 
