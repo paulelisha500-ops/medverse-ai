@@ -27,6 +27,9 @@ const LEXICAL_THRESHOLD = 2.0
 const MODEL_WAIT_MS = 30000
 const RETRY_AFTER_MS = 60000
 const ANSWER_CHAR_BUDGET = 650
+// Openers that refer back to the previous sentence.
+const LEANS_ON_PREVIOUS =
+  /^(?:other|another|these|this|those|that|it|its|they|their|such|however|but|also|additionally|in addition|similarly|likewise|otherwise|instead)\b/i
 
 // ---------------------------------------------------------------------------
 // Knowledge base
@@ -304,6 +307,16 @@ async function extractAnswer(question, passages, retrieval) {
     if (chosen.length && length + s.text.length > ANSWER_CHAR_BUDGET) continue
     chosen.push(s)
     length += s.text.length
+  }
+  // A sentence that leans on the one before it ("Other sudden symptoms
+  // include…") makes no sense alone, and the sentence it leans on is often the
+  // heart of the answer (the FAST signs, for "warning signs of a stroke"), so
+  // it comes along. Checking the added ones too follows a chain back.
+  for (let k = 0; k < chosen.length; k++) {
+    const s = chosen[k]
+    if (s.si === 0 || !LEANS_ON_PREVIOUS.test(s.text)) continue
+    const previous = sentences.find((x) => x.pi === s.pi && x.si === s.si - 1)
+    if (!chosen.includes(previous)) chosen.push(previous)
   }
 
   // Back in reading order, one paragraph per passage.
