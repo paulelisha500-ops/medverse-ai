@@ -17,6 +17,8 @@ const ORBIT_ICONS = [
   { icon: FileText, top: '39%', left: '16%' },
 ]
 
+const ROLE_ORDER = ['patient', 'doctor', 'admin']
+
 const STEPS = [
   'Sign in to your dashboard',
   'Ask, check, or assess',
@@ -30,6 +32,7 @@ export default function Login() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [busy, setBusy] = useState(false)
+  const [builtInAccounts, setBuiltInAccounts] = useState([])
 
   // Signing in almost always lands on the dashboard next; the register page
   // is the other click available from here. Warm both in the background so
@@ -38,18 +41,39 @@ export default function Login() {
     idlePrefetch(pageLoaders.dashboard, pageLoaders.register)
   }, [])
 
-  async function handleSubmit(e) {
-    e.preventDefault()
+  // Browser edition: every browser gets its own copy of the seeded accounts,
+  // so offer them as one-click sign-ins for trying each role.
+  useEffect(() => {
+    if (__BROWSER_EDITION__) {
+      import('../browser/data/seed.json').then(({ default: seed }) => {
+        const byRole = (a, b) => ROLE_ORDER.indexOf(a.role) - ROLE_ORDER.indexOf(b.role)
+        setBuiltInAccounts([...seed.users].sort(byRole))
+      })
+    }
+  }, [])
+
+  async function signIn(emailValue, passwordValue) {
     setError('')
     setBusy(true)
     try {
-      await login(email, password)
+      await login(emailValue, passwordValue)
       navigate('/dashboard')
     } catch (err) {
       setError(apiErrorMessage(err, 'Could not sign in. Check your email and password.'))
     } finally {
       setBusy(false)
     }
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    signIn(email, password)
+  }
+
+  function signInAs(account) {
+    setEmail(account.email)
+    setPassword(account.password)
+    signIn(account.email, account.password)
   }
 
   return (
@@ -138,6 +162,28 @@ export default function Login() {
               Create an account
             </Link>
           </p>
+
+          {builtInAccounts.length > 0 && (
+            <div className="mt-8 border-t border-line pt-5">
+              <div className="readout-label">Sign in as</div>
+              <div className="mt-3 grid grid-cols-3 gap-2">
+                {builtInAccounts.map((account) => (
+                  <button
+                    key={account.email}
+                    type="button"
+                    disabled={busy}
+                    onClick={() => signInAs(account)}
+                    className="rounded border border-line bg-surface px-3 py-2 text-sm font-medium text-ink transition-colors hover:border-pulse disabled:opacity-50"
+                  >
+                    {account.role.charAt(0).toUpperCase() + account.role.slice(1)}
+                  </button>
+                ))}
+              </div>
+              <p className="mt-2 text-xs text-muted">
+                Built-in accounts for each role. They live only in this browser, alongside anything you add.
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>

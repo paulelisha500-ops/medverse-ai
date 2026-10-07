@@ -86,3 +86,27 @@ def test_fentanyl_conversion_is_refused_not_approximated(client, tokens):
 def test_conversion_rejects_negative_dose(client, tokens):
     res = convert(client, tokens["patient"], "opioid", "morphine", "oxycodone", -1)
     assert res.status_code == 422
+
+
+def test_label_mention_found_by_generic_name():
+    # A warfarin label warns about "ibuprofen"; nobody's label says "Advil".
+    from app.nlp.drug_data import check_pair_live
+
+    warfarin = {"canonical_name": "warfarin", "label_text": "NSAIDs such as ibuprofen increase the risk of bleeding."}
+    advil = {"canonical_name": "Advil", "label_text": "Ask a doctor before use if you take a blood thinner."}
+    live = check_pair_live("Warfarin", "Advil", warfarin, advil, "warfarin", "ibuprofen")
+    assert live["status"] == "hit"
+    assert live["matched_name"] == "ibuprofen"
+
+
+def test_curated_pair_reported_when_labels_dont_name_each_other(client, tokens, monkeypatch):
+    # Both labels found, neither names the other: that isn't evidence the pair
+    # is safe, so the hand-reviewed interaction must still come through.
+    import app.api.medications as medications_api
+
+    monkeypatch.setattr(
+        medications_api, "lookup_drug", lambda name: {"canonical_name": name, "label_text": "Store at room temperature."}
+    )
+    found = check(client, tokens["patient"], ["warfarin", "ibuprofen"])
+    assert [f["source"] for f in found] == ["curated"]
+    assert found[0]["severity"] == "high"

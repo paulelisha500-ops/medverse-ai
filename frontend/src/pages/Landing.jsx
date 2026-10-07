@@ -27,7 +27,13 @@ const CLINIC_IMG = 'https://images.unsplash.com/photo-1682365114691-f0264ad25c52
 const TECH_IMG = 'https://images.unsplash.com/photo-1758691462848-31a39258dbd8?auto=format&fit=crop&w=1400&q=80'
 const TABLET_IMG = 'https://images.unsplash.com/photo-1666886573301-b5d526cfd518?auto=format&fit=crop&w=1400&q=80'
 
-const STACK = ['React', 'FastAPI', 'scikit-learn', 'sentence-transformers', 'FAISS', 'SQLAlchemy']
+// The browser edition (static hosting) runs everything client-side, so the
+// copy that names the machinery describes whichever edition this is.
+const BROWSER = __BROWSER_EDITION__
+
+const STACK = BROWSER
+  ? ['React', 'Transformers.js', 'ONNX Runtime Web', 'scikit-learn', 'openFDA', 'RxNorm']
+  : ['React', 'FastAPI', 'scikit-learn', 'sentence-transformers', 'FAISS', 'SQLAlchemy']
 
 // Every database figure this page quotes, in one place so the copy can't
 // drift from the data again (checked against app/nlp/medication_data.py and
@@ -38,7 +44,7 @@ const DB = {
   reference: 506,
   interactions: 230,
   aliases: 674,
-  topics: 74,
+  topics: 75,
 }
 
 const STEPS = [
@@ -68,7 +74,11 @@ const CAPABILITIES = [
 
 const PLATFORM_ITEMS = [
   { icon: MessageSquareText, label: 'AI Assistant', body: 'RAG-grounded chat over a real knowledge base' },
-  { icon: FileText, label: 'Report Analysis', body: 'Regex + LLM extraction of labs, meds, diagnoses' },
+  {
+    icon: FileText,
+    label: 'Report Analysis',
+    body: BROWSER ? 'On-device extraction of labs, meds, diagnoses' : 'Regex + LLM extraction of labs, meds, diagnoses',
+  },
   { icon: Activity, label: 'Risk Check', body: 'Trained diabetes & heart-disease risk models' },
   { icon: Pill, label: 'Medication Checker', body: `${DB.drugs} drugs, ${DB.interactions} curated interactions` },
 ]
@@ -77,17 +87,23 @@ const TECH_DETAILS = [
   {
     icon: BrainCircuit,
     title: 'RAG Assistant',
-    body: 'sentence-transformers (all-MiniLM-L6-v2) embeds a hand-written knowledge base; FAISS does the vector search. Answers cite their retrieved passages. LLM generation is pluggable — OpenAI, Anthropic, Ollama, or a retrieval-only fallback with zero keys.',
+    body: BROWSER
+      ? 'all-MiniLM-L6-v2 runs in your browser through Transformers.js and ranks a hand-written knowledge base embedded with sentence-transformers. Answers quote the best-matching passages and cite them, and your questions never leave your device.'
+      : 'sentence-transformers (all-MiniLM-L6-v2) embeds a hand-written knowledge base; FAISS does the vector search. Answers cite their retrieved passages. LLM generation is pluggable — OpenAI, Anthropic, Ollama, or a retrieval-only fallback with zero keys.',
   },
   {
     icon: ScanText,
     title: 'NLP Report Extraction',
-    body: 'Lab values are pulled out with hand-written regex patterns — no API key needed for that part. Diagnosis and medication extraction, plus dual patient/clinical summaries, use the configured LLM.',
+    body: BROWSER
+      ? `Lab values are pulled out with hand-written regex patterns; diagnoses and medications are matched against a condition lexicon and the ${DB.drugs}-drug directory. Patient-friendly and clinical summaries are written from the findings against standard reference ranges, all on your device.`
+      : 'Lab values are pulled out with hand-written regex patterns — no API key needed for that part. Diagnosis and medication extraction, plus dual patient/clinical summaries, use the configured LLM.',
   },
   {
     icon: LineChart,
     title: 'Risk Prediction',
-    body: 'Two scikit-learn logistic regression models — one for diabetes, one for heart disease — trained on synthetic data at first run, with coefficient-based "top contributing factor" explainability.',
+    body: BROWSER
+      ? 'Two scikit-learn logistic regression models — one for diabetes, one for heart disease — trained on synthetic data and evaluated right in your browser, with coefficient-based "top contributing factor" explainability.'
+      : 'Two scikit-learn logistic regression models — one for diabetes, one for heart disease — trained on synthetic data at first run, with coefficient-based "top contributing factor" explainability.',
   },
   {
     icon: ShieldCheck,
@@ -99,11 +115,15 @@ const TECH_DETAILS = [
 const FAQS = [
   {
     q: 'Is this connected to a real hospital system or EHR?',
-    a: 'No. This is a self-contained application with its own database — it has no connection to any real patient records or health system. Accounts you create live only in this app.',
+    a: BROWSER
+      ? 'No. MedVerse runs entirely in your browser and has no connection to any real patient records or health system. Accounts and records you create are stored only on this device.'
+      : 'No. This is a self-contained application with its own database — it has no connection to any real patient records or health system. Accounts you create live only in this app.',
   },
   {
     q: 'Do I need an API key to try it?',
-    a: 'No. The RAG assistant works with zero keys in retrieval-only mode. Setting an OpenAI, Anthropic, or local Ollama key unlocks full generated answers, but nothing else in the app requires one.',
+    a: BROWSER
+      ? 'No. Everything runs in your browser with zero keys. The assistant downloads its language model once (about 25 MB) and keeps it cached for next time.'
+      : 'No. The RAG assistant works with zero keys in retrieval-only mode. Setting an OpenAI, Anthropic, or local Ollama key unlocks full generated answers, but nothing else in the app requires one.',
   },
   {
     q: 'Can I use this for real medical decisions?',
@@ -385,6 +405,22 @@ function AnnouncementBar() {
   )
 }
 
+// In-page section links. They scroll rather than set the URL hash, which the
+// browser edition's router uses for page routes.
+function SectionLink({ to, onClick, ...props }) {
+  return (
+    <a
+      href={`#${to}`}
+      onClick={(e) => {
+        e.preventDefault()
+        onClick?.()
+        document.getElementById(to)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }}
+      {...props}
+    />
+  )
+}
+
 function Nav() {
   const [platformOpen, setPlatformOpen] = useState(false)
 
@@ -399,15 +435,15 @@ function Nav() {
               onMouseEnter={() => setPlatformOpen(true)}
               onMouseLeave={() => setPlatformOpen(false)}
             >
-              <a href="#platform" className="flex items-center gap-1 text-sm font-medium text-ink hover:text-pulse-dark">
+              <SectionLink to="platform" className="flex items-center gap-1 text-sm font-medium text-ink hover:text-pulse-dark">
                 Platform <ChevronDown size={14} />
-              </a>
+              </SectionLink>
               {platformOpen && (
                 <div className="absolute left-0 top-full w-72 rounded-lg border border-line bg-surface p-2 shadow-xl">
                   {PLATFORM_ITEMS.map(({ icon: Icon, label, body }) => (
-                    <a
+                    <SectionLink
                       key={label}
-                      href="#platform"
+                      to="platform"
                       onClick={() => setPlatformOpen(false)}
                       className="flex gap-3 rounded-md p-2 hover:bg-pulse-dim"
                     >
@@ -418,17 +454,17 @@ function Nav() {
                         <div className="text-sm font-medium text-ink">{label}</div>
                         <div className="text-xs text-muted">{body}</div>
                       </div>
-                    </a>
+                    </SectionLink>
                   ))}
                 </div>
               )}
             </div>
-            <a href="#technology" className="text-sm font-medium text-ink hover:text-pulse-dark">
+            <SectionLink to="technology" className="text-sm font-medium text-ink hover:text-pulse-dark">
               Technology
-            </a>
-            <a href="#faq" className="text-sm font-medium text-ink hover:text-pulse-dark">
+            </SectionLink>
+            <SectionLink to="faq" className="text-sm font-medium text-ink hover:text-pulse-dark">
               FAQ
-            </a>
+            </SectionLink>
           </nav>
         </div>
         <div className="flex items-center gap-4">

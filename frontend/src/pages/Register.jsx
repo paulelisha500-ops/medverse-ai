@@ -41,6 +41,9 @@ export default function Register() {
         <p className="mt-1 text-sm text-muted">
           Patient sign-up. Doctor and admin accounts are created by an administrator.
         </p>
+        {__BROWSER_EDITION__ && (
+          <p className="mt-1 text-xs text-muted">Your account and records are stored only in this browser.</p>
+        )}
 
         <form onSubmit={handleSubmit} className="mt-6 space-y-4">
           <Field label="Full name">

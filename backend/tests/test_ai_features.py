@@ -79,3 +79,26 @@ def test_dashboard_stats_match_role(client, tokens, role):
     res = client.get("/api/dashboard/stats", headers=auth(tokens[role]))
     assert res.status_code == 200
     assert res.json()["role"] == role
+
+
+def test_rag_index_rebuilds_when_knowledge_base_changes(client, tmp_path, monkeypatch):
+    # A saved index must not outlive an edit to health_topics.md.
+    from app.rag import vector_store
+
+    monkeypatch.setattr(vector_store, "DATA_DIR", str(tmp_path))
+    monkeypatch.setattr(vector_store, "INDEX_PATH", str(tmp_path / "kb_index.faiss"))
+    monkeypatch.setattr(vector_store, "CHUNKS_PATH", str(tmp_path / "kb_chunks.json"))
+    # Restored after the test, so the rest of the suite keeps the real index.
+    monkeypatch.setattr(vector_store, "_index", vector_store._index)
+    monkeypatch.setattr(vector_store, "_chunks", vector_store._chunks)
+
+    first = [{"title": "Sleep", "text": "Adults need seven to nine hours of sleep."}]
+    monkeypatch.setattr(vector_store, "parse_knowledge_base", lambda: first)
+    vector_store.build_index()
+    assert vector_store._index.ntotal == 1
+
+    edited = first + [{"title": "Hydration", "text": "Drink water regularly through the day."}]
+    monkeypatch.setattr(vector_store, "parse_knowledge_base", lambda: edited)
+    vector_store.build_index()
+    assert vector_store._chunks == edited
+    assert vector_store._index.ntotal == 2
